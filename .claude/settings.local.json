@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 -c \":*)",
+      "Bash(python -c \":*)",
+      "Bash(\"/c/Users/gianc/AppData/Local/Microsoft/WindowsApps/python.exe\" --version)",
+      "Bash(node -e \":*)",
+      "Bash(node \"c:/Users/gianc/OneDrive/Área de Trabalho/Cigame/workspace/fix_form.js\")"
+    ]
+  }
+}

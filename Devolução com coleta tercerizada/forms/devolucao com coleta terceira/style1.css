@@ -827,3 +827,23 @@ span.form-control {
 .spacer {
     margin-top: 20px;
 }
+
+/* Section label separators inside panels */
+.section-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #cb252d;
+    letter-spacing: 0.06em;
+    margin: 18px 0 6px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #f0d0d1;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.section-label i {
+    font-size: 0.75rem;
+    opacity: 0.85;
+}

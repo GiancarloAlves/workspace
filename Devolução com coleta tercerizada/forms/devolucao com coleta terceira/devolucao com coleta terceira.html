@@ -107,6 +107,7 @@
                   <div class="panel-body">
                     <!--panel body normal da seção-->
 
+                    <div class="section-label"><i class="fas fa-info-circle"></i> Informações Gerais</div>
                     <div class="row">
                       <div class="form-group col-md-3">
                         <label>Número</label>
@@ -193,8 +194,9 @@
                       </div>
                     </div>
 
+                    <div class="section-label"><i class="fas fa-user"></i> Dados do Cliente</div>
                     <div class="row">
-                      <div class="form-group col-md-3">
+                      <div class="form-group col-md-4">
                         <label class="required">Cliente</label>
                         <input
                           type="zoom"
@@ -214,8 +216,8 @@
                         />
                       </div>
 
-                      <div class="form-group col-md-3">
-                        <label class="required">Código do cliente</label>
+                      <div class="form-group col-md-2">
+                        <label class="required">Código</label>
                         <input
                           type="zoom"
                           name="codCliente"
@@ -235,6 +237,22 @@
                       </div>
 
                       <div class="form-group col-md-3">
+                        <label>CNPJ cliente</label>
+                        <div class="input-group">
+                          <input
+                            type="text"
+                            name="cnpjCliente"
+                            id="cnpjCliente"
+                            class="form-control"
+                            readonly
+                          />
+                          <span class="input-group-addon">
+                            <i class="fas fa-id-card"></i>
+                          </span>
+                        </div>
+                      </div>
+
+                      <div class="form-group col-md-3">
                         <label>IE cliente</label>
                         <div class="input-group">
                           <input
@@ -249,11 +267,12 @@
                           </span>
                         </div>
                       </div>
+                    </div>
 
+                    <div class="section-label"><i class="fas fa-undo-alt"></i> Detalhes da Devolução</div>
+                    <div class="row">
                       <div class="form-group col-md-3">
-                        <label class="required"
-                          >Cliente emite NF de devolução?</label
-                        >
+                        <label class="required">Cliente emite NF de devolução?</label>
                         <input
                           type="text"
                           name="rdEmiteNFDev"
@@ -262,9 +281,7 @@
                           readonly
                         />
                       </div>
-                    </div>
 
-                    <div class="row">
                       <div class="form-group col-md-3">
                         <label class="required">Motivo da devolução</label>
                         <input
@@ -299,22 +316,6 @@
                       </div>
 
                       <div class="form-group col-md-3">
-                        <label>CNPJ cliente</label>
-                        <div class="input-group">
-                          <input
-                            type="text"
-                            name="cnpjCliente"
-                            id="cnpjCliente"
-                            class="form-control"
-                            readonly
-                          />
-                          <span class="input-group-addon">
-                            <i class="fas fa-id-card"></i>
-                          </span>
-                        </div>
-                      </div>
-
-                      <div class="form-group col-md-3">
                         <label class="required">Frete por conta</label>
                         <select
                           name="freteConta"
@@ -328,6 +329,7 @@
                       </div>
                     </div>
 
+                    <div class="section-label"><i class="fas fa-truck"></i> Coleta &amp; Anexos</div>
                     <div class="row">
                       <div class="form-group col-md-3">
                         <button
@@ -353,7 +355,7 @@
                         </div>
                       </div>
 
-                      <div class="form-group col-md-2">
+                      <div class="form-group col-md-3">
                         <label class="required">Possui coleta?</label>
                         <select
                           name="rdPossuiColeta"
@@ -383,6 +385,7 @@
                       </div>
                     </div>
 
+                    <div class="section-label"><i class="fas fa-map-marker-alt"></i> Endereço de Coleta</div>
                     <div class="row">
                       <div class="form-group col-md-3 blocked">
                         <label class="required">Endereço da coleta</label>
