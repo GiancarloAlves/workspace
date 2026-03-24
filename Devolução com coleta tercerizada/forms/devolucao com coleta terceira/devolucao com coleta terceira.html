@@ -329,27 +329,6 @@
                     </div>
 
                     <div class="row">
-                      <!-- <div class="form-group col-md-3">
-											<label class="required">Ligar p/ o cliente para acertar o crédito?</label>
-											<select name="rdLigarCliente" id="rdLigarCliente" class="form-control"
-												data-ligar>
-												<option value="">Selecione uma opção...</option>
-												<option>Sim</option>
-												<option>Não</option>
-											</select>
-										</div> -->
-
-                      <!-- <div class="form-group col-md-3 blocked">
-											<label class="required">Telefone ou e-mail de contato</label>
-											<div class="input-group">
-												<input type="text" name="contatoCliente" id="contatoCliente"
-													class="form-control" placeholder="">
-												<span class="input-group-addon">
-													<i class="fas fa-id-card"></i>
-												</span>
-											</div>
-										</div> -->
-
                       <div class="form-group col-md-3">
                         <button
                           class="btn btn-primary btn-custom btn-custom-primary btn-custom-primary--file showcamera"
@@ -967,8 +946,7 @@
                       data-toggle="collapse"
                       data-parent="#accordion"
                       href="#realizar-recebimento"
-                      ><i class="fas fa-tasks"></i> REALIZAR DEVOLUÇÃO - RESP:
-                      LOGÍSTICA</a
+                      ><i class="fas fa-tasks"></i> VALIDAÇÃO E IDENTIFICAÇÃO DO PROBLEMA</a
                     >
                   </h3>
                 </div>
@@ -980,56 +958,10 @@
                   <div class="panel-body">
                     <div class="row">
                       <div class="form-group col-md-3">
-                        <label>Conferente</label>
-                        <div class="input-group">
-                          <input
-                            type="text"
-                            name="conferenteRecebimento"
-                            id="conferenteRecebimento"
-                            class="form-control"
-                            readonly
-                          />
-                          <span class="input-group-addon">
-                            <i class="far fa-user"></i>
-                          </span>
-                        </div>
-                      </div>
-
-                      <div class="form-group col-md-3">
-                        <label>Box</label>
-                        <div class="input-group">
-                          <input
-                            type="text"
-                            name="boxRecebimento"
-                            id="boxRecebimento"
-                            class="form-control"
-                          />
-                          <span class="input-group-addon">
-                            <i class="fas fa-box"></i>
-                          </span>
-                        </div>
-                      </div>
-
-                      <div class="form-group col-md-3">
-                        <label>N NF entrada</label>
-                        <div class="input-group">
-                          <input
-                            type="text"
-                            name="nfEntradaRecebimento"
-                            id="nfEntradaRecebimento"
-                            class="form-control"
-                          />
-                          <span class="input-group-addon">
-                            <i class="fas fa-file-invoice"></i>
-                          </span>
-                        </div>
-                      </div>
-
-                      <div class="form-group col-md-3">
-                        <label class="required">Recebimento ok?</label>
+                        <label class="required">Aprovar solicitação?</label>
                         <select
-                          name="recebimentoOk"
-                          id="recebimentoOk"
+                          name="rdAprovaPosVenda"
+                          id="rdAprovaPosVenda"
                           class="form-control"
                         >
                           <option value="">Selecione uma opção...</option>
@@ -1037,15 +969,51 @@
                           <option>Não</option>
                         </select>
                       </div>
+
+                      <div class="form-group col-md-3">
+                        <label class="required">Origem do problema</label>
+                        <select
+                          name="origemProblema"
+                          id="origemProblema"
+                          class="form-control"
+                        >
+                          <option value="">Selecione uma opção...</option>
+                          <option>opcao1</option>
+                          <option>opcao2</option>
+                          <option>opcao3</option>
+                          <option>opcao4</option>
+                        </select>
+                      </div>
+
+                      <div class="form-group col-md-3">
+                        <label>Ordem de coleta</label>
+                        <div class="input-group">
+                          <input
+                            type="text"
+                            name="ordemColeta"
+                            id="ordemColeta"
+                            class="form-control"
+                          />
+                          <span class="input-group-addon">
+                            <i class="fas fa-truck-loading"></i>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+
+
+
+                    <div class="row">
+                      <div class="form-group col-md-12">
+                        <label>Observação pós venda</label>
+                        <textarea
+                          name="obsPosVenda"
+                          id="obsPosVenda"
+                          class="form-control"
+                        ></textarea>
+                      </div>
                     </div>
                   </div>
-
-                  <!-- Hidden -->
-                  <input
-                    type="hidden"
-                    name="matConferenteRecebimento"
-                    id="matConferenteRecebimento"
-                  />
                 </div>
               </div>
             </div>
