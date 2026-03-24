@@ -1,0 +1,242 @@
+<html>
+
+<head>
+	<link type="text/css" rel="stylesheet" href="/portal/resources/style-guide/css/fluig-style-guide.min.css" />
+	<link type="text/css" rel="stylesheet" href="custom.css" />
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/mustache/mustache-min.js"></script>
+	<script type="text/javascript" src="/portal/resources/style-guide/js/fluig-style-guide.min.js"
+		charset="utf-8"></script>
+	<script type="text/javascript" src="/webdesk/vcXMLRPC.js"></script>
+	<script type="text/javascript" src="custom.js" charset="utf-8"></script>
+	<style>
+		.panel-heading {
+			background-color: #58595b !important;
+			color: #fff !important;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="fluig-style-guide">
+		<form name="form" role="form">
+			<div class="panel-body">
+				<div class="row">
+					<div class="text-center col-md-3">
+						<span>
+							<img src="totvs.png" class="img-responsive" style="display:block;margin:auto;">
+						</span>
+					</div>
+
+					<div class="text-center col-md-6">
+						<h2>Formul&aacute;rio solicita&ccedil;&atilde;o de abertura de chamado</h2>
+					</div>
+
+					<div class="col-md-2 text-center">
+						<span class="fluigicon fluigicon-brand fluigicon-thumbnail-md"></span>
+					</div>
+				</div>
+			</div>
+
+			<div class="container-fluid">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title">
+							<b>Dados do solicitante</b>
+						</h3>
+					</div>
+					<div class="panel-body">
+						<div class="row">
+							<div class="col-md-9 col-sm-12">
+								<div class="form-group">
+									<label for="txt_solicitante">Solicitante</label>
+									<input type="text" class="form-control" id="txt_solicitante"
+										name="txt_solicitante" />
+								</div>
+							</div>
+							<div class="col-md-3 col-sm-12">
+								<div class="form-group">
+									<label for="txt_numsolicita">N&uacute;mero da solicita&ccedil;&atilde;o</label>
+									<input type="text" class="form-control" id="txt_numsolicita"
+										name="txt_numsolicita" />
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6 col-sm-12">
+								<div class="form-group">
+									<label for="txt_emailsolicitante">Email solicitante</label>
+									<input type="text" class="form-control" id="txt_emailsolicitante"
+										name="txt_emailsolicitante" />
+								</div>
+							</div>
+							<div class="col-md-3 col-sm-12">
+								<div class="form-group">
+									<label for="txt_data">Data</label>
+									<input type="text" class="form-control" id="txt_data" name="txt_data" />
+								</div>
+							</div>
+							<div class="col-md-3 col-sm-12">
+								<div class="form-group">
+									<label for="txt_hora">Hora</label>
+									<input type="text" class="form-control" id="txt_hora" name="txt_hora" />
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="container-fluid">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title">
+							<b>Dados da solicita&ccedil;&atilde;o</b>
+						</h3>
+					</div>
+					<div class="panel-body">
+						<div class="row">
+							<div class="col-md-3 col-sm-12">
+								<div class="form-group">
+									<label for="txt_categoria" class="required">Categoria</label>
+									<select id="txt_categoria" name="txt_categoria" class="form-control">
+										<option value=""></option>
+										<option value="Hardware">Hardware</option>
+										<option value="Software">Software</option>
+									</select>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12 col-sm-12">
+								<div class="form-group">
+									<label for="txt_problema" class="required">Descri&ccedil;&atilde;o do
+										chamado</label>
+									<textarea class="form-control" rows="3" id="txt_problema"
+										name="txt_problema"></textarea>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="container-fluid" id="blocoAnalisePrestador">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title">
+							<b>Dados da an&aacute;lise do prestador de servi&ccedil;o</b>
+						</h3>
+					</div>
+					<div class="panel-body">
+						<div class="row">
+							<div class="col-md-3 col-sm-12">
+								<div class="form-group">
+									<label class="required">Atendimento</label>
+									<select id="txt_atendimento" name="txt_atendimento" class="form-control">
+										<option value=""></option>
+										<option value="remoto">Remoto</option>
+										<option value="inloco">In loco</option>
+									</select>
+									<input type="hidden" class="form-control" id="hidden_atendimento"
+										name="hidden_atendimento" value="" />
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12 col-sm-12">
+								<div class="form-group">
+									<label for="txt_analise">An&aacute;lise</label>
+									<textarea class="form-control" rows="3" id="txt_analise"
+										name="txt_analise"></textarea>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="container-fluid" id="blocoSite">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title">
+							<b>In loco - Digite um site para atendimento</b>
+						</h3>
+					</div>
+					<div class="panel-body">
+						<div class="row">
+							<div class="col-md-6 col-sm-12">
+								<div class="form-group">
+									<label for="txt_site" class="required">Site</label>
+									<input type="text" class="form-control" id="txt_site" name="txt_site">
+
+									<!-- <input type="zoom" class="form-control" id="txt_site" name="txt_site" data-zoom="{
+									'displayKey':'txt_nome',
+									'datasetId':'cadastroSite',
+									'fields':[
+										{ 'field':'txt_nome', 'label':'Nome',  'search':'true' }
+									] }" /> -->
+
+									<input type="hidden" class="form-control" id="txt_grupo" name="txt_grupo" value="" />
+									<input type="hidden" class="form-control" id="txt_sla" name="txt_sla" value="" />
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="container-fluid" id="blocoResolucao">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title">
+							<b>Dados da resolu&ccedil;&atilde;o do prestador de servi&ccedil;o</b>
+						</h3>
+					</div>
+					<div class="panel-body">
+						<div class="row">
+							<div class="col-md-12 col-sm-12">
+								<div class="form-group">
+									<label class="required">Resolu&ccedil;&atilde;o</label>
+									<textarea class="form-control" rows="3" id="txt_resolucao"
+										name="txt_resolucao"></textarea>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="container-fluid" id="blocoAprovacao">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title">
+							<b>Dados de aprova&ccedil;&atilde;o</b>
+						</h3>
+					</div>
+					<div class="panel-body">
+						<div class="row">
+							<div class="col-md-3 col-sm-12">
+								<div class="form-group">
+									<label class="required">Aprovado?</label>
+									<select id="txt_aprovacao" name="txt_aprovacao" class="form-control">
+										<option value=""></option>
+										<option value="sim">Sim</option>
+										<option value="nao">N&atilde;o</option>
+									</select>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12 col-sm-12">
+								<div class="form-group">
+									<label class="lbl_justificativa">Justificativa</label>
+									<textarea class="form-control" rows="3" id="txt_justificativa"
+										name="txt_justificativa"></textarea>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<parent>
+		<groupId>com.fluig</groupId>
+		<artifactId>sample-additional-user-data</artifactId>
+		<version>1.5.8</version>
+	</parent>
+
+  	<modelVersion>4.0.0</modelVersion>
+	<artifactId>wcm-widget-editable-sample</artifactId>
+	<packaging>war</packaging>
+
+	<name>Editable</name>
+	<description>Exemplo de perfil editável.</description>
+
+	<build>
+        <finalName>${project.artifactId}</finalName>
+    </build>
+
+	<profiles>
+		<profile>
+			<id>debug</id>
+			<activation>
+				<property>
+					<name>!onlyminify</name>
+				</property>
+			</activation>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-war-plugin</artifactId>
+						<configuration>
+							<failOnMissingWebXml>false</failOnMissingWebXml>
+							<archive>
+								<manifestEntries>
+									<Dependencies>org.slf4j, com.fluig.api, com.fluig.api.common</Dependencies>
+								</manifestEntries>
+							</archive>
+						</configuration>
+					</plugin>
+					<plugin>
+						<groupId>net.alchim31.maven</groupId>
+						<artifactId>yuicompressor-maven-plugin</artifactId>
+						<executions>
+							<execution>
+								<goals>
+									<goal>compress</goal>
+								</goals>
+							</execution>
+						</executions>
+						<configuration>
+							<nosuffix>false</nosuffix>
+							<force>true</force>
+							<linebreakpos>-1</linebreakpos>
+							<disableOptimizations>false</disableOptimizations>
+							<gzip>false</gzip>
+							<jswarn>false</jswarn>
+							<nomunge>true</nomunge>
+							<preserveAllSemiColons>false</preserveAllSemiColons>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+</project>

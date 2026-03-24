@@ -1,0 +1,523 @@
+<html>
+
+<head>
+  <link type="text/css" rel="stylesheet" href="/style-guide/css/fluig-style-guide.min.css" />
+  <script type="text/javascript" src="/portal/resources/js/jquery/jquery.js"></script>
+  <script type="text/javascript" src="/portal/resources/js/jquery/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="/portal/resources/js/mustache/mustache-min.js"></script>
+  <script type="text/javascript" src="/style-guide/js/fluig-style-guide.min.js" charset="utf-8"></script>
+
+  <!-- Dataset -->
+  <script type="text/javascript" src="/webdesk/vcXMLRPC.js"></script>
+
+  <!-- sweetalert2 -->
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <!-- FontAwesome -->
+  <link type="text/css" rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+  <!-- JQuery Mask Plugin -->
+  <script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
+
+  <!-- Custom -->
+  <link type="text/css" rel="stylesheet" href="./style_comp.css">
+  <script type="text/javascript" src="./app.js"></script>
+
+
+<body class="fluig-style-guide process-style" id="devkit-style">
+  <form name="form" role="form" id="form-processo">
+
+
+    <div class="panel panel-primary panel-border">
+      <!--Painel geral do formulário - fecha no extremo do arquivo e contém todas as seções-->
+
+      <div class="panel-heading panel-bg panel-border"> <!--início da declaração do cabeçalho principal (azul)-->
+        <div class="container-fluid">
+          <section id="logo">
+            <img src="./images/logoCigame.png" alt="NOME-CLIENTE" width="130" style="padding: 10px;">
+            <h3 class="panel-title">FOLLOW-UP DE MERCADORIAS</h3>
+          </section>
+        </div>
+      </div> <!--fim da declaração do cabeçalho principal (azul)-->
+
+      <div class="panel-body"> <!--panel body geral do arquivo - fecha no extremo e contém todas as seções-->
+
+        <div class="panel panel-primary"> <!--declaração da primeira seção-->
+          <div class="panel-heading"> <!--início do cabeçalho da seção-->
+            <h3 class="panel-title subpanel_title">
+              <a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion" href="#abertura"><i
+                  class="far fa-clipboard"></i> DADOS DA MERCADORIA</a>
+            </h3>
+          </div> <!--fim da declaração do cabeçalho da seção-->
+
+          <div id="abertura" class="panel-collapse collapse in">
+            <div class="panel-body">
+
+              <!--início do primeiro row-->
+
+
+              <div class="form-group col-md-2" hidden>
+                <label>Matrícula</label>
+                <div group="input-group">
+                  <input type="text" class="form-control" name="matricula" id="matricula" readonly>
+                </div>
+              </div>
+
+              <div id="pesquisa" class="panel-collapse collapse in">
+                <div class="panel-body">
+
+                  <div class="row">
+
+                    <div class="col-md-6">
+                      <div class="card">
+                        <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+                        <div class="card-body">
+                          <h3 class="card-title">Consulta por OC</h3>
+                          <p class="card-text">Digite o número da OC desejada.
+                            O botão "LISTAR OC" coloca na tabela todos os produtos da ordem de compra escolhida.
+                          </p>
+                          <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+
+                          <div class="form-group col-md-6">
+                            <label for="zoom">Ordem de compra</label>
+                            <input type="zoom" class="form-control zoom-input" name="mainOC" id="mainOC"
+                              dataset="ds_oc_follow_winthor" zoomvalue="A14_PEDIDO_COMPRA"
+                              datasetvalue="A14_PEDIDO_COMPRA"
+                              data-zoom="{'displayKey':'A14_PEDIDO_COMPRA','datasetId':'ds_oc_follow_winthor','fields':[{'field':'A14_PEDIDO_COMPRA','label':'oc','standard':true}]}" />
+                          </div>
+
+                          <div class="form-group col-md-4" id="listaoc">
+                            <button
+                              class="btn btn-primary btn-custom btn-custom-primary btn-custom-primary--file showcamera"
+                              onclick="deployOC()">
+                              <i class="fas fa-images"></i> LISTAR OC
+                            </button>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-md-6">
+                      <div class="card">
+                        <div class="card-body">
+                          <h3 class="card-title">Consulta por item</h3>
+                          <p class="card-text">Digite o item desejado.
+                            O botão "LISTAR ITEM" coloca na tabela todos as ordens de compra abertas para o item
+                            escolhido.</p>
+
+                          <div class="form-group col-md-6">
+                            <label for="zoom">Cód.produto</label>
+                            <input type="zoom" class="form-control zoom-input" name="pesqcod" id="pesqcod"
+                              dataset="ds_oc_follow_winthor" zoomvalue="A08_CODPROD" datasetvalue="A08_CODPROD"
+                              data-zoom="{'displayKey':'A08_CODPROD','datasetId':'ds_oc_follow_winthor','fields':[{'field':'A08_CODPROD','label':'Codigo','standard':true}]}" />
+                          </div>
+
+                          <div class="form-group col-md-4" id="listaitem">
+                            <button
+                              class="btn btn-primary btn-custom btn-custom-primary btn-custom-primary--file showcamera"
+                              onclick="deployItem()">
+                              <i class="fas fa-images"></i> LISTAR ITEM
+                            </button>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- <div class="form-group col-md-3">
+            <label for="zoom">Ordem de compra</label>
+            <input type="zoom" class="form-control zoom-input" name="mainOC" id="mainOC"
+              dataset="ds_pedidos_follow_winthor" zoomvalue="A14_PEDIDO_COMPRA" datasetvalue="A14_PEDIDO_COMPRA"
+              data-zoom="{'displayKey':'A14_PEDIDO_COMPRA','datasetId':'ds_pedidos_follow_winthor','fields':[{'field':'A14_PEDIDO_COMPRA','label':'oc','standard':true}]}" />
+          </div>
+
+          <div class="form-group col-md-2">
+            <button class="btn btn-primary btn-custom btn-custom-primary btn-custom-primary--file showcamera" onclick="deployOC()">
+              <i class="fas fa-images"></i> LISTAR OC 
+            </button>
+          </div> -->
+
+                  </div>
+
+                  <div class="row">
+
+                    <div class="form-group col-md-3">
+                      <label for="zoom">Cod. fornecedor</label>
+                      <input type="zoom" class="form-control zoom-input" name="codfornec" id="codfornec"
+                        dataset="ds_oc_follow_winthor" zoomvalue="A10_CODFORNEC" datasetvalue="A10_CODFORNEC"
+                        data-zoom="{'displayKey':'A10_CODFORNEC','datasetId':'ds_oc_follow_winthor','fields':[{'field':'A10_CODFORNEC','label':'Cód.fornec','standard':true}]}" />
+                    </div>
+
+                    <div class="form-group col-md-4">
+                      <label for="zoom">Fornecedor</label>
+                      <input type="zoom" class="form-control zoom-input" name="fornecedor" id="fornecedor"
+                        dataset="ds_oc_follow_winthor" zoomvalue="A11_FORNECEDOR" datasetvalue="A11_FORNECEDOR"
+                        data-zoom="{'displayKey':'A11_FORNECEDOR','datasetId':'ds_oc_follow_winthor','fields':[{'field':'A11_FORNECEDOR','label':'Fornecedor','standard':true}]}" />
+                    </div>
+
+                    <div class="form-group col-md-2">
+                      <label>Comprador</label>
+                      <div group="input-group">
+                        <input type="text" class="form-control" name="comprador" id="comprador" readonly>
+                      </div>
+                    </div>
+
+                    <div class="form-group col-md-1" hidden>
+                      <label>Mat. comprador</label>
+                      <div group="input-group">
+                        <input type="text" class="form-control" name="matcomprador" id="matcomprador">
+                      </div>
+                    </div>
+
+                    <div class="form-group col-md-3" id="deploylista">
+                      <button class="btn btn-primary btn-custom btn-custom-primary btn-custom-primary--file showcamera"
+                        onclick="deployFollow()">
+                        <i class="fas fa-images"></i> LISTAR PRODUTOS
+                      </button>
+                    </div>
+
+                  </div> <!-- fecha row-->
+
+                  <div class="row">
+                    <div class="form-group col-md-3" id="novaConsulta">
+                      <button class="btn btn-primary btn-custom btn-custom-primary btn-custom-primary--file showcamera"
+                        onclick="limparCampos()">
+                        <i class="flaticon flaticon-refresh icon-sm" aria-hidden="true"></i>
+                        Nova Consulta
+                      </button>
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+              <div class="form-group">
+                <label>Observação</label>
+                <div group="input-group">
+                  <textarea class="form-control" name="observacao" id="observacao" rows="2"></textarea>
+                </div>
+              </div>
+
+              <div class="form-field" data-type="tabledetail" data-show-properties="" data-field-name="Dados_do_t_tulo">
+                <table id="TabelaTitulos" class="table pai-filho table-striped" tablename="TabelaTitulos"
+                  noaddbutton="true" nodeletebutton="true">
+                  <caption>A pesquisa deve ser feita pelo código. O sistema preenche automaticamente os dados da compra
+                    e da quantidade comprada. </caption>
+
+                  <thead>
+                    <tr>
+                      <th width="5%">Cód.produto</th>
+                      <th width="50%">
+                        Descrição_produto&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      </th>
+                      <th width="3%">O.Compra</th>
+                      <th title="Quantidade na ordem de compra" width="5%">Qt.OC</th>
+                      <th width="5%">Comprador</th>
+                      <th>Qtd. desejada</th>
+                      <th>Qual data necessita?</th>
+                      <th title="Data original da previsão de chegada">Prev.chegada</th>
+                      <th title="Data real da previsão de chegada">Prev.real.chegada</th>
+                      <th title="Foi alterada a previsão de chegada deste produto?">Alterada previsão?</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                    <tr>
+
+                      <td>
+                        <input type="zoom" name="codprod" id="codprod" class="form-control zoom-input" data-zoom="
+                      {
+                        'displayKey':'A08_CODPROD',
+                        'datasetId':'ds_oc_follow_winthor',
+                        'maximumSelectionLength':'1',
+                        'fields':[
+                          {'field':'A08_CODPROD','label':'Codigo','standard':'true'}                        
+                          ]
+                      }">
+                      </td>
+
+                      <!-- <td>
+                  <input type="text" name="codprod" id="codprod" class="form-control" readonly>
+                </td> -->
+
+                      <td>
+                        <input type="text" name="descprod" id="descprod" class="form-control" readonly>
+                      </td>
+
+
+
+                      <!--  <td>
+                  <input type="zoom" name="descprod" id="descprod" class="form-control-sm" data-zoom="
+                      {
+                        'displayKey':'A09_DESCRICAO',
+                        'datasetId':'ds_pedidos_follow_winthor',
+                        'maximumSelectionLength':'1',
+                        'fields':[
+                          {'field':'A09_DESCRICAO','label':'Descr.','standard':'true'}                          
+                          ]
+                      }">
+                </td> -->
+
+                      <!-- <td>
+                  <input type="zoom" name="oc" id="oc" class="form-control" data-zoom="
+                      {
+                        'displayKey':'A14_PEDIDO_COMPRA',
+                        'datasetId':'ds_pedidos_follow_winthor',
+                        'maximumSelectionLength':'1',
+                        'fields':[
+                          {'field':'A14_PEDIDO_COMPRA','label':'OC','standard':'true'}                        
+                          ]
+                      }">
+                </td>
+
+                <td>
+                  <input type="zoom" name="qtdcomprada" id="qtdcomprada" class="form-control" data-zoom="
+                      {
+                        'displayKey':'A15_QT_PEDIDA',
+                        'datasetId':'ds_pedidos_follow_winthor',
+                        'maximumSelectionLength':'1',
+                        'placeholder':'Buscar...',
+                        'fields':[
+                          {'field':'A15_QT_PEDIDA','label':'Qtd. comprada','standard':'true'}                        
+                          ]
+                      }">
+                </td> -->
+
+                      <!-- <td>
+                  <input type="text" name="descprod" id="descprod" class="form-control">
+                </td> -->
+
+                      <td>
+                        <input type="text" name="oc" id="oc" class="form-control" readonly>
+                      </td>
+
+                      <td>
+                        <input type="text" name="qtdcomprada" id="qtdcomprada" class="form-control" readonly>
+                      </td>
+
+                      <td>
+                        <input type="text" name="comprador2" id="comprador2" class="form-control" readonly>
+                      </td>
+
+                      <td>
+                        <input type="text" name="quantidade" id="quantidade" class="form-control">
+                      </td>
+
+                      <td>
+                        <input type="text" name="datanec" id="datanec" class="form-control">
+                      </td>
+
+                      <td>
+                        <input type="text" name="prevorig" id="prevorig" class="form-control">
+                      </td>
+
+                      <td>
+                        <input type="text" name="prevreal" id="prevreal" class="form-control">
+                      </td>
+
+                      <td>
+                        <input type="text" name="prevalter" id="prevalter" class="form-control">
+                      </td>
+
+                      <td class="remove">
+                        <span class="fs-display-block fs-sm-space">
+                          <i class="flaticon flaticon-close icon-md remove-button" onclick="fnWdkRemoveChild(this)"></i>
+                        </span>
+                      </td>
+
+                    </tr>
+                  </tbody>
+                </table>
+
+                <hr>
+                <div class="form-group" id="additem" hidden>
+                  <div class="row">
+                    <div class="col-xs-6">
+                      <button class="btn btn-primary btn-custom btn-custom-primary js-add">
+                        <i class="fas fa-plus-circle"></i> ADICIONAR ITEM
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+              </div> <!--FINALIZA A TABELA-->
+
+            </div> <!-- finaliza body-->
+          </div> <!--finaliza colapsável-->
+        </div> <!--fecha o painel primary-->
+
+        <!--declaração do terceiro painel-->
+        <div class="panel panel-primary"> <!--declaração da primeira seção-->
+          <div class="panel-heading"> <!--início do cabeçalho da seção-->
+            <h3 class="panel-title subpanel_title">
+              <a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion" href="#retorno-cadastro"><i
+                  class="far fa-clipboard"></i> RETORNO DE FOLLOW-UP - CADASTRO</a>
+            </h3>
+          </div> <!--fim da declaração do cabeçalho da seção-->
+
+          <div id="retorno-cadastro" class="panel-collapse collapse in">
+            <div class="panel-body">
+
+              <div class="form-group">
+                <label>Observação Cadastro</label>
+                <div group="input-group">
+                  <textarea class="form-control" name="obscadastro" id="obscadastro" rows="2"></textarea>
+                </div>
+              </div>
+
+            </div> <!-- finaliza panel body-->
+          </div> <!--finaliza painel colapsável-->
+        </div> <!--finaliza panel-primary-->
+
+        <!--declaração do  painel-->
+        <div class="panel panel-primary"> <!--declaração da primeira seção-->
+          <div class="panel-heading"> <!--início do cabeçalho da seção-->
+            <h3 class="panel-title subpanel_title">
+              <a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion" href="#resposta-vendedor"><i
+                  class="far fa-clipboard"></i> PRIMEIRA RESPOSTA DO VENDEDOR</a>
+            </h3>
+          </div> <!--fim da declaração do cabeçalho da seção-->
+
+          <div id="resposta-vendedor" class="panel-collapse collapse in">
+            <div class="panel-body">
+
+              <div class="form-group col-md-2">
+                <label>Essa data atende a expectativa do cliente?</label>
+                <div class="radio-options">
+                  <div class="radio"><label><input type="radio" name="expectativa" value="Sim" />Sim</label></div>
+                  <div class="radio"><label><input type="radio" name="expectativa" value="Não" />Não</label></div>
+                  <div class="radio"><label><input type="radio" name="expectativa" value="Inativo"
+                        checked />Inativo</label></div>
+                </div>
+              </div>
+
+              <div class="form-group col-md-6">
+                <label>Observação Vendedor</label>
+                <div group="input-group">
+                  <textarea class="form-control" name="obsvendedor" id="obsvendedor" rows="2"></textarea>
+                </div>
+              </div>
+
+            </div> <!-- finaliza panel body-->
+          </div> <!--finaliza painel colapsável-->
+        </div> <!--finaliza panel-primary-->
+
+        <!--declaração do  painel-->
+        <div class="panel panel-primary"> <!--declaração da primeira seção-->
+          <div class="panel-heading"> <!--início do cabeçalho da seção-->
+            <h3 class="panel-title subpanel_title">
+              <a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion" href="#tratativa-comprador"><i
+                  class="far fa-clipboard"></i> TRATATIVA DO COMPRADOR INFORMAÇÕES AO RECEBIMENTO</a>
+            </h3>
+          </div> <!--fim da declaração do cabeçalho da seção-->
+
+          <div id="tratativa-comprador" class="panel-collapse collapse in">
+            <div class="panel-body">
+
+              <div class="form-group col-md-2">
+                <label>Número NF</label>
+                <div group="input-group">
+                  <input type="text" class="form-control" name="num_nf" id="num_nf">
+                </div>
+              </div>
+
+              <div class="form-group col-md-2">
+                <label>Atividade destino</label>
+                <div class="radio-options">
+                  <div class="radio">
+                    <label><input type="radio" name="destino" value="vendedor" />Retonar para vendedor</label>
+                  </div>
+                  <div class="radio">
+                    <label><input type="radio" name="destino" value="recebimento" />Recebimento</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group col-md-6">
+                <label>Observação</label>
+                <div group="input-group">
+                  <textarea class="form-control" name="obscomprador" id="obscomprador" rows="2"></textarea>
+                </div>
+              </div>
+
+            </div> <!-- finaliza panel body-->
+          </div> <!--finaliza painel colapsável-->
+        </div> <!--finaliza panel-primary-->
+
+        <!--declaração do  painel-->
+        <div class="panel panel-primary"> <!--declaração da primeira seção-->
+          <div class="panel-heading"> <!--início do cabeçalho da seção-->
+            <h3 class="panel-title subpanel_title">
+              <a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion" href="#recebimento"><i
+                  class="far fa-clipboard"></i> RECEBIMENTO</a>
+            </h3>
+          </div> <!--fim da declaração do cabeçalho da seção-->
+
+          <div id="recebimento" class="panel-collapse collapse in">
+            <div class="panel-body">
+
+              <div class="form-group col-md-2">
+                <label>Processo finalizado? (liberado no estoque?)</label>
+                <div class="radio-options">
+                  <div class="radio">
+                    <label><input type="radio" name="receb" value="Sim" />Sim</label>
+                  </div>
+                  <div class="radio">
+                    <label><input type="radio" name="receb" value="Não" />Não</label>
+                  </div>
+                </div>
+              </div>
+
+            </div> <!-- finaliza panel body-->
+          </div> <!--finaliza painel colapsável-->
+        </div> <!--finaliza panel-primary-->
+
+        <!--declaração do  painel-->
+        <div class="panel panel-primary"> <!--declaração da primeira seção-->
+          <div class="panel-heading"> <!--início do cabeçalho da seção-->
+            <h3 class="panel-title subpanel_title">
+              <a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion" href="#fechamento"><i
+                  class="far fa-clipboard"></i> FINALIZAÇÃO DO VENDEDOR</a>
+            </h3>
+          </div> <!--fim da declaração do cabeçalho da seção-->
+
+          <div id="fechamento" class="panel-collapse collapse in">
+            <div class="panel-body">
+
+              <div class="row">
+
+                <div class="form-group col-md-2">
+                  <label>Processo finalizado, demanda atendida?</label>
+                  <div class="radio-options">
+                    <div class="radio">
+                      <label><input type="radio" name="fim" value="Sim" />Sim</label>
+                    </div>
+                    <div class="radio">
+                      <label><input type="radio" name="fim" value="Não" />Não</label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group col-xs-6">
+                  <label>Observação final</label>
+                  <div group="input-group">
+                    <textarea class="form-control" name="obsfinal" id="obsfinal" rows="2"></textarea>
+                  </div>
+                </div>
+
+              </div>
+
+            </div> <!-- finaliza panel body-->
+          </div> <!--finaliza painel colapsável-->
+        </div> <!--finaliza panel-primary-->
+
+      </div> <!--fim do formulário-->
+    </div> <!--fim do formulário-->
+
+  </form>
+</body>
+
+</html>

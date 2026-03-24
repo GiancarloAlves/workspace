@@ -1,0 +1,923 @@
+<html>
+
+<head>
+	<link type="text/css" rel="stylesheet" href="/style-guide/css/fluig-style-guide.min.css" />
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/mustache/mustache-min.js"></script>
+	<script type="text/javascript" src="/style-guide/js/fluig-style-guide.min.js" charset="utf-8"></script>
+
+	<!-- Dataset -->
+	<script type="text/javascript" src="/webdesk/vcXMLRPC.js"></script>
+
+	<!-- sweetalert2 -->
+	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+	<!-- FontAwesome -->
+	<link type="text/css" rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+	<!-- JQuery Mask Plugin -->
+	<script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
+
+	<!-- Custom -->
+	<link type="text/css" rel="stylesheet" href="./style_comp.css">
+	<script type="text/javascript" src="./app1.js"></script>
+	<script type="text/javascript" src="./Moment.js"></script>
+
+<body class="fluig-style-guide process-style" id="devkit-style">
+	<form name="form" role="form" id="form-processo">
+
+		<div class="panel panel-primary panel-border">
+			<!--Painel geral do formulário - fecha no extremo do arquivo e contém todas as seções-->
+
+			<div class="panel-heading panel-bg panel-border"> <!--início da declaração do cabeçalho principal (azul)-->
+				<div class="container-fluid">
+					<section id="logo">
+						<img src="./images/logoCigame.png" alt="NOME-CLIENTE" width="130" style="padding: 10px;">
+						<h3 class="panel-title">CADASTRO E COMPRA DE ITEM NOVO - REPRESENTANTES</h3>
+					</section>
+				</div>
+			</div> <!--fim da declaração do cabeçalho principal (azul)-->
+
+			<div class="panel-body"> <!--panel body geral do arquivo - fecha no extremo e contém todas as seções-->
+
+				<div class="panel panel-primary"> <!--declaração da primeira seção-->
+					<div class="panel-heading"> <!--início do cabeçalho da seção-->
+						<h3 class="panel-title subpanel_title">
+							<span id="led_abertura" class="led"></span>
+							<a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion"
+								href="#abertura"><i class="far fa-clipboard"></i> DADOS DO ITEM NOVO</a>
+						</h3>
+					</div> <!--fim da declaração do cabeçalho da seção-->
+
+					<div id="abertura" class="panel-collapse collapse in">
+						<div class="panel-body">
+
+							<div class="row">
+
+								<div class="form-group col-md-3">
+									<label>Solicitante</label>
+									<div class="input-group">
+										<input type="text" name="solicitante" id="solicitante" class="form-control"
+											readonly>
+										<span class="input-group-addon"><i class="fas fa-user"></i></span>
+									</div>
+								</div>
+
+								<div class="form-group col-md-3">
+									<label>Supervisor</label>
+									<div class="input-group">
+										<input type="text" name="supervisorSolicitante" id="supervisorSolicitante"
+											class="form-control" readonly>
+										<span class="input-group-addon"><i class="fas fa-user-shield"></i></span>
+									</div>
+								</div>
+
+								<div class="form-group col-md-2">
+									<label>Tipo solicitante</label>
+									<div class="input-group">
+										<input type="text" name="tipoSolicitante" id="tipoSolicitante"
+											class="form-control" readonly>
+										<span class="input-group-addon"><i class="fas fa-graduation-cap"></i></span>
+									</div>
+								</div>
+
+								<div class="form-group col-md-2">
+									<label>Mat. solicitante</label>
+									<div class="input-group">
+										<input type="text" name="matSolicitante" id="matSolicitante"
+											class="form-control" readonly>
+										<span class="input-group-addon"><i class="fas fa-graduation-cap"></i></span>
+									</div>
+								</div>
+
+								<div class="form-group col-md-2">
+									<label>Mat. supervisor</label>
+									<div class="input-group">
+										<input type="text" name="matSupervisor" id="matSupervisor" class="form-control"
+											readonly>
+										<span class="input-group-addon"><i class="fas fa-graduation-cap"></i></span>
+									</div>
+								</div>
+
+							</div>
+
+							<div class="row">
+
+								<div class="form-group col-md-2">
+									<label for="zoom">Cod. fornecedor</label>
+									<input type="zoom" class="form-control zoom-input" name="codfornec" id="codfornec"
+										dataset="ds_fornecedores_winthor" zoomvalue="A10_CODFORNEC"
+										datasetvalue="CODFORNEC"
+										data-zoom="{'displayKey':'CODFORNEC','datasetId':'ds_fornecedores_winthor','fields':[{'field':'CODFORNEC','label':'Cód.fornec','standard':true}]}" />
+								</div>
+
+								<div class="form-group col-md-3">
+									<label for="zoom">Fornecedor</label>
+									<input type="zoom" class="form-control zoom-input" name="fornecedor" id="fornecedor"
+										dataset="ds_fornecedores_winthor" zoomvalue="FORNECEDOR"
+										datasetvalue="FORNECEDOR"
+										data-zoom="{'displayKey':'FORNECEDOR','datasetId':'ds_fornecedores_winthor','fields':[{'field':'FORNECEDOR','label':'Fornecedor','standard':true}]}" />
+								</div>
+
+								<div class="form-group col-md-4">
+									<label>Comprador</label>
+									<div group="input-group">
+										<input type="text" class="form-control" name="comprador" id="comprador"
+											readonly>
+									</div>
+								</div>
+
+								<div class="form-group col-md-1">
+									<label>Mat. comp.</label>
+									<div group="input-group">
+										<input type="text" class="form-control" name="matcomprador" id="matcomprador"
+											readonly>
+									</div>
+								</div>
+
+								<div class="form-group col-md-4" hidden>
+									<label>Comprador</label>
+									<div group="input-group">
+										<input type="text" class="form-control" name="compras1" id="compras1" readonly>
+									</div>
+								</div>
+
+								<div class="form-group col-md-1" hidden>
+									<label>Mat. comp.</label>
+									<div group="input-group">
+										<input type="text" class="form-control" name="matcompras1" id="matcompras1"
+											readonly>
+									</div>
+								</div>
+
+								<div class="form-group col-md-2">
+									<label>Qtd itens</label>
+									<div class="input-group">
+										<input type="text" name="quantItens" id="quantItens" class="form-control"
+											readonly>
+										<span class="input-group-addon">
+											<i class="fas fa-exclamation"></i>
+										</span>
+									</div>
+								</div>
+
+							</div>
+
+							<div class="row">
+
+								<div class="form-group col-md-12">
+									<label>Observação</label>
+									<div class="input-group">
+										<textarea class="form-control" name="observacao" id="observacao"
+											rows="2"></textarea>
+										<span class="input-group-addon"><i class="fas fa-pen"></i></span>
+									</div>
+								</div>
+
+							</div>
+
+						</div> <!-- finaliza body-->
+					</div> <!--finaliza colapsável-->
+				</div> <!--fecha o painel primary-->
+
+				<div class="panel panel-primary"> <!--declaração da primeira seção-->
+					<div class="panel-heading"> <!--início do cabeçalho da seção-->
+						<h3 class="panel-title subpanel_title">
+							<span id="led_cadastro" class="led"></span>
+							<a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion"
+								href="#cadastro"><i class="far fa-clipboard"></i> ITENS PARA CADASTRO</a>
+						</h3>
+					</div> <!--fim da declaração do cabeçalho da seção-->
+
+					<div id="cadastro" class="panel-collapse collapse in">
+						<div class="panel-body">
+							<div class="alert alert-info alert-dismissible" role="alert" style="margin-bottom: 12px;">
+								<button type="button" class="close" data-dismiss="alert" aria-label="Fechar">
+									<span aria-hidden="true">&times;</span>
+									<span class="sr-only">Fechar</span>
+								</button>
+								<strong>Prazos para cadastro:</strong>
+								<ol type="none">
+									<li type="none"><strong>- 1 a 2 itens:</strong> 5 horas</li>
+									<li type="none"><strong>- 3 a 5 itens:</strong> 7 horas</li>
+									<li type="none"><strong>- 6 a 10 itens:</strong> 24 horas</li>
+									<li type="none"><strong>- 11 a 20 itens:</strong> 3 dias</li>
+									<li type="none"><strong>- 21 a 40 itens:</strong> 5 dias</li>
+									<li type="none"><strong>- 41 a 60 itens:</strong> 7 dias</li>
+									<li type="none"><strong>- 61 a 100 itens:</strong> 10 dias</li>
+									<li type="none"><strong>- acima de 100 itens:</strong> 15 dias</li>
+								</ol>
+							</div>
+
+							<div class="row sectionDadosCorretos hidden">
+								<div class="form-group col-md-2">
+									<label class="required">Dados estão corretos?</label>
+									<select name="dadosCorretos" id="dadosCorretos" class="form-control">
+										<option selected>Sim</option>
+										<option>Não</option>
+									</select>
+								</div>
+							</div>
+
+							<div class="row sectionDadosCorretos hidden">
+								<div class="form-group col-md-12">
+									<label>Observação Comprador</label>
+									<div class="input-group">
+										<textarea class="form-control" name="observacaoComprador" id="observacaoComprador"
+											rows="2"></textarea>
+										<span class="input-group-addon"><i class="fas fa-pen"></i></span>
+									</div>
+								</div>
+							</div>
+
+							<div class="form-field" data-type="tabledetail" data-show-properties=""
+								data-field-name="tabcadastro">
+								<table id="tabcadastro" class="table pai-filho table-striped" tablename="tabcadastro"
+									noaddbutton="true" nodeletebutton="true">
+
+									<thead>
+
+										<tr>
+											<th width="10%" data-cod>Código do
+												produto&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+											</th>
+											<th width="35%">Nome do
+												Produto&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+											</th>
+											<th width="25%" data-prod>
+												NCM&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+											</th>
+											<th width="25%" data-prod>
+												Código de Barras&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+											</th>
+											<th width="8%" data-prod>
+												Cod.fabrica&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+											</th>
+											<th width="20%" data-prod>
+												Marca&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+											</th>
+											<!--
+											<th width="15%" data-prod>Preço
+												líquido&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+											</th>
+											<th width="10%" data-prod>IPI% /
+												valor&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+											</th>
+											<th width="10%" data-prod>St% /
+												valor&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+											</th>
+											<th width="10%" data-prod>
+												ICMS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+											</th>
+											<th>Qual data
+												necessita?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+											</th>
+											-->
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td data-cod><input type="text" name="codprod" id="codprod"
+													class="form-control"></td>
+											<td><input type="text" name="produto" id="produto" class="form-control">
+											</td>
+											<td data-prod><input type="text" name="ncm" id="ncm" class="form-control">
+											</td>
+											<td data-prod><input type="text" name="Codbarras" id="Codbarras" class="form-control">
+											</td>
+											<td data-prod><input type="text" name="refMarca" id="refMarca"
+													class="form-control"></td>
+											<td data-prod><input type="text" name="marca" id="marca"
+													class="form-control"></td>
+											<!--
+											<td data-prod><input type="text" name="preco" id="preco"
+													class="form-control displayColumn"></td>
+											<td data-prod><input type="text" name="ipi" id="ipi" class="form-control displayColumn">
+											</td>
+											<td data-prod><input type="text" name="st" id="st" class="form-control displayColumn">
+											</td>
+											<td data-prod><input type="text" name="icms" id="icms" class="form-control displayColumn">
+											</td>
+											<td><input type="text" name="dataNec" id="dataNec" class="form-control">
+											</td>
+											-->
+											<td class="remove"><span class="fs-display-block fs-sm-space">
+													<i class="flaticon flaticon-close icon-md remove-button"
+														onclick="fnWdkRemoveChild(this)"></i>
+												</span></td>
+										</tr>
+									</tbody>
+								</table>
+
+								<hr>
+								<div class="form-group" id="additem" hidden>
+									<div class="row">
+										<div class="col-xs-6">
+											<button class="btn btn-primary btn-custom btn-custom-primary js-add">
+												<i class="fas fa-plus-circle"></i> ADICIONAR ITEM
+											</button>
+										</div>
+									</div>
+								</div>
+
+							</div> <!--finaliza tabela-->
+
+						</div> <!-- finaliza body-->
+					</div> <!--finaliza colapsável-->
+				</div> <!--fecha o painel primary-->
+
+				<div class="panel panel-primary"> <!--declaração da primeira seção-->
+					<div class="panel-heading"> <!--início do cabeçalho da seção-->
+						<h3 class="panel-title subpanel_title">
+							<span id="led_pedido" class="led"></span>
+							<a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion"
+								href="#dadospedido"><i class="far fa-clipboard"></i> COLOCAÇÃO DO PEDIDO</a>
+						</h3>
+					</div> <!--fim da declaração do cabeçalho da seção-->
+
+					<div id="dadospedido" class="panel-collapse collapse in">
+						<div class="panel-body">
+
+							<div class="row">
+
+								<div class="form-group col-md-3">
+									<label class="required">Número do pedido</label>
+									<input type="zoom" name="numped" id="numped" class="form-control" data-zoom="
+									{
+										'displayKey':'A01_PEDIDO',
+										'datasetId':'ds_compra_praca_form_winthor',
+										'maximumSelectionLength':'1',
+										'placeholder':'Buscar...',
+										'fields':[
+											{'field':'A01_PEDIDO','label':'Num. pedido','standard':'true'}
+										]
+									}">
+								</div>
+
+								<div class="form-group col-md-3">
+									<label class="required">Cod.cliente</label>
+									<input type="zoom" name="codcli" id="codcli" class="form-control" data-zoom="
+									{
+										'displayKey':'A02_COD_CLI',
+										'datasetId':'ds_compra_praca_form_winthor',
+										'maximumSelectionLength':'1',
+										'placeholder':'Buscar...',
+										'fields':[
+											{'field':'A02_COD_CLI','label':'Codcli','standard':'true'}
+										]
+									}">
+								</div>
+
+								<div class="form-group col-md-6">
+									<label class="required">Cliente</label>
+									<input type="zoom" name="cliente" id="cliente" class="form-control" data-zoom="
+									{
+										'displayKey':'A03_CLIENTE',
+										'datasetId':'ds_compra_praca_form_winthor',
+										'maximumSelectionLength':'1',
+										'placeholder':'Buscar...',
+										'fields':[
+											{'field':'A03_CLIENTE','label':'Cliente','standard':'true'}
+										]
+									}">
+								</div>
+
+							</div>
+
+							<div class="row">
+
+								<div class="form-group col-md-3">
+									<label>Data pedido</label>
+									<div class="input-group">
+										<input type="text" name="dataped" id="dataped" class="form-control" readonly>
+										<span class="input-group-addon">
+											<i class="fas fa-calendar"></i>
+										</span>
+									</div>
+								</div>
+
+								<div class="form-group col-md-3">
+									<label>Dt. integr. WMS</label>
+									<div class="input-group">
+										<input type="text" name="dtwms" id="dtwms" class="form-control" readonly>
+										<span class="input-group-addon">
+											<i class="fas fa-money-bill"></i>
+										</span>
+									</div>
+								</div>
+
+								<div class="form-group col-md-4">
+									<label>Validação</label>
+									<div class="input-group">
+										<input type="text" name="validacao" id="validacao" class="form-control"
+											readonly>
+										<span class="input-group-addon">
+											<i class="fas fa-exclamation"></i>
+										</span>
+									</div>
+								</div>
+
+								<div class="form-group col-md-2">
+									<label>Qt.item esp</label>
+									<div class="input-group">
+										<input type="text" name="qtditensesp" id="qtditensesp" class="form-control"
+											readonly>
+										<span class="input-group-addon">
+											<i class="fas fa-money-bill"></i>
+										</span>
+									</div>
+								</div>
+
+							</div>
+
+							<div class="row">
+
+								<div class="form-group col-md-4">
+									<label>Status pedido</label>
+									<div class="input-group">
+										<input type="text" name="status" id="status" class="form-control" readonly
+											onchange="validaStatus()">
+										<span class="input-group-addon">
+											<i class="fas fa-exclamation"></i>
+										</span>
+									</div>
+								</div>
+
+								<div class="form-group col-md-4">
+									<label>Status WMS</label>
+									<div class="input-group">
+										<input type="text" name="statuswms" id="statuswms" class="form-control"
+											readonly>
+										<span class="input-group-addon">
+											<i class="fas fa-exclamation"></i>
+										</span>
+									</div>
+								</div>
+
+							</div>
+
+							<div class="row">
+
+								<div class="form-group col-md-12">
+									<label>Observação</label>
+									<div class="input-group">
+										<textarea class="form-control" name="observacao2" id="observacao2"
+											rows="2"></textarea>
+										<span class="input-group-addon"><i class="fas fa-pen"></i></span>
+									</div>
+								</div>
+
+							</div>
+
+							<div class="form-field" data-type="tabledetail" data-show-properties=""
+								data-field-name="pedido">
+								<table id="pedido" class="table pai-filho table-striped" tablename="pedido"
+									noaddbutton="true" nodeletebutton="true">
+
+									<thead>
+
+										<tr>
+											<th width="10%">
+												Cód.produto&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+											</th>
+											<th width="30%">Descrição
+												produto&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+											</th>
+											<th width="20%">Tipo
+												produto&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+											</th>
+											<th width="10%">
+												Qtd&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+											</th>
+											<th width="10%">Cód.fornecedor</th>
+											<th width="30%">
+												Fornecedor&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+											</th>
+											<th width="30%">
+												Comprador&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+											</th>
+											<th width="10%">OC</th>
+											<th width="30%">Dt.compra&nbsp;&nbsp;&nbsp;</th>
+											<th width="30%">Data chegada real&nbsp;&nbsp;&nbsp;</th>
+											<th width="35%">
+												Observação&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+											</th>
+										</tr>
+									</thead>
+
+									<tbody>
+										<tr>
+											<td><input type="text" name="codprod2" id="codprod2" class="form-control"
+													readonly></td>
+											<td><input type="text" name="descprod" id="descprod" class="form-control"
+													readonly></td>
+											<td><input type="text" name="tipo" id="tipo" class="form-control" readonly>
+											</td>
+											<td><input type="text" name="qtd" id="qtd" class="form-control" readonly>
+											</td>
+											<td><input type="text" name="a13codf" id="a13codf" class="form-control"
+													readonly></td>
+											<td><input type="text" name="a14forn" id="a14forn" class="form-control"
+													readonly></td>
+											<td><input type="text" name="a18comp" id="a18comp" class="form-control"
+													readonly></td>
+
+											<td>
+												<input type="zoom" name="oc" id="oc" class="form-control zoom-input"
+													data-zoom="
+										{
+										  'displayKey':'A14_PEDIDO_COMPRA',
+										  'datasetId':'ds_oc_follow_winthor',
+										  'maximumSelectionLength':'1',
+										  'fields':[
+											{'field':'A14_PEDIDO_COMPRA','label':'OC','standard':'true'}                        
+											]
+										}">
+											</td>
+
+											<!-- <td><input type="text" name="qtdc" id="qtdc" class="form-control" readonly></td> -->
+											<td><input type="text" name="dtcompra" id="dtcompra" class="form-control"
+													readonly></td>
+											<td><input type="text" name="prevent" id="prevent" class="form-control"
+													readonly></td>
+											<td><input type="text" name="obs" id="obs" class="form-control"></td>
+
+											<td class="remove"><span class="fs-display-block fs-sm-space">
+													<i class="flaticon flaticon-close icon-md remove-button"
+														onclick="fnWdkRemoveChild(this)"
+														data-tablename="tabcadastro"></i>
+												</span></td>
+										</tr>
+									</tbody>
+								</table>
+
+							</div>
+
+						</div> <!-- finaliza body-->
+					</div> <!--finaliza colapsável-->
+				</div> <!--fecha o painel primary-->
+
+				<div class="panel panel-primary"> <!--declaração seção-->
+					<div class="panel-heading"> <!--início do cabeçalho da seção-->
+						<h3 class="panel-title subpanel_title">
+							<span id="led_compra" class="led"></span>
+							<a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion"
+								href="#compra"><i class="far fa-clipboard"></i> COMPRA DO MATERIAL</a>
+						</h3>
+					</div> <!--fim da declaração do cabeçalho da seção-->
+
+					<div id="compra" class="panel-collapse collapse in">
+						<div class="panel-body">
+
+							<div class="row">
+								<div class="form-group col-md-3">
+									<label for="continuarCompra">Continuar compra?</label>
+									<select class="form-control" id="continuarCompra" name="continuarCompra">
+										<option value="sim">Sim</option>
+										<option value="nao">Não</option>
+									</select>
+								</div>
+
+								<div class="form-group col-md-3">
+									<label for="zoom">Ordem de compra</label>
+									<input type="zoom" class="form-control zoom-input" name="mainOC" id="mainOC"
+										dataset="ds_pedidos_follow_winthor" zoomvalue="A14_PEDIDO_COMPRA"
+										datasetvalue="A14_PEDIDO_COMPRA"
+										data-zoom="{'displayKey':'A14_PEDIDO_COMPRA','datasetId':'ds_pedidos_follow_winthor','fields':[{'field':'A14_PEDIDO_COMPRA','label':'oc','standard':true}]}" />
+								</div>
+
+								<div class="form-group col-md-3">
+									<label>Previsão de chegada</label>
+									<div class="input-group">
+										<input type="text" name="previsaoChegada" id="previsaoChegada"
+											class="form-control data" readonly>
+										<span class="input-group-addon">
+											<i class="far fa-calendar"></i>
+										</span>
+									</div>
+								</div>
+
+								<div class="form-input col-md-12">
+									<label>Observação</label>
+									<div class="input-group">
+										<textarea class="form-control" rows="3" name="obsCompra"
+											id="obsCompra"></textarea>
+										<span class="input-group-addon"><i class="fas fa-pen"></i></span>
+									</div>
+								</div>
+
+							</div>
+
+						</div> <!-- finaliza body-->
+					</div> <!--finaliza colapsável-->
+				</div> <!--fecha o painel primary-->
+
+				<div class="panel panel-primary"> <!--declaração da primeira seção-->
+					<div class="panel-heading"> <!--início do cabeçalho da seção-->
+						<h3 class="panel-title subpanel_title">
+							<span id="led_follow" class="led"></span>
+							<a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion"
+								href="#follow"><i class="far fa-clipboard"></i> follow-up</a>
+						</h3>
+					</div> <!--fim da declaração do cabeçalho da seção-->
+
+					<div id="follow" class="panel-collapse collapse in">
+						<div class="panel-body">
+
+							<div class="form-field" data-type="tabledetail" data-show-properties=""
+								data-field-name="tabFollow">
+								<table id="tabFollow" class="table pai-filho table-striped" tablename="tabFollow"
+									noaddbutton="true" nodeletebutton="true">
+
+									<thead>
+
+										<tr>
+											<th width="10%">Código do
+												produto&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+											</th>
+											<th width="35%">Nome do
+												Produto&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+											</th>
+											<th>Num.
+												NF&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+											</th>
+											<th>Data chegada
+												real&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+											</th>
+
+
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td><input type="text" name="codprodFollow" id="codprodFollow"
+													class="form-control"></td>
+											<td><input type="text" name="produtoFollow" id="produtoFollow"
+													class="form-control"></td>
+											<td><input type="text" name="nfEnt" id="nfEnt" class="form-control"></td>
+											<td><input type="text" name="prevCheg" id="prevCheg" class="form-control">
+											</td>
+
+											<td class="remove" hidden><span class="fs-display-block fs-sm-space">
+													<i class="flaticon flaticon-close icon-md remove-button"
+														onclick="fnWdkRemoveChild(this)"></i>
+												</span></td>
+										</tr>
+									</tbody>
+								</table>
+
+								<hr>
+								<div class="form-group" id="additemFollow" hidden>
+									<div class="row">
+										<div class="col-xs-6">
+											<button class="btn btn-primary btn-custom btn-custom-primary"
+												data-tablename="tabFollow">
+												<i class="fas fa-plus-circle"></i> ADICIONAR ITEM
+											</button>
+										</div>
+									</div>
+								</div>
+
+							</div> <!--finaliza tabela-->
+
+							<div class="form-group col-md-12">
+								<label>Observação Follow-up</label>
+								<div class="input-group">
+									<textarea class="form-control" name="obsFollow" id="obsFollow" rows="4"></textarea>
+									<span class="input-group-addon"><i class="fas fa-pen"></i></span>
+								</div>
+							</div>
+
+						</div> <!-- finaliza body-->
+					</div> <!--finaliza colapsável-->
+				</div> <!--fecha o painel primary-->
+
+				<div class="panel panel-primary"> <!--declaração seção-->
+					<div class="panel-heading"> <!--início do cabeçalho da seção-->
+						<h3 class="panel-title subpanel_title">
+							<span id="led_recebimento" class="led"></span>
+							<a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion"
+								href="#recebimento"><i class="far fa-clipboard"></i> RECEBIMENTO</a>
+						</h3>
+					</div> <!--fim da declaração do cabeçalho da seção-->
+
+					<div id="recebimento" class="panel-collapse collapse in">
+						<div class="panel-body">
+							<div class="row">
+								<div class="col-md-6" style="margin-bottom: 12px;">
+									<h4>Dica 💡: Você pode incluir a data prevista de chegada do item nos complementos
+										desta solicitação!</h4>
+								</div>
+							</div>
+							<div class="row">
+								<div class="form-group col-md-3">
+									<label class="required">Foi dada a entrada no recebimento?</label>
+									<div class="form-check">
+										<label class="form-check-label">
+											<input type="radio" class="form-check-input" id="rdRecebido"
+												name="rdRecebido" value="sim" checked>Sim</label>
+									</div>
+									<div class="form-check">
+										<label class="form-check-label">
+											<input type="radio" class="form-check-input" id="rdRecebido"
+												name="rdRecebido" value="nao">Não</label>
+									</div>
+								</div>
+
+								<div class="form-input col-md-12">
+									<label>Observação Recebimento</label>
+									<div class="input-group">
+										<textarea class="form-control" rows="2" name="obsreceb"
+											id="obsreceb"></textarea>
+										<span class="input-group-addon"><i class="fas fa-pen"></i></span>
+									</div>
+								</div>
+
+							</div>
+
+						</div> <!-- finaliza body-->
+					</div> <!--finaliza colapsável-->
+				</div> <!--fecha o painel primary-->
+
+				<div class="panel panel-primary"> <!--declaração seção-->
+					<div class="panel-heading"> <!--início do cabeçalho da seção-->
+						<h3 class="panel-title subpanel_title">
+							<span id="led_rastreio" class="led"></span>
+							<a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion"
+								href="#rastreio"><i class="far fa-clipboard"></i> REMOÇÃO DO RASTREIO </a>
+						</h3>
+					</div> <!--fim da declaração do cabeçalho da seção-->
+
+					<div id="rastreio" class="panel-collapse collapse in">
+						<div class="panel-body">
+
+							<div class="row">
+
+								<div class="form-group col-md-3">
+									<label class="required">Removido rastreio?</label>
+									<div class="form-check" id="aprovgerente">
+										<label class="form-check-label">
+											<input type="radio" class="form-check-input" id="remove_rast"
+												name="remove_rast" value="sim">Sim</label>
+									</div>
+									<div class="form-check">
+										<label class="form-check-label">
+											<input type="radio" class="form-check-input" id="remove_rast"
+												name="remove_rast" value="nao" checked>Não</label>
+									</div>
+								</div>
+
+								<div class="form-input col-md-6" id="obscompras">
+									<label>Observação Compras</label>
+									<div class="input-group">
+										<textarea class="form-control" rows="2" name="obsrastreio"
+											id="obsrastreio"></textarea>
+										<span class="input-group-addon"><i class="fas fa-pen"></i></span>
+									</div>
+								</div>
+
+							</div>
+
+						</div> <!-- finaliza body-->
+					</div> <!--finaliza colapsável-->
+				</div> <!--fecha o painel primary-->
+
+				<div class="panel panel-primary"> <!--declaração seção-->
+					<div class="panel-heading"> <!--início do cabeçalho da seção-->
+						<h3 class="panel-title subpanel_title">
+							<span id="led_liberacao" class="led"></span>
+							<a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion"
+								href="#liberacao"><i class="far fa-clipboard"></i> LIBERAÇÃO DO PEDIDO</a>
+						</h3>
+					</div> <!--fim da declaração do cabeçalho da seção-->
+
+					<div id="liberacao" class="panel-collapse collapse in">
+						<div class="panel-body">
+
+							<div class="row">
+
+								<div class="form-group col-md-4">
+									<label>Status pedido</label>
+									<div class="input-group">
+										<input type="text" name="status2" id="numped" class="status2 form-control"
+											readonly>
+										<span class="input-group-addon">
+											<i class="fas fa-exclamation"></i>
+										</span>
+									</div>
+								</div>
+
+							</div>
+
+							<div class="row">
+
+								<div class="form-input col-md-12">
+									<label>Observação liberação do pedido</label>
+									<div class="input-group">
+										<textarea class="form-control" rows="2" name="obsliberacao"
+											id="obsliberacao"></textarea>
+										<span class="input-group-addon"><i class="fas fa-pen"></i></span>
+									</div>
+								</div>
+
+							</div>
+
+						</div> <!-- finaliza body-->
+					</div> <!--finaliza colapsável-->
+				</div> <!--fecha o painel primary-->
+
+				<div class="panel panel-primary"> <!--declaração seção-->
+					<div class="panel-heading"> <!--início do cabeçalho da seção-->
+						<h3 class="panel-title subpanel_title">
+							<span id="led_finalizacao" class="led"></span>
+							<a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion"
+								href="#finalizacao"><i class="far fa-clipboard"></i> FINALIZAÇÃO DO COMPRAS</a>
+						</h3>
+					</div> <!--fim da declaração do cabeçalho da seção-->
+
+					<div id="finalizacao" class="panel-collapse collapse in">
+						<div class="panel-body">
+
+
+							<div class="row">
+
+								<div class="form-group col-md-3">
+									<label class="required">Número NF</label>
+									<input type="zoom" name="numNF" id="numNF" class="form-control" data-zoom="
+								  {
+									  'displayKey':'A03_NOTA',
+									  'datasetId':'ds_cancelamento_de_notas_Winthor',
+									  'maximumSelectionLength':'1',
+									  'placeholder':'Buscar...',
+									  'fields':[
+										  {'field':'A03_NOTA','label':'NF','standard':'true'}
+									  ]
+								  }">
+								</div>
+
+								<div class="form-group col-md-3">
+									<label class="required">Código do cliente</label>
+									<input type="zoom" name="codClienteVal" id="codClienteVal" class="form-control"
+										data-zoom="
+												{
+												'displayKey':'A01_COD_CLI',
+												'datasetId':'ds_cancelamento_de_notas_Winthor',
+												'maximumSelectionLength':'1',
+												'placeholder':'Buscar...',
+												'fields':[
+												{'field':'A01_COD_CLI','label':'Código','standard':'true'}
+												]
+												}">
+								</div>
+
+								<div class="form-group col-md-3">
+									<label class="required">Cliente</label>
+									<input type="zoom" name="clienteVal" id="clienteVal" class="form-control" data-zoom="
+								  {
+									  'displayKey':'A02_CLIENTE',
+									  'datasetId':'ds_cancelamento_de_notas_Winthor',
+									  'maximumSelectionLength':'1',
+									  'placeholder':'Buscar...',
+									  'fields':[
+										  {'field':'A02_CLIENTE','label':'Cliente','standard':'true'}
+									  ]
+								  }">
+								</div>
+
+								<div class="form-group col-md-3">
+									<label>Número do pedido</label>
+									<div class="input-group">
+										<input type="text" name="pedido2" id="pedido2" class="form-control" readonly>
+										<span class="input-group-addon">
+											<i class="fas fa-exclamation"></i>
+										</span>
+									</div>
+								</div>
+
+							</div>
+
+							<div class="row">
+
+								<div class="form-input col-md-6" id="obsdev">
+									<label>Observação final</label>
+									<div class="input-group">
+										<textarea class="form-control" rows="2" name="obsfim"></textarea>
+										<span class="input-group-addon"><i class="fas fa-pen"></i></span>
+									</div>
+								</div>
+
+							</div>
+
+						</div> <!-- finaliza body-->
+					</div> <!--finaliza colapsável-->
+				</div> <!--fecha o painel primary-->
+
+			</div> <!--fim do formulário-->
+		</div> <!--fim do formulário-->
+
+	</form>
+</body>
+
+</html>

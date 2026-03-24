@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
+             xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI"
+             xmlns:dc="http://www.omg.org/spec/DD/20100524/DC"
+             xmlns:di="http://www.omg.org/spec/DD/20100524/DI"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             id="Definitions_1"
+             targetNamespace="http://www.fluig.com/bpmn">
+
+  <!-- ============================================================ -->
+  <!-- PROCESSO: Devolução com coleta terceirizada                  -->
+  <!-- ============================================================ -->
+
+  <process id="devolucao_coleta_terceirizada" name="Devolução com coleta terceirizada" isExecutable="true">
+
+    <!-- ========== LANES (Raias) ========== -->
+    <laneSet id="LaneSet_1">
+      <lane id="lane_vendedor" name="Vendedor">
+        <flowNodeRef>startEvent_1</flowNodeRef>
+        <flowNodeRef>userTask_solicitacao</flowNodeRef>
+        <flowNodeRef>exclusiveGateway_aprovacao</flowNodeRef>
+        <flowNodeRef>userTask_aprovacao_supervisor</flowNodeRef>
+        <flowNodeRef>exclusiveGateway_merge_aprovacao</flowNodeRef>
+      </lane>
+      <lane id="lane_pos_venda" name="Pós Venda">
+        <flowNodeRef>userTask_validacao_pos_venda</flowNodeRef>
+        <flowNodeRef>userTask_finalizacao_pos_venda</flowNodeRef>
+      </lane>
+      <lane id="lane_devolucao" name="Devolução">
+        <flowNodeRef>userTask_conferencia_devolucao</flowNodeRef>
+        <flowNodeRef>exclusiveGateway_cobrar_transporte</flowNodeRef>
+        <flowNodeRef>endEvent_1</flowNodeRef>
+      </lane>
+    </laneSet>
+
+    <!-- ========== EVENTOS ========== -->
+
+    <!-- Início do processo -->
+    <startEvent id="startEvent_1" name="Início">
+      <outgoing>flow_start_to_solicitacao</outgoing>
+    </startEvent>
+
+    <!-- Fim do processo -->
+    <endEvent id="endEvent_1" name="Fim">
+      <incoming>flow_finalizacao_to_end</incoming>
+    </endEvent>
+
+    <!-- ========== ATIVIDADES (User Tasks) ========== -->
+
+    <!-- 1. Vendedor preenche solicitação de devolução -->
+    <userTask id="userTask_solicitacao" name="Solicitação de Devolução">
+      <documentation>
+        - Preencher dados da solicitação
+        - Informar custo de coleta
+        - Informar pedido substituto
+      </documentation>
+      <incoming>flow_start_to_solicitacao</incoming>
+      <outgoing>flow_solicitacao_to_gw_aprovacao</outgoing>
+    </userTask>
+
+    <!-- 2. Aprovação do Supervisor (condicional) -->
+    <userTask id="userTask_aprovacao_supervisor" name="Aprovação do Supervisor">
+      <documentation>
+        Aprovação obrigatória do supervisor do solicitante.
+        Condição: produto especial ou fora do prazo (+30 dias).
+      </documentation>
+      <incoming>flow_gw_aprovacao_to_supervisor</incoming>
+      <outgoing>flow_supervisor_to_merge</outgoing>
+    </userTask>
+
+    <!-- 3. Validação e Aprovação - Pós Venda -->
+    <userTask id="userTask_validacao_pos_venda" name="Validação e Aprovação - Pós Venda">
+      <documentation>
+        - Validação e aprovação da solicitação
+        - Verificar origem do problema
+        - Gerar ordem de coleta e agendar com a transportadora
+      </documentation>
+      <incoming>flow_merge_to_validacao</incoming>
+      <incoming>flow_gw_transporte_loop_to_validacao</incoming>
+      <outgoing>flow_validacao_to_conferencia</outgoing>
+    </userTask>
+
+    <!-- 4. Conferência de Devolução -->
+    <userTask id="userTask_conferencia_devolucao" name="Conferência de Devolução">
+      <documentation>
+        - Conferência de devolução
+        - Geração de crédito
+      </documentation>
+      <incoming>flow_validacao_to_conferencia</incoming>
+      <outgoing>flow_conferencia_to_gw_transporte</outgoing>
+    </userTask>
+
+    <!-- 5. Finalização - Pós Venda -->
+    <userTask id="userTask_finalizacao_pos_venda" name="Finalização - Pós Venda">
+      <documentation>
+        - Caso necessário, abater o crédito
+        - Encerrar processo
+        - Anexar satisfação do cliente
+      </documentation>
+      <incoming>flow_gw_transporte_to_finalizacao</incoming>
+      <outgoing>flow_finalizacao_to_end</outgoing>
+    </userTask>
+
+    <!-- ========== GATEWAYS ========== -->
+
+    <!-- Gateway 1: Verificar se precisa aprovação do supervisor -->
+    <exclusiveGateway id="exclusiveGateway_aprovacao" name="Produto especial ou fora do prazo +30?" gatewayDirection="Diverging">
+      <incoming>flow_solicitacao_to_gw_aprovacao</incoming>
+      <outgoing>flow_gw_aprovacao_to_supervisor</outgoing>
+      <outgoing>flow_gw_aprovacao_to_merge</outgoing>
+    </exclusiveGateway>
+
+    <!-- Gateway 2: Merge após aprovação do supervisor -->
+    <exclusiveGateway id="exclusiveGateway_merge_aprovacao" name="Merge Aprovação" gatewayDirection="Converging">
+      <incoming>flow_supervisor_to_merge</incoming>
+      <incoming>flow_gw_aprovacao_to_merge</incoming>
+      <outgoing>flow_merge_to_validacao</outgoing>
+    </exclusiveGateway>
+
+    <!-- Gateway 3: Verificar se precisa cobrar transporte (loop) -->
+    <exclusiveGateway id="exclusiveGateway_cobrar_transporte" name="Necessário cobrar transporte?" gatewayDirection="Diverging">
+      <incoming>flow_conferencia_to_gw_transporte</incoming>
+      <outgoing>flow_gw_transporte_loop_to_validacao</outgoing>
+      <outgoing>flow_gw_transporte_to_finalizacao</outgoing>
+    </exclusiveGateway>
+
+    <!-- ========== FLUXOS DE SEQUÊNCIA ========== -->
+
+    <!-- Início → Solicitação -->
+    <sequenceFlow id="flow_start_to_solicitacao" name="" sourceRef="startEvent_1" targetRef="userTask_solicitacao"/>
+
+    <!-- Solicitação → Gateway Aprovação -->
+    <sequenceFlow id="flow_solicitacao_to_gw_aprovacao" name="" sourceRef="userTask_solicitacao" targetRef="exclusiveGateway_aprovacao"/>
+
+    <!-- Gateway Aprovação → Supervisor (Sim: produto especial ou fora prazo +30) -->
+    <sequenceFlow id="flow_gw_aprovacao_to_supervisor" name="Sim - Produto especial ou fora do prazo +30" sourceRef="exclusiveGateway_aprovacao" targetRef="userTask_aprovacao_supervisor">
+      <conditionExpression xsi:type="tFormalExpression">#{produtoEspecial == true || foraPrazo30 == true}</conditionExpression>
+    </sequenceFlow>
+
+    <!-- Gateway Aprovação → Merge (Não: fluxo normal) -->
+    <sequenceFlow id="flow_gw_aprovacao_to_merge" name="Não" sourceRef="exclusiveGateway_aprovacao" targetRef="exclusiveGateway_merge_aprovacao">
+      <conditionExpression xsi:type="tFormalExpression">#{produtoEspecial == false &amp;&amp; foraPrazo30 == false}</conditionExpression>
+    </sequenceFlow>
+
+    <!-- Supervisor → Merge -->
+    <sequenceFlow id="flow_supervisor_to_merge" name="" sourceRef="userTask_aprovacao_supervisor" targetRef="exclusiveGateway_merge_aprovacao"/>
+
+    <!-- Merge → Validação Pós Venda -->
+    <sequenceFlow id="flow_merge_to_validacao" name="" sourceRef="exclusiveGateway_merge_aprovacao" targetRef="userTask_validacao_pos_venda"/>
+
+    <!-- Validação Pós Venda → Conferência de Devolução -->
+    <sequenceFlow id="flow_validacao_to_conferencia" name="" sourceRef="userTask_validacao_pos_venda" targetRef="userTask_conferencia_devolucao"/>
+
+    <!-- Conferência → Gateway Cobrar Transporte -->
+    <sequenceFlow id="flow_conferencia_to_gw_transporte" name="" sourceRef="userTask_conferencia_devolucao" targetRef="exclusiveGateway_cobrar_transporte"/>
+
+    <!-- Gateway Transporte → Loop volta para Validação Pós Venda (SLA 3 dias) -->
+    <sequenceFlow id="flow_gw_transporte_loop_to_validacao" name="Sim - Cobrar transporte (SLA 3 dias)" sourceRef="exclusiveGateway_cobrar_transporte" targetRef="userTask_validacao_pos_venda">
+      <conditionExpression xsi:type="tFormalExpression">#{cobrarTransporte == true}</conditionExpression>
+    </sequenceFlow>
+
+    <!-- Gateway Transporte → Finalização Pós Venda -->
+    <sequenceFlow id="flow_gw_transporte_to_finalizacao" name="Não" sourceRef="exclusiveGateway_cobrar_transporte" targetRef="userTask_finalizacao_pos_venda">
+      <conditionExpression xsi:type="tFormalExpression">#{cobrarTransporte == false}</conditionExpression>
+    </sequenceFlow>
+
+    <!-- Finalização → Fim -->
+    <sequenceFlow id="flow_finalizacao_to_end" name="" sourceRef="userTask_finalizacao_pos_venda" targetRef="endEvent_1"/>
+
+  </process>
+
+  <!-- ============================================================ -->
+  <!-- DIAGRAMA BPMN (Layout Visual)                                -->
+  <!-- ============================================================ -->
+
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="devolucao_coleta_terceirizada">
+
+      <!-- ========== LANES ========== -->
+
+      <!-- Lane Vendedor -->
+      <bpmndi:BPMNShape id="Lane_vendedor_di" bpmnElement="lane_vendedor" isHorizontal="true">
+        <dc:Bounds x="160" y="60" width="940" height="180"/>
+      </bpmndi:BPMNShape>
+
+      <!-- Lane Pós Venda -->
+      <bpmndi:BPMNShape id="Lane_pos_venda_di" bpmnElement="lane_pos_venda" isHorizontal="true">
+        <dc:Bounds x="160" y="240" width="940" height="180"/>
+      </bpmndi:BPMNShape>
+
+      <!-- Lane Devolução -->
+      <bpmndi:BPMNShape id="Lane_devolucao_di" bpmnElement="lane_devolucao" isHorizontal="true">
+        <dc:Bounds x="160" y="420" width="940" height="180"/>
+      </bpmndi:BPMNShape>
+
+      <!-- ========== SHAPES ========== -->
+
+      <!-- Start Event -->
+      <bpmndi:BPMNShape id="startEvent_1_di" bpmnElement="startEvent_1">
+        <dc:Bounds x="212" y="132" width="36" height="36"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="218" y="175" width="24" height="14"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+
+      <!-- Task: Solicitação de Devolução -->
+      <bpmndi:BPMNShape id="userTask_solicitacao_di" bpmnElement="userTask_solicitacao">
+        <dc:Bounds x="300" y="110" width="160" height="80"/>
+      </bpmndi:BPMNShape>
+
+      <!-- Gateway: Aprovação -->
+      <bpmndi:BPMNShape id="exclusiveGateway_aprovacao_di" bpmnElement="exclusiveGateway_aprovacao" isMarkerVisible="true">
+        <dc:Bounds x="515" y="125" width="50" height="50"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="495" y="88" width="90" height="40"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+
+      <!-- Task: Aprovação do Supervisor -->
+      <bpmndi:BPMNShape id="userTask_aprovacao_supervisor_di" bpmnElement="userTask_aprovacao_supervisor">
+        <dc:Bounds x="630" y="110" width="160" height="80"/>
+      </bpmndi:BPMNShape>
+
+      <!-- Gateway: Merge Aprovação -->
+      <bpmndi:BPMNShape id="exclusiveGateway_merge_aprovacao_di" bpmnElement="exclusiveGateway_merge_aprovacao" isMarkerVisible="true">
+        <dc:Bounds x="845" y="125" width="50" height="50"/>
+      </bpmndi:BPMNShape>
+
+      <!-- Task: Validação Pós Venda -->
+      <bpmndi:BPMNShape id="userTask_validacao_pos_venda_di" bpmnElement="userTask_validacao_pos_venda">
+        <dc:Bounds x="350" y="290" width="180" height="80"/>
+      </bpmndi:BPMNShape>
+
+      <!-- Task: Conferência de Devolução -->
+      <bpmndi:BPMNShape id="userTask_conferencia_devolucao_di" bpmnElement="userTask_conferencia_devolucao">
+        <dc:Bounds x="350" y="470" width="180" height="80"/>
+      </bpmndi:BPMNShape>
+
+      <!-- Gateway: Cobrar Transporte -->
+      <bpmndi:BPMNShape id="exclusiveGateway_cobrar_transporte_di" bpmnElement="exclusiveGateway_cobrar_transporte" isMarkerVisible="true">
+        <dc:Bounds x="615" y="485" width="50" height="50"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="595" y="542" width="90" height="40"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+
+      <!-- Task: Finalização Pós Venda -->
+      <bpmndi:BPMNShape id="userTask_finalizacao_pos_venda_di" bpmnElement="userTask_finalizacao_pos_venda">
+        <dc:Bounds x="750" y="290" width="180" height="80"/>
+      </bpmndi:BPMNShape>
+
+      <!-- End Event -->
+      <bpmndi:BPMNShape id="endEvent_1_di" bpmnElement="endEvent_1">
+        <dc:Bounds x="1002" y="312" width="36" height="36"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1010" y="355" width="20" height="14"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+
+      <!-- ========== EDGES (Conectores) ========== -->
+
+      <!-- Início → Solicitação -->
+      <bpmndi:BPMNEdge id="flow_start_to_solicitacao_di" bpmnElement="flow_start_to_solicitacao">
+        <di:waypoint x="248" y="150"/>
+        <di:waypoint x="300" y="150"/>
+      </bpmndi:BPMNEdge>
+
+      <!-- Solicitação → Gateway Aprovação -->
+      <bpmndi:BPMNEdge id="flow_solicitacao_to_gw_aprovacao_di" bpmnElement="flow_solicitacao_to_gw_aprovacao">
+        <di:waypoint x="460" y="150"/>
+        <di:waypoint x="515" y="150"/>
+      </bpmndi:BPMNEdge>
+
+      <!-- Gateway Aprovação → Supervisor (Sim) -->
+      <bpmndi:BPMNEdge id="flow_gw_aprovacao_to_supervisor_di" bpmnElement="flow_gw_aprovacao_to_supervisor">
+        <di:waypoint x="565" y="150"/>
+        <di:waypoint x="630" y="150"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="572" y="132" width="50" height="14"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+
+      <!-- Gateway Aprovação → Merge (Não) -->
+      <bpmndi:BPMNEdge id="flow_gw_aprovacao_to_merge_di" bpmnElement="flow_gw_aprovacao_to_merge">
+        <di:waypoint x="540" y="175"/>
+        <di:waypoint x="540" y="210"/>
+        <di:waypoint x="870" y="210"/>
+        <di:waypoint x="870" y="175"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="548" y="192" width="25" height="14"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+
+      <!-- Supervisor → Merge -->
+      <bpmndi:BPMNEdge id="flow_supervisor_to_merge_di" bpmnElement="flow_supervisor_to_merge">
+        <di:waypoint x="790" y="150"/>
+        <di:waypoint x="845" y="150"/>
+      </bpmndi:BPMNEdge>
+
+      <!-- Merge → Validação Pós Venda -->
+      <bpmndi:BPMNEdge id="flow_merge_to_validacao_di" bpmnElement="flow_merge_to_validacao">
+        <di:waypoint x="870" y="175"/>
+        <di:waypoint x="870" y="330"/>
+        <di:waypoint x="530" y="330"/>
+      </bpmndi:BPMNEdge>
+
+      <!-- Validação → Conferência -->
+      <bpmndi:BPMNEdge id="flow_validacao_to_conferencia_di" bpmnElement="flow_validacao_to_conferencia">
+        <di:waypoint x="440" y="370"/>
+        <di:waypoint x="440" y="470"/>
+      </bpmndi:BPMNEdge>
+
+      <!-- Conferência → Gateway Transporte -->
+      <bpmndi:BPMNEdge id="flow_conferencia_to_gw_transporte_di" bpmnElement="flow_conferencia_to_gw_transporte">
+        <di:waypoint x="530" y="510"/>
+        <di:waypoint x="615" y="510"/>
+      </bpmndi:BPMNEdge>
+
+      <!-- Gateway Transporte → Loop Validação (Sim) -->
+      <bpmndi:BPMNEdge id="flow_gw_transporte_loop_di" bpmnElement="flow_gw_transporte_loop_to_validacao">
+        <di:waypoint x="640" y="485"/>
+        <di:waypoint x="640" y="330"/>
+        <di:waypoint x="530" y="330"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="648" y="400" width="80" height="28"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+
+      <!-- Gateway Transporte → Finalização (Não) -->
+      <bpmndi:BPMNEdge id="flow_gw_transporte_to_finalizacao_di" bpmnElement="flow_gw_transporte_to_finalizacao">
+        <di:waypoint x="665" y="510"/>
+        <di:waypoint x="840" y="510"/>
+        <di:waypoint x="840" y="370"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="730" y="492" width="25" height="14"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+
+      <!-- Finalização → Fim -->
+      <bpmndi:BPMNEdge id="flow_finalizacao_to_end_di" bpmnElement="flow_finalizacao_to_end">
+        <di:waypoint x="930" y="330"/>
+        <di:waypoint x="1002" y="330"/>
+      </bpmndi:BPMNEdge>
+
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+
+</definitions>

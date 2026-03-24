@@ -1,0 +1,1251 @@
+<html>
+	<head>
+		<link type="text/css" rel="stylesheet" href="/style-guide/css/fluig-style-guide.min.css"/>
+		<script type="text/javascript" src="/portal/resources/js/jquery/jquery.js"></script>
+		<script type="text/javascript" src="/portal/resources/js/jquery/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="/portal/resources/js/mustache/mustache-min.js"></script>
+		<script type="text/javascript" src="/style-guide/js/fluig-style-guide.min.js" charset="utf-8"></script>
+
+		<!-- sweetalert2 -->
+		<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+		
+		<!-- FontAwesome -->
+		<link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+
+		<!-- JQuery Mask Plugin -->
+		<script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
+
+		<!-- Custom -->
+		<link type="text/css" rel="stylesheet" href="./style.css">
+		<script type="text/javascript" src="./app.js"></script>
+		<script type="text/javascript" src="./zoom.js"></script>
+		<script type="text/javascript" src="./taskHandlers.js"></script>
+		<script type="text/javascript" src="./workflow.js"></script>
+	</head>
+
+	<body class="fluig-style-guide process-style" id="devkit-style"> 
+		<form name="form" role="form" id="form-processo">
+
+			<div class="panel panel-primary panel-border"> <!--Painel geral do formulário - fecha no extremo do arquivo e contém todas as seções-->
+
+				<div class="panel-heading panel-bg panel-border"> <!--início da declaração do cabeçalho principal (azul)-->
+					<div class="container-fluid">
+						<section id="logo">
+							<img src="https://api-site.cigame.com.br/images/logo-150px-x-35-px-(2)-1653585063932-(1)-(1)-(1)-(1)-1655820026572.png" alt="NOME-CLIENTE" title="LOGO-CLIENTE" width="200">
+							<h3 class="panel-title">Devolução de Clientes</h3>
+						</section>
+					</div>
+				</div>											<!--fim da declaração do cabeçalho principal (azul)-->
+
+				<div class="panel-body"> <!--panel body geral do arquivo - fecha no extremo e contém todas as seções-->
+
+
+					<div class="panel panel-primary"> <!--declaração da primeira seção-->
+						<div class="panel-heading"> <!--início do cabeçalho da seção-->
+							<h3 class="panel-title subpanel_title">
+								<a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion" href="#registro-devolucao"><i class="far fa-clipboard"></i> REGISTRO DE DEVOLUÇÃO DE CLIENTES</a>
+							</h3>
+						</div> <!--fim da declaração do cabeçalho da seção-->
+	
+						<div id="registro-devolucao" class="panel-collapse collapse in"> <!--início do conteúdo colapsável (engloba todas as variáveis da seção)-->
+							<div class="panel-body"> <!--panel body normal da seção-->
+
+								<div class="row">
+
+									<div class="form-group col-md-3">
+                                        <label>Número</label>
+										<div class="input-group">
+											<input type="text" name="nrSolicFluig" id="nrSolicFluig" class="form-control" readonly>
+											<span class="input-group-addon">
+												<i class="flaticon flaticon-fluig icon-sm" aria-hidden="true"></i>
+											</span>
+										</div>
+                                    </div>
+
+
+
+																					<!-- Hidden -->
+			<input type="hidden" name="tipoSolicitante" id="tipoSolicitante">
+			<input type="hidden" name="itemReprovado" id="itemReprovado">
+			<input type="hidden" name="recebimento" id="recebimento">
+
+
+
+									<div class="form-group col-md-3">
+                                        <label>Vendedor</label>
+										<div class="input-group">
+											<input type="text" name="vendedor" id="vendedor" class="form-control" readonly>
+											<span class="input-group-addon">
+												<i class="far fa-user"></i>
+											</span>
+										</div>
+                                    </div>
+
+									<div class="form-group col-md-3">
+                                        <label>Data abertura</label>
+										<div class="input-group">
+											<input type="text" name="dtAbertura" id="dtAbertura" class="form-control data" readonly>
+											<span class="input-group-addon">
+												<i class="far fa-calendar"></i>
+											</span>
+										</div>
+                                    </div>
+
+									<div class="form-group col-md-3">
+                                        <label>Supervisor solicitante</label>
+										<div class="input-group">
+											<input type="text" name="supervisorSolicitante" id="supervisorSolicitante" class="form-control" readonly>
+											<span class="input-group-addon">
+												<i class="fas fa-user-shield"></i>
+											</span>
+										</div>
+                                    </div>
+								</div>
+
+								<div class="row">
+									<div class="form-group col-md-3">
+										<label class="required">Cliente</label>
+										<input type="zoom" name="cliente" id="cliente" class="form-control" data-zoom="
+											{
+												'displayKey':'CLIENTE',
+												'datasetId':'Ds_Consulta_Clientes_Winthor',
+												'maximumSelectionLength':'1',
+												'placeholder':'Buscar...',
+												'fields':[
+													{'field':'CLIENTE','label':'Cliente','standard':'true'}
+												]
+											}"
+										>
+									</div>
+
+									<div class="form-group col-md-3">
+                                        <label class="required">Código do cliente</label>
+										<input type="zoom" name="codCliente" id="codCliente" class="form-control" data-zoom="
+											{
+												'displayKey':'CODCLI',
+												'datasetId':'Ds_Consulta_Clientes_Winthor',
+												'maximumSelectionLength':'1',
+												'placeholder':'Buscar...',
+												'fields':[
+													{'field':'CODCLI','label':'Código','standard':'true'}
+												]
+											}"
+										>
+                                    </div>
+
+									<div class="form-group col-md-3">
+                                        <label>IE cliente</label>
+										<div class="input-group">
+											<input type="text" name="ieCliente" id="ieCliente" class="form-control" readonly>
+											<span class="input-group-addon">
+												<i class="fas fa-clipboard-list"></i>
+											</span>
+										</div>
+                                    </div>
+
+									<div class="form-group col-md-3">
+                                        <label>CNPJ cliente</label>
+										<div class="input-group">
+											<input type="text" name="cnpjCliente" id="cnpjCliente" class="form-control" readonly>
+											<span class="input-group-addon">
+												<i class="fas fa-id-card"></i>
+											</span>
+										</div>
+                                    </div>
+								</div>
+
+								<div class="row">
+									<div class="form-group col-md-3">
+										<label class="required">Motivo da devolução</label>
+										<input type="zoom" name="motivoDevolucao" id="motivoDevolucao" class="form-control" data-zoom="
+											{
+												'displayKey':'MOTIVO',
+												'datasetId':'ds_motivo_devolucoes_winthor',
+												'maximumSelectionLength':'1',
+												'placeholder':'Buscar...',
+												'fields':[
+													{'field':'MOTIVO','label':'Motivo','standard':'true'}
+												]
+											}"
+										>
+									</div>
+
+									<div class="form-group col-md-3">
+                                        <label class="required">Onde está o cliente?</label>
+										<select name="localCliente" id="localCliente" class="form-control">
+											<option value="">Selecione uma opção...</option>
+											<option>Na Cigame</option>
+											<option>Em outro local</option>
+											<!-- <option>Troca NF</option> -->
+										</select>
+                                    </div>
+
+									<div class="form-group col-md-3">
+                                        <label class="required">Possui coleta?</label>
+										<select name="rdPossuiColeta" id="rdPossuiColeta" class="form-control" data-coleta onchange="pedidoSubstituto()">
+											<option value="">Selecione uma opção...</option>
+											<option>Sim</option>
+											<option>Não</option>
+										</select>
+                                    </div>
+
+									<div class="form-group col-md-3 blocked">
+										<label class="required">Endereço da coleta</label>
+										<input type="zoom" name="endColeta" id="endColeta" class="form-control" data-zoom="
+											{
+												'displayKey':'ENDERCOM',
+												'datasetId':'ds_enderecos_entrega_winthor',
+												'maximumSelectionLength':'1',
+												'placeholder':'Buscar...',
+												'fields':[
+													{'field':'ENDERCOM','label':'Endereço','standard':'true'}
+												]
+											}"
+										>
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="form-group col-md-2">
+                                        <label class="required">Cliente emite NF de devolução?</label>
+										<select name="rdEmiteNFDev" id="rdEmiteNFDev" class="form-control">
+											<option value="">Selecione uma opção...</option>
+											<option>Sim</option>
+											<option>Não</option>
+										</select>
+                                    </div>
+
+									<div class="form-group col-md-2">
+                                        <label class="required">Ligar para o cliente para acertar o crédito?</label>
+										<select name="rdLigarCliente" id="rdLigarCliente" class="form-control">
+											<option value="">Selecione uma opção...</option>
+											<option>Sim</option>
+											<option>Não</option>
+										</select>
+                                    </div>
+
+									<div class="form-group col-md-3">
+                                        <label class="required">Telefone ou e-mail de contato</label>
+										<div class="input-group">
+										<input type="text" name="contatoCliente" id="contatoCliente" class="form-control" placeholder="">
+										<span class="input-group-addon">
+											<i class="fas fa-id-card"></i>
+										</span>
+									</div>
+								</div>
+															
+									
+                                    <!-- </div>
+
+									<div class="form-group col-md-3">
+                                        <label>CNPJ cliente</label>
+										<div class="input-group">
+											<input type="text" name="cnpjCliente" id="cnpjCliente" class="form-control" readonly>
+											<span class="input-group-addon">
+												<i class="fas fa-id-card"></i>
+											</span>
+										</div>
+                                    </div>
+								 -->
+
+									<div class="form-group col-md-3">
+                                        <label>Número do pedido substituto</label>
+										<div class="input-group">
+											<input type="text" name="pedidoSubst" id="pedidoSubst" class="form-control" onchange="pedidoSubstituto()">
+											<span class="input-group-addon">
+												<i class="fas fa-fingerprint"></i>
+											</span>
+										</div>
+                                    </div>
+									
+									<div class="form-group col-md-2">
+										<button class="btn btn-primary btn-custom btn-custom-primary btn-custom-primary--file showcamera">
+											<i class="fas fa-images"></i> ANEXAR FOTO 
+										</button>
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="col-md-6" id="card" hidden>
+										<div class="card">
+											<div class="card-body">
+												<h3 class="card-title">LISTAR TODA A NF</h3>
+												<p class="card-text">Se você deseja fazer a devolução completa de uma nota, pode usar o campo abaixo para listar a nota inteira.</p>
+
+												<div class="form-group col-md-4">
+													<label class="required">FILTRO NF</label>
+													<input type="zoom" name="filtroNF" id="filtroNF" class="form-control" data-zoom="
+														{
+															'displayKey':'NUMNOTA',
+															'datasetId':'ds_nf_saida_winthor',
+															'maximumSelectionLength':'1',
+															'placeholder':'Buscar...',
+															'fields':[
+																{'field':'NUMNOTA','label':'NF','standard':'true'}
+															]
+														}"
+													>
+												</div>
+
+												<div class="form-group" id="addNF">											
+														<div class="col-xs-6">
+														<button class="btn btn-primary btn-custom btn-custom-primary js-add" onclick="deployNota()">
+																<i class="fas fa-plus-circle"></i> LISTAR NF
+														</button>
+														</div>	
+												</div>
+
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<hr>
+								<div class="alert alert-warning alert-dismissible" role="alert">
+									Linha <strong>amarela</strong> significa produto <strong>fora do prazo</strong>!
+								</div>
+
+								<div class="alert alert-danger" role="alert">|_____Linha <strong>vermelha </strong> significa <strong> produto especial!</strong></div>
+
+								<!-- PaixFilho Devolução -->
+								<table id="gridDevolucao" class="table pai-filho table-striped" tablename="gridDevolucao" noaddbutton="true"  nodeletebutton="true">
+									<caption><i class="fas fa-undo-alt"></i> Devolução</caption>
+
+									<thead>
+										<tr>
+											<th width="5%" data-aprovacao-supervisor>Reprovar</th>
+											<th width="10%">N da NF</th>
+											<th width="10%">Cód. Produto</th>
+											<th width="10%">Desc. do produto</th>
+											<th width="7%">Quantidade</th>
+											<th width="7%" data-valor-unitario>VL unit.</th>
+											<th width="10%">Qtde. devolvida</th>
+											<th width="10%" data-valor-total>Valor total</th>
+											<th width="5%" data-especialmente title="O produto foi comprado especialmente para o pedido?">P.E?</th>
+											<th width="10%" data-especial>Prod. especial?</th>
+											<th width="5%" data-ddd>DDD?</th>
+											<th width="30%" data-observacao>Observação</th>
+											<th width="5%" data-realizar-recebimento>Qtde. Recebida</th>
+											<th width="5%" data-realizar-recebimento>Avaria?</th>
+											<th width="5%" data-realizar-recebimento data-divergente>Qtde. divergente</th>
+											<th width="10%" data-realizar-recebimento data-conferente>Obs. do conferente</th>
+											<th width="5%" data-revisar-devolucao>Receber</th>
+											<th width="20%" data-analisar-devolucao>Destino</th>
+											<th></th>
+										</tr>
+									</thead>
+
+									<tbody>
+										<tr>
+											<td class="center-content" data-aprovacao-supervisor>
+												<input type="checkbox" id="reprovar" name="reprovar" value="Sim" class="checkbox">
+											</td>
+
+											<td>
+												<input type="zoom" name="numeroNF" id="numeroNF" class="form-control" data-zoom="
+													{
+														'displayKey':'NUMNOTA',
+														'datasetId':'ds_nf_saida_winthor',
+														'maximumSelectionLength':'1',
+														'placeholder':'Buscar...',
+														'fields':[
+															{'field':'NUMNOTA','label':'NF','standard':'true'}
+														]
+													}"
+												>
+											</td>
+																						
+											<td>
+												<input type="zoom" name="codProduto" id="codProduto" class="form-control" data-zoom="
+													{
+														'displayKey':'CODPROD',
+														'datasetId':'ds_produtos_nf_saida_winthor',
+														'maximumSelectionLength':'1',
+														'placeholder':'Buscar...',
+														'fields':[
+															{'field':'CODPROD','label':'Código','standard':'true'}
+														]
+													}"
+												>
+
+												<input type="hidden" name="foraPrazo" id="foraPrazo" class="fora-prazo">
+											</td>
+
+											<td>
+												<input type="zoom" name="descProduto" id="descProduto" class="form-control" data-zoom="
+													{
+														'displayKey':'DESCRICAO',
+														'datasetId':'ds_produtos_nf_saida_winthor',
+														'maximumSelectionLength':'1',
+														'placeholder':'Buscar...',
+														'fields':[
+															{'field':'DESCRICAO','label':'Descrição','standard':'true'}
+														]
+													}"
+												>
+											</td>
+
+											<td>
+												<input type="text" class="form-control" id="qtde" name="qtde" readonly>
+											</td>
+											
+											<td data-valor-unitario>
+												<input type="text" class="form-control" id="valorUnitario" name="valorUnitario" readonly>
+											</td>
+
+											<td>
+												<input type="number" class="form-control calc" id="qtdeDevolvida" name="qtdeDevolvida" min="0">
+											</td>
+
+											<td>
+												<input type="text" class="form-control valorTotal" id="valorTotal" name="valorTotal" readonly>
+											</td>
+
+											<td data-especialmente class="center-content" class="hide">
+												<input type="checkbox" id="especialmentePedido" name="especialmentePedido" value="Sim" class="checkbox">
+											</td>
+											
+											<td data-especial>
+												<input type="text" class="form-control especial" id="pedidoEspecial" name="pedidoEspecial" readonly>
+											</td>
+
+											<td data-ddd class="center-content">
+												<input type="checkbox" id="produtoDDD" name="produtoDDD" value="Sim" class="checkbox">
+											</td>
+
+											<td data-observacao>
+												<input type="text" class="form-control" id="observacao" name="observacao">
+											</td>
+
+											<td data-realizar-recebimento>
+												<input type="number" class="form-control qtde-recebida" id="qtdeRecebida" name="qtdeRecebida">
+											</td>
+
+											<td data-realizar-recebimento>
+												<input type="checkbox" id="avaria" name="avaria" value="Sim" class="checkbox">
+							                </td>
+
+											<td  data-realizar-recebimento data-divergente>
+												<input type="checkbox" id="qtdeDivergente" name="qtdeDivergente" value="Sim" class="checkbox">
+											</td>
+
+											<td data-realizar-recebimento data-conferente>
+												<input type="text" class="form-control" id="observacaoConferente" name="observacaoConferente">
+											</td>
+
+											<td data-revisar-devolucao>
+												<input type="checkbox" id="receber" name="receber" value="Sim" class="checkbox">
+											</td>
+											
+											<td data-analisar-devolucao>
+												<select name="destino" id="destino" class="form-control">
+													<option value="">Selecione uma opção...</option>
+													<option>Devolução para fornecedor</option>
+													<option>Manter no estoque</option>
+												</select>
+											</td>
+
+											<td class="remove">
+												<span class="fs-display-block fs-sm-space">
+													<i class="flaticon flaticon-close icon-md remove-button"></i>
+												</span>
+											</td>
+										</tr>
+									</tbody>
+
+									<tfoot>
+										<tr>
+											<th colspan="2" scope="row" class="align-middle"><i class="fas fa-dollar-sign"></i> VALOR TOTAL DA DEVOLUÇÃO (Previsto)</th>
+											<td colspan="17">R$ <span class="valorTotalDevolucao"></span></td>
+											<input type="hidden" name="valorTotalDevolucao" id="valorTotalDevolucao" class="form-control">
+										</tr>
+
+										<tr style="display: none;">
+											<th colspan="2" scope="row" class="align-middle"><i class="fas fa-dollar-sign"></i> VALOR TOTAL DA DEVOLUÇÃO (Real)</th>
+											<td colspan="17">R$ <span class="valorTotalDevolucaoReal"></span></td>
+										</tr>
+									</tfoot>
+								</table>
+
+								<hr>
+								<div class="form-group" id="additem">
+									<div class="row">
+										<div class="col-xs-6">
+											<button class="btn btn-primary btn-custom btn-custom-primary js-add" data-tablename="gridDevolucao">
+												<i class="fas fa-plus-circle"></i> ADICIONAR ITEM
+											</button>
+										</div>
+									</div>	
+								</div>
+
+								<div class="row">
+									<div class="form-group col-md-12">
+                                        <label>Observação</label>
+										<textarea name="obsVendedor" id="obsVendedor" class="form-control"></textarea>
+									</div>	
+								</div>
+
+							</div>
+							
+							<!-- Hidden -->
+							<input type="hidden" name="matSolicitante" id="matSolicitante">
+							<input type="hidden" name="matSupervisor" id="matSupervisor">
+						</div>	
+				
+
+					<div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title subpanel_title">
+                                <a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion" href="#aprovacao-supervisor"><i class="fas fa-user-check"></i> APROVAÇÃO SUPERVISOR</a>
+                            </h3>
+                        </div>
+                        <div id="aprovacao-supervisor" class="panel-collapse collapse in">
+                            <div class="panel-body">
+
+								<div class="row">
+									<div class="form-group col-md-3">
+										<label class="required">Aprovar solicitação?</label>
+										<select name="rdAprovaSup" id="rdAprovaSup" class="form-control">
+											<option value="">Selecione uma opção...</option>
+											<option>Sim</option>
+											<option>Não</option>
+										</select>
+                                    </div>
+								</div>
+
+								<div class="row">
+									<div class="form-group col-md-12">
+                                        <label>Observação da supervisão</label>
+										<textarea name="obsSuperv" id="obsSuperv" class="form-control"></textarea>
+									</div>	
+								</div>
+                            </div>
+                        </div>
+                    </div>
+
+					<!-- <div class="panel panel-primary">
+						<div class="panel-heading">
+							<h3 class="panel-title subpanel_title">
+								<a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion" href="#avaliacao-gerente"><i class="fas fa-user-tie"></i> AVALIAÇÃO GERENTE DE VENDAS</a>
+							</h3>
+						</div>
+
+						<div id="avaliacao-gerente" class="panel-collapse collapse in">
+							<div class="panel-body">
+								
+
+								<div class="row">
+									<div class="form-group col-md-12">
+                                        <label>Observação</label>
+										<textarea name="obsGerenteVendas" id="obsGerenteVendas" class="form-control"></textarea>
+									</div>	
+								</div>
+							</div>
+						</div>	
+					</div>	 -->
+
+					<div class="panel panel-primary"> <!-- abre seção do Matheus-->
+                        <div class="panel-heading">
+                            <h3 class="panel-title subpanel_title">
+                                <a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion" href="#aprovacao-gerente"><i class="fas fa-clipboard-check"></i> APROVAÇÃO GERENTE DE VENDAS</a>
+                            </h3>
+                        </div>
+
+						<div id="aprovacao-gerente" class="panel-collapse collapse in">
+                            <div class="panel-body">
+								
+								<div class="row">	
+									
+									<div class="form-group col-md-3">
+										<label class="required">Necessita avaliação do compras?</label>
+										<select name="rdCompras" id="rdCompras" class="form-control">
+											<option value="">Selecione uma opção...</option>
+											<option>Sim</option>
+											<option>Não</option>
+										</select>
+									</div>
+									
+									<div class="form-group col-md-3">
+										<label class="required">Aprovar solicitação?</label>
+										<select name="rdAprovaGerente" id="rdAprovaGerente" class="form-control">
+											<option value="">Selecione uma opção...</option>
+											<option>Sim</option>
+											<option>Não</option>
+										</select>
+                                    </div>
+
+								
+										<div class="form-group col-md-3">
+											<label>Escolha a ação a ser tomada</label>
+											<select name="acaoPenalidade" id="acaoPenalidade" class="form-control">
+												<option value="">Selecione uma opção...</option>
+												<option>N/A - Erro de outro setor</option>
+												<option>Verbal</option>
+												<option>Formal</option>
+												<option>Desconto em folha</option>
+											</select>
+										</div>
+
+									</div>									
+	
+										<!-- <div class="form-group col-md-3">
+											<label class="required">Aprovar solicitação?</label>
+											<select name="rdAprovaGerenteVendas" id="rdAprovaGerenteVendas" class="form-control">
+												<option value="">Selecione uma opção...</option>
+												<option>Sim</option>
+												<option>Não</option>
+											</select>
+										</div> -->
+										
+									<div class="ROW">
+
+										<div class="form-group col-md-3">
+											<label>Produto Especial?</label>
+											<div class="input-group">
+												<input type="text" name="produtoEspecial" id="produtoEspecial" class="form-control" readonly>
+												<span class="input-group-addon">
+													<i class="fas fa-virus"></i>
+												</span>
+											</div>
+										</div>
+	
+										<div class="form-group col-md-3">
+											<label>Remessa sem pedido substituto?</label>
+											<div class="input-group">
+												<input type="text" name="tipoRemessa" id="tipoRemessa" class="form-control" readonly>
+												<span class="input-group-addon">
+													<i class="fas fa-virus"></i>
+												</span>
+											</div>
+										</div>
+				
+
+							</div>
+					
+								<div class="row">
+									<div class="form-group col-md-12">
+                                        <label>Observação da gerência</label>
+										<textarea name="obsGerente" id="obsGerente" class="form-control"></textarea>
+									</div>	
+								</div>
+							</div>
+						</div>	
+
+						</div> <!--fecha seção do Matheus-->
+					
+					
+					<div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title subpanel_title">
+                                <a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion" href="#alteracao-cobranca"><i class="fas fa-file-invoice-dollar"></i> ALTERAÇÃO DA COBRANÇA</a>
+                            </h3>
+                        </div>
+
+						<div id="alteracao-cobranca" class="panel-collapse collapse in">
+                            <div class="panel-body">
+								<div class="row">
+									<div class="form-group col-md-3">
+										<label>Alterado o tipo de cobrança?</label>
+										<select name="rdAlteraCobranca" id="rdAlteraCobranca" class="form-control">
+											<option value="">Selecione uma opção...</option>
+											<option>Sim</option>
+											<option>Não</option>
+										</select>
+                                    </div>
+								</div>
+							</div>
+						</div>	
+					</div>	
+
+					<div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title subpanel_title">
+                                <a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion" href="#realizar-coleta"><i class="fas fa-truck"></i> REALIZAR COLETA</a>
+                            </h3>
+                        </div>
+
+						<div id="realizar-coleta" class="panel-collapse collapse in">
+                            <div class="panel-body">
+								<div class="row">
+									<div class="form-group col-md-3">
+										<label class="required">Material ok na coleta?</label>
+										<select name="avalColeta" id="avalColeta" class="form-control">
+											<option value="">Selecione uma opção...</option>
+											<option>Sim</option>
+											<option>Não</option>
+										</select>
+                                    </div>
+
+									<div class="form-group col-md-3">
+										<button class="btn btn-primary btn-custom btn-custom-primary btn-custom-primary--file showcamera">
+											<i class="fas fa-images"></i> ANEXAR FOTO 
+										</button>
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="form-group col-md-12">
+                                        <label>Observação da coleta</label>
+										<textarea name="obsColeta" id="obsColeta" class="form-control"></textarea>
+									</div>	
+								</div>
+							</div>
+						</div>	
+					</div>	
+					
+					<div class="panel panel-primary">
+						<div class="panel-heading">
+							<h3 class="panel-title subpanel_title">
+								<a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion" href="#realizar-recebimento"><i class="fas fa-tasks"></i> REALIZAR RECEBIMENTO</a>
+							</h3>
+						</div>
+
+						<div id="realizar-recebimento" class="panel-collapse collapse in">
+							<div class="panel-body">
+								<div class="row">
+									<div class="form-group col-md-3">
+										<label>Conferente</label>
+										<div class="input-group">
+											<input type="text" name="conferenteRecebimento" id="conferenteRecebimento" class="form-control" readonly>
+											<span class="input-group-addon">
+												<i class="far fa-user"></i>
+											</span>
+										</div>
+									</div>
+
+									<div class="form-group col-md-3">
+										<label>Box</label>
+										<div class="input-group">
+											<input type="text" name="boxRecebimento" id="boxRecebimento" class="form-control">
+											<span class="input-group-addon">
+												<i class="fas fa-box"></i>
+											</span>
+										</div>
+									</div>
+
+									<div class="form-group col-md-3">
+										<label>N NF entrada</label>
+										<div class="input-group">
+											<input type="text" name="nfEntradaRecebimento" id="nfEntradaRecebimento" class="form-control">
+											<span class="input-group-addon">
+												<i class="fas fa-file-invoice"></i>
+											</span>
+										</div>
+									</div>
+
+									<div class="form-group col-md-3">
+										<label class="required">Recebimento ok?</label>
+										<select name="recebimentoOk" id="recebimentoOk" class="form-control">
+											<option value="">Selecione uma opção...</option>
+											<option>Sim</option>
+											<option>Não</option>
+										</select>
+                                    </div>
+								</div>
+							</div>
+
+							<!-- Hidden -->
+							<input type="hidden" name="matConferenteRecebimento" id="matConferenteRecebimento">
+						</div>	
+					</div>	
+
+					<div class="panel panel-primary">
+						<div class="panel-heading">
+							<h3 class="panel-title subpanel_title">
+								<a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion" href="#acerto-credito"><i class="fas fa-money-check-alt"></i> ACERTO DE CRÉDITO</a>
+							</h3>
+						</div>
+
+						<div id="acerto-credito" class="panel-collapse collapse in">
+							<div class="panel-body">
+								<div class="row">
+									<div class="form-group col-md-3">
+										<label>Acerto de crédito</label>
+										<select name="acertoCredito" id="acertoCredito" class="form-control">
+											<option value="">Selecione uma opção...</option>
+											<option>Abater duplicata em aberto</option>
+											<option>Devolução dinheiro</option>
+											<option>Crédito p/ próxima compra</option>
+										</select>
+                                    </div>
+								</div>
+							</div>
+						</div>	
+					</div>	
+
+					<div class="panel panel-primary">
+						<div class="panel-heading">
+							<h3 class="panel-title subpanel_title">
+								<a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion" href="#revisar-devolucao"><i class="fas fa-eye"></i> REVISAR DEVOLUÇÃO</a>
+							</h3>
+						</div>
+
+						<div id="revisar-devolucao" class="panel-collapse collapse in">
+							<div class="panel-body">
+								<div class="row">
+									
+									<div class="form-group col-md-3">
+										<label class="required">Devolução revisada</label>
+										<select name="devolucaoRevisada" id="devolucaoRevisada" class="form-control">
+											<option value="">Selecione uma opção...</option>
+											<option>Sim</option>
+											<option>Cancelar</option>
+										</select>
+                                    </div>
+								</div>
+
+								<div class="row">
+									<div class="form-group col-md-12">
+                                        <label>Observação da revisão da coleta</label>
+										<textarea name="obsRevisaoColeta" id="obsRevisaoColeta" class="form-control"></textarea>
+									</div>	
+								</div>
+							</div>
+						</div>	
+					</div>
+					
+					<div class="panel panel-primary">
+						<div class="panel-heading">
+							<h3 class="panel-title subpanel_title">
+								<a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion" href="#recebimento-ajustado"><i class="fas fa-sliders-h"></i> RECEBIMENTO AJUSTADO</a>
+							</h3>
+						</div>
+
+						<div id="recebimento-ajustado" class="panel-collapse collapse in">
+							<div class="panel-body">
+								<div class="row">
+									<div class="form-group col-md-3">
+										<label>Conferente</label>
+										<div class="input-group">
+											<input type="text" name="conferenteRecAjustado" id="conferenteRecAjustado" class="form-control" readonly>
+											<span class="input-group-addon">
+												<i class="far fa-user"></i>
+											</span>
+										</div>
+									</div>
+
+									<div class="form-group col-md-3">
+										<label>Box</label>
+										<div class="input-group">
+											<input type="text" name="box" id="box" class="form-control">
+											<span class="input-group-addon">
+												<i class="fas fa-box"></i>
+											</span>
+										</div>
+									</div>
+
+									<div class="form-group col-md-3">
+										<label>N NF entrada</label>
+										<div class="input-group">
+											<input type="text" name="nfEntrada" id="nfEntrada" class="form-control">
+											<span class="input-group-addon">
+												<i class="fas fa-file-invoice"></i>
+											</span>
+										</div>
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="form-group col-md-12">
+                                        <label>Observação do conferente</label>
+										<textarea name="obsConferente" id="obsConferente" class="form-control"></textarea>
+									</div>	
+								</div>
+							</div>
+
+							<!-- Hidden inputs -->
+							<input type="hidden" name="matConferenteRecAjustado" id="matConferenteRecAjustado">
+						</div>	
+					</div>
+
+					<div class="panel panel-primary">
+						<div class="panel-heading">
+							<h3 class="panel-title subpanel_title">
+								<a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion" href="#ajustar-devolucao"><i class="fas fa-wrench"></i> AJUSTAR DEVOLUÇÃO</a>
+							</h3>
+						</div>
+
+						<div id="ajustar-devolucao" class="panel-collapse collapse in">
+							<div class="panel-body">
+								<!-- PaixFilho Devolução -->
+								<table id="gridDevolucaoRep" class="table pai-filho table-striped" tablename="gridDevolucaoRep" noaddbutton="true"  nodeletebutton="true">
+									<caption><i class="fas fa-ban"></i> Produtos reprovados</span></caption>
+
+									<thead>
+										<tr>
+											<th width="5%">Incluir novamente</th>
+											<th width="10%">N da NF</th>
+											<th width="10%">Desc. do produto</th>
+											<th width="10%">Cód. Produto</th>
+											<th width="7%">Quantidade</th>
+											<th width="7%">VL unit.</th>
+											<th width="10%">Qtde. devolvida</th>
+											<th width="10%">Valor total</th>
+											<th width="5%" data-especialmente title="O produto foi comprado especialmente para o pedido?">P.E?</th>
+											<th width="10%">Prod. especial?</th>
+											<th width="5%" data-ddd>DDD?</th>
+											<th width="30%">Observação</th>
+										</tr>
+									</thead>
+
+									<tbody>
+										<tr>
+											<td class="center-content">
+												<input type="checkbox" id="incluirNovamente" name="incluirNovamente" value="Sim" class="checkbox">
+											</td>
+
+											<td>
+												<input type="zoom" name="numeroNFRep" id="numeroNFRep" class="form-control" data-zoom="
+													{
+														'displayKey':'descricao',
+														'datasetId':'dsImage',
+														'maximumSelectionLength':'1',
+														'placeholder':'Buscar...',
+														'fields':[
+															{'field':'url','label':'Produto','standard':'true'},
+															{'field':'descricao','label':'Descrição','standard':'true'},
+															{'field':'valor','label':'Preço','standard':'true'}
+														]
+													}"
+												>
+											</td>
+																						
+											<td>
+												<input type="zoom" name="codProdutoRep" id="codProdutoRep" class="form-control" data-zoom="
+													{
+														'displayKey':'descricao',
+														'datasetId':'dsImage',
+														'maximumSelectionLength':'1',
+														'placeholder':'Buscar...',
+														'fields':[
+															{'field':'url','label':'Produto','standard':'true'},
+															{'field':'descricao','label':'Descrição','standard':'true'},
+															{'field':'valor','label':'Preço','standard':'true'}
+														]
+													}"
+												>
+
+												<input type="hidden" name="foraPrazoRep" id="foraPrazoRep" class="fora-prazo">
+											</td>
+
+											<td>
+												<input type="zoom" name="descProdutoRep" id="descProdutoRep" class="form-control" data-zoom="
+													{
+														'displayKey':'descricao',
+														'datasetId':'dsImage',
+														'maximumSelectionLength':'1',
+														'placeholder':'Buscar...',
+														'fields':[
+															{'field':'url','label':'Produto','standard':'true'},
+															{'field':'descricao','label':'Descrição','standard':'true'},
+															{'field':'valor','label':'Preço','standard':'true'}
+														]
+													}"
+												>
+											</td>
+
+											<td>
+												<input type="text" class="form-control" id="qtdeRep" name="qtdeRep" readonly>
+											</td>
+											
+											<td>
+												<input type="text" class="form-control" id="valorUnitarioRep" name="valorUnitarioRep" readonly>
+											</td>
+
+											<td>
+												<input type="number" class="form-control" id="qtdeDevolvidaRep" name="qtdeDevolvidaRep">
+											</td>
+
+											<td>
+												<input type="text" class="form-control valorTotal" id="valorTotalRep" name="valorTotalRep" readonly>
+											</td>
+
+											<td class="center-content">
+												<input type="checkbox" id="especialmentePedidoRep" name="especialmentePedidoRep" value="Sim" class="checkbox">
+											</td>
+											
+											<td>
+												<input type="text" class="form-control especial" id="pedidoEspecialRep" name="pedidoEspecialRep" readonly>
+											</td>
+
+											<td class="center-content">
+												<input type="checkbox" id="produtoDDDRep" name="produtoDDDRep" value="Sim" class="checkbox">
+											</td>
+
+											<td>
+												<input type="text" class="form-control" id="observacaoRep" name="observacaoRep">
+											</td>
+
+											<td class="remove" style="display: none;">
+												<span class="fs-display-block fs-sm-space">
+													<i class="flaticon flaticon-close icon-md remove-button"></i>
+												</span>
+											</td>
+										</tr>
+									</tbody>
+
+									<tfoot>
+										<tr>
+											<th colspan="6" scope="row" class="align-middle"><i class="fas fa-dollar-sign"></i> VALOR TOTAL DA DEVOLUÇÃO</th>
+											<td colspan="17">R$ <span class="valorTotalDevolucao"></span></td>
+										</tr>
+									</tfoot>
+								</table>
+
+								<div class="form-group" style="display: none;">
+									<div class="row">
+										<div class="col-xs-6">
+											<button class="btn btn-primary btn-custom btn-custom-primary js-add" data-tablename="gridDevolucaoRep">
+												<i class="fas fa-plus-circle"></i> ADICIONAR ITEM
+											</button>
+										</div>
+									</div>	
+								</div>
+
+								<div class="row">
+									<div class="form-group col-md-3">
+										<label>Continuar devolução?</label>
+										<select name="rdContinuarDevolucao" id="rdContinuarDevolucao" class="form-control">
+											<option value="">Selecione uma opção...</option>
+											<option>Sim</option>
+											<option>Não</option>
+										</select>
+                                    </div>
+								</div>
+
+								<div class="row">
+									<div class="form-group col-md-12">
+                                        <label>Observação do ajuste da devolução</label>
+										<textarea name="obsAjusteDevolucao" id="obsAjusteDevolucao" class="form-control"></textarea>
+									</div>	
+								</div>
+							</div>
+						</div>	
+					</div>	
+
+					<div class="panel panel-primary">
+						<div class="panel-heading">
+							<h3 class="panel-title subpanel_title">
+								<a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion" href="#acao-comportamental"><i class="fas fa-exclamation-triangle"></i> APLICAR AÇÃO COMPORTAMENTAL</a>
+							</h3>
+						</div>
+
+						<div id="acao-comportamental" class="panel-collapse collapse in">
+							<div class="panel-body">
+								<div class="row">
+									<div class="form-group col-md-3">
+										<label class="required">Aplicação da penalidade foi registrada?</label>
+										<select name="aplicadoRegistro" id="aplicadoRegistro" class="form-control">
+											<option value="">Selecione uma opção...</option>
+											<option>Sim</option>
+											<option>Não</option>
+										</select>
+                                    </div>
+
+									<div class="form-group col-md-3">
+										<label>Penalidade</label>
+										<div class="input-group">
+											<input type="text" name="penalidade" id="penalidade" class="form-control" readonly>
+											<span class="input-group-addon">
+												<i class="fas fa-gavel"></i>
+											</span>
+										</div>
+									</div>
+								</div>
+
+								<div class="form-group col-md-3">
+									<label>Aplicar penalidade?</label>
+									<div class="input-group">
+										<input type="text" name="aplicaPena" id="aplicaPena" class="form-control" readonly>
+										<span class="input-group-addon">
+											<i class="fas fa-gavel"></i>
+										</span>
+									</div>
+								</div>
+					
+
+								<div class="row">
+									<div class="form-group col-md-12">
+                                        <label>Observação</label>
+										<textarea name="obsRH" id="obsRH" class="form-control"></textarea>
+									</div>	
+								</div>
+
+							</div>
+						</div>	
+					</div>	
+
+					<div class="panel panel-primary">
+						<div class="panel-heading">
+							<h3 class="panel-title subpanel_title">
+								<a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion" href="#confirmar-coleta"><i class="fas fa-user-check"></i> CONFIRMAR COLETA</a>
+							</h3>
+						</div>
+
+						<div id="confirmar-coleta" class="panel-collapse collapse in">
+							<div class="panel-body">
+								<div class="row">
+									<div class="form-group col-md-3">
+										<label class="required">Material reprovado na coleta, coletar mesmo assim?</label>
+										<select name="coletaReprovada" id="coletaReprovada" class="form-control">
+											<option value="">Selecione uma opção...</option>
+											<option>Sim</option>
+											<option>Não</option>
+										</select>
+                                    </div>
+								</div>
+							</div>
+						</div>	
+					</div>	
+
+					<!-- <div class="panel panel-primary"> ANTIGO PAINEL DE DECISÃO DE PENALIDADE DO GERENTE DE VENDAS - FOI COLOCADO PARA O PAINEL DE AVALIAÇÃO
+						<div class="panel-heading">
+							<h3 class="panel-title subpanel_title">
+								<a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion" href="#penalidade-gerente"><i class="fas fa-gavel"></i> PENALIDADE</a>
+							</h3>
+						</div>
+
+						<div id="penalidade-gerente" class="panel-collapse collapse in">
+							<div class="panel-body">
+
+							</div>
+						</div>	
+					</div>	 -->
+
+
+		
+
+					<div class="panel panel-primary">
+						<div class="panel-heading">
+							<h3 class="panel-title subpanel_title">
+								<a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion" href="#criar-roteiro"><i class="fas fa-route"></i> CRIAR ROTEIRO</a>
+							</h3>
+						</div>
+
+						<div id="criar-roteiro" class="panel-collapse collapse in">
+							<div class="panel-body">
+								<div class="alert alert-warning alert-dismissible" role="alert">
+									<strong>Antes de criar o roteiro, verifique se há pedido substituto!</strong>
+								</div>
+
+								<div class="row">
+									<div class="form-group col-md-12">
+										<label>Endereço completo</label>
+										<div class="input-group">
+											<input type="text" name="enderecoCompleto" id="enderecoCompleto" class="form-control" readonly>
+											<span class="input-group-addon">
+												<i class="fas fa-map-marker-alt"></i>
+											</span>
+										</div>
+									</div>
+								</div>
+								<hr>
+
+								<div class="row">
+									<div class="form-group col-md-2">
+										<label>Data de saída do caminhão</label>
+										<div class="input-group">
+											<input type="text" name="dataSaida" id="dataSaida" class="form-control calendar">
+											<span class="input-group-addon">
+												<i class="far fa-calendar"></i>
+											</span>
+										</div>
+									</div>
+
+									<div class="form-group col-md-2">
+										<label>Placa</label>
+										<div class="input-group">
+											<input type="text" name="veiculo" id="veiculo" class="form-control">
+											<span class="input-group-addon">
+												<i class="fas fa-truck"></i>
+											</span>
+										</div>
+									</div>
+
+									<div class="form-group col-md-4">
+										<label>Rota/Romaneio</label>
+										<div class="input-group">
+											<input type="text" name="rota" id="rota" class="form-control">
+											<span class="input-group-addon">
+												<i class="fas fa-map-marked-alt"></i>
+											</span>
+										</div>
+									</div>
+
+									<div class="form-group col-md-2">
+										<label>Motorista</label>
+										<div class="input-group">
+											<input type="text" name="motorista" id="motorista" class="form-control">
+											<span class="input-group-addon">
+												<i class="far fa-user"></i>
+											</span>
+										</div>
+									</div>
+
+									<div class="form-group col-md-2">
+										<label>Ajudante</label>
+										<div class="input-group">
+											<input type="text" name="ajudante" id="ajudante" class="form-control">
+											<span class="input-group-addon">
+												<i class="fas fa-people-carry"></i>
+											</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>	
+					</div>	
+
+					<div class="panel panel-primary">
+						<div class="panel-heading">
+							<h3 class="panel-title subpanel_title">
+								<a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion" href="#desfaz-alteracao"><i class="fas fa-undo"></i> DESFAZ ALTERAÇÃO DA COBRANÇA</a>
+							</h3>
+						</div>
+
+						<div id="desfaz-alteracao" class="panel-collapse collapse in">
+							<div class="panel-body">
+								<div class="row">
+									<div class="form-group col-md-3">
+										<label>Devolução cancelada, desfeita a alteração de cobrança?</label>
+										<select name="rdDesfazCobranca" id="rdDesfazCobranca" class="form-control">
+											<option value="">Selecione uma opção...</option>
+											<option>Sim</option>
+											<option>Não</option>
+										</select>
+                                    </div>
+								</div>
+							</div>
+						</div>	
+					</div>	
+
+					
+
+					<div class="panel panel-primary">
+						<div class="panel-heading">
+							<h3 class="panel-title subpanel_title">
+								<a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion" href="#avaliacao-compras"><i class="fas fa-tags"></i> AVALIAÇÃO COMPRAS</a>
+							</h3>
+						</div>
+
+						<div id="avaliacao-compras" class="panel-collapse collapse in">
+							<div class="panel-body">
+								<div class="row">
+									<div class="form-group col-md-12">
+                                        <label>Observação</label>
+										<textarea name="observacaoCompras" id="observacaoCompras" class="form-control"></textarea>
+									</div>	
+								</div>
+							</div>
+						</div>	
+					</div>	
+
+				</div>
+			</div>	
+
+		</form>
+	</body>
+	
+	<!-- JS -->
+	<script type="text/javascript" src="/webdesk/vcXMLRPC.js"></script>
+</html>

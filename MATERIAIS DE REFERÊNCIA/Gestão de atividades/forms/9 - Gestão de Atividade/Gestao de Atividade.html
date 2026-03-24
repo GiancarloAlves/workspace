@@ -1,0 +1,290 @@
+<html>
+
+<head>
+	<link type="text/css" rel="stylesheet" href="/portal/resources/style-guide/css/fluig-style-guide.min.css" />
+	<link type="text/css" rel="stylesheet" href="fluig_colors.css" />
+	<link href="style.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/mustache/mustache.min.js"></script>
+	<script type="text/javascript" src="/portal/resources/style-guide/js/fluig-style-guide.min.js"
+		charset="utf-8"></script>
+	<script src="/webdesk/vcXMLRPC.js"></script>
+	<style>
+		.panel-heading{
+			background-color: #58595b!important;
+			color: #fff!important;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="fluig-style-guide">
+		<form name="form" role="form">
+			<!-- CABECALHO -->
+			<div class="panel-body">
+				<div class="row form-group">
+					<div class="text-center col-md-3">
+						<img src="logo.png" class="img-responsive" style="display:block;margin:auto;margin-top:12px;">
+					</div>
+
+					<div class="text-center col-md-6">
+						<h2>Gestão de Atividade</h2>
+					</div>
+
+					<div class="col-md-2 text-center">
+						<span class="fluigicon fluigicon-brand fluigicon-thumbnail-md"></span>
+					</div>
+				</div>
+			</div>
+
+			<!-- PROJETO -->
+			<input type="hidden" id="txt_numeroprojeto" name="txt_numeroprojeto" value="" />
+			<input type="hidden" id="txt_idprojeto" name="txt_idprojeto" value="" />
+			<input type="hidden" id="IDT_descatividade" name="IDT_descatividade" value="" />
+			<input type="hidden" name="campo_descritor" value="" />
+			<input type="hidden" name="restartPage" value="" />
+
+
+			<div id="container-fluid">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title">
+							<b>Dados</b>
+						</h3>
+					</div>
+					<div class="panel-body">
+						<div class="form-group row form-group">
+							<div class="col-md-6 col-sm-12">
+								<label for="txt_nomeprojeto" class="required"> Projeto </label>
+								<input type="text" name="txt_projeto" id="txt_projeto" class="form-control">
+
+								<!-- <input type="zoom" class="form-control" id="txt_projeto" name="txt_projeto" data-zoom="{
+										'displayKey':'txt_nomeprojeto',
+										'datasetId':'ca_projetos',
+										'fields':[
+											{ 'field':'txt_numeroprojeto', 'label':'Numero do projeto' },
+											{ 'field':'txt_nomeprojeto', 'label':'Nome',  'search':'true' }
+										] }" /> -->
+
+							</div>
+							<!-- SETOR -->
+							<div class="col-md-6 col-sm-12">
+								<label for="txt_Setor" class="required"> Setor </label>
+
+								<input type="text" name="txt_Setor" id="txt_Setor" class="form-control">
+
+								<!-- <input type="zoom" class="form-control" id="txt_Setor" name="txt_Setor" data-zoom="{
+										'displayKey':'txt_nomesetor',
+										'datasetId':'cadastro_setor',
+										'fields':[
+											{ 'field':'txt_nomesetor', 'label':'Setor',  'search':'true' }
+										] }" /> -->
+							</div>
+						</div>
+
+						<!-- DESCRICAO DA ATIVIDADE -->
+						<div class="form-group row form-group">
+							<div class="col-md-12 col-sm-12">
+								<label for="txt_descatividade" class="required"> Descri&ccedil;&atilde;o da atividade </label>
+								<textarea class="form-control no-resize" id="txt_descatividade" name="txt_descatividade"
+									placeholder="Descreva aqui o que deve ser feito nesta atividade" maxlength="4000"
+									row form-groups="4"></textarea>
+							</div>
+						</div>
+
+						<!-- DEFINICAO DAS DATAS -->
+						<div class="form-group row form-group">
+							<div class="col-md-2 col-sm-12">
+								<label for="date_inicioatividade"> In&iacute;cio da atividade </label>
+								<div class="input-group">
+									<input type="text" onchange="verificaDataInicio(this)" class="form-control"
+										id="date_inicioatividade" mask="00/00/0000" name="date_inicioatividade" />
+									<span class="input-group-addon">
+										<span class="fluigicon fluigicon-calendar fluigicon-sm"></span>
+									</span>
+								</div>
+							</div>
+							<div class="col-md-2 col-sm-12">
+								<label for="date_terminoatividade"> T&eacute;rmino da atividade </label>
+								<div class="input-group">
+									<input type="text" onchange="verificaDataTermino(this)" class="form-control"
+										id="date_terminoatividade" mask="00/00/0000" name="date_terminoatividade" />
+									<span class="input-group-addon">
+										<span class="fluigicon fluigicon-calendar fluigicon-sm"></span>
+									</span>
+								</div>
+							</div>
+							<div class="">
+								<div class="col-md-2 col-sm-12 bloco_executarTarefa">
+									<label for="date_reprogramacao"> Reprograma&ccedil;&atilde;o </label>
+									<div class="input-group">
+										<input type="text" onchange="verificaDataReprograma(this)" class="form-control"
+											id="date_reprogramacao" name="date_reprogramacao" mask="00/00/0000">
+										<span class="input-group-addon">
+											<span class="fluigicon fluigicon-calendar fluigicon-sm"></span>
+										</span>
+									</div>
+									<input type="hidden" id="cnt_date_Reprogramacao" name="cnt_date_Reprogramacao">
+									<input type="hidden" id="cnt_num_Reprogramacao" name="cnt_num_Reprogramacao">
+								</div>
+								<div class="col-md-1 col-sm-12 bloco_executarTarefa">
+									<label for="txt_NumReprogramacao"> Num. </label> <input type="text" value="0"
+										class="form-control" id="txt_NumReprogramacao" name="txt_NumReprogramacao" readonly>
+								</div>
+								<div class="col-md-2 col-sm-12 bloco_executarTarefa">
+									<label for="data_finalizacao"> Finaliza&ccedil;&atilde;o </label>
+									<div class="input-group">
+										<input type="text" onchange="verificaDataFinal(this)" class="form-control"
+											id="data_finalizacao" name="data_finalizacao" mask="00/00/0000">
+										<span class="input-group-addon">
+											<span class="fluigicon fluigicon-calendar fluigicon-sm"></span>
+										</span>
+									</div>
+								</div>
+							</div>
+						</div>
+
+
+						<!-- PRIORIDADE -->
+						<div class="form-group row form-group">
+							<div class="col-md-2 col-sm-12">
+								<label class="control-label required">Prioridade</label>
+							</div>
+
+							<div class="col-md-7 col-sm-12">
+								<div class="btn-group btn-group-justified opc_prioridade" data-toggle="buttons">
+
+									<!-- NORMAL -->
+									<label class="btn btn-default normal" id="lbl_normal"> <input type="radio" name="txt_prioridade"
+											id="N_prioridade" value="normal">Normal
+									</label>
+
+									<!-- URGENTE -->
+									<label class="btn btn-default urgente" id="lbl_urgente"> <input type="radio"
+											name="txt_prioridade" id="U_prioridade" value="urgente">Urgente
+									</label>
+
+									<!-- URGENTISSIMO -->
+									<label class="btn btn-default urgentissimo" id="lbl_urgentissimo">
+										<input type="radio" name="txt_prioridade" id="O_prioridade"
+											value="urgentissimo">Urgent&iacute;ssimo
+									</label>
+
+								</div>
+								<p class="help-block"></p>
+							</div>
+						</div>
+
+
+						<!-- CRIAR TAREFAS -->
+						<input type="hidden" name="qtativ" id="qtativ" />
+						<div class="form-group row form-group">
+							<div class="col-md-12 col-sm-12" id="divItensTAREFAS">
+								<div>
+									<input type="button" onclick="adicionaLinha('tbatividades')" value="Nova Tarefa"
+										class="btn btn-default" id="btn_NovaTAREFA" name="btn_NovaTAREFA" />
+								</div>
+
+								<table id="tbatividades" tablename="tbatividades" style="width: 100%" noaddbutton="true"
+									nodeletebutton="true" class="table table-striped table-condensed table-bordered tbFilhos">
+									<thead>
+										<tr class="fs-display-none">
+											<!-- BOTAO PARA INCLUIR NOVO ITEM -->
+											<td></td>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>
+												<div class="row form-group">
+													<!-- PRAZO -->
+													<div class="col-md-2 col-sm-12">
+														<label for="date_Prazo" class="required"> Prazo </label>
+														<div class="input-group">
+															<input type="text" class="form-control linhaDatePrazo" id="dtprazoativ"
+																name="dtprazoativ" mask="00/00/0000" />
+															<span class="input-group-addon">
+																<span class="fluigicon fluigicon-calendar fluigicon-sm"></span>
+															</span>
+														</div>
+													</div>
+
+													<!-- DESCRICAO -->
+													<div class="col-md-5 col-sm-12">
+														<label class="required"> Descri&ccedil;&atilde;o </label> <input type="text"
+															class="form-control linhaDescricaoTarefa" id="nomeativ" name="nomeativ">
+													</div>
+
+													<!-- CODIGO DO RESPONSAVEL -->
+													<div class="col-md-3 col-sm-12">
+														<label class="required"> Respons&aacute;vel </label> <input type="zoom"
+															name="txtrespativ" id="txtrespativ" data-zoom="{
+																'displayKey':'colleagueName',
+																'datasetId':'colleague',
+																'fields':[
+																	{'field':'colleagueName', 'label':'Nome', 'search':'true'},
+																	{'field':'colleagueId', 'label':'ID'}]
+																}" />
+													</div>
+													<!-- NOME DO RESPONSAVEL -->
+													<input type="hidden" class="form-control linhaNomeReponsavel" name="hdnrespativ"
+														id="hdnrespativ" readonly />
+
+													<div class="col-md-1 col-sm-12">
+														<label> Atividade </label> <input type="text" class="form-control"
+															name="atividadeId" value="" readonly="readonly" />
+													</div>
+
+													<!-- BOTAO PARA REMOVER ITEM -->
+													<br>
+													<div class="col-md-1 col-sm-12">
+														<button onclick="removeLinha(this)" type="button" name="bnt_RemoveTAREFA"
+															class="btn btn-danger bnt_RemoveTAREFA">-</button>
+														<input type="hidden" name="criacaoAdHoc" value="" />
+													</div>
+												</div>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<div class="form-group row form-group">
+							<div class="col-md-3 col-sm-12">
+								<label> Situação - Finalizar Atividade</label>
+								<select class="form-control" name="aprovado" id="aprovado">
+									<option value="sim">Sim</option>
+									<option value="nao">Não</option>
+								</select>
+							</div>
+						</div>
+						<!-- FIM DO FORMULARIO -->
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+
+	<!-- ATIVAR O BOTAO DE PRIORIDADES -->
+	<script type="text/javascript">
+		var queryParams;
+		var row;
+
+		function getQueryParams(qs) {
+			qs = qs.split("+").join(" ");
+
+			var params = {}, tokens, re = /[?&]?([^=]+)=([^&]*)/g;
+
+			while (tokens = re.exec(qs)) {
+				params[decodeURIComponent(tokens[1])] = decodeURIComponent(tokens[2]);
+			}
+
+			return params;
+		}
+	</script>
+</body>
+<script type="text/javascript" src="custom.js"></script>
+<script type="text/javascript" src="GestaodeAtividade.js"></script>
+
+</html>

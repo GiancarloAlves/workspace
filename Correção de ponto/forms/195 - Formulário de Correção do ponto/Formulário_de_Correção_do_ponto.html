@@ -1,0 +1,349 @@
+<html>
+
+<head>
+  <link type="text/css" rel="stylesheet" href="/style-guide/css/fluig-style-guide.min.css" />
+  <script type="text/javascript" src="/portal/resources/js/jquery/jquery.js"></script>
+  <script type="text/javascript" src="/portal/resources/js/jquery/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="/portal/resources/js/mustache/mustache-min.js"></script>
+  <script type="text/javascript" src="/style-guide/js/fluig-style-guide.min.js" charset="utf-8"></script>
+
+  <!-- sweetalert2 -->
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <!-- FontAwesome -->
+  <link type="text/css" rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+  <!-- JQuery Mask Plugin -->
+  <script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
+
+  <!-- Custom -->
+  <link type="text/css" rel="stylesheet" href="./style_dp.css">
+  <script type="text/javascript" src="./app1.js"></script>
+
+
+<body class="fluig-style-guide process-style" id="devkit-style">
+  <form name="form" role="form" id="form-processo">
+
+
+    <div class="panel panel-primary panel-border">
+      <!--Painel geral do formulário - fecha no extremo do arquivo e contém todas as seções-->
+
+      <div class="panel-heading panel-bg panel-border"> <!--início da declaração do cabeçalho principal (azul)-->
+        <div class="container-fluid">
+          <section id="logo">
+            <img
+              src="https://api-site.cigame.com.br/images/logo-150px-x-35-px-(2)-1653585063932-(1)-(1)-(1)-(1)-1655820026572.png"
+              alt="NOME-CLIENTE" title="LOGO-CLIENTE" width="100">
+            <h3 class="panel-title">CORREÇÃO DO PONTO</h3>
+          </section>
+        </div>
+      </div> <!--fim da declaração do cabeçalho principal (azul)-->
+
+      <div class="panel-body"> <!--panel body geral do arquivo - fecha no extremo e contém todas as seções-->
+
+
+        <div class="panel panel-primary"> <!--declaração da primeira seção-->
+          <div class="panel-heading"> <!--início do cabeçalho da seção-->
+            <h3 class="panel-title subpanel_title">
+              <a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion" href="#abertura"><i
+                  class="far fa-clipboard"></i> Requisição do usuário</a>
+            </h3>
+          </div> <!--fim da declaração do cabeçalho da seção-->
+
+          <div id="abertura" class="panel-collapse collapse in">
+            <div class="panel-body">
+
+              <input type="hidden" name="matSolicitante" id="matSolicitante">
+              <input type="hidden" name="matSupervisor" id="matSupervisor">
+
+
+              <div class="form-input" hidden>
+                <div class="form-group col-md-3">
+                  <label for="zoom">Supervisor</label>
+                  <div class="input-group">
+                    <input type="zoom" class="form-control" name="solicitantezoom"
+                      dataset="ds_consulta_usuarios_winthor" zoomvalue="CODFUNCAO" datasetvalue="NOME"
+                      data-zoom="{'displayKey':'NOME','datasetId':'ds_consulta_usuarios_winthor','fields':[{'field':'NOME','label':'NOME','standard':true}]}" />
+                    <div class="input-group-addon zoom-preview">
+                      <span class="fluigicon fluigicon-zoom-in"></span>
+                    </div>
+                    <input type="hidden" name="hidden_Solicitante" id="hidden_Solicitante" />
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+
+                <div class="form-group col-md-3">
+                  <label>Solicitante</label>
+                  <div class="input-group">
+                    <input type="text" name="solicitante" id="solicitante" class="form-control" readonly>
+                    <span class="input-group-addon"><i class="fas fa-user"></i></span>
+                  </div>
+                </div>
+
+                <div class="form-group col-md-3">
+                  <label>Supervisor</label>
+                  <div class="input-group">
+                    <input type="text" name="supervisorSolicitante" id="supervisorSolicitante" class="form-control"
+                      readonly>
+                    <span class="input-group-addon"><i class="fas fa-user-shield"></i></span>
+                  </div>
+                </div>
+
+                <div class="form-group col-md-3">
+                  <label>Tipo solicitante</label>
+                  <div class="input-group">
+                    <input type="text" name="tipoSolicitante" id="tipoSolicitante" class="form-control" readonly>
+                    <span class="input-group-addon"><i class="fas fa-graduation-cap"></i></span>
+                  </div>
+                </div>
+
+                <div class="form-group col-md-4">
+                  <label>Data e hora da marcação esquecida</label>
+                  <div class="input-group">
+                    <input type="text" name="data_hora_marc" id="data_hora_marc" class="form-control"
+                      placeholder="dd/mm/aaaa hh:mm" mask="00/00/0000 00:00:00">
+                    <span class="input-group-addon">
+                      <i class="fas fa-calendar"></i>
+                    </span>
+                  </div>
+                </div>
+
+                <div class="form-group col-md-5">
+                  <label>Justificativa</label>
+                  <div class="input-group">
+                    <input type="text" name="justificativa" id="justificativa" class="form-control">
+                    <span class="input-group-addon"><i class="fas fa-exclamation"></i></span>
+                  </div>
+                </div>
+
+              </div> <!--fecha row-->
+
+            </div> <!--fecha panel body -->
+          </div> <!--fecha parte colapsável-->
+        </div> <!--fecha panel-primary-->
+
+        <div class="panel panel-primary"> <!--declaração da primeira seção-->
+          <div class="panel-heading"> <!--início do cabeçalho da seção-->
+            <h3 class="panel-title subpanel_title">
+              <a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion" href="#aprovacao"><i
+                  class="far fa-clipboard"></i> Aprovação do supervisor</a>
+            </h3>
+          </div> <!--fim da declaração do cabeçalho da seção-->
+
+          <div id="aprovacao" class="panel-collapse collapse in">
+            <div class="panel-body">
+
+              <div class="row">
+
+                <div class="form-input">
+                  <div class="form-group col-md-2">
+                    <label>Aprovação supervisor</label>
+                    <div class="radio-options">
+                      <div class="radio">
+                        <label>
+                          <input type="radio" name="aprov_sup" value="Aprovar" />Aprovar
+                        </label>
+                      </div>
+                      <div class="radio">
+                        <label>
+                          <input type="radio" name="aprov_sup" value="Reprovar" />Reprovar
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-input">
+                  <div class="form-group col-md-6">
+                    <label>Observação supervisor</label><input type="text" class="form-control" name="obs_supervisor"
+                      value="" placeholder="" data-size="big" />
+                  </div>
+                </div>
+
+              </div> <!--fecha row-->
+
+
+            </div> <!--fecha panel body -->
+          </div> <!--fecha parte colapsável-->
+        </div> <!--fecha panel-primary-->
+
+
+
+        <div class="panel panel-primary"> <!--declaração da primeira seção-->
+          <div class="panel-heading"> <!--início do cabeçalho da seção-->
+            <h3 class="panel-title subpanel_title">
+              <a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion" href="#alteracao"><i
+                  class="far fa-clipboard"></i> Alteração pelo RH</a>
+            </h3>
+          </div> <!--fim da declaração do cabeçalho da seção-->
+
+          <div id="alteracao" class="panel-collapse collapse in">
+            <div class="panel-body">
+
+              <div class="row">
+
+                <div class="form-group col-md-4">
+                  <label>Marcação modificada em:</label>
+                  <div class="input-group">
+                    <input type="text" name="marc_modificada" id="marc_modificada" class="form-control"
+                      placeholder="dd/mm/aaaa hh:mm" mask="00/00/0000 00:00:00">
+                    <span class="input-group-addon">
+                      <i class="fas fa-calendar"></i>
+                    </span>
+                  </div>
+                </div>
+
+                <div class="form-field" data-type="textbox" data-show-properties="" data-field-name="obs_dp">
+                  <div class="form-input">
+                    <div class="form-group col-md-4">
+                      <label>Observação DP</label><input type="text" class="form-control" name="obs_dp" value=""
+                        placeholder="" data-size="big" />
+                    </div>
+                  </div>
+                </div>
+
+
+              </div> <!--fecha row-->
+            </div> <!--fecha panel body-->
+          </div> <!--fecha panel primary-->
+
+  </form>
+
+  <script type="text/javascript">
+    var keyDown = false,
+      ctrl = 17,
+      vKey = 86,
+      Vkey = 118;
+
+    $(document)
+      .keydown(function (e) {
+        if (e.keyCode == ctrl) keyDown = true;
+      })
+      .keyup(function (e) {
+        if (e.keyCode == ctrl) keyDown = false;
+      });
+
+    $("[data-only-numbers]")
+      .on("keypress", function (e) {
+        if (!e) {
+          var e = window.event;
+        }
+
+        if (e.keyCode > 0 && e.which == 0) {
+          return true;
+        }
+
+        if (e.keyCode) {
+          code = e.keyCode;
+        } else if (e.which) {
+          code = e.which;
+        }
+
+        if (code == 46) {
+          return true;
+        }
+
+        var character = String.fromCharCode(code);
+        if (character == "\b" || character == " " || character == "\t") {
+          return true;
+        }
+        if (keyDown && (code == vKey || code == Vkey)) {
+          return character;
+        } else {
+          return /[0-9]$/.test(character);
+        }
+      })
+      .on("focusout", function (e) {
+        var $this = $(this);
+        if ($this.val() == "") {
+          return true;
+        }
+        $this.val($this.val().replace(/[^0-9\.]/g, ""));
+      })
+      .on("paste", function (e) {
+        var $this = $(this);
+        setTimeout(function () {
+          $this.val($this.val().replace(/[^0-9\.]/g, ""));
+        }, 5);
+      });
+
+    $(".create-form-components").on(
+      "keyup",
+      'input[required="required"][type="text"], input[required="required"][type="number"], input[required="required"][type="date"], textarea[required="required"]',
+      function () {
+        validationFieldsForm(
+          $(this),
+          $(this).parents(".form-field").data("type")
+        );
+      }
+    );
+
+    $(".create-form-components").on(
+      "change",
+      'input[required="required"][type="checkbox"], input[required="required"][type="radio"], select[required="required"]',
+      function () {
+        validationFieldsForm(
+          $(this),
+          $(this).parents(".form-field").data("type")
+        );
+      }
+    );
+
+    function validationFieldsForm(field, type) {
+      if (type === "checkbox" || type === "radio") {
+        if (!field.is(":checked")) {
+          field.parents(".form-field").addClass("required");
+        } else {
+          field.parents(".form-field").removeClass("required");
+        }
+      } else {
+        if (!field.val().trim()) {
+          field.parents(".form-field").addClass("required");
+        } else {
+          field.parents(".form-field").removeClass("required");
+        }
+      }
+    }
+
+    var $zoomPreview = $(".zoom-preview");
+    if ($zoomPreview.length) {
+      $zoomPreview.parent().removeClass("input-group");
+      $zoomPreview.remove();
+    }
+
+    var ratings = $(".rating");
+    if (ratings.length > 0) ratingStars(ratings);
+    function ratingStars(stars) {
+      $.each(stars, function (i, obj) {
+        var field = $(this).closest(".form-group").find(".rating-value");
+        var tgt = $(obj);
+        tgt.html("");
+        var rating = FLUIGC.stars(tgt, { value: field.val() });
+        rating.on("click", function (o) {
+          field.val($(this).index() + 1);
+        });
+      });
+    }
+
+    $.each($("[data-date]"), function (i, o) {
+      var id = $(o).attr("id");
+      FLUIGC.calendar("#" + id);
+    });
+
+    $(document).ready(function () {
+      $.each($("[data-date]"), function (i, o) {
+        var id = $(o).attr("id");
+        if ($("#" + id).attr("readonly")) {
+          $("#" + id)
+            .data("DateTimePicker")
+            .disable();
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>

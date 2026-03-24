@@ -1,0 +1,4 @@
+
+var ATIV_TRATAR_CHAMADO = 19;
+
+

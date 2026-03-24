@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<title>Formulário de teste - Curso Fluig Kids Intermediate</title>
+
+            <link rel="stylesheet" type="text/css" href="/style-guide/css/fluig-style-guide.min.css">
+            <script src="/resources/js/jquery/jquery.js"></script>
+            <script src="/resources/js/jquery/jquery-ui.min.js"></script>
+            <script src="/resources/js/mustache/mustache-min.js"></script>
+            <script src="/style-guide/js/fluig-style-guide.min.js"></script>
+
+            <!-- CUSTOM -->
+            <link href="/style-guide/css/fluig-style-guide-filter.min.css" rel="stylesheet" type="text/css">
+            <link href="/style-guide/css/fluig-style-guide-ratingstars.min.css" rel="stylesheet" type="text/css">
+            <script src="/style-guide/js/fluig-style-guide-filter.min.js"></script>
+            <script src="/style-guide/js/fluig-style-guide-ratingstars.min.js"></script>
+
+            <link href='/webdesk/customresources?cid=1&resourceName=temaFormulario/0.css' type='text/css' rel='stylesheet' />
+		</head>
+        <body class="fluig-style-guide">
+			
+		<form class="totvs-form grid vertical create-form-components ui-sortable t0" name="createFormComponents" style="padding-left: 20px; padding-right: 20px;"><h1 class="title-form-application">Formulário de teste - Curso Fluig Kids Intermediate</h1>
+			
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title"><i class="fluigicon fluigicon-apple icon-md" aria-hidden="true"></i>
+        Dados do usuário mobral <i class="fluigicon fluigicon-android icon-md" aria-hidden="true"></i></h3>
+    </div>
+    <div class="panel-body">
+  		
+<div class="row">
+	<div class="form-group col-md-4" >
+		<label>Email</label>
+		<input type="text" class="form-control" name="testeEntrada" value="" placeholder="NÃ£o digite aqui o e-mail" data-size="small">
+	</div>
+	
+	<div class="form-group col-md-2" >
+		<label>Nome</label>
+		<input type="text" class="form-control" name="teste1" value="" placeholder="Digite aqui seu nome" data-size="medium">
+	</div>
+		
+	<div class="form-group col-md-2">
+		<label>Tipo de quebra</label>
+		<select class="form-control" name="MultipEscolha"><option value="Quebra linha">Quebra linha</option><option value="NÃ£o quebra linha">NÃ£o quebra linha</option></select>
+	</div>
+	
+	<div class="form-group col-md-4">
+		<label>Aprovacao</label>
+		<div class="radio">
+		<label><input type="radio" name="Aprovacao" value="Aprovar">Aprovar</label>
+		<label><input type="radio" name="Aprovacao" value="Reprovar">Reprovar</label>
+		<label><input type="radio" name="Aprovacao" value="Nada">Não fazer nada</label>
+		<label><input type="radio" name="Aprovacao" value="Dormir">Dormir</label>
+		
+		</div>
+	</div>
+	
+	<!-- <div class = "form-group col-md-4">
+		<label>VÃ¡rias opÃ§Ãµes</label>
+		<div class = "checkbox">
+		<label><input type="checkbox" name="celular">Cel</label>
+		<label><input type="checkbox" name="caneta">Can</label>
+		<label><input type="checkbox" name="garrafa">Gar</label>
+		<label><input type="checkbox" name="rotuladora">Rot</label>
+		</div>
+	</div> -->
+</div>
+
+    </div>
+</div>
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title"><i class="fluigicon fluigicon-map-marker icon-xs" aria-hidden="true"></i>Endereço do usuário mobral</i>
+        </h3>
+    </div>
+    <div class="panel-body">
+    
+<div class="row">
+	
+		<div class="alert alert-warning alert-dismissible" role="alert">
+		    <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+		    <strong>Warning!</strong> O Brasil é grande, mas contigo, ele só diminui.
+		</div>
+		
+			<div class="form-group col-md-2">
+		<label for="cep">CEP</label>
+			<input type="text" name="cep" id="cep" class="form-control" mask="00000-000"> 
+		</div>
+		
+			<div class="form-group col-md-4">
+		<label for="endereco">Endereço</label>
+			<input type="text" name="endereco" id="endereco" class="form-control"> 
+		</div>
+		
+			<div class="form-group col-md-1">
+		<label for="endereco">Número</label>
+			<input type="text" name="numero" id="numero" class="form-control"> 
+		</div>
+	
+</div>
+	
+<div class="row">
+		<div class="form-group col-md-2">
+		<label for="bairro">Bairro</label>
+			<input type="text" name="bairro" id="bairro" class="form-control"> 
+		</div>
+		
+			<div class="form-group col-md-2">
+		<label for="cidade">Cidade</label>
+			<input type="text" name="cidade" id="cidade" class="form-control"> 
+		</div>
+		
+			<div class="form-group col-md-2">
+		<label for="estado">Estado</label>
+			<input type="text" name="estado" id="estado" class="form-control"> 
+		</div>
+	
+</div>	
+
+    </div>
+</div>
+
+<div class="panel panel-warning">
+    <div class="panel-heading">
+        <h3 class="panel-title"><i class="fluigicon fluigicon-money icon-sm" aria-hidden="true"></i> Financeiro</i>
+        </h3>
+    </div>
+    
+    <div class="panel-body">
+    <div class="row">
+	
+			<div class="form-group col-md-2">
+		<label for="valor">Valor</label>
+			<input type="number" name="valor" id="valor" class="form-control"> 
+		</div>
+		
+			<div class="form-group col-md-4">
+		<label for="lucro">Lucro estimado</label>
+			<input type="number" name="lucro" id="lucro" class="form-control"> 
+		</div>
+		
+</div>
+	
+    </div>
+</div>
+
+	</form>
+			
+		</body>
+			<script type="text/javascript"> var calendDataNasc = FLUIGC.calendar('#DataNasc');</script>
+			<script type="text/javascript" src="cep.js"></script>	
+	</html>

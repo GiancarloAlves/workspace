@@ -1,0 +1,2089 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.8.0_452" class="java.beans.XMLDecoder">
+ <object class="java.util.HashMap">
+  <void method="put">
+   <string>volume</string>
+   <array class="java.lang.String" length="1">
+    <void index="0">
+     <string>Default</string>
+    </void>
+   </array>
+  </void>
+  <void method="put">
+   <string>mecanismoGrupo</string>
+   <object class="java.util.ArrayList">
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.GroupDto">
+      <void property="groupDescription">
+       <string>Moderador do grupo Fluig</string>
+      </void>
+      <void property="groupId">
+       <string>MODERATOR_FLUIG</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.GroupDto">
+      <void property="groupDescription">
+       <string>Tecnologia da Informação</string>
+      </void>
+      <void property="groupId">
+       <string>TI</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.GroupDto">
+      <void property="groupDescription">
+       <string>Compras</string>
+      </void>
+      <void property="groupId">
+       <string>COMPRAS</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.GroupDto">
+      <void property="groupDescription">
+       <string>Recebimento</string>
+      </void>
+      <void property="groupId">
+       <string>RECEBIMENTO</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.GroupDto">
+      <void property="groupDescription">
+       <string>Recursos Humanos</string>
+      </void>
+      <void property="groupId">
+       <string>RH</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.GroupDto">
+      <void property="groupDescription">
+       <string>Coleta</string>
+      </void>
+      <void property="groupId">
+       <string>COLETA</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.GroupDto">
+      <void property="groupDescription">
+       <string>Financeiro</string>
+      </void>
+      <void property="groupId">
+       <string>FINANCEIRO</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.GroupDto">
+      <void property="groupDescription">
+       <string>Diretoria</string>
+      </void>
+      <void property="groupId">
+       <string>DIRETORIA</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.GroupDto">
+      <void property="groupDescription">
+       <string>Logística</string>
+      </void>
+      <void property="groupId">
+       <string>LOGISTICA</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.GroupDto">
+      <void property="groupDescription">
+       <string>Vendas</string>
+      </void>
+      <void property="groupId">
+       <string>VENDAS</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.GroupDto">
+      <void property="groupDescription">
+       <string>Supervisores - grupo geral</string>
+      </void>
+      <void property="groupId">
+       <string>SUPERVISORES</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.GroupDto">
+      <void property="groupDescription">
+       <string>Marketing</string>
+      </void>
+      <void property="groupId">
+       <string>MARKETING</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.GroupDto">
+      <void property="groupDescription">
+       <string>Gerentes</string>
+      </void>
+      <void property="groupId">
+       <string>GERENTES</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.GroupDto">
+      <void property="groupDescription">
+       <string>ESTOQUE - Chamado Logística </string>
+      </void>
+      <void property="groupId">
+       <string>ESTOQUE</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.GroupDto">
+      <void property="groupDescription">
+       <string>SOLICITANTES_MANUTENCAO</string>
+      </void>
+      <void property="groupId">
+       <string>SOLICITANTES_MANUTENCAO</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.GroupDto">
+      <void property="groupDescription">
+       <string>SOLICITANTES_NOVO_COLABORADOR</string>
+      </void>
+      <void property="groupId">
+       <string>SOLICITANTES_NOVO_COLABORADOR</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.GroupDto">
+      <void property="groupDescription">
+       <string>Gestores Devolução</string>
+      </void>
+      <void property="groupId">
+       <string>GestoresDevolucao</string>
+      </void>
+     </object>
+    </void>
+   </object>
+  </void>
+  <void method="put">
+   <string>expediente</string>
+   <array class="java.lang.String" length="6">
+    <void index="0">
+     <string>CIGAME_PADRAO</string>
+    </void>
+    <void index="1">
+     <string>Default</string>
+    </void>
+    <void index="2">
+     <string>LOGISTICA_MADRUGADA</string>
+    </void>
+    <void index="3">
+     <string>LOGISTICA_MANHA</string>
+    </void>
+    <void index="4">
+     <string>LOGISTICA_NOITE</string>
+    </void>
+    <void index="5">
+     <string>LOGISTICA_TARDE</string>
+    </void>
+   </array>
+  </void>
+  <void method="put">
+   <string>processosServidor</string>
+   <object class="java.util.ArrayList">
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ProcessDefinitionDto">
+      <void property="companyId">
+       <int>1</int>
+      </void>
+      <void property="processDescription">
+       <string>Devolução de Garantia</string>
+      </void>
+      <void property="processId">
+       <string>Devolução de Garantia</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ProcessDefinitionDto">
+      <void property="companyId">
+       <int>1</int>
+      </void>
+      <void property="processDescription">
+       <string>Listar Tarefas</string>
+      </void>
+      <void property="processId">
+       <string>FLUIGADHOC</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ProcessDefinitionDto">
+      <void property="companyId">
+       <int>1</int>
+      </void>
+      <void property="processDescription">
+       <string>Pedidos parados no Retira</string>
+      </void>
+      <void property="processId">
+       <string>Pedidos parados no Retira</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ProcessDefinitionDto">
+      <void property="companyId">
+       <int>1</int>
+      </void>
+      <void property="processDescription">
+       <string>relatorio_debito_funcionarios</string>
+      </void>
+      <void property="processId">
+       <string>relatorio_debito_funcionarios</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ProcessDefinitionDto">
+      <void property="companyId">
+       <int>1</int>
+      </void>
+      <void property="processDescription">
+       <string>teste_approval</string>
+      </void>
+      <void property="processId">
+       <string>teste_approval</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ProcessDefinitionDto">
+      <void property="companyId">
+       <int>1</int>
+      </void>
+      <void property="processDescription">
+       <string>Devolução de Clientes</string>
+      </void>
+      <void property="processId">
+       <string>WFCOMERCIALDEVOLUCAOCLIENTES</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ProcessDefinitionDto">
+      <void property="companyId">
+       <int>1</int>
+      </void>
+      <void property="processDescription">
+       <string>wf_acompanhamento_tarefas_logistica</string>
+      </void>
+      <void property="processId">
+       <string>wf_acompanhamento_tarefas_logistica_diario</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ProcessDefinitionDto">
+      <void property="companyId">
+       <int>1</int>
+      </void>
+      <void property="processDescription">
+       <string>wf_acompanhamento_tarefas_logistica_diaria</string>
+      </void>
+      <void property="processId">
+       <string>wf_acompanhamento_tarefas_logistica_semanal</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ProcessDefinitionDto">
+      <void property="companyId">
+       <int>1</int>
+      </void>
+      <void property="processDescription">
+       <string>Solicitação de adiantamento de fornecedor</string>
+      </void>
+      <void property="processId">
+       <string>wf_adiantamento_fornecedor</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ProcessDefinitionDto">
+      <void property="companyId">
+       <int>1</int>
+      </void>
+      <void property="processDescription">
+       <string>Agendamento carro CIGAME</string>
+      </void>
+      <void property="processId">
+       <string>wf_agendamento_carro</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ProcessDefinitionDto">
+      <void property="companyId">
+       <int>1</int>
+      </void>
+      <void property="processDescription">
+       <string>Alteração Cadastral</string>
+      </void>
+      <void property="processId">
+       <string>wf_alteracao_cadastral</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ProcessDefinitionDto">
+      <void property="companyId">
+       <int>1</int>
+      </void>
+      <void property="processDescription">
+       <string>Aprovação FRETES</string>
+      </void>
+      <void property="processId">
+       <string>WF_aprovacao_fretes</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ProcessDefinitionDto">
+      <void property="companyId">
+       <int>1</int>
+      </void>
+      <void property="processDescription">
+       <string>Atualizar_chave_pix</string>
+      </void>
+      <void property="processId">
+       <string>wf_atualizar_chave_pix</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ProcessDefinitionDto">
+      <void property="companyId">
+       <int>1</int>
+      </void>
+      <void property="processDescription">
+       <string>Solicitação de aumento do prazo de Devolução</string>
+      </void>
+      <void property="processId">
+       <string>wf_aumento_prazo_devolucao</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ProcessDefinitionDto">
+      <void property="companyId">
+       <int>1</int>
+      </void>
+      <void property="processDescription">
+       <string>Avaliação de desempenho</string>
+      </void>
+      <void property="processId">
+       <string>wf_avaliacao_de_desempenho</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ProcessDefinitionDto">
+      <void property="companyId">
+       <int>1</int>
+      </void>
+      <void property="processDescription">
+       <string>Cadastro e compra de item novo</string>
+      </void>
+      <void property="processId">
+       <string>wf_cadastro_compra_item_novo</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ProcessDefinitionDto">
+      <void property="companyId">
+       <int>1</int>
+      </void>
+      <void property="processDescription">
+       <string>Cadastro de produtos</string>
+      </void>
+      <void property="processId">
+       <string>wf_cadastro_de_produtos</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ProcessDefinitionDto">
+      <void property="companyId">
+       <int>1</int>
+      </void>
+      <void property="processDescription">
+       <string>Cadastro de fornecedor / transportadora</string>
+      </void>
+      <void property="processId">
+       <string>wf_cadastro_fornecedor_transportadora</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ProcessDefinitionDto">
+      <void property="companyId">
+       <int>1</int>
+      </void>
+      <void property="processDescription">
+       <string>Cancelamento de NF de vendas</string>
+      </void>
+      <void property="processId">
+       <string>wf_cancelamento_de_nf</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ProcessDefinitionDto">
+      <void property="companyId">
+       <int>1</int>
+      </void>
+      <void property="processDescription">
+       <string>Chamado Logística</string>
+      </void>
+      <void property="processId">
+       <string>wf_chamado_logistica</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ProcessDefinitionDto">
+      <void property="companyId">
+       <int>1</int>
+      </void>
+      <void property="processDescription">
+       <string>Chamado Manutenção</string>
+      </void>
+      <void property="processId">
+       <string>wf_chamado_manutencao</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ProcessDefinitionDto">
+      <void property="companyId">
+       <int>1</int>
+      </void>
+      <void property="processDescription">
+       <string>Chamado TI</string>
+      </void>
+      <void property="processId">
+       <string>wf_chamado_ti</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ProcessDefinitionDto">
+      <void property="companyId">
+       <int>1</int>
+      </void>
+      <void property="processDescription">
+       <string>Conciliação Bancos e Caixa</string>
+      </void>
+      <void property="processId">
+       <string>wf_conciliacao_bancos</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ProcessDefinitionDto">
+      <void property="companyId">
+       <int>1</int>
+      </void>
+      <void property="processDescription">
+       <string>Conciliação Diária</string>
+      </void>
+      <void property="processId">
+       <string>wf_conciliacao_diaria</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ProcessDefinitionDto">
+      <void property="companyId">
+       <int>1</int>
+      </void>
+      <void property="processDescription">
+       <string>Solicitação de consulta de crédito disponível dos clientes</string>
+      </void>
+      <void property="processId">
+       <string>wf_consulta_credito_disponivel_cliente</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ProcessDefinitionDto">
+      <void property="companyId">
+       <int>1</int>
+      </void>
+      <void property="processDescription">
+       <string>Correção do ponto</string>
+      </void>
+      <void property="processId">
+       <string>wf_Correcao_ponto</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ProcessDefinitionDto">
+      <void property="companyId">
+       <int>1</int>
+      </void>
+      <void property="processDescription">
+       <string>Cotação de frete interestadual</string>
+      </void>
+      <void property="processId">
+       <string>wf_cotacao_frete_interestadual</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ProcessDefinitionDto">
+      <void property="companyId">
+       <int>1</int>
+      </void>
+      <void property="processDescription">
+       <string>Depósito antecipado de clientes </string>
+      </void>
+      <void property="processId">
+       <string>wf_deposito_antecipado_de_clientes</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ProcessDefinitionDto">
+      <void property="companyId">
+       <int>1</int>
+      </void>
+      <void property="processDescription">
+       <string>Desligamento de colaboradores</string>
+      </void>
+      <void property="processId">
+       <string>wf_desligamento_de_colaboradores</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ProcessDefinitionDto">
+      <void property="companyId">
+       <int>1</int>
+      </void>
+      <void property="processDescription">
+       <string>Devolução Avaria Fornecedor </string>
+      </void>
+      <void property="processId">
+       <string>wf_devolucao_avaria_fornecedor</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ProcessDefinitionDto">
+      <void property="companyId">
+       <int>1</int>
+      </void>
+      <void property="processDescription">
+       <string>Devolução de compras</string>
+      </void>
+      <void property="processId">
+       <string>wf_devolucao_compras</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ProcessDefinitionDto">
+      <void property="companyId">
+       <int>1</int>
+      </void>
+      <void property="processDescription">
+       <string>Devolução de Garantia</string>
+      </void>
+      <void property="processId">
+       <string>wf_devolucao_garantia</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ProcessDefinitionDto">
+      <void property="companyId">
+       <int>1</int>
+      </void>
+      <void property="processDescription">
+       <string>Documentação para envio do Clicksign</string>
+      </void>
+      <void property="processId">
+       <string>wf_documentacao_clicksign</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ProcessDefinitionDto">
+      <void property="companyId">
+       <int>1</int>
+      </void>
+      <void property="processDescription">
+       <string>Tarefas diárias - Entradas de notas fiscais</string>
+      </void>
+      <void property="processId">
+       <string>wf_entrada_nf</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ProcessDefinitionDto">
+      <void property="companyId">
+       <int>1</int>
+      </void>
+      <void property="processDescription">
+       <string>Enviar_relatorio_fretes</string>
+      </void>
+      <void property="processId">
+       <string>wf_enviar_relatorio_fretes</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ProcessDefinitionDto">
+      <void property="companyId">
+       <int>1</int>
+      </void>
+      <void property="processDescription">
+       <string>Envio remessa de boleto para o banco</string>
+      </void>
+      <void property="processId">
+       <string>wf_envio_remessa_boleto</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ProcessDefinitionDto">
+      <void property="companyId">
+       <int>1</int>
+      </void>
+      <void property="processDescription">
+       <string>Envio de remessa de prorrogação</string>
+      </void>
+      <void property="processId">
+       <string>wf_envio_remessa_prorrogacao</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ProcessDefinitionDto">
+      <void property="companyId">
+       <int>1</int>
+      </void>
+      <void property="processDescription">
+       <string>Extrato CDB</string>
+      </void>
+      <void property="processId">
+       <string>wf_extrato_cdb</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ProcessDefinitionDto">
+      <void property="companyId">
+       <int>1</int>
+      </void>
+      <void property="processDescription">
+       <string>Fechamento Fiscal Contábil</string>
+      </void>
+      <void property="processId">
+       <string>wf_fechamento_fiscal</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ProcessDefinitionDto">
+      <void property="companyId">
+       <int>1</int>
+      </void>
+      <void property="processDescription">
+       <string>Follow-up de mercadorias</string>
+      </void>
+      <void property="processId">
+       <string>wf_follow_up_mercadorias</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ProcessDefinitionDto">
+      <void property="companyId">
+       <int>1</int>
+      </void>
+      <void property="processDescription">
+       <string>Gestão de Atividade</string>
+      </void>
+      <void property="processId">
+       <string>wf_gestaoAtividade</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ProcessDefinitionDto">
+      <void property="companyId">
+       <int>1</int>
+      </void>
+      <void property="processDescription">
+       <string>Impressão Fatura CCRE - Final 3157</string>
+      </void>
+      <void property="processId">
+       <string>wf_impressao_fatura_3157</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ProcessDefinitionDto">
+      <void property="companyId">
+       <int>1</int>
+      </void>
+      <void property="processDescription">
+       <string>Impressão Fatura CCRE - Final 4309</string>
+      </void>
+      <void property="processId">
+       <string>wf_impressao_fatura_4309</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ProcessDefinitionDto">
+      <void property="companyId">
+       <int>1</int>
+      </void>
+      <void property="processDescription">
+       <string>Impressão Fatura CCRE - Business</string>
+      </void>
+      <void property="processId">
+       <string>wf_impressao_fatura_business</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ProcessDefinitionDto">
+      <void property="companyId">
+       <int>1</int>
+      </void>
+      <void property="processDescription">
+       <string>wf_Lembrete_log</string>
+      </void>
+      <void property="processId">
+       <string>wf_Lembrete_log</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ProcessDefinitionDto">
+      <void property="companyId">
+       <int>1</int>
+      </void>
+      <void property="processDescription">
+       <string>Limpeza Caixa Postal</string>
+      </void>
+      <void property="processId">
+       <string>wf_limpeza_caixa_postal</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ProcessDefinitionDto">
+      <void property="companyId">
+       <int>1</int>
+      </void>
+      <void property="processDescription">
+       <string>Cancelamento de pedidos</string>
+      </void>
+      <void property="processId">
+       <string>wf_manutencao_cancelamento_pedidos</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ProcessDefinitionDto">
+      <void property="companyId">
+       <int>1</int>
+      </void>
+      <void property="processDescription">
+       <string>Material Urgente Compras</string>
+      </void>
+      <void property="processId">
+       <string>wf_material_urgente_compras</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ProcessDefinitionDto">
+      <void property="companyId">
+       <int>1</int>
+      </void>
+      <void property="processDescription">
+       <string>Solicitação de melhoria de processos</string>
+      </void>
+      <void property="processId">
+       <string>wf_melhoria_processos</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ProcessDefinitionDto">
+      <void property="companyId">
+       <int>1</int>
+      </void>
+      <void property="processDescription">
+       <string>Mútuos sócios</string>
+      </void>
+      <void property="processId">
+       <string>wf_mutuos_socios</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ProcessDefinitionDto">
+      <void property="companyId">
+       <int>1</int>
+      </void>
+      <void property="processDescription">
+       <string>Ocorrências </string>
+      </void>
+      <void property="processId">
+       <string>wf_ocorrencias</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ProcessDefinitionDto">
+      <void property="companyId">
+       <int>1</int>
+      </void>
+      <void property="processDescription">
+       <string>Ocorrências de Recebimento</string>
+      </void>
+      <void property="processId">
+       <string>wf_ocorrencia_recebimento</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ProcessDefinitionDto">
+      <void property="companyId">
+       <int>1</int>
+      </void>
+      <void property="processDescription">
+       <string>Pagamento ICMS</string>
+      </void>
+      <void property="processId">
+       <string>wf_pagamento_icms</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ProcessDefinitionDto">
+      <void property="companyId">
+       <int>1</int>
+      </void>
+      <void property="processDescription">
+       <string>Pagamento IRRF e CSRF</string>
+      </void>
+      <void property="processId">
+       <string>wf_pagamento_irrf_csrf</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ProcessDefinitionDto">
+      <void property="companyId">
+       <int>1</int>
+      </void>
+      <void property="processDescription">
+       <string>Pedido de entrega de urgência</string>
+      </void>
+      <void property="processId">
+       <string>wf_pedido_de_entrega_de_urgencia</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ProcessDefinitionDto">
+      <void property="companyId">
+       <int>1</int>
+      </void>
+      <void property="processDescription">
+       <string>Prorrogação de títulos</string>
+      </void>
+      <void property="processId">
+       <string>wf_prorrogacao_de_titulos</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ProcessDefinitionDto">
+      <void property="companyId">
+       <int>1</int>
+      </void>
+      <void property="processDescription">
+       <string>Reclamação de clientes</string>
+      </void>
+      <void property="processId">
+       <string>wf_reclamacao_clientes</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ProcessDefinitionDto">
+      <void property="companyId">
+       <int>1</int>
+      </void>
+      <void property="processDescription">
+       <string>Requisição de estorno de cliente</string>
+      </void>
+      <void property="processId">
+       <string>wf_requisicao_estorno</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ProcessDefinitionDto">
+      <void property="companyId">
+       <int>1</int>
+      </void>
+      <void property="processDescription">
+       <string>Requisição de Material de TI</string>
+      </void>
+      <void property="processId">
+       <string>wf_requisicao_material_ti</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ProcessDefinitionDto">
+      <void property="companyId">
+       <int>1</int>
+      </void>
+      <void property="processDescription">
+       <string>Retorno de mercadoria de entrega</string>
+      </void>
+      <void property="processId">
+       <string>wf_retorno_entrega</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ProcessDefinitionDto">
+      <void property="companyId">
+       <int>1</int>
+      </void>
+      <void property="processDescription">
+       <string>Solicitação de canhotos</string>
+      </void>
+      <void property="processId">
+       <string>wf_solicitacao_canhoto</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ProcessDefinitionDto">
+      <void property="companyId">
+       <int>1</int>
+      </void>
+      <void property="processDescription">
+       <string>Solicitação de compra na praça</string>
+      </void>
+      <void property="processId">
+       <string>wf_solicitacao_compra_praca</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ProcessDefinitionDto">
+      <void property="companyId">
+       <int>1</int>
+      </void>
+      <void property="processDescription">
+       <string>Solicitação de despesa comercial</string>
+      </void>
+      <void property="processId">
+       <string>wf_solicitacao_despesa_comercial</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ProcessDefinitionDto">
+      <void property="companyId">
+       <int>1</int>
+      </void>
+      <void property="processDescription">
+       <string>Solicitação de Despesa Imobilizado</string>
+      </void>
+      <void property="processId">
+       <string>wf_Solicitacao_de_despesa_imobilizado</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ProcessDefinitionDto">
+      <void property="companyId">
+       <int>1</int>
+      </void>
+      <void property="processDescription">
+       <string>Solicitação de Despesa Imobilizado</string>
+      </void>
+      <void property="processId">
+       <string>wf_Solicitacao_de_despesa_imobilizado1</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ProcessDefinitionDto">
+      <void property="companyId">
+       <int>1</int>
+      </void>
+      <void property="processDescription">
+       <string>Solicitação de acessos dos novos colaboradores</string>
+      </void>
+      <void property="processId">
+       <string>wf_Solicitacao_de_novos_colaboradores</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ProcessDefinitionDto">
+      <void property="companyId">
+       <int>1</int>
+      </void>
+      <void property="processDescription">
+       <string>Solicitação de Folgas/ Saídas Antecipadas/ Consultas Médicas</string>
+      </void>
+      <void property="processId">
+       <string>wf_Solicitacao_folga_saida</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ProcessDefinitionDto">
+      <void property="companyId">
+       <int>1</int>
+      </void>
+      <void property="processDescription">
+       <string>Solicitação de troca de notas</string>
+      </void>
+      <void property="processId">
+       <string>wf_solicitacao_troca_nf</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ProcessDefinitionDto">
+      <void property="companyId">
+       <int>1</int>
+      </void>
+      <void property="processDescription">
+       <string>Troca de cargo e ajuste salarial</string>
+      </void>
+      <void property="processId">
+       <string>wf_troca_cargo_ajuste_salarial</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ProcessDefinitionDto">
+      <void property="companyId">
+       <int>1</int>
+      </void>
+      <void property="processDescription">
+       <string>Troca de email do cliente</string>
+      </void>
+      <void property="processId">
+       <string>wf_troca_de_email_do_cliente</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ProcessDefinitionDto">
+      <void property="companyId">
+       <int>1</int>
+      </void>
+      <void property="processDescription">
+       <string>wf_validador_datasets</string>
+      </void>
+      <void property="processId">
+       <string>wf_validador_datasets</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ProcessDefinitionDto">
+      <void property="companyId">
+       <int>1</int>
+      </void>
+      <void property="processDescription">
+       <string>Verificação de multas</string>
+      </void>
+      <void property="processId">
+       <string>wf_verificacao_multas</string>
+      </void>
+     </object>
+    </void>
+   </object>
+  </void>
+  <void method="put">
+   <string>mecanismoPapel</string>
+   <object class="java.util.ArrayList">
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>admin</string>
+      </void>
+      <void property="roleId">
+       <string>admin</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>Analista TI</string>
+      </void>
+      <void property="roleId">
+       <string>ANALISTA_TI</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>Cadastro setor de compras</string>
+      </void>
+      <void property="roleId">
+       <string>CADASTRO_COMPRAS</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>Cadastro de clientes</string>
+      </void>
+      <void property="roleId">
+       <string>CADASTRO_CLIENTES</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>Cobrança</string>
+      </void>
+      <void property="roleId">
+       <string>COBRANCA</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>Comprador</string>
+      </void>
+      <void property="roleId">
+       <string>COMPRADOR</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>Contas a pagar</string>
+      </void>
+      <void property="roleId">
+       <string>CONTAS_A_PAGAR</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>Contas a Receber</string>
+      </void>
+      <void property="roleId">
+       <string>CONTAS_A_RECEBER</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>Crédito</string>
+      </void>
+      <void property="roleId">
+       <string>CREDITO</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>Departamento Pessoal</string>
+      </void>
+      <void property="roleId">
+       <string>DP</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>Diretor</string>
+      </void>
+      <void property="roleId">
+       <string>DIRETOR</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>Estoque</string>
+      </void>
+      <void property="roleId">
+       <string>ESTOQUE</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>Faturamento</string>
+      </void>
+      <void property="roleId">
+       <string>FATURAMENTO</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>Fios e cabos</string>
+      </void>
+      <void property="roleId">
+       <string>FIOS_E_CABOS</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>Gerente de logística</string>
+      </void>
+      <void property="roleId">
+       <string>GERENTE_DE_LOGISTICA</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>Gerente de vendas</string>
+      </void>
+      <void property="roleId">
+       <string>GERENTE_DE_VENDAS</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>Marketing</string>
+      </void>
+      <void property="roleId">
+       <string>MARKETING</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>Ocorrências</string>
+      </void>
+      <void property="roleId">
+       <string>OCORRENCIAS</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>Recebimento</string>
+      </void>
+      <void property="roleId">
+       <string>RECEBIMENTO</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>Recursos Humanos</string>
+      </void>
+      <void property="roleId">
+       <string>RECURSOS_HUMANOS</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>Representante externo</string>
+      </void>
+      <void property="roleId">
+       <string>REPRESENTANTE_EXTERNO</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>Rotas</string>
+      </void>
+      <void property="roleId">
+       <string>ROTAS</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>Supervisor de logística</string>
+      </void>
+      <void property="roleId">
+       <string>SUPERVISOR_DE_LOGISTICA</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>Supervisor de Vendas</string>
+      </void>
+      <void property="roleId">
+       <string>SUPERVISOR_DE_VENDAS</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>Suporte</string>
+      </void>
+      <void property="roleId">
+       <string>SUPORTE</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>Vendedor</string>
+      </void>
+      <void property="roleId">
+       <string>VENDEDOR</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>Gerente de compras</string>
+      </void>
+      <void property="roleId">
+       <string>GERENTE_DE_COMPRAS</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>Infraestrutura</string>
+      </void>
+      <void property="roleId">
+       <string>INFRAESTRUTURA</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>Expedição</string>
+      </void>
+      <void property="roleId">
+       <string>EXPEDICAO</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>Ajudante</string>
+      </void>
+      <void property="roleId">
+       <string>AJUDANTE</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>Motorista</string>
+      </void>
+      <void property="roleId">
+       <string>MOTORISTA</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>Fluxo logística</string>
+      </void>
+      <void property="roleId">
+       <string>FLUXO_LOGISTICA</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>Devoluções</string>
+      </void>
+      <void property="roleId">
+       <string>DEVOLUCOES</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>Agendamento</string>
+      </void>
+      <void property="roleId">
+       <string>AGENDAMENTO</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>Transportes</string>
+      </void>
+      <void property="roleId">
+       <string>TRANSPORTES</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>Gestor do processo de devolução</string>
+      </void>
+      <void property="roleId">
+       <string>GESTOR_DEVOLUCAO</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>Crédito à vista</string>
+      </void>
+      <void property="roleId">
+       <string>CREDITO_VISTA</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>Suporte Financeiro</string>
+      </void>
+      <void property="roleId">
+       <string>SUPORTE_FINANCEIRO</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>GESTAO_CANHOTOS</string>
+      </void>
+      <void property="roleId">
+       <string>GESTAO_CANHOTOS</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>Ocorrências relacionadas a Logística </string>
+      </void>
+      <void property="roleId">
+       <string>Ocorrencias_Logistica</string>
+      </void>
+     </object>
+    </void>
+   </object>
+  </void>
+  <void method="put">
+   <string>camposFormulario, documentoId = 141</string>
+   <array class="java.lang.String" length="104">
+    <void index="0">
+     <string>acaoDesconto</string>
+    </void>
+    <void index="1">
+     <string>acaoPenalidade</string>
+    </void>
+    <void index="2">
+     <string>acertoCredito</string>
+    </void>
+    <void index="3">
+     <string>ajudante</string>
+    </void>
+    <void index="4">
+     <string>anexos</string>
+    </void>
+    <void index="5">
+     <string>aplicadoRegistro</string>
+    </void>
+    <void index="6">
+     <string>aplicaPena</string>
+    </void>
+    <void index="7">
+     <string>avalColeta</string>
+    </void>
+    <void index="8">
+     <string>avaria</string>
+    </void>
+    <void index="9">
+     <string>boxRecebimento</string>
+    </void>
+    <void index="10">
+     <string>cliente</string>
+    </void>
+    <void index="11">
+     <string>cnpjCliente</string>
+    </void>
+    <void index="12">
+     <string>codCliente</string>
+    </void>
+    <void index="13">
+     <string>codProduto</string>
+    </void>
+    <void index="14">
+     <string>codProdutoRep</string>
+    </void>
+    <void index="15">
+     <string>coletaReprovada</string>
+    </void>
+    <void index="16">
+     <string>conferenteRecebimento</string>
+    </void>
+    <void index="17">
+     <string>dataSaida</string>
+    </void>
+    <void index="18">
+     <string>desconto</string>
+    </void>
+    <void index="19">
+     <string>descProduto</string>
+    </void>
+    <void index="20">
+     <string>descProdutoRep</string>
+    </void>
+    <void index="21">
+     <string>destino</string>
+    </void>
+    <void index="22">
+     <string>destinoDev</string>
+    </void>
+    <void index="23">
+     <string>devolucaoRevisada</string>
+    </void>
+    <void index="24">
+     <string>dtAbertura</string>
+    </void>
+    <void index="25">
+     <string>endColeta</string>
+    </void>
+    <void index="26">
+     <string>enderecoCompleto</string>
+    </void>
+    <void index="27">
+     <string>enderecoCompletoB</string>
+    </void>
+    <void index="28">
+     <string>especialmentePedido</string>
+    </void>
+    <void index="29">
+     <string>especialmentePedidoRep</string>
+    </void>
+    <void index="30">
+     <string>filtroNF</string>
+    </void>
+    <void index="31">
+     <string>fiscal</string>
+    </void>
+    <void index="32">
+     <string>foraPrazo</string>
+    </void>
+    <void index="33">
+     <string>foraPrazoRep</string>
+    </void>
+    <void index="34">
+     <string>freteConta</string>
+    </void>
+    <void index="35">
+     <string>ieCliente</string>
+    </void>
+    <void index="36">
+     <string>incluirNovamente</string>
+    </void>
+    <void index="37">
+     <string>itemReprovado</string>
+    </void>
+    <void index="38">
+     <string>localCliente</string>
+    </void>
+    <void index="39">
+     <string>matConferenteRecebimento</string>
+    </void>
+    <void index="40">
+     <string>matSolicitante</string>
+    </void>
+    <void index="41">
+     <string>matSupervisor</string>
+    </void>
+    <void index="42">
+     <string>motivoDevolucao</string>
+    </void>
+    <void index="43">
+     <string>motorista</string>
+    </void>
+    <void index="44">
+     <string>nfEntradaRecebimento</string>
+    </void>
+    <void index="45">
+     <string>nrSolicFluig</string>
+    </void>
+    <void index="46">
+     <string>numeroNF</string>
+    </void>
+    <void index="47">
+     <string>numeroNFRep</string>
+    </void>
+    <void index="48">
+     <string>obsAjusteDevolucao</string>
+    </void>
+    <void index="49">
+     <string>obsColeta</string>
+    </void>
+    <void index="50">
+     <string>observacao</string>
+    </void>
+    <void index="51">
+     <string>observacaoCompras</string>
+    </void>
+    <void index="52">
+     <string>observacaoConferente</string>
+    </void>
+    <void index="53">
+     <string>observacaoRep</string>
+    </void>
+    <void index="54">
+     <string>obsGerente</string>
+    </void>
+    <void index="55">
+     <string>obsLogistica</string>
+    </void>
+    <void index="56">
+     <string>obsMaterialParado</string>
+    </void>
+    <void index="57">
+     <string>obsRevisaoColeta</string>
+    </void>
+    <void index="58">
+     <string>obsRH</string>
+    </void>
+    <void index="59">
+     <string>obsSuperv</string>
+    </void>
+    <void index="60">
+     <string>obsVendedor</string>
+    </void>
+    <void index="61">
+     <string>parcelaDP</string>
+    </void>
+    <void index="62">
+     <string>parcelas</string>
+    </void>
+    <void index="63">
+     <string>pedidoEspecial</string>
+    </void>
+    <void index="64">
+     <string>pedidoEspecialRep</string>
+    </void>
+    <void index="65">
+     <string>pedidoSubst</string>
+    </void>
+    <void index="66">
+     <string>penalidade</string>
+    </void>
+    <void index="67">
+     <string>produtoDDD</string>
+    </void>
+    <void index="68">
+     <string>produtoDDDRep</string>
+    </void>
+    <void index="69">
+     <string>produtoEspecial</string>
+    </void>
+    <void index="70">
+     <string>qtde</string>
+    </void>
+    <void index="71">
+     <string>qtdeDevolvida</string>
+    </void>
+    <void index="72">
+     <string>qtdeDevolvidaRep</string>
+    </void>
+    <void index="73">
+     <string>qtdeDivergente</string>
+    </void>
+    <void index="74">
+     <string>qtdeRecebida</string>
+    </void>
+    <void index="75">
+     <string>qtdeRep</string>
+    </void>
+    <void index="76">
+     <string>rdAlteraCobranca</string>
+    </void>
+    <void index="77">
+     <string>rdAprovaGerente</string>
+    </void>
+    <void index="78">
+     <string>rdAprovaSup</string>
+    </void>
+    <void index="79">
+     <string>rdCompras</string>
+    </void>
+    <void index="80">
+     <string>rdComprasLog</string>
+    </void>
+    <void index="81">
+     <string>rdContinuarDevolucao</string>
+    </void>
+    <void index="82">
+     <string>rdDesfazCobranca</string>
+    </void>
+    <void index="83">
+     <string>rdEmiteNFDev</string>
+    </void>
+    <void index="84">
+     <string>rdEmiteNFDevSup</string>
+    </void>
+    <void index="85">
+     <string>rdLogistica</string>
+    </void>
+    <void index="86">
+     <string>rdPossuiColeta</string>
+    </void>
+    <void index="87">
+     <string>receber</string>
+    </void>
+    <void index="88">
+     <string>recebimento</string>
+    </void>
+    <void index="89">
+     <string>recebimentoOk</string>
+    </void>
+    <void index="90">
+     <string>reprovar</string>
+    </void>
+    <void index="91">
+     <string>rota</string>
+    </void>
+    <void index="92">
+     <string>subprocesso</string>
+    </void>
+    <void index="93">
+     <string>supervisorSolicitante</string>
+    </void>
+    <void index="94">
+     <string>tipoRemessa</string>
+    </void>
+    <void index="95">
+     <string>tipoSolicitante</string>
+    </void>
+    <void index="96">
+     <string>usuarioConferenciaMaterial</string>
+    </void>
+    <void index="97">
+     <string>valorTotal</string>
+    </void>
+    <void index="98">
+     <string>valorTotalDevolucao</string>
+    </void>
+    <void index="99">
+     <string>valorTotalRep</string>
+    </void>
+    <void index="100">
+     <string>valorUnitario</string>
+    </void>
+    <void index="101">
+     <string>valorUnitarioRep</string>
+    </void>
+    <void index="102">
+     <string>veiculo</string>
+    </void>
+    <void index="103">
+     <string>vendedor</string>
+    </void>
+   </array>
+  </void>
+  <void method="put">
+   <string>mecanismo</string>
+   <array class="[Ljava.lang.Object;" length="9">
+    <void index="0">
+     <array class="java.lang.Object" length="2">
+      <void index="0">
+       <string>Atribuição por Associação</string>
+      </void>
+      <void index="1">
+       <string>Associado</string>
+      </void>
+     </array>
+    </void>
+    <void index="1">
+     <array class="java.lang.Object" length="2">
+      <void index="0">
+       <string>Atribuição por Campo de Formulário</string>
+      </void>
+      <void index="1">
+       <string>Campo Formulário</string>
+      </void>
+     </array>
+    </void>
+    <void index="2">
+     <array class="java.lang.Object" length="2">
+      <void index="0">
+       <string>Atribuição por Executor de Atividade</string>
+      </void>
+      <void index="1">
+       <string>Executor Atividade</string>
+      </void>
+     </array>
+    </void>
+    <void index="3">
+     <array class="java.lang.Object" length="2">
+      <void index="0">
+       <string>Atribuição por Grupo</string>
+      </void>
+      <void index="1">
+       <string>Grupo</string>
+      </void>
+     </array>
+    </void>
+    <void index="4">
+     <array class="java.lang.Object" length="2">
+      <void index="0">
+       <string>Atribuição por Grupos do Colaborador</string>
+      </void>
+      <void index="1">
+       <string>Grupos Colaborador</string>
+      </void>
+     </array>
+    </void>
+    <void index="5">
+     <array class="java.lang.Object" length="2">
+      <void index="0">
+       <string>Atribuição por Papel</string>
+      </void>
+      <void index="1">
+       <string>Papel</string>
+      </void>
+     </array>
+    </void>
+    <void index="6">
+     <array class="java.lang.Object" length="2">
+      <void index="0">
+       <string>Atribuição para um Grupo</string>
+      </void>
+      <void index="1">
+       <string>Pool Grupo</string>
+      </void>
+     </array>
+    </void>
+    <void index="7">
+     <array class="java.lang.Object" length="2">
+      <void index="0">
+       <string>Atribuição para um Papel</string>
+      </void>
+      <void index="1">
+       <string>Pool Papel</string>
+      </void>
+     </array>
+    </void>
+    <void index="8">
+     <array class="java.lang.Object" length="2">
+      <void index="0">
+       <string>Atribuição por Usuário</string>
+      </void>
+      <void index="1">
+       <string>Usuário</string>
+      </void>
+     </array>
+    </void>
+   </array>
+  </void>
+ </object>
+</java>

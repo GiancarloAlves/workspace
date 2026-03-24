@@ -1,0 +1,405 @@
+<html>
+
+<head>
+	<link type="text/css" rel="stylesheet" href="/style-guide/css/fluig-style-guide.min.css" />
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/mustache/mustache-min.js"></script>
+	<script type="text/javascript" src="/style-guide/js/fluig-style-guide.min.js" charset="utf-8"></script>
+
+	  <!-- Dataset -->
+	  <script type="text/javascript" src="/webdesk/vcXMLRPC.js"></script>
+
+	<!-- sweetalert2 -->
+	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+	<!-- FontAwesome -->
+	<link type="text/css" rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+	<!-- JQuery Mask Plugin -->
+	<script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
+
+	<!-- Custom -->
+	<link type="text/css" rel="stylesheet" href="./style_dp.css">
+	<script type="text/javascript" src="./app.js"></script>
+
+
+<body class="fluig-style-guide process-style" id="devkit-style">
+	<form name="form" role="form" id="form-processo">
+
+
+		<div class="panel panel-primary panel-border">
+			<!--Painel geral do formulário - fecha no extremo do arquivo e contém todas as seções-->
+
+			<div class="panel-heading panel-bg panel-border"> <!--início da declaração do cabeçalho principal (azul)-->
+				<div class="container-fluid">
+					<section id="logo">
+						<img src="./images/logoCigame.png" alt="NOME-CLIENTE" width="130" style="padding: 10px;">
+						<h3 class="panel-title">Troca de função e ajuste salarial</h3>
+					</section>
+				</div>
+			</div> <!--fim da declaração do cabeçalho principal (azul)-->
+
+			<div class="panel-body"> <!--panel body geral do arquivo - fecha no extremo e contém todas as seções-->
+
+
+				<div class="panel panel-primary"> <!--declaração da primeira seção-->
+					<div class="panel-heading"> <!--início do cabeçalho da seção-->
+						<h3 class="panel-title subpanel_title">
+							<a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion"
+								href="#abertura"><i class="far fa-clipboard"></i> ABERTURA DO GESTOR</a>
+						</h3>
+					</div> <!--fim da declaração do cabeçalho da seção-->
+
+					<div id="abertura" class="panel-collapse collapse in">
+						<div class="panel-body">
+
+							<div class="row">
+
+								<div class="form-group col-md-2">
+									<label class="required">Matrícula</label>
+									<input type="zoom" name="matricula" id="matricula" class="form-control" data-zoom="
+												  {
+													  'displayKey':'A01_MATRICULA',
+													  'datasetId':'ds_desligamento_colaborador_winthor',
+													  'maximumSelectionLength':'1',
+													  'placeholder':'Buscar...',
+													  'fields':[
+														  {'field':'A01_MATRICULA','label':'Matrícula','standard':'true'}
+													  ]
+												  }">
+								</div>
+
+								<div class="form-group col-md-4">
+									<label class="required">Nome</label>
+									<input type="zoom" name="nome" id="nome" class="form-control"
+										data-zoom="
+												  {
+													  'displayKey':'A03_NOME',
+													  'datasetId':'ds_desligamento_colaborador_winthor',
+													  'maximumSelectionLength':'1',
+													  'placeholder':'Buscar...',
+													  'fields':[
+														  {'field':'A03_NOME','label':'Nome','standard':'true'}
+													  ]
+												  }">
+								</div>
+
+								<div class="form-group col-md-3">
+									<label required>Nome guerra</label>
+									<div class="input-group">
+										<input type="text" name="guerra" id="guerra" class="form-control" readonly>
+										<span class="input-group-addon">
+											<i class="far fa-address-book"></i>
+										</span>
+									</div>
+								</div>
+
+								<div class="form-group col-md-3">
+									<label>Data admissão</label>
+									<div class="input-group">
+										<input type="text" name="admissao" id="admissao" class="form-control"
+											placeholder="dd/mm/aaaa" mask="00/00/0000" readonly>
+										<span class="input-group-addon">
+											<i class="fas fa-calendar"></i>
+										</span>
+									</div>
+								</div>
+
+								</div>
+
+								<div class="row">
+
+								<div class="form-group col-md-4">
+									<label required>Setor</label>
+									<div class="input-group">
+										<input type="text" name="setor" id="setor" class="form-control" readonly>
+										<span class="input-group-addon">
+											<i class="far fa-address-book"></i>
+										</span>
+									</div>
+								</div>
+
+								<div class="form-group col-md-4">
+									<label required>Função / cargo </label>
+									<div class="input-group">
+										<input type="text" name="cargo" id="cargo" class="form-control" readonly>
+										<span class="input-group-addon">
+											<i class="fas fa-address-card"></i>
+										</span>
+									</div>
+								</div>
+
+								<div class="form-group col-md-4">
+									<label>Profissão</label>
+									<div class="input-group">
+										<input type="text" name="profissao" id="profissao" class="form-control" readonly>
+										<span class="input-group-addon"><i class="fas fa-exclamation"></i></span>
+									</div>
+								</div>
+
+							</div> <!--fecha row -->
+
+							<div class="row">
+
+								<div class="form-group col-md-3">
+									<label>Situação 528</label>
+									<div class="input-group">
+										<input type="text" name="sit528" id="sit528" class="form-control" readonly>
+										<span class="input-group-addon">
+											<i class="fas fa-skull"></i>
+										</span>
+									</div>
+								</div>
+								
+								<div class="form-group col-md-3">
+									<label>Motivo 528</label>
+									<div class="input-group">
+										<input type="text" name="motivo528" id="motivo528" class="form-control" readonly>
+										<span class="input-group-addon"><i class="fas fa-eject"></i></span>
+									</div>
+								</div>
+	
+								<div class="form-group col-md-3">
+									<label>Situação vendedor 517</label>
+									<div class="input-group">
+										<input type="text" name="sit517" id="sit517" class="form-control" readonly>
+										<span class="input-group-addon">
+											<i class="fas fa-undo-alt"></i>
+										</span>
+									</div>
+								</div>
+	
+								<div class="form-group col-md-3">
+									<label>Motivo vendedor 517</label>
+									<div class="input-group">
+										<input type="text" name="motivo517" id="motivo517" class="form-control" readonly>
+										<span class="input-group-addon">
+											<i class="fas fa-undo-alt"></i>
+										</span>
+									</div>
+								</div>
+		
+							</div>
+
+							<div class="row">
+
+								<div class="form-group col-md-3">
+									<label>Aumento de salário?</label>
+									<div class="input-group">
+										<select name="aumentosal" id="aumentosal" class="form-control" onchange="reaplicarHide()">
+											<option value="Selecione">Selecione</option>
+											<option>Sim</option>
+											<option>Não</option>
+										</select>
+										<span class="input-group-addon"><i class="fas fa-search-dollar"></i></span>
+									</div>
+								</div>					
+						
+								<div class="form-group col-md-3" id="divnovosal">
+									<label class="required">Novo salário</label>
+									<div class="input-group">
+										<input type="text" name="novosal" id="novosal" class="form-control">
+										<span class="input-group-addon"><i class="fas fa-money-bill"></i></span>
+									</div>
+								</div>
+
+							</div>
+
+							<div class="row">
+
+								<div class="form-group col-md-3">
+									<label>Troca de cargo?</label>
+									<div class="input-group">
+										<select name="trocacargo" id="trocacargo" class="form-control" onchange="reaplicarHide()">
+											<option value="Selecione">Selecione</option>
+											<option>Sim</option>
+											<option>Não</option>
+										</select>
+										<span class="input-group-addon"><i class="fas fa-search-dollar"></i></span>
+									</div>
+								</div>					
+						
+								<div class="form-group col-md-3" id="divnovocargo">
+									<label class="required">Novo cargo</label>
+									<div class="input-group">
+										<input type="text" name="novocargo" id="novocargo" class="form-control">
+										<span class="input-group-addon"><i class="fas fa-money-bill"></i></span>
+									</div>
+								</div>
+
+								<div class="form-group col-md-3">
+									<label>Novo horário de trabalho</label>
+									<div class="input-group">
+										<input type="text" name="novaHora" id="novaHora" class="form-control"
+											placeholder="hh:mm às hh:mm" mask="00:00 as 00:00">
+										<span class="input-group-addon">
+											<i class="fas fa-calendar"></i>
+										</span>
+									</div>
+								</div>
+
+							</div>
+
+							<div class="row">
+
+							<div class="form-group col-md-3">
+								<label>Troca de acessos?</label>
+								<div class="input-group">
+									<select name="trocaacessos" id="trocaacessos" class="form-control" onchange="reaplicarHide()">
+										<option value="Selecione">Selecione</option>
+										<option>Sim</option>
+										<option>Não</option>
+									</select>
+									<span class="input-group-addon"><i class="fas fa-search-dollar"></i></span>
+								</div>
+							</div>	
+
+						</div>
+		
+
+														
+						</div> <!-- finaliza panel body-->
+					</div> <!--finaliza painel colapsável-->
+				</div> <!--finaliza panel-primary-->
+
+				<div class="panel panel-primary"> <!--declaração da primeira seção-->
+					<div class="panel-heading"> <!--início do cabeçalho da seção-->
+						<h3 class="panel-title subpanel_title">
+							<a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion"
+								href="#ti"><i class="fas fa-info"></i> DADOS DE ACESSO</a>
+						</h3>
+					</div> <!--fim da declaração do cabeçalho da seção-->
+
+					<div id="ti" class="panel-collapse collapse in">
+						<div class="panel-body">
+
+
+    								<!-- PaixFilho Devolução -->
+									<table id="acessos" class="table pai-filho table-striped" tablename="acessos" noaddbutton="true"  nodeletebutton="true">
+										<caption><i class="fas fa-info"></i> Acessos</caption>
+					  
+										<thead>
+										  <tr>
+											<th>Excluir</th>
+											<th width="13%">Acessos</th>
+											<th width="18%">Ação</th>
+											<th width="25%">Transferir para</th> 
+											<th width="40%">Observação</th>                 
+											<th>Checklist TI</th>
+										  </tr>
+										</thead>
+					  
+										<tbody>								
+											  
+											  <tr>	
+												
+												<td class="remove">
+													<span class="fs-display-block fs-sm-space">
+													  <i class="flaticon flaticon-close icon-md remove-button" onclick="fnWdkRemoveChild(this)"></i>
+													</span>
+												  </td>
+															
+											<td>
+											  <input type="text" class="form-control" id="tipo" name="tipo">
+											</td>
+
+											<td data-analisar-devolucao>
+												<select name="destino" id="destino" class="form-control">
+												  <option value="">Selecione</option>
+												  <option>Transferir</option>
+												  <option>Bloquear</option>
+												  <option>Excluir</option>
+												  <option>Só alterar senha</option>					
+												</select>
+											  </td>
+											
+											<td data-valor-unitario>
+											  <input type="text" class="form-control" id="novo" name="novo">
+											</td>
+					  
+											<td>
+											  <input type="text" class="form-control" id="obsacessos" name="obsacessos">
+											</td>  	
+											
+											<td class="center-content" data-aprovacao-supervisor>
+												<input type="checkbox" id="reprovar" name="reprovar" value="Sim" class="checkbox">
+											</td>						  
+							
+										  </tr>					
+
+										</tbody>
+					  
+								  </table>
+				  
+									  <hr>
+									  <div class="form-group" id="additem">
+										<div class="row">
+										  <div class="col-xs-6">
+											<button class="btn btn-primary btn-custom btn-custom-primary js-add" data-tablename="acessos">
+											  <i class="fas fa-plus-circle"></i> ADICIONAR ITEM
+											</button>
+										  </div>
+										</div>	
+									  </div>
+							
+						</div> <!-- finaliza panel body-->
+					</div> <!--finaliza painel colapsável-->
+				</div> <!--finaliza panel-primary-->
+
+				<div class="panel panel-primary"> <!--declaração da primeira seção-->
+					<div class="panel-heading"> <!--início do cabeçalho da seção-->
+						<h3 class="panel-title subpanel_title">
+							<a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion"
+								href="#rh"><i class="fas fa-people-carry"></i> TRATATIVA DP/RH</a>
+						</h3>
+					</div> <!--fim da declaração do cabeçalho da seção-->
+
+					<div id="rh" class="panel-collapse collapse in">
+						<div class="panel-body">
+
+
+						<div class="row">
+
+							<div class="form-group col-md-3">
+								<label>Data do exame</label>
+								<div class="input-group">
+									<input type="text" name="desligamento" id="desligamento" class="form-control"
+										placeholder="dd/mm/aaaa" mask="00/00/0000">
+									<span class="input-group-addon">
+										<i class="fas fa-calendar"></i>
+									</span>
+								</div>
+							</div>
+
+							<!-- <div class="form-group col-md-3">
+								<div class="input-group"><label>Cadastro concluído?</label>
+									<div class="left-content">
+										<div class="radio"><label><input type="radio" name="radio13"
+													value="Concluído">Concluído</label>
+										</div>
+									</div>
+								</div>
+							</div> -->
+
+							<div class="form-input col-md-6">
+								<div class="form-group">
+								  <label>Observação</label><textarea class="form-control" rows="3"
+									name="obsdp" id="obsdp"></textarea>
+								</div>
+							  </div>
+
+						</div>
+
+
+					</div> <!-- finaliza panel body-->
+				</div> <!--finaliza painel colapsável-->
+			</div> <!--finaliza panel-primary-->
+
+
+	</form>
+		
+</body>
+
+</html>

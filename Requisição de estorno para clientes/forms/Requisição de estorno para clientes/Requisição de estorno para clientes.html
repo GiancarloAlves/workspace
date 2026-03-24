@@ -1,0 +1,430 @@
+<html>
+  <head>
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="/style-guide/css/fluig-style-guide.min.css"
+    />
+    <script
+      type="text/javascript"
+      src="/portal/resources/js/jquery/jquery.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="/portal/resources/js/jquery/jquery-ui.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="/portal/resources/js/mustache/mustache-min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="/style-guide/js/fluig-style-guide.min.js"
+      charset="utf-8"
+    ></script>
+
+    <!-- Dataset -->
+    <script type="text/javascript" src="/webdesk/vcXMLRPC.js"></script>
+
+    <!-- sweetalert2 -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- FontAwesome -->
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+
+    <!-- JQuery Mask Plugin -->
+    <script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
+
+    <!-- Custom -->
+    <link type="text/css" rel="stylesheet" href="./style_fin.css" />
+    <script type="text/javascript" src="./app2.js"></script>
+  </head>
+
+  <body class="fluig-style-guide process-style" id="devkit-style">
+    <form name="form" role="form" id="form-processo">
+      <div class="panel panel-primary panel-border">
+        <!--Painel geral do formulário - fecha no extremo do arquivo e contém todas as seções-->
+
+        <div class="panel-heading panel-bg panel-border">
+          <!--início da declaração do cabeçalho principal (azul)-->
+          <div class="container-fluid">
+            <section id="logo">
+              <img
+                src="./images/logoCigame.png"
+                alt="NOME-CLIENTE"
+                width="130"
+                style="padding: 10px"
+              />
+              <h3 class="panel-title">Requisição de estorno para clientes</h3>
+            </section>
+          </div>
+        </div>
+        <!--fim da declaração do cabeçalho principal (azul)-->
+
+        <div class="panel-body">
+          <!--panel body geral do arquivo - fecha no extremo e contém todas as seções-->
+
+          <div class="panel panel-primary">
+            <!--declaração da primeira seção-->
+            <div class="panel-heading">
+              <!--início do cabeçalho da seção-->
+              <h3 class="panel-title subpanel_title">
+                <a
+                  class="collapse-icon up"
+                  data-toggle="collapse"
+                  data-parent="#accordion"
+                  href="#abertura"
+                  ><i class="far fa-clipboard"></i> ABERTURA</a
+                >
+              </h3>
+            </div>
+            <!--fim da declaração do cabeçalho da seção-->
+
+            <div id="abertura" class="panel-collapse collapse in">
+              <div class="panel-body">
+                <div class="alert alert-danger" role="alert">
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; O
+                  cliente cadastrado no Winthor deve ser o titular da conta
+                  bancária!!!!!!
+                </div>
+
+                <div class="row">
+                  <div class="form-group col-md-3">
+                    <label>Vendedor</label>
+                    <div class="input-group">
+                      <input
+                        type="text"
+                        name="vendedor"
+                        id="vendedor"
+                        class="form-control"
+                        readonly
+                      />
+                      <span class="input-group-addon">
+                        <i class="far fa-user"></i>
+                      </span>
+                    </div>
+                  </div>
+
+                  <div class="form-group col-md-3">
+                    <label class="required">Código do cliente</label>
+                    <input
+                      type="zoom"
+                      name="codCliente"
+                      id="codCliente"
+                      class="form-control"
+                      data-zoom="
+										{
+											'displayKey':'CODCLI',
+											'datasetId':'Ds_Consulta_Clientes_Winthor',
+											'maximumSelectionLength':'1',
+											'placeholder':'Buscar...',
+											'fields':[
+												{'field':'CODCLI','label':'Código','standard':'true'}
+											]
+										}"
+                    />
+                  </div>
+
+                  <div class="form-group col-md-3">
+                    <label class="required">Cliente</label>
+                    <input
+                      type="zoom"
+                      name="cliente"
+                      id="cliente"
+                      class="form-control"
+                      data-zoom="
+										{
+											'displayKey':'CLIENTE',
+											'datasetId':'Ds_Consulta_Clientes_Winthor',
+											'maximumSelectionLength':'1',
+											'placeholder':'Buscar...',
+											'fields':[
+												{'field':'CLIENTE','label':'Cliente','standard':'true'}
+											]
+										}"
+                    />
+                  </div>
+
+                  <div class="form-group col-md-3">
+                    <label class="required">Valor a ser devolvido</label>
+                    <div class="input-group">
+                      <input
+                        type="number"
+                        name="valor"
+                        id="valor"
+                        placeholder="$$"
+                        class="form-control"
+                      />
+                      <span class="input-group-addon"
+                        ><i class="fas fa-dollar-sign"></i
+                      ></span>
+                    </div>
+                  </div>
+                </div>
+                <!--fecha row -->
+
+                <div class="row">
+                  <div class="form-group col-md-3">
+                    <label>Modalidade</label>
+                    <div class="input-group">
+                      <select
+                        name="modalidade"
+                        id="modalidade"
+                        class="form-control"
+                        onchange="reaplicarHide()"
+                      >
+                        <option value="Selecione">Selecione</option>
+                        <option>TED/DOC</option>
+                        <option>Pix</option>
+                        <option>Cartão de crédito</option>
+                      </select>
+                      <span class="input-group-addon"
+                        ><i class="fas fa-search-dollar"></i
+                      ></span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="form-group col-md-3" id="divconta">
+                    <label class="required">Conta</label>
+                    <div class="input-group">
+                      <input
+                        type="text"
+                        name="conta"
+                        id="conta"
+                        class="form-control"
+                      />
+                      <span class="input-group-addon"
+                        ><i class="fas fa-money-bill"></i
+                      ></span>
+                    </div>
+                  </div>
+
+                  <div class="form-group col-md-3" id="divagencia">
+                    <label class="required">Agência</label>
+                    <div class="input-group">
+                      <input
+                        type="text"
+                        name="agencia"
+                        id="agencia"
+                        class="form-control"
+                      />
+                      <span class="input-group-addon"
+                        ><i class="fas fa-money-bill-wave"></i
+                      ></span>
+                    </div>
+                  </div>
+
+                  <div class="form-group col-md-3" id="divcnpj">
+                    <label class="required">CPF/CNPJ</label>
+                    <div class="input-group">
+                      <input
+                        type="text"
+                        name="cnpj"
+                        id="cnpj"
+                        class="form-control"
+                      />
+                      <span class="input-group-addon"
+                        ><i class="fas fa-user"></i
+                      ></span>
+                    </div>
+                  </div>
+
+                  <div class="form-group col-md-3" id="divcodbanco">
+                    <label class="required">Código do banco</label>
+                    <div class="input-group">
+                      <input
+                        type="text"
+                        name="codbanco"
+                        id="codbanco"
+                        class="form-control"
+                      />
+                      <span class="input-group-addon"
+                        ><i class="fas fa-user"></i
+                      ></span>
+                    </div>
+                  </div>
+                </div>
+                <!--fecha row-->
+
+                <div class="row">
+                  <div class="form-group col-md-3" id="divpix">
+                    <label class="required">Chave Pix</label>
+                    <div class="input-group">
+                      <input
+                        type="text"
+                        name="pix"
+                        id="pix"
+                        class="form-control"
+                      />
+                      <span class="input-group-addon"
+                        ><i class="fas fa-key"></i
+                      ></span>
+                    </div>
+                  </div>
+
+                  <div class="form-group col-md-3" id="divtipopix">
+                    <label class="required"
+                      >Tipo da chave (CPF, cel., e-mail...)</label
+                    >
+                    <div class="input-group">
+                      <input
+                        type="text"
+                        name="tipopix"
+                        id="tipopix"
+                        class="form-control"
+                      />
+                      <span class="input-group-addon"
+                        ><i class="fas fa-key"></i
+                      ></span>
+                    </div>
+                  </div>
+                </div>
+                <!--fecha row-->
+
+                <div class="row">
+                  <div class="form-group col-md-3" id="diviniciocartao">
+                    <label class="required">4 dígitos iniciais do cartão</label>
+                    <div class="input-group">
+                      <input
+                        type="text"
+                        name="iniciocartao"
+                        id="iniciocartao"
+                        class="form-control"
+                        mask="0000"
+                      />
+                      <span class="input-group-addon"
+                        ><i class="fas fa-money-bill"></i
+                      ></span>
+                    </div>
+                  </div>
+
+                  <div class="form-group col-md-3" id="divfimcartao">
+                    <label class="required">4 dígitos finais do cartão</label>
+                    <div class="input-group">
+                      <input
+                        type="text"
+                        name="fimcartao"
+                        id="fimcartao"
+                        class="form-control"
+                        mask="0000"
+                      />
+                      <span class="input-group-addon"
+                        ><i class="fas fa-money-bill-wave"></i
+                      ></span>
+                    </div>
+                  </div>
+
+                  <div class="form-group col-md-3" id="divnumNF">
+                    <label class="required">Número NF</label>
+                    <input
+                      type="zoom"
+                      name="numNF"
+                      id="numNF"
+                      class="form-control"
+                      data-zoom="
+									{
+										'displayKey':'NUMNOTA',
+										'datasetId':'ds_nf_saida_winthor',
+										'maximumSelectionLength':'1',
+										'placeholder':'Buscar...',
+										'fields':[
+											{'field':'NUMNOTA','label':'NF','standard':'true'}
+										]
+									}"
+                    />
+                  </div>
+                </div>
+              </div>
+              <!-- finaliza panel body-->
+            </div>
+            <!--finaliza painel colapsável-->
+          </div>
+          <!--finaliza panel-primary-->
+
+          <div class="panel panel-primary">
+            <!--declaração da primeira seção-->
+            <div class="panel-heading">
+              <!--início do cabeçalho da seção-->
+              <h3 class="panel-title subpanel_title">
+                <a
+                  class="collapse-icon up"
+                  data-toggle="collapse"
+                  data-parent="#accordion"
+                  href="#cp"
+                  ><i class="far fa-clipboard"></i> Contas a pagar</a
+                >
+              </h3>
+            </div>
+            <!--fim da declaração do cabeçalho da seção-->
+
+            <div id="cp" class="panel-collapse collapse in">
+              <div class="panel-body">
+                <div class="form-group">
+                  <label class="required">Observação</label>
+                  <div class="input-group col-md-12">
+                    <textarea
+                      type="text"
+                      name="obscp"
+                      id="obscp"
+                      class="form-control"
+                    ></textarea>
+                  </div>
+                </div>
+              </div>
+              <!-- finaliza panel body-->
+            </div>
+            <!--finaliza painel colapsável-->
+          </div>
+          <!--finaliza panel-primary-->
+
+          <div class="panel panel-primary">
+            <!--declaração da primeira seção-->
+            <div class="panel-heading">
+              <!--início do cabeçalho da seção-->
+              <h3 class="panel-title subpanel_title">
+                <a
+                  class="collapse-icon up"
+                  data-toggle="collapse"
+                  data-parent="#accordion"
+                  href="#credito"
+                  ><i class="far fa-clipboard"></i> Crédito</a
+                >
+              </h3>
+            </div>
+            <!--fim da declaração do cabeçalho da seção-->
+
+            <div id="credito" class="panel-collapse collapse in">
+              <div class="panel-body">
+                <div class="form-group">
+                  <label>Observação Crédito</label>
+                  <div class="input-group col-md-12">
+                    <textarea
+                      type="text"
+                      name="obscredito"
+                      id="obscredito"
+                      class="form-control"
+                    ></textarea>
+                  </div>
+                </div>
+              </div>
+              <!-- finaliza panel body-->
+            </div>
+            <!--finaliza painel colapsável-->
+          </div>
+          <!--finaliza panel-primary-->
+        </div>
+        <!--finaliza panel body-->
+      </div>
+      <!--finaliza painel geral-->
+    </form>
+    <script>
+      $(".form-group").removeClass("hide");
+    </script>
+  </body>
+</html>

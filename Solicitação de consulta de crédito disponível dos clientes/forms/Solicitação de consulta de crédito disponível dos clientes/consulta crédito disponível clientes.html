@@ -1,0 +1,299 @@
+<html>
+
+<head>
+
+	<link type="text/css" rel="stylesheet" href="/style-guide/css/fluig-style-guide.min.css" />
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/mustache/mustache-min.js"></script>
+	<script type="text/javascript" src="/style-guide/js/fluig-style-guide.min.js" charset="utf-8"></script>
+
+	<!-- sweetalert2 -->
+	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+	<!-- FontAwesome -->
+	<link type="text/css" rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+	<!-- JQuery Mask Plugin -->
+	<script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
+
+	<!-- Custom -->
+	<link type="text/css" rel="stylesheet" href="./style.css">
+	<script type="text/javascript" src="./app.js"></script>
+
+</head>
+
+<body>
+	<div class="fluig-style-guide process-style" id="devkit-style">
+		<form name="form" role="form" id="form-processo">
+			<div class="panel panel-primary panel-border">
+				<div class="panel-heading panel-bg panel-border">
+					<!--início da declaração do cabeçalho principal (azul)-->
+					<div class="container-fluid">
+						<section id="logo">
+							<img src="./images/logoCigame.png" alt="NOME-CLIENTE" width="130" style="padding: 10px;">
+							<h3 class="panel-title">Solicitação de consulta de crédito disponível dos clientes</h3>
+						</section>
+					</div>
+				</div> <!--fim da declaração do cabeçalho principal (azul)-->
+				<div class="panel-body">
+					<div class="panel panel-primary ">
+						<div class="panel-heading"> <!--início do cabeçalho da seção-->
+							<h3 class="panel-title subpanel_title">
+								<span id="led_abertura" class="led"></span>
+								<a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion"
+									href="#abertura"><i class="far fa-clipboard"></i> DADOS DO CLIENTE</a>
+							</h3>
+						</div> <!--fim da declaração do cabeçalho da seção-->
+						<div id="abertura" class="panel-collapse collapse in">
+							<div class="panel-body">
+								<div class="row">
+									<div class="form-group col-md-3">
+										<label>Solicitante</label>
+										<div class="input-group">
+											<input type="text" name="vendedor" id="vendedor" class="form-control"
+												readonly>
+											<span class="input-group-addon">
+												<i class="far fa-user"></i>
+											</span>
+										</div>
+									</div>
+
+									<div class="form-group col-md-3">
+										<label>Mat. solicitante</label>
+										<div class="input-group">
+											<input type="text" name="matSolicitante" id="matSolicitante"
+												class="form-control" readonly>
+											<span class="input-group-addon"><i class="fas fa-id-card"></i></span>
+										</div>
+									</div>
+
+									<div class="form-group col-md-3">
+										<label>Tipo solicitante</label>
+										<div class="input-group">
+											<input type="text" class="form-control" name="tipoSolicitante"
+												id="tipoSolicitante" readonly>
+											<span class="input-group-addon"><i class="fas fa-graduation-cap"></i></span>
+										</div>
+									</div>
+
+									<div class="col-md-3 form-group">
+										<label class="required" for="zoom">Cód. cliente</label>
+										<input type="zoom" class="form-control" name="codClient" id="codClient"
+											data-zoom="
+												{
+													'displayKey':'A02_COD_CLI',
+													'datasetId':'ds_consulta_credito_winthor',
+													'maximumSelectionLength':'1',
+													'placeholder':'Buscar...',
+													'fields':[
+														{
+															'field':'A02_COD_CLI',
+															'label':'Cód.Cliente',
+															'standard':'true'
+														},
+														{
+															'field':'A03_CLIENTE',
+															'label':'Cliente',
+															'standard':'true'
+													    }
+													]
+												}">
+									</div>
+								</div>
+
+								<div class="row">
+
+									<div class="form-group col-md-3">
+										<label class="required" for="zoom">Nome Cliente</label>
+										<input type="zoom" class="form-control" name="nomeCliente" id="nomeCliente"
+											data-zoom="
+												{
+													'displayKey':'A03_CLIENTE',
+													'datasetId':'ds_consulta_credito_winthor',
+													'maximumSelectionLength':'1',
+													'placeholder':'Buscar...',
+													'fields':[
+														{
+															'field':'A03_CLIENTE',
+															'label':'Cliente',
+															'standard':'true'
+													    },
+														{
+															'field':'A02_COD_CLI',
+															'label':'Cód. Cliente',
+															'standard':'true'
+														}
+													]
+												}">
+									</div>
+
+									<div class="form-group col-md-3">
+										<label>Disponível real</label>
+										<div class="input-group">
+											<input type="text" class="form-control" name="disponivelReal"
+												id="disponivelReal" readonly>
+											<span class="input-group-addon">
+												<i class="fas fa-coins"></i>
+											</span>
+										</div>
+									</div>
+
+
+									<div class="form-group col-md-3">
+										<label>Pedidos liberados</label>
+										<div class="input-group">
+											<input type="text" class="form-control" name="pedidosLiberados"
+												id="pedidosLiberados" readonly>
+											<span class="input-group-addon">
+												<i class="fas fa-hand-holding-usd"></i>
+											</span>
+										</div>
+									</div>
+
+									<div class="form-group col-md-3">
+										<label>Crédito aberto</label>
+										<div class="input-group">
+											<input type="text" class="form-control" name="creditoAberto"
+												id="creditoAberto" readonly>
+											<span class="input-group-addon">
+												<i class="fas fa-wallet"></i>
+											</span>
+										</div>
+									</div>
+
+								</div>
+
+								<div class="row">
+
+									<div class="form-group col-md-3">
+										<label>Pedidos com pendência ou bloqueados</label>
+										<div class="input-group">
+											<input type="text" class="form-control" name="pedidosPendBloq"
+												id="pedidosPendBloq" readonly>
+											<span class="input-group-addon">
+												<i class="fas fa-truck"></i>
+											</span>
+										</div>
+									</div>
+
+									<div class="form-group col-md-3">
+										<label>Valor aberto</label>
+										<div class="input-group">
+											<input type="text" class="form-control" name="valorAberto" id="valorAberto"
+												readonly>
+											<span class="input-group-addon">
+												<i class="fas fa-dollar-sign"></i>
+											</span>
+										</div>
+									</div>
+
+									<div class="form-group col-md-3">
+										<label>Valor vencido</label>
+										<div class="input-group">
+											<input type="text" class="form-control" name="valorVencido"
+												id="valorVencido" readonly>
+											<span class="input-group-addon">
+												<i class="fas fa-money-check-alt"></i>
+											</span>
+										</div>
+									</div>
+
+									<div class="form-group col-md-3">
+										<label>Títulos vencidos</label>
+										<div class="input-group">
+											<input type="text" class="form-control" name="titulosVencidos"
+												id="titulosVencidos" readonly>
+											<span class="input-group-addon">
+												<i class="fas fa-exclamation"></i>
+											</span>
+										</div>
+									</div>
+
+									<div class="form-group col-md-3">
+										<label>Limite crédito</label>
+										<div class="input-group">
+											<input type="text" class="form-control" name="limiteCredito"
+												id="limiteCredito" readonly>
+											<span class="input-group-addon">
+												<i class="far fa-credit-card"></i>
+											</span>
+										</div>
+									</div>
+
+									<div class="form-group col-md-3">
+										<label>Data de vencimento do crédito</label>
+										<div class="input-group">
+											<input type="text" class="form-control" name="vencimentoCredito"
+												id="vencimentoCredito" readonly>
+											<span class="input-group-addon">
+												<i class="far fa-calendar"></i>
+											</span>
+										</div>
+									</div>
+
+									<div class="form-group col-md-3">
+										<label>Bloqueado</label>
+										<div class="input-group">
+											<input type="text" class="form-control" name="bloqueio" id="bloqueio"
+												readonly>
+											<span class="input-group-addon">
+												<i class="fas fa-ban"></i>
+											</span>
+										</div>
+									</div>
+
+								</div>
+
+								<div class="row">
+
+									<div class="form-group col-md-3">
+										<label class="required">Deseja mais alguma informação?</label>
+										<select class="form-control" name="maisInfos" id="maisInfos">
+											<option value="">Selecione uma opção</option>
+											<option value="Sim">Sim</option>
+											<option value="Não">Não</option>
+										</select>
+									</div>
+
+								</div>
+
+								<div class="row">
+									<div class="form-group col-md-12">
+										<label>Detalhes sobre as informações adicionais</label>
+										<textarea class="form-control" rows="4" name="obsInfos"
+											data-size="big"></textarea>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="panel panel-primary">
+						<div class="panel-heading">
+							<h3 class="panel-title subpanel_title">
+								<span id="led_credito" class="led"></span>
+								<a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion"
+									href="#credito"><i class="far fa-clipboard"></i> DETALHES ADICIONAIS</a>
+							</h3>
+						</div>
+						<div id="credito" class="panel-collapse collapse in">
+							<div class="panel-body">
+								<div class="row">
+									<div class="form-group col-md-12">
+										<label class="required">Resposta das informações adicionais</label>
+										<textarea class="form-control" rows="4" name="obsCadastro"
+											data-size="big"></textarea>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</form>
+	</div>
+</body>
+
+</html>

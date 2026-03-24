@@ -1,0 +1,409 @@
+<html>
+
+<head>
+  <link type="text/css" rel="stylesheet" href="/style-guide/css/fluig-style-guide.min.css" />
+  <script type="text/javascript" src="/portal/resources/js/jquery/jquery.js"></script>
+  <script type="text/javascript" src="/portal/resources/js/jquery/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="/portal/resources/js/mustache/mustache-min.js"></script>
+  <script type="text/javascript" src="/style-guide/js/fluig-style-guide.min.js" charset="utf-8"></script>
+
+  <!-- sweetalert2 -->
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <!-- FontAwesome -->
+  <link type="text/css" rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+  <!-- JQuery Mask Plugin -->
+  <script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
+
+  <!-- Custom -->
+  <link type="text/css" rel="stylesheet" href="./style_log.css">
+  <script type="text/javascript" src="./app.js"></script>
+
+
+<body class="fluig-style-guide process-style" id="devkit-style">
+  <form name="form" role="form" id="form-processo">
+
+
+    <div class="panel panel-primary panel-border"> <!--Painel geral do formulário - fecha no extremo do arquivo e contém todas as seções-->
+
+      <div class="panel-heading panel-bg panel-border"> <!--início da declaração do cabeçalho principal (azul)-->
+        <div class="container-fluid">
+          <section id="logo">
+            <img
+              src="https://api-site.cigame.com.br/images/logo-150px-x-35-px-(2)-1653585063932-(1)-(1)-(1)-(1)-1655820026572.png"
+              alt="NOME-CLIENTE" title="LOGO-CLIENTE" width="100">
+            <h3 class="panel-title">Retorno de entrega</h3>
+          </section>
+        </div>
+      </div> <!--fim da declaração do cabeçalho principal (azul)-->
+
+      <div class="panel-body"> <!--panel body geral do arquivo - fecha no extremo e contém todas as seções-->
+
+
+        <div class="panel panel-primary"> <!--declaração da primeira seção-->
+          <div class="panel-heading"> <!--início do cabeçalho da seção-->
+            <h3 class="panel-title subpanel_title">
+              <a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion" href="#abertura"><i class="far fa-clipboard"></i> REGISTRO INICIAL DA RECUSA</a>
+            </h3>
+          </div> <!--fim da declaração do cabeçalho da seção-->
+
+          <div id="abertura" class="panel-collapse collapse in">
+            <div class="panel-body">
+
+              <input type="" name="matVendedor" id="matVendedor">
+              
+              <div class="row">
+
+                <div class="form-group col-md-3">
+                  <label class="required">Número NF</label>
+                  <input type="zoom" name="numNF" id="numNF" class="form-control" data-zoom="
+                      {
+                        'displayKey':'A01_NOTA',
+                        'datasetId':'ds_retorno_entrega_nf_winthor',
+                        'maximumSelectionLength':'1',
+                        'placeholder':'Buscar...',
+                        'fields':[
+                          {'field':'A01_NOTA','label':'NF','standard':'true'}
+                        ]
+                      }">
+                </div>
+    
+
+                  <div class="form-group col-md-3">
+                    <label class="required">Código do cliente</label>
+                    <input type="zoom" name="codCliente" id="codCliente" class="form-control" data-zoom="
+                    {
+                    'displayKey':'A04_COD_CLI',
+                    'datasetId':'ds_retorno_entrega_nf_winthor',
+                    'maximumSelectionLength':'1',
+                    'placeholder':'Buscar...',
+                    'fields':[
+                    {'field':'A04_COD_CLI','label':'Código','standard':'true'}
+                    ]
+                    }">
+            </div>
+
+            <div class="form-group col-md-3">
+              <label class="required">Cliente</label>
+              <input type="zoom" name="cliente" id="cliente" class="form-control" data-zoom="
+                  {
+                    'displayKey':'A05_CLIENTE',
+                    'datasetId':'ds_retorno_entrega_nf_winthor',
+                    'maximumSelectionLength':'1',
+                    'placeholder':'Buscar...',
+                    'fields':[
+                      {'field':'A05_CLIENTE','label':'Cliente','standard':'true'}
+                    ]
+                  }">
+            </div>
+
+            <div class="form-group col-md-3">
+              <label>Vendedor</label>
+              <div class="input-group">
+                <input type="text" name="vendedor" id="vendedor" class="form-control" readonly>
+                <span class="input-group-addon">
+                  <i class="far fa-user"></i>
+                </span>
+              </div>
+            </div>
+            
+          </div> <!-- fecha row-->
+
+          <div class="row">
+
+            <div class="form-group col-md-6">
+              <label class="required">Motivo da recusa</label>
+              <input type="zoom" name="MotivoRecusa" id="MotivoRecusa" class="form-control" data-zoom="
+                  {
+                    'displayKey':'MOTIVO',
+                    'datasetId':'ds_motivo_devolucoes_winthor',
+                    'maximumSelectionLength':'1',
+                    'placeholder':'Buscar...',
+                    'fields':[
+                      {'field':'MOTIVO','label':'Motivo','standard':'true'}
+                    ]
+                  }">
+            </div>
+
+            <div class="form-group col-md-6">
+              <label>Endereço da entrega</label>
+              <div class="input-group">
+                <input type="text" name="endereco" id="endereco" class="form-control"
+                  readonly>
+                <span class="input-group-addon">
+                  <i class="fas fa-user-shield"></i>
+                </span>
+              </div>
+            </div>
+
+            </div> <!--fecha row-->
+
+            <div class="row">
+
+                <div class="form-group col-md-3">
+                  <label>Data fat. SEFAZ</label>
+                  <div class="input-group">
+                    <input type="text" name="datafat" id="datafat" class="form-control" readonly>
+                    <span class="input-group-addon">
+                      <i class="fas fa-calendar"></i>
+                    </span>
+                  </div>
+                </div>
+
+                <div class="form-group col-md-1">
+                  <label>Qt. itens</label>
+                  <div class="input-group">
+                    <input type="text" name="qtditens" id="qtditens" class="form-control" readonly>
+                    <!-- <span class="input-group-addon">
+                      <i class="fas fa-money-bill"></i> -->
+                    </span>
+                  </div>
+                </div>
+
+                <div class="form-group col-md-1">
+                  <label>Qt.item esp</label>
+                  <div class="input-group">
+                    <input type="text" name="qtditensesp" id="qtditensesp" class="form-control" readonly>
+                    <!-- <span class="input-group-addon">
+                      <i class="fas fa-money-bill"></i> -->
+                    </span>
+                  </div>
+                </div>
+
+                <div class="form-group col-md-1">
+                  <label>Qt.volumes</label>
+                  <div class="input-group">
+                    <input type="text" name="qtdvolume" id="qtdvolume" class="form-control" readonly>
+                    <!-- <span class="input-group-addon">
+                      <i class="fas fa-dollar-sign"></i> -->
+                    </span>
+                  </div>
+                </div>
+
+                <div class="form-group col-md-3">
+                  <label>Cobrança</label>
+                  <div class="input-group">
+                    <input type="text" name="cobranca" id="cobranca" class="form-control" readonly>
+                    <span class="input-group-addon">
+                      <i class="fas fa-dollar-sign"></i>
+                    </span>
+                  </div>
+                </div>
+
+                <div class="form-group col-md-3">
+                  <label>Plano</label>
+                  <div class="input-group">
+                    <input type="text" name="plano" id="plano" class="form-control" readonly>
+                    <span class="input-group-addon">
+                      <i class="fas fa-dollar-sign"></i>
+                    </span>
+                  </div>
+                </div>
+
+                </div> <!--fecha row-->
+
+                <div class="row">
+
+                <div class="form-group col-md-4">
+                  <label>Validação</label>
+                  <div class="input-group">
+                    <input type="text" name="validacao" id="validacao" class="form-control" readonly>
+                    <span class="input-group-addon">
+                      <i class="fas fa-exclamation"></i>
+                    </span>
+                  </div>
+                </div>
+
+                <div class="form-group col-md-2">
+                  <label>Cód. transportadora</label>
+                  <div class="input-group">
+                    <input type="text" name="codtransp" id="codtransp" class="form-control" readonly>
+                    <span class="input-group-addon">
+                      <i class="fas fa-exclamation"></i>
+                    </span>
+                  </div>
+                </div>
+
+                <div class="form-group col-md-6">
+                  <label>Transportadora</label>
+                  <div class="input-group">
+                    <input type="text" name="transportadora" id="transportadora" class="form-control" readonly>
+                    <span class="input-group-addon">
+                      <i class="fas fa-exclamation"></i>
+                    </span>
+                  </div>
+                </div>
+
+              </div> <!--FECHA ROW-->
+
+              <div class="row">
+
+              </div> <!--fecha row-->
+
+            </div> <!-- finaliza panel body-->
+          </div> <!--finaliza painel colapsável-->
+        </div> <!--finaliza panel-primary-->
+
+
+        <div class="panel panel-primary"> <!--declaração da seção-->
+          <div class="panel-heading"> <!--início do cabeçalho da seção-->
+            <h3 class="panel-title subpanel_title">
+              <a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion" href="#notifica-vendedor"><i class="far fa-clipboard"></i> Ação do vendedor</a>
+            </h3>
+          </div> <!--fim da declaração do cabeçalho da seção-->
+
+          <div id="notifica-vendedor" class="panel-collapse collapse in"> <!--início do conteúdo colapsável (engloba todas as variáveis da seção)-->
+          <div class="panel-body"> <!--panel body normal da seção-->
+
+              <div class="form-group col-md-5">
+                <label>Aprovar solicitação?</label>
+                <div class="form-check" id="destino">
+                  <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="destino" value="Reentrega" checked>Reentrega</label>
+                </div>
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="destino" value="Devolucao">Devolução / Canc. NF (finaliza o processo)</label>
+                </div>
+              </div>      
+
+              <div class="form-group col-md-5">
+                <label>Observação vendedor</label>
+                <textarea class="form-control" rows="3" name="Obsvendedor" placeholder=""
+                  data-size="big"></textarea>
+              </div>
+
+            </div> <!--fim do panel body-->
+          </div> <!--fim da aprovação do painel colapsável-->
+        </div> <!--fim do panel primary-->
+
+        <div class="panel panel-primary"> <!--declaração da seção-->
+          <div class="panel-heading"> <!--início do cabeçalho da seção-->
+            <h3 class="panel-title subpanel_title">
+              <a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion" href="#roteiro"><i class="far fa-clipboard"></i> CRIAR ROTEIRO</a>
+            </h3>
+          </div> <!--fim da declaração do cabeçalho da seção-->
+
+          <div id="roteiro" class="panel-collapse collapse in"> <!--início do conteúdo colapsável (engloba todas as variáveis da seção)-->
+          <div class="panel-body"> <!--panel body normal da seção-->
+
+            <div class="row">
+              <div class="form-group col-md-12">
+                <label>Endereço completo</label>
+                <div class="input-group">
+                  <input type="text" name="enderecoCompleto" id="enderecoCompleto" class="form-control" readonly>
+                  <span class="input-group-addon">
+                    <i class="fas fa-map-marker-alt"></i>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+
+              <div class="form-group col-md-2">
+                <label>Data de saída do caminhão</label>
+                <div class="input-group">
+                  <input type="text" name="dataSaida" id="dataSaida" class="form-control calendar">
+                  <span class="input-group-addon">
+                    <i class="far fa-calendar"></i>
+                  </span>
+                </div>
+              </div>
+
+              <div class="form-group col-md-2">
+                <label>Placa</label>
+                <div class="input-group">
+                  <input type="text" name="veiculo" id="veiculo" class="form-control">
+                  <span class="input-group-addon">
+                    <i class="fas fa-truck"></i>
+                  </span>
+                </div>
+              </div>
+
+              <div class="form-group col-md-4">
+                <label>Rota/Romaneio</label>
+                <div class="input-group">
+                  <input type="text" name="rota" id="rota" class="form-control">
+                  <span class="input-group-addon">
+                    <i class="fas fa-map-marked-alt"></i>
+                  </span>
+                </div>
+              </div>
+
+              <div class="form-group col-md-2">
+                <label>Motorista</label>
+                <div class="input-group">
+                  <input type="text" name="motorista" id="motorista" class="form-control">
+                  <span class="input-group-addon">
+                    <i class="far fa-user"></i>
+                  </span>
+                </div>
+              </div>
+
+              <div class="form-group col-md-2">
+                <label>Ajudante</label>
+                <div class="input-group">
+                  <input type="text" name="ajudante" id="ajudante" class="form-control">
+                  <span class="input-group-addon">
+                    <i class="fas fa-people-carry"></i>
+                  </span>
+                </div>
+              </div>
+
+              </div> <!--fim da row-->
+
+            </div> <!--fim do panel body-->
+          </div> <!--fim da aprovação do painel colapsável-->
+        </div> <!--fim do panel primary-->
+
+        <div class="panel panel-primary"> <!--declaração da seção-->
+          <div class="panel-heading"> <!--início do cabeçalho da seção-->
+            <h3 class="panel-title subpanel_title">
+              <a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion" href="#acomp"><i class="far fa-clipboard"></i> Acompanhamento do vendedor</a>
+            </h3>
+          </div> <!--fim da declaração do cabeçalho da seção-->
+
+          <div id="acomp" class="panel-collapse collapse in"> <!--início do conteúdo colapsável (engloba todas as variáveis da seção)-->
+          <div class="panel-body"> <!--panel body normal da seção-->
+
+            <div class="row">
+
+               <div class="form-group col-md-6">
+                  <label>Demanda atendida?</label>
+                  <div class="form-check">
+                    <label class="form-check-label">
+                      <input type="radio" class="form-check-input" name="aprovfinal" value="Aprovar" checked>Sim, finalizar processo</label>
+                  </div>
+                  <div class="form-check">
+                    <label class="form-check-label">
+                      <input type="radio" class="form-check-input" name="aprovfinal" value="Reprovar">Não, retornar para rotas</label>
+                  </div>
+                  <div class="form-check">
+                    <label class="form-check-label">
+                      <input type="radio" class="form-check-input" name="aprovfinal" value="Devolucao">Não, finalizar processo p/ abrir devolução ou cancelamento</label>
+                  </div>
+                </div>              
+  
+                  <div class="form-group col-md-4">
+                    <label>Observação final</label>
+                    <textarea class="form-control" rows="3" name="obsfinal" id="obsfinal" placeholder=""
+                      data-size="big"></textarea>
+                  </div> 
+
+              </div> <!--fecha row-->
+
+            </div> <!--fim do panel body-->
+          </div> <!--fim da aprovação do painel colapsável-->
+        </div> <!--fim do panel primary-->
+
+      </div> <!--fim do formulário-->
+    </div>	<!--fim do formulário-->
+
+  </form>
+
+</body>
+
+</html>

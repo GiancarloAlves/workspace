@@ -1,0 +1,250 @@
+<html>
+
+<head>
+	<link type="text/css" rel="stylesheet" href="/style-guide/css/fluig-style-guide.min.css" />
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/mustache/mustache-min.js"></script>
+	<script type="text/javascript" src="/style-guide/js/fluig-style-guide.min.js" charset="utf-8"></script>
+
+	<!-- sweetalert2 -->
+	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+	<!-- FontAwesome -->
+	<link type="text/css" rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+	<!-- JQuery Mask Plugin -->
+	<script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
+
+	<!-- Custom -->
+	<link type="text/css" rel="stylesheet" href="./style_dp.css">
+	<script type="text/javascript" src="./app.js"></script>
+
+
+<body class="fluig-style-guide process-style" id="devkit-style">
+	<form name="form" role="form" id="form-processo">
+
+
+		<div class="panel panel-primary panel-border">
+			<!--Painel geral do formulário - fecha no extremo do arquivo e contém todas as seções-->
+
+			<div class="panel-heading panel-bg panel-border"> <!--início da declaração do cabeçalho principal (azul)-->
+				<div class="container-fluid">
+					<section id="logo">
+						<img src="./images/logoCigame.png" alt="NOME-CLIENTE" width="130" style="padding: 10px;">
+						<h3 class="panel-title">SOLICITAÇÃO DE FOLGA, SAÍDA ANTECIPADA E CONSULTAS MÉDICAS</h3>
+					</section>
+				</div>
+			</div> <!--fim da declaração do cabeçalho principal (azul)-->
+
+			<div class="panel-body"> <!--panel body geral do arquivo - fecha no extremo e contém todas as seções-->
+
+
+				<div class="panel panel-primary"> <!--declaração da primeira seção-->
+					<div class="panel-heading"> <!--início do cabeçalho da seção-->
+						<h3 class="panel-title subpanel_title">
+							<a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion"
+								href="#abertura"><i class="far fa-clipboard"></i> Requisição do usuário</a>
+						</h3>
+					</div> <!--fim da declaração do cabeçalho da seção-->
+
+					<div id="abertura" class="panel-collapse collapse in">
+						<div class="panel-body">
+							<div class="row">
+
+								<div class="form-group col-md-2">
+									<label>Matrícula Solicitante</label>
+									<div class="input-group">
+										<input type="text" name="matSolicitante" id="matSolicitante"
+											class="form-control" readonly>
+										<span class="input-group-addon"><i class="fas fa-wallet"></i></span>
+									</div>
+								</div>
+
+								<div class="form-group col-md-2">
+									<label>Matrícula Supervisor</label>
+									<div class="input-group">
+										<input type="text" name="matSupervisor" id="matSupervisor" class="form-control"
+											readonly>
+										<span class="input-group-addon"><i class="fas fa-wallet"></i></span>
+									</div>
+								</div>
+
+								<div class="form-group col-md-3">
+									<label>Solicitante</label>
+									<div class="input-group">
+										<input type="text" name="solicitante" id="solicitante" class="form-control"
+											readonly>
+										<span class="input-group-addon"><i class="fas fa-user"></i></span>
+									</div>
+								</div>
+
+								<div class="form-group col-md-2">
+									<label>Supervisor</label>
+									<div class="input-group">
+										<input type="text" name="supervisorSolicitante" id="supervisorSolicitante"
+											class="form-control" readonly>
+										<span class="input-group-addon"><i class="fas fa-user-shield"></i></span>
+									</div>
+								</div>
+
+								<div class="form-group col-md-3">
+									<label>Tipo solicitante</label>
+									<div class="input-group">
+										<input type="text" name="tipoSolicitante" id="tipoSolicitante"
+											class="form-control" readonly>
+										<span class="input-group-addon"><i class="fas fa-graduation-cap"></i></span>
+									</div>
+								</div>
+
+							</div>
+
+							<div class="row">
+
+								<div class="form-group col-md-4">
+									<label>Data e hora de saída</label>
+									<div class="input-group">
+										<input type="text" name="data_saida" id="data_saida" class="form-control"
+											placeholder="dd/mm/aaaa hh:mm" mask="00/00/0000 00:00:00">
+										<span class="input-group-addon">
+											<i class="fas fa-calendar"></i>
+										</span>
+									</div>
+								</div>
+
+								<div class="form-group col-md-4">
+									<label>Data e hora de retorno</label>
+									<div class="input-group">
+										<input type="text" name="data_retorno" id="data_retorno" class="form-control"
+											placeholder="dd/mm/aaaa hh:mm" mask="00/00/0000 00:00:00">
+										<span class="input-group-addon">
+											<i class="fas fa-calendar"></i>
+										</span>
+									</div>
+								</div>
+
+								<div class="form-group col-md-4">
+									<label>Tipo da solicitação</label>
+									<div class="input-group">
+										<select class="form-control" name="tipo_solicit">
+											<option value="Selecione">Selecione</option>
+											<option value="Folga">Folga</option>
+											<option value="Medico/Dentista">Medico/Dentista</option>
+											<option value="Dias em haver">Dias em haver</option>
+											<option value="Saida antecipada">Saida antecipada</option>
+										</select>
+										<span class="input-group-addon"><i class="fas fa-th-list"></i></span>
+									</div>
+								</div>
+
+
+							</div> <!--fecha row-->
+
+							<div class="row">
+
+								<div class="form-group col-md-12">
+									<label>Deseja fazer alguma observação?</label>
+									<div class="input-group">
+										<input type="text" class="form-control" name="obs_solicitante" value=""
+											placeholder="" data-size="big" />
+										<span class="input-group-addon"><i class="fas fa-pen"></i></span>
+									</div>
+								</div>
+
+
+							</div>
+
+						</div> <!--fecha panel body -->
+					</div> <!--fecha parte colapsável-->
+				</div> <!--fecha panel-primary-->
+
+
+				<!-- -------------------------------------------------------------------- -->
+
+
+				<div class="panel panel-primary"> <!--declaração da primeira seção-->
+					<div class="panel-heading"> <!--início do cabeçalho da seção-->
+						<h3 class="panel-title subpanel_title">
+							<a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion"
+								href="#aprovacao"><i class="far fa-clipboard"></i> Aprovação do gestor</a>
+						</h3>
+					</div> <!--fim da declaração do cabeçalho da seção-->
+
+					<div id="aprovacao" class="panel-collapse collapse in">
+						<div class="panel-body">
+
+
+							<div class="form-group">
+								<div class="input-group">
+									<label>Aprovação Gestor</label>
+									<div class="radio-options">
+										<div class="radio"><label><input type="radio" name="aprov_gestor"
+													value="Aprovar" />Aprovar</label></div>
+										<div class="radio"><label><input type="radio" name="aprov_gestor"
+													value="Reprovar" />Reprovar</label></div>
+									</div>
+								</div>
+							</div>
+
+							<div class="form-group col-md-12">
+								<label>Observação</label>
+								<div class="input-group">
+									<input type="text" class="form-control" name="obs_gestor" />
+									<span class="input-group-addon"><i class="fas fa-pen"></i></span>
+								</div>
+							</div>
+
+						</div> <!--fecha panel body -->
+					</div> <!--fecha parte colapsável-->
+				</div> <!--fecha panel-primary-->
+
+				<!-- ----------------------------------------------------------------------------------------------- -->
+
+				<div class="panel panel-primary"> <!--declaração da primeira seção-->
+					<div class="panel-heading"> <!--início do cabeçalho da seção-->
+						<h3 class="panel-title subpanel_title">
+							<a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion" href="#acomp"><i
+									class="far fa-clipboard"></i> Acompanhamento do RH</a>
+						</h3>
+					</div> <!--fim da declaração do cabeçalho da seção-->
+
+					<div id="acomp" class="panel-collapse collapse in">
+						<div class="panel-body">
+
+							<div class="row">
+
+								<div class="form-group col-md-4">
+									<label>Data e hora efetivas de saída</label>
+									<div class="input-group">
+										<input type="text" name="confsaida_rh" id="confsaida_rh" class="form-control"
+											placeholder="dd/mm/aaaa hh:mm" mask="00/00/0000 00:00:00">
+										<span class="input-group-addon"><i class="fas fa-calendar-minus"></i></span>
+									</div>
+								</div>
+
+								<div class="form-group col-md-4">
+									<label>Data e hora efetivas de retorno</label>
+									<div class="input-group">
+										<input type="text" name="conf_retorno_rh" id="conf_retorno_rh"
+											class="form-control" placeholder="dd/mm/aaaa hh:mm"
+											mask="00/00/0000 00:00:00">
+										<span class="input-group-addon"><i class="fas fa-calendar-check"></i></span>
+									</div>
+								</div>
+
+								<div class="form-group col-md-12">
+									<label>Observação</label>
+									<div class="input-group">
+										<input type="text" class="form-control" name="obs_conf_rh" />
+										<span class="input-group-addon"><i class="fas fa-pen"></i></span>
+									</div>
+								</div>
+
+
+
+	</form>
+
+</body>
+
+</html>

@@ -1,0 +1,1899 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Form</title>
+	<link rel="stylesheet" type="text/css" href="/style-guide/css/fluig-style-guide.min.css" />
+	<script src="/resources/js/jquery/jquery.js"></script>
+	<script src="/resources/js/jquery/jquery-ui.min.js"></script>
+	<script src="/resources/js/mustache/mustache-min.js"></script>
+	<script src="/style-guide/js/fluig-style-guide.min.js"></script>
+
+	<!-- CUSTOM -->
+	<link href="/style-guide/css/fluig-style-guide-filter.min.css" rel="stylesheet" type="text/css" />
+	<link href="/style-guide/css/fluig-style-guide-ratingstars.min.css" rel="stylesheet" type="text/css" />
+	<script src="/style-guide/js/fluig-style-guide-filter.min.js"></script>
+	<script src="/style-guide/js/fluig-style-guide-ratingstars.min.js"></script>
+
+	<link href="/webdesk/customresources?cid=1&resourceName=temaFormulario/0.css" type="text/css" rel="stylesheet" />
+	<link type="text/css" rel="stylesheet" href="./styles.css">
+	<script type="text/javascript" src="./app.js"></script>
+</head>
+
+<body class="fluig-style-guide">
+	<form class="totvs-form grid vertical create-form-components ui-sortable t0" name="createFormComponents"
+		style="padding-left: 10px; padding-right: 10px">
+
+		<div style="background-color: #292b64; color: #ffff; margin-bottom: 16px;"
+			class="panel-heading panel-bg panel-border">
+			<div class="container-fluid">
+				<section style="display: flex; align-items: center; justify-content: flex-start; margin: 0 -20px;"
+					id="logo">
+					<img src="./images/logoCigame.png" width="130" style="padding: 10px;">
+					<h3 style="border-left: 1px solid; padding: 10px;" class="panel-title">FECHAMENTO FISCAL CONTÁBIL
+					</h3>
+				</section>
+			</div>
+		</div>
+
+		<div class="panel panel-primary blocked" id="check3">
+			<div class="panel-heading">
+				<h3 class="panel-title" style="display: flex; align-items: center; gap: 8px;">
+					<i class="fluigicon fluigicon-file-download icon-md" aria-hidden="true"></i>
+					Conferir NF Entrada do
+					mês anterior (Winthor: 1007)
+				</h3>
+			</div>
+			<div class="panel-body">
+
+				<div class="form-field" data-type="checkbox" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<div class="check-options">
+								<div class="checkbox">
+									<label>
+										<input type="checkbox" name="check1"
+											value="Conferir NF Entrada do mês anterior (Winthor: 1007)" />
+										Conferir NF
+										Entrada do mês anterior
+										(Winthor: 1007)
+									</label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-field" data-type="textarea" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<label>Observação</label>
+							<textarea class="form-control" rows="3" name="check1obs" data-size="big"></textarea>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="panel panel-primary blocked" id="check5">
+			<div class="panel-heading">
+				<h3 class="panel-title" style="display: flex; align-items: center; gap: 8px;">
+					<i class="fluigicon fluigicon-file icon-md" aria-hidden="true"></i>
+					Ajustar parâmetros de PIS/Cofins Entradas (Winthor: 212)
+				</h3>
+			</div>
+			<div class="panel-body">
+
+				<div class="form-field" data-type="checkbox" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<div class="check-options">
+								<div class="checkbox">
+									<label>
+										<input type="checkbox" name="check2"
+											value="Ajustar parâmetros de PIS/Cofins Entradas (Winthor: 212)" />
+										Ajustar parâmetros de PIS/Cofins Entradas (Winthor: 212)
+									</label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-field" data-type="textarea" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<label>Observação</label>
+							<textarea class="form-control" rows="3" name="check2obs" data-size="big"></textarea>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="panel panel-primary blocked" id="check7">
+			<div class="panel-heading">
+				<h3 class="panel-title" style="display: flex; align-items: center; gap: 8px;">
+					<i class="fluigicon fluigicon-paste icon-md" aria-hidden="true"></i>
+					Ajustar parâmetros de PIS/Cofins Saídas (SQL)
+				</h3>
+			</div>
+			<div class="panel-body">
+
+				<div class="form-field" data-type="checkbox" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<div class="check-options">
+								<div class="checkbox">
+									<label>
+										<input type="checkbox" name="check3"
+											value="Ajustar parâmetros de PIS/Cofins Saídas (SQL)" />
+										Ajustar parâmetros de PIS/Cofins Saídas (SQL)
+									</label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-field" data-type="textarea" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<label>Observação</label>
+							<textarea class="form-control" rows="3" name="check3obs" data-size="big"></textarea>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="panel panel-primary blocked" id="check12">
+			<div class="panel-heading">
+				<h3 class="panel-title" style="display: flex; align-items: center; gap: 8px;">
+					<i class="fluigicon fluigicon-paste icon-md" aria-hidden="true"></i>
+					Recálculo PIS/Cofins Entradas/Saídas (Winthor: 1000 Opções Acessórias)
+				</h3>
+			</div>
+			<div class="panel-body">
+
+				<div class="form-field" data-type="checkbox" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<div class="check-options">
+								<div class="checkbox">
+									<label>
+										<input type="checkbox" name="check4"
+											value="Recálculo PIS/Cofins Entradas/Saídas (Winthor: 1000 Opções Acessórias)" />
+										Recálculo PIS/Cofins Entradas/Saídas (Winthor: 1000 Opções Acessórias)
+									</label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-field" data-type="textarea" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<label>Observação</label>
+							<textarea class="form-control" rows="3" name="check4obs" data-size="big"></textarea>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="panel panel-primary blocked" id="check17">
+			<div class="panel-heading">
+				<h3 class="panel-title" style="display: flex; align-items: center; gap: 8px;">
+					<i class="fluigicon fluigicon-paste icon-md" aria-hidden="true"></i>
+					Arrumar PIS/Cofins dos Fretes de Vendas (SQL)
+				</h3>
+			</div>
+			<div class="panel-body">
+
+				<div class="form-field" data-type="checkbox" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<div class="check-options">
+								<div class="checkbox">
+									<label>
+										<input type="checkbox" name="check5"
+											value="Arrumar PIS/Cofins dos Fretes de Vendas (SQL)" />
+										Arrumar PIS/Cofins dos Fretes de Vendas (SQL)
+									</label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-field" data-type="textarea" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<label>Observação</label>
+							<textarea class="form-control" rows="3" name="check5obs" data-size="big"></textarea>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="panel panel-primary blocked" id="check19">
+			<div class="panel-heading">
+				<h3 class="panel-title" style="display: flex; align-items: center; gap: 8px;">
+					<i class="fluigicon fluigicon-paste icon-md" aria-hidden="true"></i>
+					Executar Histórico de Movimentações (Winthor: 1000 Opções Acessórias)
+				</h3>
+			</div>
+			<div class="panel-body">
+
+				<div class="form-field" data-type="checkbox" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<div class="check-options">
+								<div class="checkbox">
+									<label>
+										<input type="checkbox" name="check6"
+											value="Executar Histórico de Movimentações (Winthor: 1000 Opções Acessórias)" />
+										Executar Histórico de Movimentações (Winthor: 1000 Opções Acessórias)
+									</label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-field" data-type="textarea" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<label>Observação</label>
+							<textarea class="form-control" rows="3" name="check6obs" data-size="big"></textarea>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="panel panel-primary blocked" id="check21">
+			<div class="panel-heading">
+				<h3 class="panel-title" style="display: flex; align-items: center; gap: 8px;">
+					<i class="fluigicon fluigicon-paste icon-md" aria-hidden="true"></i>
+					Recálculo UF Origem Destino CTE (Winthor: 1000 Opções Acessórias 3)
+				</h3>
+			</div>
+			<div class="panel-body">
+
+				<div class="form-field" data-type="checkbox" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<div class="check-options">
+								<div class="checkbox">
+									<label>
+										<input type="checkbox" name="check7"
+											value="Recálculo UF Origem Destino CTE (Winthor: 1000 Opções Acessórias 3)" />
+										Recálculo UF Origem Destino CTE (Winthor: 1000 Opções Acessórias 3)
+									</label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-field" data-type="textarea" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<label>Observação</label>
+							<textarea class="form-control" rows="3" name="check7obs" data-size="big"></textarea>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="panel panel-primary blocked" id="check23">
+			<div class="panel-heading">
+				<h3 class="panel-title" style="display: flex; align-items: center; gap: 8px;">
+					<i class="fluigicon fluigicon-paste icon-md" aria-hidden="true"></i>
+					Arrumar Notas 2102 com ST (SQL)
+				</h3>
+			</div>
+			<div class="panel-body">
+
+				<div class="form-field" data-type="checkbox" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<div class="check-options">
+								<div class="checkbox">
+									<label>
+										<input type="checkbox" name="check8" value="Arrumar Notas 2102 com ST (SQL)" />
+										Arrumar Notas 2102 com ST (SQL)
+									</label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-field" data-type="textarea" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<label>Observação</label>
+							<textarea class="form-control" rows="3" name="check8obs" data-size="big"></textarea>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="panel panel-primary blocked" id="check25">
+			<div class="panel-heading">
+				<h3 class="panel-title" style="display: flex; align-items: center; gap: 8px;">
+					<i class="fluigicon fluigicon-paste icon-md" aria-hidden="true"></i>
+					Arrumar geraicms NF Entradas c/ICMS (SQL)
+				</h3>
+			</div>
+			<div class="panel-body">
+
+				<div class="form-field" data-type="checkbox" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<div class="check-options">
+								<div class="checkbox">
+									<label>
+										<input type="checkbox" name="check9"
+											value="Arrumar geraicms NF Entradas c/ICMS (SQL)" />
+										Arrumar geraicms NF Entradas c/ICMS (SQL)
+									</label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-field" data-type="textarea" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<label>Observação</label>
+							<textarea class="form-control" rows="3" name="check9obs" data-size="big"></textarea>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="panel panel-primary blocked" id="check27">
+			<div class="panel-heading">
+				<h3 class="panel-title" style="display: flex; align-items: center; gap: 8px;">
+					<i class="fluigicon fluigicon-paste icon-md" aria-hidden="true"></i>
+					Arrumar geraicms NF Entradas s/ICMS (SQL)
+				</h3>
+			</div>
+			<div class="panel-body">
+
+				<div class="form-field" data-type="checkbox" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<div class="check-options">
+								<div class="checkbox">
+									<label>
+										<input type="checkbox" name="check10"
+											value="Arrumar geraicms NF Entradas s/ICMS (SQL)" />
+										Arrumar geraicms NF Entradas s/ICMS (SQL)
+									</label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-field" data-type="textarea" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<label>Observação</label>
+							<textarea class="form-control" rows="3" name="check10obs" data-size="big"></textarea>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="panel panel-primary blocked" id="check29">
+			<div class="panel-heading">
+				<h3 class="panel-title" style="display: flex; align-items: center; gap: 8px;">
+					<i class="fluigicon fluigicon-paste icon-md" aria-hidden="true"></i>
+					Arrumar geraicms NF Uso/Consumo (SQL)
+				</h3>
+			</div>
+			<div class="panel-body">
+
+				<div class="form-field" data-type="checkbox" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<div class="check-options">
+								<div class="checkbox">
+									<label>
+										<input type="checkbox" name="check11"
+											value="Arrumar geraicms NF Uso/Consumo (SQL)" />
+										Arrumar geraicms NF Uso/Consumo (SQL)
+									</label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-field" data-type="textarea" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<label>Observação</label>
+							<textarea class="form-control" rows="3" name="check11obs" data-size="big"></textarea>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="panel panel-primary blocked" id="check31">
+			<div class="panel-heading">
+				<h3 class="panel-title" style="display: flex; align-items: center; gap: 8px;">
+					<i class="fluigicon fluigicon-paste icon-md" aria-hidden="true"></i>
+					Arrumar NF Entrada c/ Crédito do IPI (SQL)
+				</h3>
+			</div>
+			<div class="panel-body">
+
+				<div class="form-field" data-type="checkbox" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<div class="check-options">
+								<div class="checkbox">
+									<label>
+										<input type="checkbox" name="check12"
+											value="Arrumar NF Entrada c/ Crédito do IPI (SQL)" />
+										Arrumar NF Entrada c/ Crédito do IPI (SQL)
+									</label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-field" data-type="textarea" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<label>Observação</label>
+							<textarea class="form-control" rows="3" name="check12obs" data-size="big"></textarea>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="panel panel-primary blocked" id="check33">
+			<div class="panel-heading">
+				<h3 class="panel-title" style="display: flex; align-items: center; gap: 8px;">
+					<i class="fluigicon fluigicon-paste icon-md" aria-hidden="true"></i>
+					Arrumar PIS/Cofins NF Entradas (SQL)
+				</h3>
+			</div>
+			<div class="panel-body">
+
+				<div class="form-field" data-type="checkbox" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<div class="check-options">
+								<div class="checkbox">
+									<label>
+										<input type="checkbox" name="check13"
+											value="Arrumar PIS/Cofins NF Entradas (SQL)" />
+										Arrumar PIS/Cofins NF Entradas (SQL)
+									</label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-field" data-type="textarea" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<label>Observação</label>
+							<textarea class="form-control" rows="3" name="check13obs" data-size="big"></textarea>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="panel panel-primary blocked" id="check35">
+			<div class="panel-heading">
+				<h3 class="panel-title" style="display: flex; align-items: center; gap: 8px;">
+					<i class="fluigicon fluigicon-paste icon-md" aria-hidden="true"></i>
+					Arrumar PIS/Cofins NF Saídas (SQL)
+				</h3>
+			</div>
+			<div class="panel-body">
+
+				<div class="form-field" data-type="checkbox" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<div class="check-options">
+								<div class="checkbox">
+									<label>
+										<input type="checkbox" name="check14"
+											value="Arrumar PIS/Cofins NF Saídas (SQL)" />
+										Arrumar PIS/Cofins NF Saídas (SQL)
+									</label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-field" data-type="textarea" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<label>Observação</label>
+							<textarea class="form-control" rows="3" name="check14obs" data-size="big"></textarea>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="panel panel-primary blocked" id="check37">
+			<div class="panel-heading">
+				<h3 class="panel-title" style="display: flex; align-items: center; gap: 8px;">
+					<i class="fluigicon fluigicon-paste icon-md" aria-hidden="true"></i>
+					Livros Fiscais Entrada/Saída (Winthor: 1000 Opções Essenciais)
+				</h3>
+			</div>
+			<div class="panel-body">
+
+				<div class="form-field" data-type="checkbox" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<div class="check-options">
+								<div class="checkbox">
+									<label>
+										<input type="checkbox" name="check15"
+											value="Livros Fiscais Entrada/Saída (Winthor: 1000 Opções Essenciais)" />
+										Livros Fiscais Entrada/Saída (Winthor: 1000 Opções Essenciais)
+									</label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-field" data-type="textarea" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<label>Observação</label>
+							<textarea class="form-control" rows="3" name="check15obs" data-size="big"></textarea>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="panel panel-primary blocked" id="check39">
+			<div class="panel-heading">
+				<h3 class="panel-title" style="display: flex; align-items: center; gap: 8px;">
+					<i class="fluigicon fluigicon-paste icon-md" aria-hidden="true"></i>
+					Exportar TXT NF Saídas (ECAC Sefaz/RS)
+				</h3>
+			</div>
+			<div class="panel-body">
+
+				<div class="form-field" data-type="checkbox" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<div class="check-options">
+								<div class="checkbox">
+									<label>
+										<input type="checkbox" name="check16"
+											value="Exportar TXT NF Saídas (ECAC Sefaz/RS)" />
+										Exportar TXT NF Saídas (ECAC Sefaz/RS)
+									</label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-field" data-type="textarea" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<label>Observação</label>
+							<textarea class="form-control" rows="3" name="check16obs" data-size="big"></textarea>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="panel panel-primary blocked" id="check41">
+			<div class="panel-heading">
+				<h3 class="panel-title" style="display: flex; align-items: center; gap: 8px;">
+					<i class="fluigicon fluigicon-paste icon-md" aria-hidden="true"></i>
+					Exportar xls dados NF Saídas (Winthor: 1003)
+				</h3>
+			</div>
+			<div class="panel-body">
+
+				<div class="form-field" data-type="checkbox" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<div class="check-options">
+								<div class="checkbox">
+									<label>
+										<input type="checkbox" name="check17"
+											value="Exportar xls dados NF Saídas (Winthor: 1003)" />
+										Exportar xls dados NF Saídas (Winthor: 1003)
+									</label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-field" data-type="textarea" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<label>Observação</label>
+							<textarea class="form-control" rows="3" name="check17obs" data-size="big"></textarea>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="panel panel-primary blocked" id="check43">
+			<div class="panel-heading">
+				<h3 class="panel-title" style="display: flex; align-items: center; gap: 8px;">
+					<i class="fluigicon fluigicon-paste icon-md" aria-hidden="true"></i>
+					Conferir NF Saídas Winthor x Sefaz/RS (Excel)
+				</h3>
+			</div>
+			<div class="panel-body">
+
+				<div class="form-field" data-type="checkbox" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<div class="check-options">
+								<div class="checkbox">
+									<label>
+										<input type="checkbox" name="check18"
+											value="Conferir NF Saídas Winthor x Sefaz/RS (Excel)" />
+										Conferir NF Saídas Winthor x Sefaz/RS (Excel)
+									</label>
+								</div>
+
+								<div style="display: flex; flex-direction: column;">
+									<label>Ocorreu algum erro?</label>
+									<select style="width: 58px;" name="erroAtividade43" id="erroAtividade43">
+										<option selected value="Não">Não</option>
+										<option value="Sim">Sim</option>
+									</select>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-field" data-type="textarea" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<label>Observação</label>
+							<textarea class="form-control" rows="3" name="check18obs" data-size="big"></textarea>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="panel panel-primary blocked" id="check47">
+			<div class="panel-heading">
+				<h3 class="panel-title" style="display: flex; align-items: center; gap: 8px;">
+					<i class="fluigicon fluigicon-paste icon-md" aria-hidden="true"></i>
+					Ajustar ICMS das NF divergêntes (Winthor: 1008)
+				</h3>
+			</div>
+			<div class="panel-body">
+
+				<div class="form-field" data-type="checkbox" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<div class="check-options">
+								<div class="checkbox">
+									<label>
+										<input type="checkbox" name="check19"
+											value="Ajustar ICMS das NF divergêntes (Winthor: 1008)" />
+										Ajustar ICMS das NF divergêntes (Winthor: 1008)
+									</label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-field" data-type="textarea" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<label>Observação</label>
+							<textarea class="form-control" rows="3" name="check19obs" data-size="big"></textarea>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="panel panel-primary blocked" id="check50">
+			<div class="panel-heading">
+				<h3 class="panel-title" style="display: flex; align-items: center; gap: 8px;">
+					<i class="fluigicon fluigicon-paste icon-md" aria-hidden="true"></i>
+					Informar início do fechamento fiscal (e-mail)
+				</h3>
+			</div>
+			<div class="panel-body">
+
+				<div class="form-field" data-type="checkbox" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<div class="check-options">
+								<div class="checkbox">
+									<label>
+										<input type="checkbox" name="check20"
+											value="Informar início do fechamento fiscal (e-mail)" />
+										Informar início do fechamento fiscal (e-mail)
+									</label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-field" data-type="textarea" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<label>Observação</label>
+							<textarea class="form-control" rows="3" name="check20obs" data-size="big"></textarea>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="panel panel-primary blocked" id="check52">
+			<div class="panel-heading">
+				<h3 class="panel-title" style="display: flex; align-items: center; gap: 8px;">
+					<i class="fluigicon fluigicon-paste icon-md" aria-hidden="true"></i>
+					Livros de Apuração de ICMS (Winthor: 1024)
+				</h3>
+			</div>
+			<div class="panel-body">
+
+				<div class="form-field" data-type="checkbox" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<div class="check-options">
+								<div class="checkbox">
+									<label>
+										<input type="checkbox" name="check21"
+											value="Livros de Apuração de ICMS (Winthor: 1024)" />
+										Livros de Apuração de ICMS (Winthor: 1024)
+									</label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-field" data-type="textarea" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<label>Observação</label>
+							<textarea class="form-control" rows="3" name="check21obs" data-size="big"></textarea>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="panel panel-primary blocked" id="check54">
+			<div class="panel-heading">
+				<h3 class="panel-title" style="display: flex; align-items: center; gap: 8px;">
+					<i class="fluigicon fluigicon-paste icon-md" aria-hidden="true"></i>
+					Livro de Entradas de PIS/Cofins (Winthor: 1096 : Entradas)
+				</h3>
+			</div>
+			<div class="panel-body">
+
+				<div class="form-field" data-type="checkbox" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<div class="check-options">
+								<div class="checkbox">
+									<label>
+										<input type="checkbox" name="check22"
+											value="Livro de Entradas de PIS/Cofins (Winthor: 1096 : Entradas)" />
+										Livro de Entradas de PIS/Cofins (Winthor: 1096 : Entradas)
+									</label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-field" data-type="textarea" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<label>Observação</label>
+							<textarea class="form-control" rows="3" name="check22obs" data-size="big"></textarea>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="panel panel-primary blocked" id="check56">
+			<div class="panel-heading">
+				<h3 class="panel-title" style="display: flex; align-items: center; gap: 8px;">
+					<i class="fluigicon fluigicon-paste icon-md" aria-hidden="true"></i>
+					Livro de Saídas de PIS/Cofins (Winthor: 1096 : Saídas)
+				</h3>
+			</div>
+			<div class="panel-body">
+
+				<div class="form-field" data-type="checkbox" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<div class="check-options">
+								<div class="checkbox">
+									<label>
+										<input type="checkbox" name="check23"
+											value="Livro de Saídas de PIS/Cofins (Winthor: 1096 : Saídas)" />
+										Livro de Saídas de PIS/Cofins (Winthor: 1096 : Saídas)
+									</label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-field" data-type="textarea" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<label>Observação</label>
+							<textarea class="form-control" rows="3" name="check23obs" data-size="big"></textarea>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="panel panel-primary blocked" id="check58">
+			<div class="panel-heading">
+				<h3 class="panel-title" style="display: flex; align-items: center; gap: 8px;">
+					<i class="fluigicon fluigicon-paste icon-md" aria-hidden="true"></i>
+					Conciliação Entradas e Saídas (Excel)
+				</h3>
+			</div>
+			<div class="panel-body">
+
+				<div class="form-field" data-type="checkbox" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<div class="check-options">
+								<div class="checkbox">
+									<label>
+										<input type="checkbox" name="check24"
+											value="Conciliação Entradas e Saídas (Excel)" />
+										Conciliação Entradas e Saídas (Excel)
+									</label>
+								</div>
+
+								<div style="display: flex; flex-direction: column;">
+									<label>Ocorreu algum erro?</label>
+									<select style="width: 58px;" name="erroAtividade58" id="erroAtividade58">
+										<option selected value="Não">Não</option>
+										<option value="Sim">Sim</option>
+									</select>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-field" data-type="textarea" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<label>Observação</label>
+							<textarea class="form-control" rows="3" name="check24obs" data-size="big"></textarea>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="panel panel-primary blocked" id="check62">
+			<div class="panel-heading">
+				<h3 class="panel-title" style="display: flex; align-items: center; gap: 8px;">
+					<i class="fluigicon fluigicon-paste icon-md" aria-hidden="true"></i>
+					Analisar e realizar Ajustes nos Documentos Fiscais (Winthor)
+				</h3>
+			</div>
+			<div class="panel-body">
+
+				<div class="form-field" data-type="checkbox" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<div class="check-options">
+								<div class="checkbox">
+									<label>
+										<input type="checkbox" name="check25"
+											value="Analisar e realizar Ajustes nos Documentos Fiscais (Winthor)" />
+										Analisar e realizar Ajustes nos Documentos Fiscais (Winthor)
+									</label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-field" data-type="textarea" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<label>Observação</label>
+							<textarea class="form-control" rows="3" name="check25obs" data-size="big"></textarea>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="panel panel-primary blocked" id="check64">
+			<div class="panel-heading">
+				<h3 class="panel-title" style="display: flex; align-items: center; gap: 8px;">
+					<i class="fluigicon fluigicon-paste icon-md" aria-hidden="true"></i>
+					Revisar Conciliação Entrada e Saídas (Excel)
+				</h3>
+			</div>
+			<div class="panel-body">
+
+				<div class="form-field" data-type="checkbox" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<div class="check-options">
+								<div class="checkbox">
+									<label>
+										<input type="checkbox" name="check26"
+											value="Revisar Conciliação Entrada e Saídas (Excel)" />
+										Revisar Conciliação Entrada e Saídas (Excel)
+									</label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-field" data-type="textarea" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<label>Observação</label>
+							<textarea class="form-control" rows="3" name="check26obs" data-size="big"></textarea>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="panel panel-primary blocked" id="check67">
+			<div class="panel-heading">
+				<h3 class="panel-title" style="display: flex; align-items: center; gap: 8px;">
+					<i class="fluigicon fluigicon-paste icon-md" aria-hidden="true"></i>
+					Gerar arquivo SPED Físcal (Winthor: 1097)
+				</h3>
+			</div>
+			<div class="panel-body">
+
+				<div class="form-field" data-type="checkbox" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<div class="check-options">
+								<div class="checkbox">
+									<label>
+										<input type="checkbox" name="check27"
+											value="Gerar arquivo SPED Físcal (Winthor: 1097)" />
+										Gerar arquivo SPED Físcal (Winthor: 1097)
+									</label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-field" data-type="textarea" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<label>Observação</label>
+							<textarea class="form-control" rows="3" name="check27obs" data-size="big"></textarea>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="panel panel-primary blocked" id="check69">
+			<div class="panel-heading">
+				<h3 class="panel-title" style="display: flex; align-items: center; gap: 8px;">
+					<i class="fluigicon fluigicon-paste icon-md" aria-hidden="true"></i>
+					Importar arquivo SPED Físcal (EFD ICMS IPI)
+				</h3>
+			</div>
+			<div class="panel-body">
+
+				<div class="form-field" data-type="checkbox" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<div class="check-options">
+								<div class="checkbox">
+									<label>
+										<input type="checkbox" name="check28"
+											value="Importar arquivo SPED Físcal (EFD ICMS IPI)" />
+										Importar arquivo SPED Físcal (EFD ICMS IPI)
+									</label>
+								</div>
+
+								<div style="display: flex; flex-direction: column;">
+									<label>Ocorreu algum erro?</label>
+									<select style="width: 58px;" name="erroAtividade69" id="erroAtividade69">
+										<option selected value="Não">Não</option>
+										<option value="Sim">Sim</option>
+									</select>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-field" data-type="textarea" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<label>Observação</label>
+							<textarea class="form-control" rows="3" name="check28obs" data-size="big"></textarea>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="panel panel-primary blocked" id="check73">
+			<div class="panel-heading">
+				<h3 class="panel-title" style="display: flex; align-items: center; gap: 8px;">
+					<i class="fluigicon fluigicon-paste icon-md" aria-hidden="true"></i>
+					Analisar e realizar Ajustes (Winthor)
+				</h3>
+			</div>
+			<div class="panel-body">
+
+				<div class="form-field" data-type="checkbox" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<div class="check-options">
+								<div class="checkbox">
+									<label>
+										<input type="checkbox" name="check29"
+											value="Analisar e realizar Ajustes (Winthor)" />
+										Analisar e realizar Ajustes (Winthor)
+									</label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-field" data-type="textarea" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<label>Observação</label>
+							<textarea class="form-control" rows="3" name="check29obs" data-size="big"></textarea>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="panel panel-primary blocked" id="check76">
+			<div class="panel-heading">
+				<h3 class="panel-title" style="display: flex; align-items: center; gap: 8px;">
+					<i class="fluigicon fluigicon-paste icon-md" aria-hidden="true"></i>
+					Importar SPED Físcal na GIA9 (GIA9)
+				</h3>
+			</div>
+			<div class="panel-body">
+
+				<div class="form-field" data-type="checkbox" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<div class="check-options">
+								<div class="checkbox">
+									<label>
+										<input type="checkbox" name="check30"
+											value="Importar SPED Físcal na GIA9 (GIA9)" />
+										Importar SPED Físcal na GIA9 (GIA9)
+									</label>
+								</div>
+
+								<div style="display: flex; flex-direction: column;">
+									<label>Ocorreu algum erro?</label>
+									<select style="width: 58px;" name="erroAtividade76" id="erroAtividade76">
+										<option selected value="Não">Não</option>
+										<option value="Sim">Sim</option>
+									</select>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-field" data-type="textarea" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<label>Observação</label>
+							<textarea class="form-control" rows="3" name="check30obs" data-size="big"></textarea>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="panel panel-primary blocked" id="check80">
+			<div class="panel-heading">
+				<h3 class="panel-title" style="display: flex; align-items: center; gap: 8px;">
+					<i class="fluigicon fluigicon-paste icon-md" aria-hidden="true"></i>
+					Analisar e realizar Ajustes (SPED Físcal)
+				</h3>
+			</div>
+			<div class="panel-body">
+
+				<div class="form-field" data-type="checkbox" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<div class="check-options">
+								<div class="checkbox">
+									<label>
+										<input type="checkbox" name="check31"
+											value="Analisar e realizar Ajustes (SPED Físcal)" />
+										Analisar e realizar Ajustes (SPED Físcal)
+									</label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-field" data-type="textarea" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<label>Observação</label>
+							<textarea class="form-control" rows="3" name="check31obs" data-size="big"></textarea>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="panel panel-primary blocked" id="check83">
+			<div class="panel-heading">
+				<h3 class="panel-title" style="display: flex; align-items: center; gap: 8px;">
+					<i class="fluigicon fluigicon-paste icon-md" aria-hidden="true"></i>
+					Encaminhar resumo GIA/RS e Boleto p/Aprovação (E-mail)
+				</h3>
+			</div>
+			<div class="panel-body">
+
+				<div class="form-field" data-type="checkbox" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<div class="check-options">
+								<div class="checkbox">
+									<label>
+										<input type="checkbox" name="check32"
+											value="Encaminhar resumo GIA/RS e Boleto p/Aprovação (E-mail)" />
+										Encaminhar resumo GIA/RS e Boleto p/Aprovação (E-mail)
+									</label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-field" data-type="textarea" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<label>Observação</label>
+							<textarea class="form-control" rows="3" name="check32obs" data-size="big"></textarea>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="panel panel-primary blocked" id="check85">
+			<div class="panel-heading">
+				<h3 class="panel-title" style="display: flex; align-items: center; gap: 8px;">
+					<i class="fluigicon fluigicon-paste icon-md" aria-hidden="true"></i>
+					Incluir CodContaContabil - 18 na PCCLIENT (SQL)
+				</h3>
+			</div>
+			<div class="panel-body">
+
+				<div class="form-field" data-type="checkbox" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<div class="check-options">
+								<div class="checkbox">
+									<label>
+										<input type="checkbox" name="check33"
+											value="Incluir CodContaContabil - 18 na PCCLIENT (SQL)" />
+										Incluir CodContaContabil - 18 na PCCLIENT (SQL)
+									</label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-field" data-type="textarea" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<label>Observação</label>
+							<textarea class="form-control" rows="3" name="check33obs" data-size="big"></textarea>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="panel panel-primary blocked" id="check87">
+			<div class="panel-heading">
+				<h3 class="panel-title" style="display: flex; align-items: center; gap: 8px;">
+					<i class="fluigicon fluigicon-paste icon-md" aria-hidden="true"></i>
+					Arrumar Conta Contábil Adiantamentos (SQL)
+				</h3>
+			</div>
+			<div class="panel-body">
+
+				<div class="form-field" data-type="checkbox" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<div class="check-options">
+								<div class="checkbox">
+									<label>
+										<input type="checkbox" name="check34"
+											value="Arrumar Conta Contábil Adiantamentos (SQL)" />
+										Arrumar Conta Contábil Adiantamentos (SQL)
+									</label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-field" data-type="textarea" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<label>Observação</label>
+							<textarea class="form-control" rows="3" name="check34obs" data-size="big"></textarea>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="panel panel-primary blocked" id="check89">
+			<div class="panel-heading">
+				<h3 class="panel-title" style="display: flex; align-items: center; gap: 8px;">
+					<i class="fluigicon fluigicon-paste icon-md" aria-hidden="true"></i>
+					Relacionar Contas Contábeis nos Fornecedores (Winthor: 2124)
+				</h3>
+			</div>
+			<div class="panel-body">
+
+				<div class="form-field" data-type="checkbox" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<div class="check-options">
+								<div class="checkbox">
+									<label>
+										<input type="checkbox" name="check35"
+											value="Relacionar Contas Contábeis nos Fornecedores (Winthor: 2124)" />
+										Relacionar Contas Contábeis nos Fornecedores (Winthor: 2124)
+									</label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-field" data-type="textarea" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<label>Observação</label>
+							<textarea class="form-control" rows="3" name="check35obs" data-size="big"></textarea>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="panel panel-primary blocked" id="check91">
+			<div class="panel-heading">
+				<h3 class="panel-title" style="display: flex; align-items: center; gap: 8px;">
+					<i class="fluigicon fluigicon-paste icon-md" aria-hidden="true"></i>
+					Executar Integrações Contábeis (Winthor: 2130)
+				</h3>
+			</div>
+			<div class="panel-body">
+
+				<div class="form-field" data-type="checkbox" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<div class="check-options">
+								<div class="checkbox">
+									<label>
+										<input type="checkbox" name="check36"
+											value="Executar Integrações Contábeis (Winthor: 2130)" />
+										Executar Integrações Contábeis (Winthor: 2130)
+									</label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-field" data-type="textarea" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<label>Observação</label>
+							<textarea class="form-control" rows="3" name="check36obs" data-size="big"></textarea>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="panel panel-primary blocked" id="check93">
+			<div class="panel-heading">
+				<h3 class="panel-title" style="display: flex; align-items: center; gap: 8px;">
+					<i class="fluigicon fluigicon-paste icon-md" aria-hidden="true"></i>
+					Executar CTRL_LANCAMENTOS (CONTABIL) (SQL)
+				</h3>
+			</div>
+			<div class="panel-body">
+
+				<div class="form-field" data-type="checkbox" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<div class="check-options">
+								<div class="checkbox">
+									<label>
+										<input type="checkbox" name="check37"
+											value="Executar CTRL_LANCAMENTOS (CONTABIL) (SQL)" />
+										Executar CTRL_LANCAMENTOS (CONTABIL) (SQL)
+									</label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-field" data-type="textarea" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<label>Observação</label>
+							<textarea class="form-control" rows="3" name="check37obs" data-size="big"></textarea>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="panel panel-primary blocked" id="check95">
+			<div class="panel-heading">
+				<h3 class="panel-title" style="display: flex; align-items: center; gap: 8px;">
+					<i class="fluigicon fluigicon-paste icon-md" aria-hidden="true"></i>
+					Conciliar Contas de Caixas e Bancos (Excel)
+				</h3>
+			</div>
+			<div class="panel-body">
+
+				<div class="form-field" data-type="checkbox" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<div class="check-options">
+								<div class="checkbox">
+									<label>
+										<input type="checkbox" name="check38"
+											value="Conciliar Contas de Caixas e Bancos (Excel)" />
+										Conciliar Contas de Caixas e Bancos (Excel)
+									</label>
+								</div>
+
+								<div style="display: flex; flex-direction: column;">
+									<label>Ocorreu algum erro?</label>
+									<select style="width: 58px;" name="erroAtividade95" id="erroAtividade95">
+										<option selected value="Não">Não</option>
+										<option value="Sim">Sim</option>
+									</select>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-field" data-type="textarea" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<label>Observação</label>
+							<textarea class="form-control" rows="3" name="check38obs" data-size="big"></textarea>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="panel panel-primary blocked" id="check99">
+			<div class="panel-heading">
+				<h3 class="panel-title" style="display: flex; align-items: center; gap: 8px;">
+					<i class="fluigicon fluigicon-paste icon-md" aria-hidden="true"></i>
+					Analisar e realizar Ajustes (Winthor)
+				</h3>
+			</div>
+			<div class="panel-body">
+
+				<div class="form-field" data-type="checkbox" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<div class="check-options">
+								<div class="checkbox">
+									<label>
+										<input type="checkbox" name="check39"
+											value="Analisar e realizar Ajustes (Winthor)" />
+										Analisar e realizar Ajustes (Winthor)
+									</label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-field" data-type="textarea" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<label>Observação</label>
+							<textarea class="form-control" rows="3" name="check39obs" data-size="big"></textarea>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="panel panel-primary blocked" id="check102">
+			<div class="panel-heading">
+				<h3 class="panel-title" style="display: flex; align-items: center; gap: 8px;">
+					<i class="fluigicon fluigicon-paste icon-md" aria-hidden="true"></i>
+					Exportar TXT Balancete Contábil MOD3 (Winthor: 2116)
+				</h3>
+			</div>
+			<div class="panel-body">
+
+				<div class="form-field" data-type="checkbox" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<div class="check-options">
+								<div class="checkbox">
+									<label>
+										<input type="checkbox" name="check40"
+											value="Exportar TXT Balancete Contábil MOD3 (Winthor: 2116)" />
+										Exportar TXT Balancete Contábil MOD3 (Winthor: 2116)
+									</label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-field" data-type="textarea" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<label>Observação</label>
+							<textarea class="form-control" rows="3" name="check40obs" data-size="big"></textarea>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="panel panel-primary blocked" id="check104">
+			<div class="panel-heading">
+				<h3 class="panel-title" style="display: flex; align-items: center; gap: 8px;">
+					<i class="fluigicon fluigicon-paste icon-md" aria-hidden="true"></i>
+					Conciliar Contas de Despesa Gerencial x Contábil (Excel)
+				</h3>
+			</div>
+			<div class="panel-body">
+
+				<div class="form-field" data-type="checkbox" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<div class="check-options">
+								<div class="checkbox">
+									<label>
+										<input type="checkbox" name="check41"
+											value="Conciliar Contas de Despesa Gerencial x Contábil (Excel)" />
+										Conciliar Contas de Despesa Gerencial x Contábil (Excel)
+									</label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-field" data-type="textarea" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<label>Observação</label>
+							<textarea class="form-control" rows="3" name="check41obs" data-size="big"></textarea>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="panel panel-primary blocked" id="check106">
+			<div class="panel-heading">
+				<h3 class="panel-title" style="display: flex; align-items: center; gap: 8px;">
+					<i class="fluigicon fluigicon-paste icon-md" aria-hidden="true"></i>
+					Solicitar XLS resumos Folha de Pagamento (E-mail)
+				</h3>
+			</div>
+			<div class="panel-body">
+
+				<div class="form-field" data-type="checkbox" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<div class="check-options">
+								<div class="checkbox">
+									<label>
+										<input type="checkbox" name="check42"
+											value="Solicitar XLS resumos Folha de Pagamento (E-mail)" />
+										Solicitar XLS resumos Folha de Pagamento (E-mail)
+									</label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-field" data-type="textarea" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<label>Observação</label>
+							<textarea class="form-control" rows="3" name="check42obs" data-size="big"></textarea>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="panel panel-primary blocked" id="check108">
+			<div class="panel-heading">
+				<h3 class="panel-title" style="display: flex; align-items: center; gap: 8px;">
+					<i class="fluigicon fluigicon-paste icon-md" aria-hidden="true"></i>
+					Atualizar Folha de Funcionários (Excel)
+				</h3>
+			</div>
+			<div class="panel-body">
+
+				<div class="form-field" data-type="checkbox" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<div class="check-options">
+								<div class="checkbox">
+									<label>
+										<input type="checkbox" name="check43"
+											value="Atualizar Folha de Funcionários (Excel)" />
+										Atualizar Folha de Funcionários (Excel)
+									</label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-field" data-type="textarea" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<label>Observação</label>
+							<textarea class="form-control" rows="3" name="check43obs" data-size="big"></textarea>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="panel panel-primary blocked" id="check110">
+			<div class="panel-heading">
+				<h3 class="panel-title" style="display: flex; align-items: center; gap: 8px;">
+					<i class="fluigicon fluigicon-paste icon-md" aria-hidden="true"></i>
+					Importar TXT lançamentos Folha de Funcionários (Winthor: 2127)
+				</h3>
+			</div>
+			<div class="panel-body">
+
+				<div class="form-field" data-type="checkbox" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<div class="check-options">
+								<div class="checkbox">
+									<label>
+										<input type="checkbox" name="check44"
+											value="Importar TXT lançamentos Folha de Funcionários (Winthor: 2127)" />
+										Importar TXT lançamentos Folha de Funcionários (Winthor: 2127)
+									</label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-field" data-type="textarea" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<label>Observação</label>
+							<textarea class="form-control" rows="3" name="check44obs" data-size="big"></textarea>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="panel panel-primary blocked" id="check112">
+			<div class="panel-heading">
+				<h3 class="panel-title" style="display: flex; align-items: center; gap: 8px;">
+					<i class="fluigicon fluigicon-paste icon-md" aria-hidden="true"></i>
+					Atualizar Folha de Sócios (Excel)
+				</h3>
+			</div>
+			<div class="panel-body">
+
+				<div class="form-field" data-type="checkbox" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<div class="check-options">
+								<div class="checkbox">
+									<label>
+										<input type="checkbox" name="check45"
+											value="Atualizar Folha de Sócios (Excel)" />
+										Atualizar Folha de Sócios (Excel)
+									</label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-field" data-type="textarea" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<label>Observação</label>
+							<textarea class="form-control" rows="3" name="check45obs" data-size="big"></textarea>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="panel panel-primary blocked" id="check114">
+			<div class="panel-heading">
+				<h3 class="panel-title" style="display: flex; align-items: center; gap: 8px;">
+					<i class="fluigicon fluigicon-paste icon-md" aria-hidden="true"></i>
+					Importar TXT lançamentos Folha de Sócios (Winthor: 2127)
+				</h3>
+			</div>
+			<div class="panel-body">
+
+				<div class="form-field" data-type="checkbox" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<div class="check-options">
+								<div class="checkbox">
+									<label>
+										<input type="checkbox" name="check46"
+											value="Importar TXT lançamentos Folha de Sócios (Winthor: 2127)" />
+										Importar TXT lançamentos Folha de Sócios (Winthor: 2127)
+									</label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-field" data-type="textarea" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<label>Observação</label>
+							<textarea class="form-control" rows="3" name="check46obs" data-size="big"></textarea>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="panel panel-primary blocked" id="check116">
+			<div class="panel-heading">
+				<h3 class="panel-title" style="display: flex; align-items: center; gap: 8px;">
+					<i class="fluigicon fluigicon-paste icon-md" aria-hidden="true"></i>
+					Gerar arquivo EFD Contribuiç (Winthor: 1097)
+				</h3>
+			</div>
+			<div class="panel-body">
+
+				<div class="form-field" data-type="checkbox" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<div class="check-options">
+								<div class="checkbox">
+									<label>
+										<input type="checkbox" name="check47"
+											value="Gerar arquivo EFD Contribuiç (Winthor: 1097)" />
+										Gerar arquivo EFD Contribuiç (Winthor: 1097)
+									</label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-field" data-type="textarea" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<label>Observação</label>
+							<textarea class="form-control" rows="3" name="check47obs" data-size="big"></textarea>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="panel panel-primary blocked" id="check118">
+			<div class="panel-heading">
+				<h3 class="panel-title" style="display: flex; align-items: center; gap: 8px;">
+					<i class="fluigicon fluigicon-paste icon-md" aria-hidden="true"></i>
+					Importar arquivo EFD Contribuiç (EFD Contribui)
+				</h3>
+			</div>
+			<div class="panel-body">
+
+				<div class="form-field" data-type="checkbox" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<div class="check-options">
+								<div class="checkbox">
+									<label>
+										<input type="checkbox" name="check48"
+											value="Importar arquivo EFD Contribuiç (EFD Contribui)" />
+										Importar arquivo EFD Contribuiç (EFD Contribui)
+									</label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-field" data-type="textarea" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<label>Observação</label>
+							<textarea class="form-control" rows="3" name="check48obs" data-size="big"></textarea>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="panel panel-primary blocked" id="check120">
+			<div class="panel-heading">
+				<h3 class="panel-title" style="display: flex; align-items: center; gap: 8px;">
+					<i class="fluigicon fluigicon-paste icon-md" aria-hidden="true"></i>
+					Encaminhar resumo PIS/Cofins p/Aprovação (E-mail)
+				</h3>
+			</div>
+			<div class="panel-body">
+
+				<div class="form-field" data-type="checkbox" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<div class="check-options">
+								<div class="checkbox">
+									<label>
+										<input type="checkbox" name="check49"
+											value="Encaminhar resumo PIS/Cofins p/Aprovação (E-mail)" />
+										Encaminhar resumo PIS/Cofins p/Aprovação (E-mail)
+									</label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-field" data-type="textarea" style="position: relative; left: 0px; top: 0px">
+					<div class="form-input">
+						<div class="form-group">
+							<label>Observação</label>
+							<textarea class="form-control" rows="3" name="check49obs" data-size="big"></textarea>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+	</form>
+</body>
+
+</html>

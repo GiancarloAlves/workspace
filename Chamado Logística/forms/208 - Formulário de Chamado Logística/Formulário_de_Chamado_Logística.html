@@ -1,0 +1,665 @@
+<html>
+
+<head>
+	<link type="text/css" rel="stylesheet" href="/style-guide/css/fluig-style-guide.min.css" />
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/mustache/mustache-min.js"></script>
+	<script type="text/javascript" src="/style-guide/js/fluig-style-guide.min.js" charset="utf-8"></script>
+
+	<!-- Dataset -->
+	<script type="text/javascript" src="/webdesk/vcXMLRPC.js"></script>
+
+	<!-- sweetalert2 -->
+	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+	<!-- FontAwesome -->
+	<link type="text/css" rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+	<!-- JQuery Mask Plugin -->
+	<script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
+
+	<!-- Custom -->
+	<link type="text/css" rel="stylesheet" href="./style.css">
+	<script type="text/javascript" src="./app1.js"></script>
+</head>
+
+<body class="fluig-style-guide process-style" id="devkit-style">
+
+	<form name="form" role="form" id="form-processo">
+		<div class="panel panel-primary panel-border">
+			<div class="panel-heading panel-bg panel-border">
+				<!-- início da declaração do cabeçalho principal (azul) -->
+				<div class="container-fluid">
+					<section id="logo">
+						<img src="./images/logoCigame.png" alt="NOME-CLIENTE" width="130" style="padding: 10px;">
+						<h3 class="panel-title">Formulário de Chamado Logística</h3>
+					</section>
+				</div>
+			</div>
+
+			<div class="panel-body">
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h3 class="panel-title subpanel_title">
+							<span id="led_abertura" class="led"></span>
+							<a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion"
+								href="#dadosSolicitacao"><i class="far fa-clipboard"></i> DADOS SOLICITAÇÃO</a>
+						</h3>
+					</div>
+					<div id="dadosSolicitacao" class="panel-collapse collapse in">
+						<div class="panel-body">
+							<div class="row">
+								<div class="col-md-3">
+									<div class="form-group">
+										<label>
+											Matrícula solicitante
+										</label>
+										<input readonly type="text" class="form-control matriculaSolic" name="matricula"
+											id="matricula">
+									</div>
+								</div>
+								<div class="col-md-3">
+									<div class="form-field" data-type="textbox" data-field-name="nome">
+										<div class="form-input">
+											<div class="form-group">
+												<label>
+													Solicitante
+												</label>
+												<input type="text" readonly class="form-control" id="nome" name="nome">
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-3">
+									<div class="form-field" data-type="combo" data-field-name="ComboArea">
+										<div class="form-input">
+											<div class="form-group">
+												<label class="required"> Área</label>
+												<select onclick="selectTipoSolicitacao()" class="form-control"
+													id="comboArea" name="ComboArea">
+													<option>Selecione</option>
+													<option value="separacao">Separação | Conferência (Victor Fagundes)
+													</option>
+													<option value="entregasViaAuto">Entregas | via - auto (Natalia)
+													</option>
+													<option value="entregasLeomar">Entregas | Tercerizado (Natalia)
+													</option>
+													<option value="estoque">Estoque (Eduardo Pastoriza)
+													</option>
+													<option value="recebimento">Recebimento (Elton)
+													</option>
+													<option value="fluxoEntregas">Fluxo Entregas (Francine)
+													</option>
+													<option value="faturamento">Faturamento (Priscila)
+													</option>
+													<option value="gerencia">Gerência/Supervisão
+														(Adriano)
+													</option>
+												</select>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-3">
+									<div class="form-field" data-type="combo" data-field-name="tipo_solic">
+										<div class="form-input">
+											<div class="form-group blocked" id="divSelectSolicitacao">
+												<label class="required">Tipo da solicitação</label>
+												<select onclick="exibirCampos()" class="form-control" id="tipo_solic"
+													name="tipo_solic"></select>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-3 group-item blocked" id="codClienteGroup">
+									<div class="form-field">
+										<div class="form-input">
+											<div class="form-group">
+												<label>
+													Cód. Cliente
+													<i
+														class="flaticon flaticon-important icon-sm hidden iconWarning iconWarningCodClient"></i>
+												</label>
+												<input type="zoom" class="form-control inputItem" id="codCliente"
+													name="codCliente" data-zoom="{
+															'datasetId':'ds_chamado_logistica_cab_winthor',
+															'displayKey':'A13_COD_CLIENTE',
+															'maximumSelectionLength':'1',
+															'placeholder':'Buscar...',
+															'fields':[
+																{
+																	'field':'A13_COD_CLIENTE',
+																	'label':'Cód. Cliente',
+																	'standard':'true'
+																}
+															]
+														}">
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-3 group-item blocked" id="numPedGroup">
+									<div class="form-field">
+										<div class="form-input">
+											<div class="form-group">
+												<label>
+													Número do pedido
+													<i
+														class="flaticon flaticon-important icon-sm hidden iconWarning iconWarningNumPed"></i>
+												</label>
+												<input type="zoom" class="form-control inputItem" id="numPed"
+													name="numPed" data-zoom="{
+															'datasetId':'ds_chamado_logistica_cab_winthor',
+															'displayKey':'A01_PEDIDO',
+															'maximumSelectionLength':'1',
+															'placeholder':'Buscar...',
+															'fields':[
+																{
+																	'field':'A01_PEDIDO',
+																	'label':'Num. Pedido',
+																	'standard':'true'
+																}
+															]
+														}">
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-2 group-item blocked" id="posicaoPedGroup">
+									<div class="form-field">
+										<div class="form-input">
+											<div class="form-group">
+												<label>Status pedido</label>
+												<input class="form-control defaultField" id="posicaoPed"
+													name="posicaoPed" />
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-2 group-item blocked" id="dataPedGroup">
+									<div class="form-field">
+										<div class="form-input">
+											<div class="form-group">
+												<label>Data pedido</label>
+												<input class="form-control defaultField" id="dataPed" name="dataPed" />
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-2 group-item blocked" id="dataLiberaGroup">
+									<div class="form-field">
+										<div class="form-input">
+											<div class="form-group">
+												<label>Data liberação</label>
+												<input class="form-control defaultField" id="dataLibera"
+													name="dataLibera" />
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-3 group-item blocked" id="nomeClienteGroup">
+									<div class="form-field">
+										<div class="form-input">
+											<div class="form-group">
+												<label>Cliente</label>
+												<input class="form-control defaultField" id="nomeCliente"
+													name="nomeCliente" />
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-5 group-item blocked" id="entregaGroup">
+									<div class="form-field">
+										<div class="form-input">
+											<div class="form-group">
+												<label>Endereço de entrega</label>
+												<input class="form-control defaultField" id="entrega" name="entrega" />
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-2 group-item blocked" id="numNFGroup">
+									<div class="form-field">
+										<div class="form-input">
+											<div class="form-group">
+												<label>
+													Número da NF
+													<i
+														class="flaticon flaticon-important icon-sm hidden iconWarning iconWarningNumNF"></i>
+												</label>
+												<input type="zoom" class="form-control inputItem" id="numNF"
+													name="numNF" data-zoom="{
+															'datasetId':'ds_chamado_logistica_cab_winthor',
+															'displayKey':'A02_NF',
+															'maximumSelectionLength':'1',
+															'placeholder':'Buscar...',
+															'fields':[
+																{
+																	'field':'A02_NF',
+																	'label':'Num. NF',
+																	'standard':'true'
+																}
+															]
+														}">
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-2 group-item blocked" id="dataNFGroup">
+									<div class="form-field">
+										<div class="form-input">
+											<div class="form-group">
+												<label>Data NF</label>
+												<input class="form-control defaultField" id="dataNF" name="dataNF" />
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-3 group-item blocked" id="nomeTranspGroup">
+									<div class="form-field">
+										<div class="form-input">
+											<div class="form-group">
+												<label>
+													Transportadora correta p/ envio
+													<i
+														class="flaticon flaticon-important icon-sm hidden iconWarning iconWarningNomeTransp"></i>
+												</label>
+												<input readonly class="form-control inputItem" id="nomeTransp"
+													name="nomeTransp" />
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-3 group-item blocked" id="codItemGroup">
+									<div class="form-field">
+										<div class="form-input">
+											<div class="form-group">
+												<label>
+													Código do item
+													<i
+														class="flaticon flaticon-important icon-sm hidden iconWarning iconWarningCodItem"></i>
+												</label>
+												<input readonly class="form-control inputItem" id="codItem"
+													name="codItem" />
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-3 group-item blocked" id="nomeFornecGroup">
+									<div class="form-field">
+										<div class="form-input">
+											<div class="form-group">
+												<label>
+													Nome fornecedor
+													<i
+														class="flaticon flaticon-important icon-sm hidden iconWarning iconWarningNomeFornec"></i>
+												</label>
+												<input readonly class="form-control inputItem" id="nomeFornec"
+													name="nomeFornec" />
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="form-group col-md-3">
+									<label>Prazo para concluir a solicitação</label>
+									<div class="input-group">
+										<input type="text" name="prazo" id="prazo" class="form-control" readonly>
+										<span class="input-group-addon">
+											<i class="fas fa-hourglass-start"></i>
+										</span>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="form-group col-md-12">
+									<label class="required">Descreva a solicitação</label>
+									<textarea class="form-control" rows="5" name="descricaoSolicitacao"
+										id="descricaoSolicitacao"
+										placeholder="Descreva o problema com o maior detalhe possível!" data-size="big"
+										value=""></textarea>
+								</div>
+							</div>
+							<input type="hidden" name="dia" id="dia">
+							<input type="hidden" name="mes" id="mes">
+							<input type="hidden" name="ano" id="ano">
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="panel-body">
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h3 class="panel-title subpanel_title">
+							<span id="led_separacao" class="led"></span>
+							<a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion"
+								href="#respostaSeparacao"><i class="far fa-clipboard"></i> RESPOSTA DA SEPARAÇÃO</a>
+						</h3>
+					</div>
+					<div id="respostaSeparacao" class="panel-collapse collapse in">
+						<div class="panel-body">
+							<div class="row">
+								<div class="col-md-3">
+									<div class="form-group">
+										<label class="required">Solicitação compreendida?</label>
+										<select class="form-control" id="solicCompreendidaSeparacao"
+											name="solicCompreendidaSeparacao">
+											<option>Selecione</option>
+											<option value="sim">Sim</option>
+											<option value="nao">Não</option>
+										</select>
+									</div>
+								</div>
+								<div class="form-group col-md-12">
+									<label class="required">Resposta da solicitação</label>
+									<textarea class="form-control" rows="5" name="descricaoSeparacao"
+										id="descricaoSeparacao"
+										placeholder="Descreva com detalhes a resposta da solicitação" data-size="big"
+										value=""></textarea>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="panel-body">
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h3 class="panel-title subpanel_title">
+							<span id="led_entregasViaAuto" class="led"></span>
+							<a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion"
+								href="#respostaEntregasViaAuto"><i class="far fa-clipboard"></i> RESPOSTA ENTREGAS | VIA
+								- AUTO</a>
+						</h3>
+					</div>
+					<div id="respostaEntregasViaAuto" class="panel-collapse collapse in">
+						<div class="panel-body">
+							<div class="row">
+								<div class="col-md-3">
+									<div class="form-group">
+										<label class="required">Solicitação compreendida?</label>
+										<select class="form-control" id="solicCompredEntregaViaAuto"
+											name="solicCompredEntregaViaAuto">
+											<option>Selecione</option>
+											<option value="sim">Sim</option>
+											<option value="nao">Não</option>
+										</select>
+									</div>
+								</div>
+								<div class="form-group col-md-12">
+									<label class="required">Resposta da solicitação</label>
+									<textarea class="form-control" rows="5" name="descricaoEntregasViaAuto"
+										id="descricaoEntregasViaAuto"
+										placeholder="Descreva com detalhes a resposta da solicitação" data-size="big"
+										value=""></textarea>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="panel-body">
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h3 class="panel-title subpanel_title">
+							<span id="led_entregasLeomar" class="led"></span>
+							<a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion"
+								href="#respostaEntregasLeomar"><i class="far fa-clipboard"></i> RESPOSTA ENTREGAS |
+								TERCERIZADO</a>
+						</h3>
+					</div>
+					<div id="respostaEntregasLeomar" class="panel-collapse collapse in">
+						<div class="panel-body">
+							<div class="row">
+								<div class="col-md-3">
+									<div class="form-group">
+										<label class="required">Solicitação compreendida?</label>
+										<select class="form-control" id="solicCompredEntregasLeomar"
+											name="solicCompredEntregasLeomar">
+											<option>Selecione</option>
+											<option value="sim">Sim</option>
+											<option value="nao">Não</option>
+										</select>
+									</div>
+								</div>
+								<div class="form-group col-md-12">
+									<label class="required">Resposta da solicitação</label>
+									<textarea class="form-control" rows="5" name="descricaoEntregasLeomar"
+										id="descricaoEntregasLeomar"
+										placeholder="Descreva com detalhes a resposta da solicitação" data-size="big"
+										value=""></textarea>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="panel-body">
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h3 class="panel-title subpanel_title">
+							<span id="led_estoque" class="led"></span>
+							<a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion"
+								href="#respostaEstoque"><i class="far fa-clipboard"></i> RESPOSTA DO ESTOQUE</a>
+						</h3>
+					</div>
+					<div id="respostaEstoque" class="panel-collapse collapse in">
+						<div class="panel-body">
+							<div class="row">
+								<div class="col-md-3">
+									<div class="form-group">
+										<label class="required">Solicitação compreendida?</label>
+										<select class="form-control" id="solicCompreendidaEstoque"
+											name="solicCompreendidaEstoque">
+											<option>Selecione</option>
+											<option value="sim">Sim</option>
+											<option value="nao">Não</option>
+										</select>
+									</div>
+								</div>
+								<div class="form-group col-md-12">
+									<label class="required">Resposta da solicitação</label>
+									<textarea class="form-control" rows="5" name="descricaoEstoque"
+										id="descricaoEstoque"
+										placeholder="Descreva com detalhes a resposta da solicitação" data-size="big"
+										value=""></textarea>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="panel-body">
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h3 class="panel-title subpanel_title">
+							<span id="led_recebimento" class="led"></span>
+							<a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion"
+								href="#respostaRecebimento"><i class="far fa-clipboard"></i> RESPOSTA DO RECEBIMENTO</a>
+						</h3>
+					</div>
+					<div id="respostaRecebimento" class="panel-collapse collapse in">
+						<div class="panel-body">
+							<div class="row">
+								<div class="col-md-3">
+									<div class="form-group">
+										<label class="required">Solicitação compreendida?</label>
+										<select class="form-control" id="solicCompreendidaRecebimento"
+											name="solicCompreendidaRecebimento">
+											<option>Selecione</option>
+											<option value="sim">Sim</option>
+											<option value="nao">Não</option>
+										</select>
+									</div>
+								</div>
+								<div class="form-group col-md-12">
+									<label class="required">Resposta da solicitação</label>
+									<textarea class="form-control" rows="5" name="descricaoRecebimento"
+										id="descricaoRecebimento"
+										placeholder="Descreva com detalhes a resposta da solicitação" data-size="big"
+										value=""></textarea>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="panel-body">
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h3 class="panel-title subpanel_title">
+							<span id="led_Entregas" class="led"></span>
+							<a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion"
+								href="#respostaEntregas"><i class="far fa-clipboard"></i> RESPOSTA ENTREGAS</a>
+						</h3>
+					</div>
+					<div id="respostaEntregas" class="panel-collapse collapse in">
+						<div class="panel-body">
+							<div class="row">
+								<div class="col-md-3">
+									<div class="form-group">
+										<label class="required">Solicitação compreendida?</label>
+										<select class="form-control" id="solicCompreendidaEntregas"
+											name="solicCompreendidaEntregas">
+											<option>Selecione</option>
+											<option value="sim">Sim</option>
+											<option value="nao">Não</option>
+										</select>
+									</div>
+								</div>
+								<div class="form-group col-md-12">
+									<label class="required">Resposta da solicitação</label>
+									<textarea class="form-control" rows="5" name="descricaoEntregas"
+										id="descricaoEntregas"
+										placeholder="Descreva com detalhes a resposta da solicitação" data-size="big"
+										value=""></textarea>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="panel-body">
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h3 class="panel-title subpanel_title">
+							<span id="led_faturamento" class="led"></span>
+							<a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion"
+								href="#respostaFaturamento"><i class="far fa-clipboard"></i> RESPOSTA DO FATURAMENTO</a>
+						</h3>
+					</div>
+					<div id="respostaFaturamento" class="panel-collapse collapse in">
+						<div class="panel-body">
+							<div class="row">
+								<div class="col-md-3">
+									<div class="form-group">
+										<label class="required">Solicitação compreendida?</label>
+										<select class="form-control" id="solicCompreendidaFaturamento"
+											name="solicCompreendidaFaturamento">
+											<option>Selecione</option>
+											<option value="sim">Sim</option>
+											<option value="nao">Não</option>
+										</select>
+									</div>
+								</div>
+								<div class="form-group col-md-12">
+									<label class="required">Resposta da solicitação</label>
+									<textarea class="form-control" rows="5" name="descricaoFaturamento"
+										id="descricaoFaturamento"
+										placeholder="Descreva com detalhes a resposta da solicitação" data-size="big"
+										value=""></textarea>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="panel-body">
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h3 class="panel-title subpanel_title">
+							<span id="led_gerencia" class="led"></span>
+							<a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion"
+								href="#respostaLog"><i class="far fa-clipboard"></i> RESPOSTA DA GERÊNCIA</a>
+						</h3>
+					</div>
+					<div id="respostaLog" class="panel-collapse collapse in">
+						<div class="panel-body">
+							<div class="row">
+								<div class="col-md-3">
+									<div class="form-group">
+										<label class="required">Solicitação compreendida?</label>
+										<select class="form-control" id="solicCompreendidaLogistica"
+											name="solicCompreendidaLogistica">
+											<option>Selecione</option>
+											<option value="sim">Sim</option>
+											<option value="nao">Não</option>
+										</select>
+									</div>
+								</div>
+								<div class="form-group col-md-12">
+									<label class="required">Resposta da solicitação</label>
+									<textarea class="form-control" rows="5" name="descricaoGerencia"
+										id="descricaoGerencia"
+										placeholder="Descreva com detalhes a resposta da solicitação" data-size="big"
+										value=""></textarea>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="panel-body">
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h3 class="panel-title subpanel_title">
+							<span id="led_RespostaSolicitante" class="led"></span>
+							<a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion"
+								href="#respostaSolicitante"><i class="far fa-clipboard"></i> RESPOSTA SOLICITANTE</a>
+						</h3>
+					</div>
+					<div id="respostaSolicitante" class="panel-collapse collapse in">
+						<div class="panel-body">
+							<div class="row">
+								<div class="col-md-3">
+									<div class="form-group">
+										<label class="required">Demanda atendida?</label>
+										<select class="form-control" id="demandaAtendida" name="demandaAtendida">
+											<option>Selecione</option>
+											<option value="sim">Sim</option>
+											<option value="nao">Não</option>
+										</select>
+									</div>
+								</div>
+								<div class="form-group col-md-12">
+									<label class="required">Observação sobre a demanda</label>
+									<textarea class="form-control" rows="5" name="observacao" id="observacao"
+										placeholder="Deixe uma observação!" data-size="big" value=""></textarea>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</form>
+</body>
+
+</html>

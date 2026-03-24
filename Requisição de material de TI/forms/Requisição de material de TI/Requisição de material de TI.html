@@ -1,0 +1,277 @@
+<html>
+
+<head>
+  <link type="text/css" rel="stylesheet" href="/style-guide/css/fluig-style-guide.min.css" />
+  <script type="text/javascript" src="/portal/resources/js/jquery/jquery.js"></script>
+  <script type="text/javascript" src="/portal/resources/js/jquery/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="/portal/resources/js/mustache/mustache-min.js"></script>
+  <script type="text/javascript" src="/style-guide/js/fluig-style-guide.min.js" charset="utf-8"></script>
+
+  <!-- sweetalert2 -->
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <!-- FontAwesome -->
+  <link type="text/css" rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+
+  <!-- JQuery Mask Plugin -->
+  <script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
+
+  <!-- Custom -->
+  <link type="text/css" rel="stylesheet" href="./style.css">
+  <script type="text/javascript" src="./app.js"></script>
+
+    <!-- Dataset -->
+    <script type="text/javascript" src="/webdesk/vcXMLRPC.js"></script>
+
+    <!-- JS -->
+    <script src="./app.js"></script>
+  
+    <!-- CUSTOM -->
+    <link href="/style-guide/css/fluig-style-guide-filter.min.css" rel="stylesheet" type="text/css" />
+    <link href="/style-guide/css/fluig-style-guide-ratingstars.min.css" rel="stylesheet" type="text/css" />
+    <script src="/style-guide/js/fluig-style-guide-filter.min.js"></script>
+    <script src="/style-guide/js/fluig-style-guide-ratingstars.min.js"></script>
+  
+    <link href="/webdesk/customresources?cid=1&resourceName=temaFormulario/0.css" type="text/css" rel="stylesheet" />
+
+<body class="fluig-style-guide process-style" id="devkit-style">
+  <form name="form" role="form" id="form-processo">
+
+    <div class="panel panel-primary panel-border"> <!--Painel geral do formulário - fecha no extremo do arquivo e contém todas as seções-->
+
+      <div class="panel-heading panel-bg panel-border"> <!--início da declaração do cabeçalho principal (azul)-->
+        <div class="container-fluid">
+          <section id="logo">
+            <img src="./images/logoCigame.png" alt="NOME-CLIENTE" width="130" style="padding: 10px;">
+            <h3 class="panel-title">Requisição de material de TI</h3>
+          </section>
+        </div>
+      </div> <!--fim da declaração do cabeçalho principal (azul)-->
+
+      <div class="panel-body"> <!--panel body geral do arquivo - fecha no extremo e contém todas as seções-->
+
+
+        <div class="panel panel-primary"> <!--declaração da primeira seção-->
+          <div class="panel-heading"> <!--início do cabeçalho da seção-->
+            <h3 class="panel-title subpanel_title">
+              <a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion" href="#abertura"><i class="far fa-clipboard"></i> ABERTURA</a>
+            </h3>
+          </div> <!--fim da declaração do cabeçalho da seção-->
+
+          <div id="abertura" class="panel-collapse collapse in">
+            <div class="panel-body">
+
+              <div class="row">
+              
+              <input type="hidden" name="matSolicitante" id="matSolicitante">
+              <input type="hidden" name="matSupervisor" id="matSupervisor">
+              <input type="hidden" name="tipoSolicitante" id="tipoSolicitante">
+              
+                <div class="form-group col-md-3">
+                  <label>Solicitante</label>
+                  <div class="input-group">
+                    <input type="text" name="vendedor" id="vendedor" class="form-control" readonly>
+                    <span class="input-group-addon">
+                      <i class="far fa-user"></i>
+                    </span>
+                  </div>
+                </div>
+
+                <div class="form-group col-md-3">
+                  <label>Supervisor solicitante</label>
+                  <div class="input-group">
+                    <input type="text" name="supervisorSolicitante" id="supervisorSolicitante" class="form-control"
+                      readonly>
+                    <span class="input-group-addon">
+                      <i class="fas fa-user-shield"></i>
+                    </span>
+                  </div>
+                </div>
+
+                <div class="form-group col-md-3">
+                  <label class="required">Selecione o material:</label><select class="form-control" name="material" id="material">
+                    <option value="Selecione">Selecione</option>
+                    <option value="Notebook">Notebook</option>
+                    <option value="Tablet">Tablet</option>
+                    <option value="Impressora">Impressora</option>
+                      <option value="Outro material (preencher o campo abaixo)">Outro material (preencher o campo abaixo)</option>
+                  </select>
+                </div>
+
+                 <div class="form-input">
+                    <div class="form-group col-md-3">
+                      <label>Se o material for outro, descreva:</label>
+                      <input type="text" class="form-control" name="outromaterial" id="outromaterial" rows="2" placeholder=""/>
+                    </div>
+                  </div>
+
+                  </div> <!--fecha row-->
+
+                  <div class="row">            
+
+                    <div class="form-group col-md-3">
+                      <label class="required">Motivo desta requisição:</label><select class="form-control" name="motivo" id="motivo">
+                        <option value="Selecione">Selecione</option>
+                        <option value="Treinamento">Treinamento</option>
+                        <option value="Reunião">Reunião</option>
+                        <option value="Apresentação">Apresentação</option>
+                        <option value="Uso no sistema WinThor">Uso no sistema WinThor</option>
+                        <option value="Uso no sistema BDTI">Uso no sistema BDTI</option>
+                        <option value="Uso no sistema WMS">Uso no sistema WMS</option>
+                        <option value="Impressão de etiquetas">Impressão de etiquetas</option>
+                        <option value="Visualização de cameras">Visualização de câmeras</option>
+                          <!-- <option value="">
+                          Outro motivo (preencher o campo abaixo) -->
+                        </option>
+                      </select>
+                    </div>                 
+             
+
+                <!-- <div class="form-field" data-type="textbox" data-show-properties="" data-field-name="OutroMotivo">
+                  <div class="form-input">
+                    <div class="form-group col-md-3">
+                      <label>Se o motivo for outro, descreva:</label><input type="text"
+                        class="form-control" name="OutroMotivo" value="" rows="2" placeholder="" data-size="big" />
+                    </div>
+                  </div>
+                </div> -->
+              
+                <div class="form-group col-md-3">
+                  <label class="required">Data que necessita</label>
+                  <div class="input-group">
+                    <input type="text" name="datainicial" id="datainicial" class="form-control" mask="00/00/0000 00:00" placeholder="dd/mm/aaaa hh:mm">
+                    <span class="input-group-addon">
+                      <i class="far fa-calendar"></i>
+                    </span>
+                  </div>
+                </div>
+
+                <div class="form-group col-md-3">
+                  <label>Data que vai devolver</label>
+                  <div class="input-group">
+                    <input type="text" name="datafinal" id="datafinal" class="form-control" mask="00/00/0000 00:00" placeholder="dd/mm/aaaa hh:mm">
+                    <span class="input-group-addon">
+                      <i class="far fa-calendar"></i>
+                    </span>
+                  </div>
+                </div>             
+
+                  </div> <!--fecha row-->
+
+              </div> <!--fecha panel body da primeira seção-->
+            </div> <!--fecha conteúdo colapsável-->
+          </div> <!--fecha panel-primary da primeira seção-->
+
+
+					<div class="panel panel-primary"> <!--declaração da seção-->
+						<div class="panel-heading"> <!--início do cabeçalho da seção-->
+							<h3 class="panel-title subpanel_title">
+								<a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion" href="#aprovacao-supervisor"><i class="far fa-clipboard"></i> APROVAÇÃO SUPERVISÃO</a>
+							</h3>
+						</div> <!--fim da declaração do cabeçalho da seção-->
+	
+						<div id="aprovacao-supervisor" class="panel-collapse collapse in"> <!--início do conteúdo colapsável (engloba todas as variáveis da seção)-->
+					  <div class="panel-body"> <!--panel body normal da seção-->
+
+            <div class="row">
+
+                <div class="form-group col-md-3">
+                  <label class="required">Aprovar solicitação?</label>
+                  <select name="rdAprovaSup" id="rdAprovaSup" class="form-control">
+                    <option value="">Selecione uma opção...</option>
+                    <option>Sim</option>
+                    <option>Não</option>
+                  </select>
+                </div>
+
+                  <div class="form-group col-md-4">
+                    <label>Observação gerência</label>
+                    <textarea class="form-control" rows="3" name="ObsGerencia" placeholder=""
+                      data-size="big"></textarea>
+                  </div>
+
+                </div> <!--fecha row-->
+              </div> <!--fecha panel body -->
+            </div> <!--fecha parte colapsável-->
+          </div> <!--fecha panel-primary-->
+
+					<div class="panel panel-primary"> <!--declaração da seção-->
+						<div class="panel-heading"> <!--início do cabeçalho da seção-->
+							<h3 class="panel-title subpanel_title">
+								<a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion" href="#entrega"><i class="far fa-clipboard"></i> REVISÃO DE ENTREGA</a>
+							</h3>
+						</div> <!--fim da declaração do cabeçalho da seção-->
+	
+						<div id="entrega" class="panel-collapse collapse in"> <!--início do conteúdo colapsável (engloba todas as variáveis da seção)-->
+					  <div class="panel-body"> <!--panel body normal da seção-->
+
+              <div class="row">
+
+                <div class="form-group col-md-3">
+                  <label class="required">Equipamento em bom estado?</label>
+                  <select name="revisaoentrega" id="revisaoentrega" class="form-control">
+                    <option value="">Selecione uma opção...</option>
+                    <option>Sim</option>
+                    <option>Não</option>
+                  </select>
+                </div>
+
+                  <div class="form-group col-md-4">
+                    <label>Observação revisão</label>
+                    <textarea class="form-control" rows="3" name="obsentrega" placeholder=""
+                      data-size="big"></textarea>
+                  </div>
+
+                </div> <!--fecha row-->
+
+              </div>
+            </div>
+          </div>
+
+          <div class="panel panel-primary"> <!--declaração da seção-->
+						<div class="panel-heading"> <!--início do cabeçalho da seção-->
+							<h3 class="panel-title subpanel_title">
+								<a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion" href="#recebimento"><i class="far fa-clipboard"></i> REVISÃO DE DEVOLUÇÃO</a>
+							</h3>
+						</div> <!--fim da declaração do cabeçalho da seção-->
+	
+						<div id="recebimento" class="panel-collapse collapse in"> <!--início do conteúdo colapsável (engloba todas as variáveis da seção)-->
+					  <div class="panel-body"> <!--panel body normal da seção-->
+
+              <div class="row">
+
+                <div class="form-group col-md-3">
+                  <label class="required">Equipamento foi devolvido em bom estado?</label>
+                  <select name="revisaodevolucao" id="revisaodevolucao" class="form-control">
+                    <option value="">Selecione uma opção...</option>
+                    <option>Sim</option>
+                    <option>Não</option>
+                  </select>
+                </div>
+
+                  <div class="form-group col-md-4">
+                    <label>Observação entrega</label>
+                    <textarea class="form-control" rows="3" name="obsdevolucao" placeholder=""
+                      data-size="big"></textarea>
+                  </div>
+
+                </div> <!--fecha row-->
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+  </form>
+
+  <script>
+
+// var calend = FLUIGC.calendar('#datainicial');
+// var calend = FLUIGC.calendar('#datafinal');
+
+  </script>
+
+</body>
+
+</html>

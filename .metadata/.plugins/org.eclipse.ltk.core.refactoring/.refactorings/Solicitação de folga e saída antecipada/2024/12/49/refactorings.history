@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Solicitação de folga e saída antecipada/forms/171 - Formulario_solicitacao_saida/app4.js&apos; to &apos;app.js&apos;" description="Rename resource &apos;app4.js&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="forms/171 - Formulario_solicitacao_saida/app4.js" name="app.js" stamp="1733225923638" updateReferences="true"/>
+</session>

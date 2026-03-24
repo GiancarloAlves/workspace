@@ -1,0 +1,142 @@
+<html>
+
+<head>
+	<link type="text/css" rel="stylesheet" href="/style-guide/css/fluig-style-guide.min.css" />
+	<link rel="stylesheet" href="style.css">
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/mustache/mustache-min.js"></script>
+	<script type="text/javascript" src="/style-guide/js/fluig-style-guide.min.js" charset="utf-8"></script>
+	<script src="./app.js"></script>
+</head>
+
+<body>
+	<div class="fluig-style-guide">
+		<form name="form" role="form">
+			<div class="panel panel-primary estoque">
+				<div class="panel-heading">
+					<h3 class="panel-title">
+						<i class="flaticon flaticon-store-mall-directory icon-md" aria-hidden="true"></i> Estoque
+					</h3>
+				</div>
+				<div class="panel-body">
+					<div class="task">
+						<div class="form-input">
+							<h3>Tarefa Estoque</h3>
+							<div class="form-group group-task">
+								<label>Revisar itens bloqueados + 1 semana: </label>
+								<div class="custom-radio custom-radio-success">
+									<input type="radio" name="taskEstoq1" value="success" id="taskSuccessEstoq1" />
+									<label for="taskSuccessEstoq1">Pronto</label>
+								</div>
+								<div class="custom-radio custom-radio-danger">
+									<input type="radio" name="taskEstoq1" value="danger" id="taskDangerEstoq1" />
+									<label for="taskDangerEstoq1">Pendência</label>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="form-field" data-field-name="ObsPendEstoque"
+						style="position: relative; left: 0px; top: 0px">
+						<div class="form-input">
+							<div class="form-group " id="ObsPendEstoque">
+								<label class="required textObs">Observação da(s) pendência(s): </label>
+								<textarea class="form-control" name="ObsPendEstoque" rows="3"
+									placeholder="Esclareça sua pendência"></textarea>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="panel panel-primary saida">
+				<div class="panel-heading">
+					<h3 class="panel-title">
+						<i class="flaticon flaticon-exit icon-md" aria-hidden="true"></i> Saídas
+					</h3>
+				</div>
+				<div class="panel-body">
+					<div class="task">
+						<div class="form-input">
+							<h3>Tarefas Saídas</h3>
+							<div class="form-group group-task">
+								<label>Revisar pedidos parados +72h: </label>
+								<div class="custom-radio custom-radio-success">
+									<input type="radio" name="taskSaida1" value="success" id="taskSuccessSaida1" />
+									<label for="taskSuccessSaida1">Pronto</label>
+								</div>
+								<div class="custom-radio custom-radio-danger">
+									<input type="radio" name="taskSaida1" value="danger" id="taskDangerSaida1" />
+									<label for="taskDangerSaida1">Pendência</label>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="task">
+						<div class="form-input">
+							<div class="form-group group-task">
+								<label>Check list carrinhos de operação: </label>
+								<div class="custom-radio custom-radio-success">
+									<input type="radio" name="taskSaida2" value="success" id="taskSuccessSaida2" />
+									<label for="taskSuccessSaida2">Pronto</label>
+								</div>
+								<div class="custom-radio custom-radio-danger">
+									<input type="radio" name="taskSaida2" value="danger" id="taskDangerSaida2" />
+									<label for="taskDangerSaida2">Pendência</label>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="form-field" data-field-name="ObsPendSaida"
+						style="position: relative; left: 0px; top: 0px">
+						<div class="form-input">
+							<div class="form-group " id="ObsPendSaida">
+								<label class="required textObs">Observação da(s) pendência(s): </label>
+								<textarea class="form-control" name="ObsPendSaida" rows="3"
+									placeholder="Esclareça sua pendência"></textarea>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="panel panel-primary viaAuto">
+				<div class="panel-heading">
+					<h3 class="panel-title">
+						<i class="flaticon flaticon-transport icon-md" aria-hidden="true"></i> Via-auto
+					</h3>
+				</div>
+				<div class="panel-body">
+					<div class="task">
+						<div class="form-input">
+							<h3>Tarefas Via-auto</h3>
+							<div class="form-group group-task">
+								<label>Percentual de fretes por transportadora: </label>
+								<div class="custom-radio custom-radio-success">
+									<input type="radio" name="taskViaAuto1" value="success" id="taskSuccessViaAuto1" />
+									<label for="taskSuccessViaAuto1">Pronto</label>
+								</div>
+								<div class="custom-radio custom-radio-danger">
+									<input type="radio" name="taskViaAuto1" value="danger" id="taskDangerViaAuto1" />
+									<label for="taskDangerViaAuto1">Pendência</label>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="form-field" data-field-name="ObsPendViaAuto"
+						style="position: relative; left: 0px; top: 0px">
+						<div class="form-input">
+							<div class="form-group " id="ObsPendViaAuto">
+								<label class="required textObs">Observação da(s) pendência(s): </label>
+								<textarea class="form-control" name="ObsPendViaAuto" rows="3"
+									placeholder="Esclareça sua pendência"></textarea>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+</body>
+
+</html>

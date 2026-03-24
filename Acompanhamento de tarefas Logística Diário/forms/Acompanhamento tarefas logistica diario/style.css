@@ -1,0 +1,14 @@
+.group-task {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.textObs {
+    color: red;
+}
+
+.blocked {
+    pointer-events: none;
+    opacity: 0.7;
+}

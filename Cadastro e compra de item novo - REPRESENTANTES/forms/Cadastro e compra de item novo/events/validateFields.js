@@ -1,0 +1,1 @@
+// function validateForm(form) {		var activity = getValue('WKNumState');if ((form.getValue("descr_solicit") == null || form.getValue("descr_solicit") ==  "") && ( getValue('WKNumProces') == null || (getValue('WKNumProces') > 0 && getValue('WKCompletTask') == 'true') )) {throw "O que voc\u00EA gostaria de solicitar? n\u00E3o pode ser vazio.";}}

@@ -1,0 +1,431 @@
+<html>
+
+<head>
+  <link type="text/css" rel="stylesheet" href="/style-guide/css/fluig-style-guide.min.css" />
+  <script type="text/javascript" src="/portal/resources/js/jquery/jquery.js"></script>
+  <script type="text/javascript" src="/portal/resources/js/jquery/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="/portal/resources/js/mustache/mustache-min.js"></script>
+  <script type="text/javascript" src="/style-guide/js/fluig-style-guide.min.js" charset="utf-8"></script>
+
+  <!-- sweetalert2 -->
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <!-- Dataset -->
+  <script type="text/javascript" src="/webdesk/vcXMLRPC.js"></script>
+
+  <!-- FontAwesome -->
+  <link type="text/css" rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+  <!-- JQuery Mask Plugin -->
+  <script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
+
+  <!-- Custom -->
+  <link type="text/css" rel="stylesheet" href="./style.css">
+  <script type="text/javascript" src="./app1.js"></script>
+
+
+<body class="fluig-style-guide process-style" id="devkit-style">
+  <form name="form" role="form" id="form-processo">
+
+
+    <div class="panel panel-primary panel-border">
+      <!--Painel geral do formulário - fecha no extremo do arquivo e contém todas as seções-->
+
+      <div class="panel-heading panel-bg panel-border"> <!--início da declaração do cabeçalho principal (azul)-->
+        <div class="container-fluid">
+          <section id="logo">
+            <img src="./images/logoCigame.png" alt="NOME-CLIENTE" width="130" style="padding: 10px;">
+            <h3 class="panel-title">Cancelamento de NF</h3>
+          </section>
+        </div>
+      </div> <!--fim da declaração do cabeçalho principal (azul)-->
+
+      <div class="panel-body"> <!--panel body geral do arquivo - fecha no extremo e contém todas as seções-->
+
+
+        <div class="panel panel-primary"> <!--declaração da primeira seção-->
+          <div class="panel-heading"> <!--início do cabeçalho da seção-->
+            <h3 class="panel-title subpanel_title">
+              <span id="led_abertura" class="led"></span>
+              <a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion" href="#abertura"><i
+                  class="far fa-clipboard"></i> ABERTURA</a>
+            </h3>
+          </div> <!--fim da declaração do cabeçalho da seção-->
+
+          <div id="abertura" class="panel-collapse collapse in">
+            <div class="panel-body">
+
+              <input type="hidden" name="matSolicitante" id="matSolicitante">
+              <input type="hidden" name="matSupervisor" id="matSupervisor">
+              <input type="hidden" name="tipoSolicitante" id="tipoSolicitante">
+
+              <div class="row">
+
+                <div class="form-group col-md-3">
+                  <label>Vendedor</label>
+                  <div class="input-group">
+                    <input type="text" name="vendedor" id="vendedor" class="form-control" readonly>
+                    <span class="input-group-addon">
+                      <i class="far fa-user"></i>
+                    </span>
+                  </div>
+                </div>
+
+                <div class="form-group col-md-3">
+                  <label>Supervisor solicitante</label>
+                  <div class="input-group">
+                    <input type="text" name="supervisorSolicitante" id="supervisorSolicitante" class="form-control"
+                      readonly>
+                    <span class="input-group-addon">
+                      <i class="fas fa-user-shield"></i>
+                    </span>
+                  </div>
+                </div>
+
+                <div class="form-group col-md-6">
+                  <label class="required">Motivo do cancelamento!!!</label>
+                  <input type="zoom" name="MotivoCancelam" id="MotivoCancelam" class="form-control" data-zoom="
+											{
+												'displayKey':'MOTIVO',
+												'datasetId':'ds_motivo_devolucoes_winthor',
+												'maximumSelectionLength':'1',
+												'placeholder':'Buscar...',
+												'fields':[
+													{'field':'MOTIVO','label':'Motivo','standard':'true'}
+												]
+											}">
+                </div>
+
+                <div class="form-group col-md-3" hidden>
+                  <label class="required">Aguardado faturamento?</label>
+                  <select name="subprocesso" id="subprocesso" class="form-control" data-ligar>
+                    <option value="sim">Sim</option>
+                    <option value="nao">Não</option>
+                  </select>
+                </div>
+
+
+                <!-- <div class="form-field" data-type="textbox" data-show-properties="" data-field-name="OutroMotivo">
+                  <div class="form-input">
+                    <div class="form-group col-md-3">
+                      <label>Se o motivo for outro, descreva:</label><input type="text"
+                        class="form-control" name="OutroMotivo" value="" rows="2" placeholder="" data-size="big" />
+                    </div>
+                  </div>
+                </div> -->
+
+              </div> <!--fecha row -->
+
+              <div class="row">
+
+                <div class="form-group col-md-3">
+                  <label class="required">Código do cliente</label>
+                  <input type="zoom" name="codCliente" id="codCliente" class="form-control" data-zoom="
+                        {
+                        'displayKey':'A01_COD_CLI',
+                        'datasetId':'ds_cancelamento_de_notas_Winthor',
+                        'maximumSelectionLength':'1',
+                        'placeholder':'Buscar...',
+                        'fields':[
+                        {'field':'A01_COD_CLI','label':'Código','standard':'true'}
+                        ]
+                        }">
+                </div>
+
+                <div class="form-group col-md-3">
+                  <label class="required">Cliente</label>
+                  <input type="zoom" name="cliente" id="cliente" class="form-control" data-zoom="
+											{
+												'displayKey':'A02_CLIENTE',
+												'datasetId':'ds_cancelamento_de_notas_Winthor',
+												'maximumSelectionLength':'1',
+												'placeholder':'Buscar...',
+												'fields':[
+													{'field':'A02_CLIENTE','label':'Cliente','standard':'true'}
+												]
+											}">
+                </div>
+
+                <div class="form-group col-md-3">
+                  <label class="required">Número NF</label>
+                  <input type="zoom" name="numNF" id="numNF" class="form-control" data-zoom="
+											{
+												'displayKey':'A03_NOTA',
+												'datasetId':'ds_cancelamento_de_notas_Winthor',
+												'maximumSelectionLength':'1',
+												'placeholder':'Buscar...',
+												'fields':[
+													{'field':'A03_NOTA','label':'NF','standard':'true'}
+												]
+											}">
+                </div>
+
+                <div class="form-group col-md-3">
+                  <label>Valor da nota</label>
+                  <div class="input-group">
+                    <input type="text" name="valornota" id="valornota" class="form-control" readonly>
+                    <span class="input-group-addon">
+                      <i class="fas fa-dollar-sign"></i>
+                    </span>
+                  </div>
+                </div>
+
+              </div> <!-- fecha row-->
+
+              <div class="row">
+
+                <div class="form-group col-md-3">
+                  <label>Cobrança</label>
+                  <div class="input-group">
+                    <input type="text" name="cobranca" id="cobranca" class="form-control" readonly>
+                    <span class="input-group-addon"><i class="fas fa-money-bill"></i></span>
+                  </div>
+                </div>
+
+                <div class="form-group col-md-3">
+                  <label>Plano de pagamento</label>
+                  <div class="input-group">
+                    <input type="text" name="plano" id="plano" class="form-control" readonly>
+                    <span class="input-group-addon">
+                      <i class="fas fa-dollar-sign"></i>
+                    </span>
+                  </div>
+                </div>
+
+                <div class="form-group col-md-3">
+                  <label>Data faturamento</label>
+                  <div class="input-group">
+                    <input type="text" name="datafat" id="datafat" class="form-control" readonly>
+                    <span class="input-group-addon">
+                      <i class="fas fa-calendar"></i>
+                    </span>
+                  </div>
+                </div>
+
+                <div class="form-group col-md-3">
+                  <label>Validação</label>
+                  <div class="input-group">
+                    <input type="text" name="validacao" id="validacao" class="form-control" readonly>
+                    <span class="input-group-addon">
+                      <i class="fas fa-exclamation"></i>
+                    </span>
+                  </div>
+                </div>
+
+              </div> <!--fecha row-->
+
+              <div class="row">
+
+                <!-- <div class="form-group col-md-3">
+                  <label class="required">Possui produtos especialmente comprados para a nota?</label>
+                  <select name="prodespecial" id="prodespecial" class="form-control">
+                    <option value="">Selecione uma opção...</option>
+                    <option>Sim</option>
+                    <option>Não</option>
+                  </select>
+                </div> -->
+
+                <div class="form-group col-md-3">
+                  <label>Número do pedido</label>
+                  <div class="input-group">
+                    <input type="text" name="pedido" id="pedido" class="form-control" readonly>
+                    <span class="input-group-addon">
+                      <i class="fas fa-exclamation"></i>
+                    </span>
+                  </div>
+                </div>
+
+                <div class="form-group col-md-3">
+                  <label>Título está no banco?</label>
+                  <select name="TituloBanco" id="TituloBanco" class="form-control">
+                    <option value="">Selecione uma opção...</option>
+                    <option>Sim</option>
+                    <option>Não</option>
+                  </select>
+                </div>
+
+                <div class="form-field" data-type="textbox" data-show-properties="" data-field-name="LocalMat"
+                  style="position: relative; left: 0px; top: 0px">
+                  <div class="form-input">
+                    <div class="form-group col-md-3">
+                      <label>Onde está o material?</label><input type="text" class="form-control" name="LocalMat"
+                        value="" placeholder="" data-size="big" />
+                    </div>
+                  </div>
+                </div>
+
+              </div> <!--fecha row-->
+
+            </div> <!-- finaliza panel body-->
+          </div> <!--finaliza painel colapsável-->
+        </div> <!--finaliza panel-primary-->
+
+
+        <div class="panel panel-primary"> <!--declaração da seção-->
+          <div class="panel-heading"> <!--início do cabeçalho da seção-->
+            <h3 class="panel-title subpanel_title">
+              <span id="led_supervisor" class="led"></span>
+              <a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion" href="#supervisor"><i
+                  class="far fa-clipboard"></i> APROVAÇÃO SUPERVISÃO</a>
+            </h3>
+          </div> <!--fim da declaração do cabeçalho da seção-->
+
+          <div id="supervisor" class="panel-collapse collapse in">
+            <!--início do conteúdo colapsável (engloba todas as variáveis da seção)-->
+            <div class="panel-body"> <!--panel body normal da seção-->
+
+              <div class="form-group col-md-3">
+                <label>Aprovar solicitação?</label>
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="rdAprovaSuperv" value="aprovar"
+                      checked>Aprovar</label>
+                </div>
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="rdAprovaSuperv" value="reprovar">Reprovar</label>
+                </div>
+              </div>
+
+              <div class="form-group col-md-4">
+                <label>Observação supervisão</label>
+                <textarea class="form-control" rows="3" name="ObsGerencia" placeholder="" data-size="big"></textarea>
+              </div>
+
+            </div> <!--fim do panel body-->
+          </div> <!--fim da aprovação do painel colapsável-->
+        </div> <!--fim do panel primary-->
+
+        <div class="panel panel-primary"> <!--declaração seção-->
+          <div class="panel-heading"> <!--início do cabeçalho da seção-->
+            <h3 class="panel-title subpanel_title">
+              <span id="led_reaval" class="led"></span>
+              <a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion" href="#reavaliacao"><i
+                  class="far fa-clipboard"></i> REAVALIAÇÃO DO SUPERVISOR</a>
+            </h3>
+          </div> <!--fim da declaração do cabeçalho da seção-->
+
+          <div id="reavaliacao" class="panel-collapse collapse in">
+            <div class="panel-body">
+
+
+              <div class="row">
+
+                <div class="form-group col-md-3">
+                  <label class="required">Prosseguir com a solicitação?</label>
+                  <div class="form-check" id="aprovgerente">
+                    <label class="form-check-label">
+                      <input type="radio" class="form-check-input" id="reavalgerente" name="reavalgerente"
+                        value="Sim">Sim, enviar para a logística</label>
+                  </div>
+                  <div class="form-check">
+                    <label class="form-check-label">
+                      <input type="radio" class="form-check-input" id="reavalgerente" name="reavalgerente"
+                        value="Não">Não, encerrar</label>
+                  </div>
+                </div>
+
+                <div class="form-input col-md-6" id="obssuperv">
+                  <label>Observação supervisor</label>
+                  <div class="input-group">
+                    <textarea class="form-control" rows="2" name="obsreaval"></textarea>
+                    <span class="input-group-addon"><i class="fas fa-pen"></i></span>
+                  </div>
+                </div>
+
+              </div>
+
+            </div> <!-- finaliza body-->
+          </div> <!--finaliza colapsável-->
+        </div> <!--fecha o painel primary-->
+
+        <div class="panel panel-primary"> <!--declaração da seção-->
+          <div class="panel-heading"> <!--início do cabeçalho da seção-->
+            <h3 class="panel-title subpanel_title">
+              <span id="led_compras" class="led"></span>
+              <a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion" href="#compras"><i
+                  class="far fa-clipboard"></i> APROVAÇÃO DO COMPRAS</a>
+            </h3>
+          </div> <!--fim da declaração do cabeçalho da seção-->
+
+          <div id="compras" class="panel-collapse collapse in">
+            <!--início do conteúdo colapsável (engloba todas as variáveis da seção)-->
+            <div class="panel-body"> <!--panel body normal da seção-->
+
+              <div class="row">
+
+                <div class="form-group col-md-3">
+                  <label>Aprovação Compras</label>
+                  <div class="form-check">
+                    <label class="form-check-label">
+                      <input type="radio" class="form-check-input" name="aprovacaoCompras" value="aprovar"
+                        checked>Aprovar</label>
+                  </div>
+                  <div class="form-check">
+                    <label class="form-check-label">
+                      <input type="radio" class="form-check-input" name="aprovacaoCompras"
+                        value="reprovar">Reprovar</label>
+                  </div>
+                </div>
+
+                <div class="form-group col-md-4">
+                  <label>Observação compras</label>
+                  <textarea class="form-control" rows="3" name="obscompras" id="obscompras" placeholder=""
+                    data-size="big"></textarea>
+                </div>
+
+              </div> <!--fecha row-->
+
+            </div> <!--fim do panel body-->
+          </div> <!--fim da aprovação do painel colapsável-->
+        </div> <!--fim do panel primary-->
+
+        <div class="panel panel-primary"> <!--declaração da seção-->
+          <div class="panel-heading"> <!--início do cabeçalho da seção-->
+            <h3 class="panel-title subpanel_title">
+              <span id="led_cancelamento" class="led"></span>
+              <a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion" href="#cancelamento"><i
+                  class="far fa-clipboard"></i> CANCELAMENTO DA NOTA</a>
+            </h3>
+          </div> <!--fim da declaração do cabeçalho da seção-->
+
+          <div id="cancelamento" class="panel-collapse collapse in">
+            <!--início do conteúdo colapsável (engloba todas as variáveis da seção)-->
+            <div class="panel-body"> <!--panel body normal da seção-->
+
+              <div class="row">
+
+                <div class="form-group col-md-3">
+                  <label>Aprovação da logística</label>
+                  <div class="form-check">
+                    <label class="form-check-label">
+                      <input type="radio" class="form-check-input" name="aprovacaoRecebimento" value="aprovar"
+                        checked>Aprovar
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <label class="form-check-label">
+                      <input type="radio" class="form-check-input" name="aprovacaoRecebimento" value="reprovar">
+                      Enviar para gerente novamente
+                    </label>
+                  </div>
+                </div>
+
+                <div class="form-group col-md-4">
+                  <label>Observação Recebimento</label>
+                  <textarea class="form-control" rows="3" name="obsreceb" id="obsreceb" placeholder=""
+                    data-size="big"></textarea>
+                </div>
+
+              </div> <!--fecha row-->
+
+            </div> <!--fim do panel body-->
+          </div> <!--fim da aprovação do painel colapsável-->
+        </div> <!--fim do panel primary-->
+
+  </form>
+
+</body>
+
+</html>

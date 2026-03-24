@@ -1,0 +1,403 @@
+<html>
+
+<head>
+  <link type="text/css" rel="stylesheet" href="/style-guide/css/fluig-style-guide.min.css" />
+  <script type="text/javascript" src="/portal/resources/js/jquery/jquery.js"></script>
+  <script type="text/javascript" src="/portal/resources/js/jquery/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="/portal/resources/js/mustache/mustache-min.js"></script>
+  <script type="text/javascript" src="/style-guide/js/fluig-style-guide.min.js" charset="utf-8"></script>
+
+  <!-- Dataset -->
+  <script type="text/javascript" src="/webdesk/vcXMLRPC.js"></script>
+
+  <!-- sweetalert2 -->
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <!-- FontAwesome -->
+  <link type="text/css" rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+  <!-- JQuery Mask Plugin -->
+  <script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
+
+  <!-- Custom -->
+  <link type="text/css" rel="stylesheet" href="./style_ti.css">
+  <script type="text/javascript" src="./app.js"></script>
+
+
+<body class="fluig-style-guide process-style" id="devkit-style">
+  <form name="form" role="form" id="form-processo">
+
+    <div class="panel panel-primary panel-border">
+      <!--Painel geral do formulário - fecha no extremo do arquivo e contém todas as seções-->
+
+      <div class="panel-heading panel-bg panel-border"> <!--início da declaração do cabeçalho principal (azul)-->
+        <div class="container-fluid">
+          <section id="logo">
+            <img
+              src="https://api-site.cigame.com.br/images/logo-150px-x-35-px-(2)-1653585063932-(1)-(1)-(1)-(1)-1655820026572.png"
+              alt="NOME-CLIENTE" title="LOGO-CLIENTE" width="100">
+            <h3 class="panel-title">CHAMADO TI</h3>
+          </section>
+        </div>
+      </div> <!--fim da declaração do cabeçalho principal (azul)-->
+
+      <div class="panel-body"> <!--panel body geral do arquivo - fecha no extremo e contém todas as seções-->
+
+        <div class="panel panel-primary"> <!--declaração da primeira seção-->
+          <div class="panel-heading"> <!--início do cabeçalho da seção-->
+            <h3 class="panel-title subpanel_title">
+              <a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion" href="#abertura"><i
+                  class="far fa-clipboard"></i> DESCRIÇÃO DO PROBLEMA</a>
+            </h3>
+          </div> <!--fim da declaração do cabeçalho da seção-->
+
+          <div id="abertura" class="panel-collapse collapse in">
+            <div class="panel-body">
+
+              <div class="alert alert-warning alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">�</span><span
+                    class="sr-only">Close</span></button>
+                <strong>ATENÇÃO! </strong>Caso a demanda seja urgente e necessite de execução imediata, não deixe de
+                fazer o registro após a ação do setor de TI!!!
+              </div>
+
+              <!-- <div class="alert alert-info alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">�</span><span
+                    class="sr-only">Close</span></button>
+                <strong>Por que abrir chamado? </strong>
+                1- Pelo fato de um sistema de abertura de chamados otimizar a rotina dos profissionais de TI, existe uma
+                melhora na produtividade do setor.
+                2- Pelo fato do sistema apresentar todos os registros de solicitações, é possível medir o desempenho,
+                mensurar a evolução do atendimento e entender melhor os problemas.
+                3 - Como a plataforma concentra todo o histórico de pedidos, os profissionais conseguem ter uma visão
+                completa sobre todos os chamados de TIs.
+              </div> -->
+
+              <input type="" name="matSolicitante" id="matSolicitante">
+              <input type="" name="matSupervisor" id="matSupervisor">
+              <input type="" name="matAgente" id="matAgente">              
+
+              <div class="row">
+
+                <div class="form-group col-md-3">
+                  <label>Vendedor</label>
+                  <div class="input-group">
+                    <input type="text" name="vendedor" id="vendedor" class="form-control" readonly>
+                    <span class="input-group-addon">
+                      <i class="far fa-user"></i>
+                    </span>
+                  </div>
+                </div>
+
+                <div class="form-group col-md-3">
+                  <label>Supervisor solicitante</label>
+                  <div class="input-group">
+                    <input type="text" name="supervisorSolicitante" id="supervisorSolicitante" class="form-control"
+                      readonly>
+                    <span class="input-group-addon">
+                      <i class="fas fa-user-shield"></i>
+                    </span>
+                  </div>
+                </div>
+
+                <div class="form-group col-md-3">
+                  <label>Tipo solicitante</label>
+                  <div class="input-group">
+                    <input type="text" name="tipoSolicitante" id="tipoSolicitante" class="form-control" readonly>
+                    <span class="input-group-addon">
+                      <i class="far fa-user"></i>
+                    </span>
+                  </div>
+                </div>
+
+                <div class="form-group col-md-3">
+                  <label for="zoom">Tipo da solicitação</label>
+                  <input type="zoom" class="form-control zoom-input" name="tipo" id="tipo"
+                    dataset="ds_solicitacao_ti_winthor" zoomvalue="A05_TIPO" datasetvalue="A05_TIPO"
+                    data-zoom="{'displayKey':'A05_TIPO','datasetId':'ds_solicitacao_ti_winthor','fields':[{'field':'A05_TIPO','label':'Tipo','standard':true}]}" />
+                </div>
+
+
+              </div> <!--encerra a primeira row-->
+
+              <div class="row">
+
+                <div class="form-group col-md-6">
+                  <label for="zoom">Onde está o problema?</label>
+                  <input type="zoom" class="form-control zoom-input" name="subtipo" id="subtipo"
+                    dataset="ds_solicitacao_ti_winthor" zoomvalue="A06_SUBTIPO" datasetvalue="A06_SUBTIPO"
+                    data-zoom="{'displayKey':'A06_SUBTIPO','datasetId':'ds_solicitacao_ti_winthor','fields':[{'field':'A06_SUBTIPO','label':'Subtipo','standard':true}]}" />
+                </div>
+
+                <div class="form-group col-md-6">
+                  <label for="zoom">O que está acontecendo?</label>
+                  <input type="zoom" class="form-control zoom-input" name="solicitacao" id="solicitacao"
+                    dataset="ds_solicitacao_ti_winthor" zoomvalue="A02_SOLICITACAO" datasetvalue="A02_SOLICITACAO"
+                    data-zoom="{'displayKey':'A02_SOLICITACAO','datasetId':'ds_solicitacao_ti_winthor','fields':[{'field':'A02_SOLICITACAO','label':'Solicitação','standard':true}]}" />
+                </div>
+
+              </div>
+
+              <div class="row">
+
+                <div class="form-group col-md-3">
+                  <label title="Necessita aprovação do gerente?">Aprovação gerente</label>
+                  <div class="input-group">
+                    <input type="text" name="aprovgerente" id="aprovgerente" class="form-control" readonly>
+                    <span class="input-group-addon">
+                      <i class="far fa-user"></i>
+                    </span>
+                  </div>
+                </div>
+
+                <div class="form-group col-md-3">
+                  <label title="Necessita requisição de material?">Requisição material</label>
+                  <div class="input-group">
+                    <input type="text" name="reqmaterial" id="reqmaterial" class="form-control" readonly>
+                    <span class="input-group-addon">
+                      <i class="fas fa-user-shield"></i>
+                    </span>
+                  </div>
+                </div>
+
+                <div class="form-group col-md-2">
+                  <label>Agente</label>
+                  <div class="input-group">
+                    <input type="text" name="agente" id="agente" class="form-control" readonly>
+                    <span class="input-group-addon">
+                      <i class="far fa-user"></i>
+                    </span>
+                  </div>
+                </div>
+
+                <div class="form-group col-md-2">
+                  <label>Prazo assumir (min)</label>
+                  <div class="input-group">
+                    <input type="text" name="tpassumir" id="tpassumir" class="form-control" readonly>
+                    <span class="input-group-addon">
+                      <i class="far fa-user"></i>
+                    </span>
+                  </div>
+                </div>
+
+                <div class="form-group col-md-2">
+                  <label>Prazo concluir (min)</label>
+                  <div class="input-group">
+                    <input type="text" name="tpconcluir" id="tpconcluir" class="form-control" readonly>
+                    <span class="input-group-addon">
+                      <i class="fas fa-user-shield"></i>
+                    </span>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="row">
+
+                <div class="form-group col-md-12">
+                  <label>Urgência</label>
+                  <div class="input-group">
+                    <input type="text" name="urgencia" id="urgencia" class="form-control" readonly>
+                    <span class="input-group-addon">
+                      <i class="fas fa-user-shield"></i>
+                    </span>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="row">
+
+                <div class="form-group col-md-12">
+                  <label>Informe sua necessidade</label><textarea class="form-control" rows="2" name="DescrProblema"
+                    placeholder="Tente relatar o problema com a maior clareza possível. Adicione código de cliente, número de NF, ou dados específicos que ajudem a resolver o problema com mais agilidade"
+                    data-size="big"></textarea>
+                </div>
+
+              </div>
+
+            </div> <!-- finaliza body-->
+          </div> <!--finaliza colapsável-->
+        </div> <!--fecha o painel primary-->
+
+        <!-- ----------------------------------------------------------------------------------------------------------------->
+        <!--início do segundo painel-->
+
+        <div class="panel panel-primary"> <!--declaração da primeira seção-->
+          <div class="panel-heading"> <!--início do cabeçalho da seção-->
+            <h3 class="panel-title subpanel_title">
+              <a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion" href="#acao-ti"><i
+                  class="far fa-clipboard"></i> Ação do setor de TI</a>
+            </h3>
+          </div> <!--fim da declaração do cabeçalho da seção-->
+
+          <div id="acao-ti" class="panel-collapse collapse in">
+            <div class="panel-body">
+
+              <div class="row">
+
+                <div class="form-input col-md-6" id="obsti">
+                  <div class="form-group">
+                    <label>Observação TI</label>
+                    <textarea class="form-control" rows="2" name="ObsEsclarecTI" placeholder=""
+                      data-size="big"></textarea>
+                  </div>
+                </div>
+
+                <div class="form-input col-md-6" id="resolucao">
+                  <div class="form-group">
+                    <label>Descreva o que foi feito para resolução do problema</label><textarea class="form-control"
+                      rows="2" name="ResolucaoTI" placeholder="" data-size="big"></textarea>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="row">
+
+                <div class="form-input col-md-6">
+                  <div class="form-group">
+                    <label>Data e hora em que foi realizada a ação</label><input type="text" class="form-control"
+                      name="DataHrManut" value="" placeholder="" data-size="big" mask="00/00/0000 00:00:00"
+                      maxlength="19" data-only-numbers="true"/>
+                  </div>
+                </div>
+
+                <div class="form-group col-md-3">
+                  <label>Retornar para usuário?</label>
+                  <div class="form-check" id="destino">
+                    <label class="form-check-label">
+                      <input type="radio" class="form-check-input" name="destino" value="Sim">Sim</label>
+                  </div>
+                  <div class="form-check">
+                    <label class="form-check-label">
+                      <input type="radio" class="form-check-input" name="destino" value="Não">Não</label>
+                  </div>
+                </div>
+
+                <div class="form-group col-md-3">
+                  <label>Confirmar solicitação com gerente?</label>
+                  <div class="form-check" id="confgerente">
+                    <label class="form-check-label">
+                      <input type="radio" class="form-check-input" name="confgerente" value="Sim">Sim</label>
+                  </div>
+                  <div class="form-check">
+                    <label class="form-check-label">
+                      <input type="radio" class="form-check-input" name="confgerente" value="Não" checked>Não</label>
+                  </div>
+                </div>
+
+              </div>
+
+            </div> <!-- finaliza body-->
+          </div> <!--finaliza colapsável-->
+        </div> <!--fecha o painel primary-->
+
+        <!-- ---------------------------------------------------------------------------------------->
+
+        <div class="panel panel-primary"> <!--declaração da primeira seção-->
+          <div class="panel-heading"> <!--início do cabeçalho da seção-->
+            <h3 class="panel-title subpanel_title">
+              <a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion" href="#finalizacao"><i
+                  class="far fa-clipboard"></i> Finalização do solicitante</a>
+            </h3>
+          </div> <!--fim da declaração do cabeçalho da seção-->
+
+          <div id="finalizacao" class="panel-collapse collapse in">
+            <div class="panel-body">
+
+              <div class="row">
+
+                <div class="form-group col-md-5">
+                  <label>Problema resolvido? Demanda atendida?</label>
+                  <div class="form-check" id="destino">
+                    <label class="form-check-label">
+                      <input type="radio" class="form-check-input" name="demandaok" value="Sim">Sim</label>
+                  </div>
+                  <div class="form-check">
+                    <label class="form-check-label">
+                      <input type="radio" class="form-check-input" name="demandaok" value="Não">Não</label>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="row">
+
+                <div class="form-input col-md-6">
+                  <div class="form-group">
+                    <label>Esclarecimento do solicitante</label><textarea class="form-control" rows="3"
+                      name="EsclarecSolicit" placeholder="" data-size="big"></textarea>
+                  </div>
+                </div>
+
+                <div class="form-input col-md-6">
+                  <div class="form-group">
+                    <label>Faça alguma observação ou sugestão</label><textarea class="form-control" rows="3"
+                      name="ObsUsuario" placeholder="" data-size="big"></textarea>
+                  </div>
+                </div>
+
+              </div>
+
+
+            </div> <!-- finaliza body-->
+          </div> <!--finaliza colapsável-->
+        </div> <!--fecha o painel primary-->
+<!-------------------------------------------------------------------------------------------------------->
+
+<div class="panel panel-primary"> <!--declaração da primeira seção-->
+  <div class="panel-heading"> <!--início do cabeçalho da seção-->
+    <h3 class="panel-title subpanel_title">
+      <a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion" href="#aprovacao-gerente"><i
+          class="far fa-clipboard"></i> Aprovação gerente</a>
+    </h3>
+  </div> <!--fim da declaração do cabeçalho da seção-->
+
+  <div id="aprovacao-gerente" class="panel-collapse collapse in">
+    <div class="panel-body">
+
+      <div class="row">
+
+        <div class="form-group col-md-2">
+          <label>Aprovar demanda?</label>
+          <div class="form-check" id="destino">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" name="rdaprovgerente" value="Sim">Sim</label>
+          </div>
+          <div class="form-check">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" name="rdaprovgerente" value="Não">Não</label>
+          </div>
+        </div>
+
+        <div class="form-group col-md-4">
+          <label for="zoom">Requisição</label>
+          <input type="zoom" class="form-control zoom-input" name="material" id="material"
+            dataset="ds_solicitacao_ti_winthor" zoomvalue="A05_TIPO" datasetvalue="A05_TIPO"
+            data-zoom="{'displayKey':'A05_TIPO','datasetId':'ds_solicitacao_ti_winthor','fields':[{'field':'A05_TIPO','label':'Tipo','standard':true}]}" />
+        </div>
+
+        <div class="form-input col-md-4" id="obsgerente">
+          <div class="form-group">
+            <label>Observação</label><textarea class="form-control"
+              rows="2" name="obsgerente" placeholder="" data-size="big"></textarea>
+          </div>
+        </div>
+
+      </div>
+
+    </div> <!-- finaliza body-->
+  </div> <!--finaliza colapsável-->
+</div> <!--fecha o painel primary-->
+
+
+      </div> <!--fim do formulário-->
+    </div> <!--fim do formulário-->
+
+  </form>
+
+  </body>
+
+</html>

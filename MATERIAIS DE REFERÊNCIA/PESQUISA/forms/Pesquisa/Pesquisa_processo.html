@@ -1,0 +1,177 @@
+<html>
+
+<head>
+  <link type="text/css" rel="stylesheet" href="/style-guide/css/fluig-style-guide.min.css" />
+  <script type="text/javascript" src="/portal/resources/js/jquery/jquery.js"></script>
+  <script type="text/javascript" src="/portal/resources/js/jquery/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="/portal/resources/js/mustache/mustache-min.js"></script>
+  <script type="text/javascript" src="/style-guide/js/fluig-style-guide.min.js" charset="utf-8"></script>
+
+  <!-- Dataset -->
+    <script type="text/javascript" src="/webdesk/vcXMLRPC.js"></script>
+
+  <!-- sweetalert2 -->
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <!-- FontAwesome -->
+  <link type="text/css" rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+  <!-- JQuery Mask Plugin -->
+  <script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
+
+  <!-- Custom -->
+  <link type="text/css" rel="stylesheet" href="./style.css">
+  <script type="text/javascript" src="./app.js"></script>
+
+
+<body class="fluig-style-guide process-style" id="devkit-style">
+  <form name="form" role="form" id="form-processo">
+
+
+    <div class="panel panel-primary panel-border"> <!--Painel geral do formulário - fecha no extremo do arquivo e contém todas as seções-->
+
+      <div class="panel-heading panel-bg panel-border"> <!--início da declaração do cabeçalho principal (azul)-->
+        <div class="container-fluid">
+          <section id="logo">
+            <img
+              src="https://api-site.cigame.com.br/images/logo-150px-x-35-px-(2)-1653585063932-(1)-(1)-(1)-(1)-1655820026572.png"
+              alt="NOME-CLIENTE" title="LOGO-CLIENTE" width="100">
+            <h3 class="panel-title">PESQUISA PROCESSO</h3>
+          </section>
+        </div>
+      </div> <!--fim da declaração do cabeçalho principal (azul)-->
+
+      <div class="panel-body"> <!--panel body geral do arquivo - fecha no extremo e contém todas as seções-->
+
+
+			<div class="panel-heading painel-master-heading">
+				<h3 class="panel-title">
+				  <a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion" href="#MasterVendas">
+					<i class="fas fa-clipboard-check"></i> VENDAS
+				  </a>
+				</h3>
+			  </div>
+
+			<div id="MasterVendas" class="panel-collapse collapse in"> 
+				<div class="panel-body">
+
+		
+		<div class="panel panel-primary"> <!--declaração da primeira seção-->
+			<div class="panel-heading"> <!--início do cabeçalho da seção-->
+			  <h3 class="panel-title subpanel_title">
+				<a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion" href="#dadoscliente"><i class="fas fa-mail-bulk"></i> DADOS DO CLIENTE</a>
+			  </h3>
+			</div> <!--fim da declaração do cabeçalho da seção-->
+  
+			<div id="dadoscliente" class="panel-collapse collapse in">
+			  <div class="panel-body">
+
+				<div class="form-group col-md-3" hidden>
+					<label>Supervisor solicitante</label>
+					<div class="input-group">
+					  <input type="text" name="supervisorSolicitante" id="supervisorSolicitante" class="form-control"
+						readonly>
+					  <span class="input-group-addon">
+						<i class="fas fa-user-shield"></i>
+					  </span>
+					</div>
+				  </div>
+
+				  <div class="form-group col-md-3" hidden>
+					<label>Tipo solicitante</label>
+					<div class="input-group">
+					  <input type="text" name="matSupervisor" id="matSupervisor" class="form-control" readonly>
+					  <span class="input-group-addon">
+						<i class="far fa-graduation-cap"></i>
+					  </span>
+					</div>
+				  </div>
+		
+ <!--início do primeiro row-->
+ <div class="row">
+
+	<div class="form-group col-md-2">
+	  <label>Matrícula</label>
+	  <div class="input-group">
+		<input type="text" class="form-control" name="matricula" id="matricula" readonly>
+		<span class="input-group-addon"><i class="fas fa-id-card"></i></span>	
+	  </div>
+	</div>
+
+	<div class="form-group col-md-2">
+		<label>Vendedor</label>
+		<div class="input-group">
+		  <input type="text" class="form-control" name="usuario" id="usuario" readonly>
+		  <span class="input-group-addon"><i class="fas fa-user"></i></span>	
+		</div>
+	  </div>
+
+	  <div class="form-group col-md-3">
+		<label>Tipo solicitante</label>
+		<div class="input-group">
+		  <input type="text" name="tipoSolicitante" id="tipoSolicitante" class="form-control" readonly>
+		  <span class="input-group-addon">
+			<i class="fas fa-graduation-cap"></i>
+		  </span>
+		</div>
+	  </div>
+
+</div>
+
+<div class="row">
+
+	<div class="form-group col-md-2">
+	  <label for="zoom">Cód. cliente</label>
+	  <input type="zoom" class="form-control" id="cod_cliente" name="cod_cliente" dataset="dsWFDevolucaoClientes"
+		zoomvalue="CODCLI" datasetvalue="CODCLI"
+		data-zoom="{'displayKey':'CODCLI','datasetId':'Ds_Consulta_Clientes_Winthor','fields':[{'field':'CODCLI','label':'CODCLI','standard':true}]}" />
+	</div>
+
+	<div class="form-group col-md-4">
+	  <label for="zoom">Cliente</label>
+	  <input type="zoom" class="form-control" name="cliente" dataset="Ds_Consulta_Clientes_Winthor"
+		zoomvalue="CLIENTE" datasetvalue="CLIENTE"
+		data-zoom="{'displayKey':'CLIENTE','datasetId':'Ds_Consulta_Clientes_Winthor','fields':[{'field':'CLIENTE','label':'CLIENTE','standard':true}]}" />
+	</div>
+
+
+	<div class="form-group col-md-2">
+		<label class="required">Qual e-mail deseja alterar?</label>
+		<div class="input-group">
+				<select name="tipo" id="tipo" class="form-control">			
+				<option value="">Selecione</option>
+					<option>Cobrança</option>
+					<option>Nfe</option>
+					<option>Comercial</option>
+				</select>
+				<span class="input-group-addon"><i class="fas fa-mail-bulk"></i></span>	
+		</div>
+	</div>
+
+	<div class="form-group col-md-4">
+		<label>E-mail antigo</label>
+		<div class="input-group">
+		<input type="text" class="form-control" name="oldmail" id="oldmail">
+		<span class="input-group-addon"><i class="fas fa-mail-bulk"></i></span>
+	  </div>
+	</div>
+
+</div>
+
+	<div class="row">
+		
+	<div class="form-group col-md-4">
+		<label>Novo e-mail</label>
+		<div class="input-group">
+		<input type="text" class="form-control" name="email" id="email">
+		<span class="input-group-addon"><i class="fas fa-mail-bulk"></i></span>
+	  </div>
+	</div>
+
+	</div>
+
+</form>		
+
+		</body>
+	</html>

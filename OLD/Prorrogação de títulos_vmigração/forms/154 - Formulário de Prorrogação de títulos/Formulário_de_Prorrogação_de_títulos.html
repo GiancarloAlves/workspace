@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Form</title>
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/style-guide/css/fluig-style-guide.min.css"
+    />
+    <script src="/resources/js/jquery/jquery.js"></script>
+    <script src="/resources/js/jquery/jquery-ui.min.js"></script>
+    <script src="/resources/js/mustache/mustache-min.js"></script>
+    <script src="/style-guide/js/fluig-style-guide.min.js"></script>
+
+    <!-- CUSTOM -->
+    <link
+      href="/style-guide/css/fluig-style-guide-filter.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="/style-guide/css/fluig-style-guide-ratingstars.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="/style-guide/js/fluig-style-guide-filter.min.js"></script>
+    <script src="/style-guide/js/fluig-style-guide-ratingstars.min.js"></script>
+
+    <link
+      href="/webdesk/customresources?cid=1&resourceName=temaFormulario/0.css"
+      type="text/css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="fluig-style-guide">
+    <form
+      class="totvs-form grid vertical create-form-components ui-sortable t0"
+      name="createFormComponents"
+      style="padding-left: 10px; padding-right: 10px"
+    >
+    <h1 class="title-form-application">
+      <section id="logo">
+        <img src="https://api-site.cigame.com.br/images/logo-150px-x-35-px-(2)-1653585063932-(1)-(1)-(1)-(1)-1655820026572.png" alt="NOME-CLIENTE" title="LOGO-CLIENTE" width="200">
+        <h3 class="panel-title">Prorrogação de títulos</h3>
+      </section> 
+        </h1>
+
+	        <!--declaração do primeiro painel-->
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+				  <h3 class="panel-title">
+					<i class="flaticon flaticon-file-person icon-md" aria-hidden="true"></i>  Dados do cliente</h3>
+			  </div>
+				<div class="panel-body">
+					
+			  <!--início do primeiro row-->
+			 <div class="row">
+
+      <div
+        class="form-field"
+        data-type="textbox"
+        data-show-properties=""
+        data-field-name="vendedor"
+        style="position: relative; left: 0px; top: 0px"
+      >
+        <div class="form-input">
+          <div class="form-group col-md-2">
+            <label>Matrícula vend.</label>
+            <input
+              type="text"
+              class="form-control"
+              name="vendedor"
+              value=""
+              placeholder=""              
+           
+            />
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="form-field"
+        data-type="zoomfield"
+        data-show-properties=""
+        data-field-name="cod_cliente"
+        style=""
+      >
+        <div class="form-input">
+          <div class="form-group col-md-2">
+            <label for="zoom">Cód. cliente</label>
+            <div class="input-group">
+              <input
+                type="zoom"
+                class="form-control"
+                name="cod_cliente"
+                dataset="Ds_Consulta_Clientes_Winthor"
+                zoomvalue="CODCLI"
+                datasetvalue="CODCLI"
+                data-zoom="{'displayKey':'CODCLI','datasetId':'Ds_Consulta_Clientes_Winthor','fields':[{'field':'CODCLI','label':'CODCLI','standard':true}]}"
+              />
+              <div class="input-group-addon zoom-preview">
+                <span class="fluigicon fluigicon-zoom-in"></span>
+              </div>
+              <input
+                type="hidden"
+                name="hidden_cod_cliente"
+                id="hidden_cod_cliente"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+	  <div
+	  class="form-field"
+	  data-type="zoomfield"
+	  data-show-properties=""
+	  data-field-name="cliente"
+	  style=""
+	>
+	  <div class="form-input">
+		<div class="form-group col-md-4">
+		  <label for="zoom">Cliente</label>
+		  <div class="input-group">
+			<input
+			  type="zoom"
+			  class="form-control"
+			  name="cliente"
+			  dataset="Ds_Consulta_Clientes_Winthor"
+			  zoomvalue="CLIENTE"
+			  datasetvalue="CLIENTE"
+			  data-zoom="{'displayKey':'CLIENTE','datasetId':'Ds_Consulta_Clientes_Winthor','fields':[{'field':'CLIENTE','label':'CLIENTE','standard':true}]}"
+			/>
+			<div class="input-group-addon zoom-preview">
+			  <span class="fluigicon fluigicon-zoom-in"></span>
+			</div>
+			<input
+			  type="hidden"
+			  name="hidden_cliente"
+			  id="hidden_cliente"
+			/>
+		  </div>
+		</div>
+	  </div>
+	</div>
+
+	<div
+	class="form-field"
+	data-type="textbox"
+	data-show-properties=""
+	data-field-name="Solicitante"
+  >
+	<div class="form-input">
+	  <div class="form-group col-md-4">
+		<label>Contato</label
+		><input
+		  type="text"
+		  class="form-control"
+		  name="Solicitante"
+		  value=""
+		  placeholder="Pessoa de contato no cliente"
+		  data-size=""		  
+		/>
+	  </div>
+	</div>
+  </div>
+
+</div> <!--fecha o primeiro row-->
+
+<div class="row">
+
+	<div
+	class="form-field"
+	data-type="textbox"
+	data-show-properties=""
+	data-field-name="email_solicitan"
+	style=""
+  >
+	<div class="form-input">
+	  <div class="form-group col-md-3">
+		<label>E-mail contato</label
+		><input
+		  type="text"
+		  class="form-control"
+		  name="email_solicitan"
+		  value=""
+		  placeholder=""
+		  data-size="medium"
+		  style=""
+		/>
+	  </div>
+	</div>
+  </div>
+
+      <div
+        class="form-field"
+        data-type="textbox"
+        data-show-properties=""
+        data-field-name="justif"
+        style="position: relative; left: 0px; top: 0px"
+      >
+        <div class="form-input">
+          <div class="form-group col-md-5">
+            <label>Motivo</label
+            ><input
+              type="text"
+              class="form-control"
+              name="justif"
+              value=""
+              placeholder="Descreva o motivo da solicitação"
+              data-size=""
+            />
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="form-field"
+        data-type="textbox"
+        data-show-properties=""
+        data-field-name="boleto"
+      >
+        <div class="form-input">
+          <div class="form-group col-md-4">
+            <label
+              >Forma de envio do boleto</label
+            ><input
+              type="text"
+              class="form-control"
+              name="boleto"
+              value=""
+              placeholder="Como o cliente quer receber o boleto?"
+              data-size=""
+            />
+          </div>
+        </div>
+      </div>
+	</div> <!--fecha row-->
+	</div> <!--fecha panel body-->
+</div> <!--finaliza o painel-->
+
+	        <!--declaração do grid de títulos-->
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+				  <h3 class="panel-title">
+					<i class="flaticon flaticon-monetization-on icon-md" aria-hidden="true"></i>  Dados do título</h3>
+			  </div>
+				<div class="panel-body">
+
+      <div
+        class="form-field"
+        data-type="tabledetail"
+        data-show-properties=""
+        data-field-name="Dados_do_t_tulo"
+      >
+        <div class="form-input">
+          <div class="form-group">
+            <label>Dados do título</label>
+            <table
+              tablename="tabledetailname2"
+              class="table"
+              noaddbutton="true"
+            >
+              <thead>
+                <tr class="tableHeadRow">
+                  <th class="tableColumn">Número do título</th>
+                  <th class="tableColumn">Vencimento original</th>
+                  <th class="tableColumn">Venc. desejado 1</th>
+                  <th class="tableColumn">Venc. desejado 2</th>
+                  <th class="tableColumn">Venc. desejado 3</th>
+                  <th class="tableColumn">Venc. desejado 4</th>
+                  <th class="tableColumn">Venc. desejado 5</th>
+                  <th class="tableColumn">Valor do título</th>
+                  <th class="tableColumn">Este título já foi prorrogado?</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="tableBodyRow">
+                  <td class="fs-v-align-middle">
+                    <div class="form-input">
+                      <input
+                        type="text"
+                        name="column1_2"
+                        class="form-control"
+                        label="Número do título"
+                      />
+                    </div>
+                  </td>
+                  <td class="fs-v-align-middle">
+                    <div class="form-input">
+                      <input
+                        type="text"
+                        name="column2_2"
+                        class="form-control"
+                        label="Vencimento original"
+                      />
+                    </div>
+                  </td>
+                  <td class="fs-v-align-middle">
+                    <div class="form-input">
+                      <input
+                        type="text"
+                        name="column3_2"
+                        class="form-control"
+                        label="Venc. desejado 1"
+                      />
+                    </div>
+                  </td>
+                  <td class="fs-v-align-middle">
+                    <div class="form-input">
+                      <input
+                        type="text"
+                        name="column4_2"
+                        class="form-control"
+                        label="Venc. desejado 2"
+                      />
+                    </div>
+                  </td>
+                  <td class="fs-v-align-middle">
+                    <div class="form-input">
+                      <input
+                        type="text"
+                        name="column5_2"
+                        class="form-control"
+                        label="Venc. desejado 3"
+                      />
+                    </div>
+                  </td>
+                  <td class="fs-v-align-middle">
+                    <div class="form-input">
+                      <input
+                        type="text"
+                        name="column6_2"
+                        class="form-control"
+                        label="Venc. desejado 4"
+                      />
+                    </div>
+                  </td>
+                  <td class="fs-v-align-middle">
+                    <div class="form-input">
+                      <input
+                        type="text"
+                        name="column7_2"
+                        class="form-control"
+                        label="Venc. desejado 5"
+                      />
+                    </div>
+                  </td>
+                  <td class="fs-v-align-middle">
+                    <div class="form-input">
+                      <input
+                        type="text"
+                        name="column8_2"
+                        class="form-control"
+                        label="Valor do título"
+                      />
+                    </div>
+                  </td>
+                  <td class="fs-v-align-middle">					
+                    <div class="form-input">
+                      <input
+                        type="text"
+                        name="column9_2"
+                        class="form-control"
+                        label="Título já foi prorrogado?"
+                      />
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <button
+              type="button"
+              class="btn btn-primary"
+              onclick="wdkAddChild('tabledetailname2')"
+            >
+              Novo Registro
+            </button>
+          </div>
+        </div>
+      </div>
+    </div> <!--fecha o panel body-->
+  </div> <!--fecha o painel-->
+
+	        <!--declaração do terceiro painel-->
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title">
+              <i class="flaticon flaticon-file-person icon-md" aria-hidden="true"></i>  Análise do financeiro</h3>
+            </div>
+            <div class="panel-body">
+
+    <div class="row">
+
+      <!--primeira linha da row do financeiro-->
+     <!--<div
+        class="form-field"
+        data-type="textbox"
+        data-show-properties=""
+        data-field-name="titulos_vencido"
+        style="position: relative; left: 0px; top: 0px"
+      >
+        <div class="form-input">
+          <div class="form-group col-md-2">
+            <label>O cliente possui títulos vencidos?</label
+            ><input
+              type="text"
+              class="form-control"
+              name="titulos_vencido"
+              value=""
+              placeholder=""
+              data-size=""
+            />
+          </div>
+        </div>
+      </div> -->
+
+      <div
+      class="form-field"
+      data-type="radio"
+      data-show-properties=""
+      data-field-name="titulos_vencido"
+      style="position: relative; left: 0px; top: 0px">    
+
+      <div class="form-input">
+        <div class="form-group col-md-2">
+          <label>O cliente possui títulos vencidos?</label>
+          <div class="radio-options">
+            <div class="radio">
+              <label
+                ><input
+                  type="radio"
+                  name="titulos_vencido"
+                  value="Sim"
+                />Sim</label
+              >
+            </div>
+            <div class="radio">
+              <label
+                ><input
+                  type="radio"
+                  name="titulos_vencido"
+                  value="Não"
+                />Não</label
+              >
+            </div>
+            <div class="radio">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+      <div
+        class="form-field"
+        data-type="radio"
+        data-show-properties=""
+        data-field-name="aprov_financ"
+        style="position: relative; left: 0px; top: 0px"
+      >
+        <div class="form-input">
+          <div class="form-group col-md-2">
+            <label>Aprovação financeiro</label>
+            <div class="radio-options">
+              <div class="radio">
+                <label
+                  ><input
+                    type="radio"
+                    name="aprov_financ"
+                    value="Aprovar"
+                  />Aprovar</label
+                >
+              </div>
+              <div class="radio">
+                <label
+                  ><input
+                    type="radio"
+                    name="aprov_financ"
+                    value="Reprovar"
+                  />Reprovar</label
+                >
+              </div>
+              <div class="radio">
+                <label
+                  ><input
+                    type="radio"
+                    name="aprov_financ"
+                    value="Enviar para a diretoria"
+                  />Enviar para a diretoria</label
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> <!--fecha row-->
+  </div> <!--fecha panel body-->
+</div> <!--fecha painel-->
+
+ <!--declaração do terceiro painel-->
+ <div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">
+    <i class="flaticon flaticon-file-person icon-md" aria-hidden="true"></i>  Aprovação da diretoria</h3>
+  </div>
+  <div class="panel-body">
+
+<div class="row">
+      
+      <div
+        class="form-field"
+        data-type="radio"
+        data-show-properties=""
+        data-field-name="aprov_diret"
+        style="position: relative; left: 0px; top: 0px"
+      >
+        <div class="form-input">
+          <div class="form-group col-md-2">
+            <label>Aprovação diretoria</label>
+            <div class="radio-options">
+              <div class="radio">
+                <label
+                  ><input
+                    type="radio"
+                    name="aprov_diret"
+                    value="Aprovar"
+                  />Aprovar</label
+                >
+              </div>
+              <div class="radio">
+                <label
+                  ><input
+                    type="radio"
+                    name="aprov_diret"
+                    value="Reprovar"
+                  />Reprovar</label
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="form-field"
+        data-type="textbox"
+        data-show-properties=""
+        data-field-name="juros"
+      >
+        <div class="form-input">
+          <div class="form-group col-md-2">
+            <label>Juros (se prorrogar)</label
+            ><input
+              type="number"
+              class="form-control"
+              name="juros"
+              value=""
+              placeholder=""
+            />
+          </div>
+        </div>
+      </div>
+    </div> <!--fecha row-->
+  </div> <!--fecha panel body-->
+</div> <!--fecha painel-->
+
+<div
+ class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">
+      <i class="fluigicon fluigicon-process-remove icon-md" aria-hidden="true"></i>
+      Reavaliação do vendedor</h3>
+  </div>
+  <div class="panel-body">
+
+   <!--<div class="alert alert-warning alert-dismissible" role="alert">
+      <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+      Se o processo voltou para a etapa inicial, é porque o financeiro ou diretoria reprovaram a solicitação. Escolha se quer alterar os dados e reenviar a solicitação ou cancelar.
+  </div> -->
+
+<div class="row">
+
+      <div
+        class="form-field"
+        data-type="radio"
+        data-show-properties=""
+        data-field-name="reenviar"
+      >
+        <div class="form-input">
+          <div class="form-group">
+            <label>Reenviar?</label>
+            <div class="radio-options">
+              <div class="radio">
+                <label
+                  ><input
+                    type="radio"
+                    name="reenviar"
+                    value="Reenviar"
+                  />Reenviar</label
+                >
+              </div>
+              <div class="radio">
+                <label
+                  ><input
+                    type="radio"
+                    name="reenviar"
+                    value="Encerrar"
+                  />Encerrar</label
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+
+    <script type="text/javascript">
+      var keyDown = false,
+        ctrl = 17,
+        vKey = 86,
+        Vkey = 118;
+
+      $(document)
+        .keydown(function (e) {
+          if (e.keyCode == ctrl) keyDown = true;
+        })
+        .keyup(function (e) {
+          if (e.keyCode == ctrl) keyDown = false;
+        });
+
+      $("[data-only-numbers]")
+        .on("keypress", function (e) {
+          if (!e) {
+            var e = window.event;
+          }
+
+          if (e.keyCode > 0 && e.which == 0) {
+            return true;
+          }
+
+          if (e.keyCode) {
+            code = e.keyCode;
+          } else if (e.which) {
+            code = e.which;
+          }
+
+          if (code == 46) {
+            return true;
+          }
+
+          var character = String.fromCharCode(code);
+          if (character == "\b" || character == " " || character == "\t") {
+            return true;
+          }
+          if (keyDown && (code == vKey || code == Vkey)) {
+            return character;
+          } else {
+            return /[0-9]$/.test(character);
+          }
+        })
+        .on("focusout", function (e) {
+          var $this = $(this);
+          if ($this.val() == "") {
+            return true;
+          }
+          $this.val($this.val().replace(/[^0-9\.]/g, ""));
+        })
+        .on("paste", function (e) {
+          var $this = $(this);
+          setTimeout(function () {
+            $this.val($this.val().replace(/[^0-9\.]/g, ""));
+          }, 5);
+        });
+
+      $(".create-form-components").on(
+        "keyup",
+        'input[required="required"][type="text"], input[required="required"][type="number"], input[required="required"][type="date"], textarea[required="required"]',
+        function () {
+          validationFieldsForm(
+            $(this),
+            $(this).parents(".form-field").data("type")
+          );
+        }
+      );
+
+      $(".create-form-components").on(
+        "change",
+        'input[required="required"][type="checkbox"], input[required="required"][type="radio"], select[required="required"]',
+        function () {
+          validationFieldsForm(
+            $(this),
+            $(this).parents(".form-field").data("type")
+          );
+        }
+      );
+
+      function validationFieldsForm(field, type) {
+        if (type === "checkbox" || type === "radio") {
+          if (!field.is(":checked")) {
+            field.parents(".form-field").addClass("required");
+          } else {
+            field.parents(".form-field").removeClass("required");
+          }
+        } else {
+          if (!field.val().trim()) {
+            field.parents(".form-field").addClass("required");
+          } else {
+            field.parents(".form-field").removeClass("required");
+          }
+        }
+      }
+
+      var $zoomPreview = $(".zoom-preview");
+      if ($zoomPreview.length) {
+        $zoomPreview.parent().removeClass("input-group");
+        $zoomPreview.remove();
+      }
+
+      var ratings = $(".rating");
+      if (ratings.length > 0) ratingStars(ratings);
+      function ratingStars(stars) {
+        $.each(stars, function (i, obj) {
+          var field = $(this).closest(".form-group").find(".rating-value");
+          var tgt = $(obj);
+          tgt.html("");
+          var rating = FLUIGC.stars(tgt, { value: field.val() });
+          rating.on("click", function (o) {
+            field.val($(this).index() + 1);
+          });
+        });
+      }
+
+      $.each($("[data-date]"), function (i, o) {
+        var id = $(o).attr("id");
+        FLUIGC.calendar("#" + id);
+      });
+
+      $(document).ready(function () {
+        $.each($("[data-date]"), function (i, o) {
+          var id = $(o).attr("id");
+          if ($("#" + id).attr("readonly")) {
+            $("#" + id)
+              .data("DateTimePicker")
+              .disable();
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

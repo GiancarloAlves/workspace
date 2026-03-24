@@ -1,0 +1,828 @@
+<html>
+
+<head>
+  <link type="text/css" rel="stylesheet" href="/style-guide/css/fluig-style-guide.min.css" />
+  <script type="text/javascript" src="/portal/resources/js/jquery/jquery.js"></script>
+  <script type="text/javascript" src="/portal/resources/js/jquery/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="/portal/resources/js/mustache/mustache-min.js"></script>
+  <script type="text/javascript" src="/style-guide/js/fluig-style-guide.min.js" charset="utf-8"></script>
+
+  <!-- Dataset -->
+  <script type="text/javascript" src="/webdesk/vcXMLRPC.js"></script>
+
+  <!-- sweetalert2 -->
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <!-- FontAwesome -->
+  <link type="text/css" rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+  <!-- JQuery Mask Plugin -->
+  <script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
+
+  <!-- Custom -->
+  <link type="text/css" rel="stylesheet" href="./style_fin.css">
+  <script type="text/javascript" src="./app.js"></script>
+  <script type="text/javascript" src="./Moment.js"></script>
+
+
+<body class="fluig-style-guide process-style" id="devkit-style">
+  <form name="form" role="form" id="form-processo">
+
+    <div class="panel panel-primary panel-border">
+      <!--Painel geral do formulário - fecha no extremo do arquivo e contém todas as seções-->
+
+      <div class="panel-heading panel-bg panel-border"> <!--início da declaração do cabeçalho principal (azul)-->
+        <div class="container-fluid">
+          <section id="logo">
+            <img src="./images/logoCigame.png" alt="NOME-CLIENTE" width="130" style="padding: 10px;">
+            <h3 class="panel-title">ANÁLISE DE CRÉDITO</h3>
+          </section>
+        </div>
+      </div> <!--fim da declaração do cabeçalho principal (azul)-->
+
+      <div class="panel-body"> <!--panel body geral do arquivo - fecha no extremo e contém todas as seções-->
+
+        <div class="panel-heading painel-master-heading">
+          <h3 class="panel-title">
+            <a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion" href="#MasterFinanceiro">
+              <i class="fas fa-clipboard-check"></i> ANÁLISE FINANCEIRA </a>
+          </h3>
+        </div>
+
+        <!-- <div id="MasterFinanceiro" class="panel-collapse collapse in"> 
+          <div class="panel-body"> -->
+
+        <div class="spacer"></div>
+
+        <div class="panel panel-primary"> <!--declaração da primeira seção-->
+          <div class="panel-heading"> <!--início do cabeçalho da seção-->
+            <h3 class="panel-title subpanel_title">
+              <span id="led_abertura" class="led"></span> <!-- led indicador de estado -->
+              <a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion" href="#abertura"><i
+                  class="far fa-clipboard"></i> DADOS DO CLIENTE</a>
+            </h3>
+          </div> <!--fim da declaração do cabeçalho da seção-->
+
+          <div id="abertura" class="panel-collapse collapse in">
+            <div class="panel-body">
+
+              <div class="row">
+
+                <div class="form-group col-md-3">
+                  <label class="required">Ação do financeiro</label>
+                  <select name="acaoFinanceiro" id="acaoFinanceiro" class="form-control">
+                    <option value="">Selecione uma opção...</option>
+                    <option value="1">Tem limite/liberado</option>
+                    <option value="2">Enviar para análise do Norberto</option>
+                  </select>
+                </div>
+
+              </div>
+
+              <div class="row">
+                <caption style="margin-bottom: 20px;"><i class="fas fa-info-circle"></i> Dados do vendedor</caption>
+              </div>
+
+              <div class="spacer"></div>
+
+              <div class="row">
+
+                <div class="form-group col-md-3">
+                  <label>Vendedor</label>
+                  <div class="input-group">
+                    <input type="text" name="solicitante" id="solicitante" class="form-control" readonly>
+                    <span class="input-group-addon"><i class="fas fa-user"></i></span>
+                  </div>
+                </div>
+
+                <div class="form-group col-md-3">
+                  <label>Supervisor</label>
+                  <div class="input-group">
+                    <input type="text" name="supervisorSolicitante" id="supervisorSolicitante" class="form-control"
+                      readonly>
+                    <span class="input-group-addon"><i class="fas fa-user-shield"></i></span>
+                  </div>
+                </div>
+
+                <div class="form-group col-md-2">
+                  <label>Tipo solicitante</label>
+                  <div class="input-group">
+                    <input type="text" name="tipoSolicitante" id="tipoSolicitante" class="form-control" readonly>
+                    <span class="input-group-addon"><i class="fas fa-graduation-cap"></i></span>
+                  </div>
+                </div>
+
+                <div class="form-group col-md-2">
+                  <label>Mat. solicitante</label>
+                  <div class="input-group">
+                    <input type="text" name="matSolicitante" id="matSolicitante" class="form-control" readonly>
+                    <span class="input-group-addon"><i class="fas fa-graduation-cap"></i></span>
+                  </div>
+                </div>
+
+                <div class="form-group col-md-2">
+                  <label>Mat. supervisor</label>
+                  <div class="input-group">
+                    <input type="text" name="matSupervisor" id="matSupervisor" class="form-control" readonly>
+                    <span class="input-group-addon"><i class="fas fa-graduation-cap"></i></span>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="row">
+
+                <caption style="margin-bottom: 20px;"><i class="fas fa-info-circle"></i> Dados do pedido</caption>
+                <div class="spacer"></div>
+
+              </div>
+
+              <!--início do primeiro row-->
+
+              <div class="row">
+                <div class="form-group col-md-3">
+                  <label>Prioridade WMS</label>
+                  <div class="input-group">
+                    <input type="text" name="prioridadeWms" id="prioridadeWms" class="form-control" readonly>
+                    <span class="input-group-addon"><i class="fas fa-shield-virus"></i></span>
+                  </div>
+                </div>
+
+                <div class="form-group col-md-3">
+                  <label>Cod. Cliente</label>
+                  <div class="input-group">
+                    <input type="text" name="codcli" id="codcli" class="form-control" readonly>
+                    <span class="input-group-addon"><i class="fas fa-virus"></i></span>
+                  </div>
+                </div>
+
+                <div class="form-group col-md-3">
+                  <label>Cliente</label>
+                  <div class="input-group">
+                    <input type="text" name="cliente" id="cliente" class="form-control" readonly>
+                    <span class="input-group-addon"><i class="fas fa-virus"></i></span>
+                  </div>
+                </div>
+
+                <div class="form-group col-md-3">
+                  <label>Cód. do cliente principal</label>
+                  <div class="input-group">
+                    <input type="text" name="codcliprinc" id="codcliprinc" class="form-control" readonly>
+                    <span class="input-group-addon"><i class="fas fa-virus"></i></span>
+                  </div>
+                </div>
+
+
+              </div> <!--fecha row-->
+
+              <div class="row">
+
+                <div class="form-group col-md-3">
+                  <label class="required">Número do pedido</label>
+                  <input type="zoom" name="numped" id="numped" class="form-control" data-zoom="
+                          {
+                            'displayKey':'A01_PEDIDO',
+                            'datasetId':'ds_analise_cred_winthor',
+                            'maximumSelectionLength':'1',
+                            'placeholder':'Buscar...',
+                            'fields':[
+                              {'field':'A01_PEDIDO','label':'Num. pedido','standard':'true'}
+                            ]
+                          }">
+                </div>
+
+                <div class="form-group col-md-3">
+                  <label>Posição</label>
+                  <div class="input-group">
+                    <input type="text" name="posicao" id="posicao" class="form-control" readonly>
+                    <span class="input-group-addon"><i class="fas fa-virus"></i></span>
+                  </div>
+                </div>
+
+                <div class="form-group col-md-3">
+                  <label>Data do pedido</label>
+                  <div class="input-group">
+                    <input type="text" name="dataPed" id="dataPed" class="form-control" readonly>
+                    <span class="input-group-addon"><i class="fas fa-virus"></i></span>
+                  </div>
+                </div>
+
+                <div class="form-group col-md-3">
+                  <label>Código da praça</label>
+                  <div class="input-group">
+                    <input type="text" name="codPraca" id="codPraca" class="form-control" readonly>
+                    <span class="input-group-addon"><i class="fas fa-virus"></i></span>
+                  </div>
+                </div>
+
+              </div> <!--fecha row-->
+
+              <div class="row">
+
+                <div class="form-group col-md-6">
+                  <label>Praça</label>
+                  <div class="input-group">
+                    <input type="text" name="praca" id="praca" class="form-control" readonly>
+                    <span class="input-group-addon"><i class="fas fa-shield-virus"></i></span>
+                  </div>
+                </div>
+
+                <div class="form-group col-md-3">
+                  <label>Valor do pedido</label>
+                  <div class="input-group">
+                    <input type="text" name="valorPed" id="valorPed" class="form-control" readonly>
+                    <span class="input-group-addon"><i class="fas fa-shield-virus"></i></span>
+                  </div>
+                </div>
+
+                <div class="form-group col-md-3">
+                  <label>Plano</label>
+                  <div class="input-group">
+                    <input type="text" name="plano" id="plano" class="form-control" readonly>
+                    <span class="input-group-addon"><i class="fas fa-virus"></i></span>
+                  </div>
+                </div>
+
+              </div> <!--fecha row-->
+
+              <div class="row">
+                <caption style="margin-bottom: 20px;"><i class="fas fa-info-circle"></i> Dados do crédito</caption>
+              </div>
+
+              <div class="spacer"></div>
+
+              <div class="row">
+
+                <div class="form-group col-md-3">
+                  <label>Primeira compra</label>
+                  <div class="input-group">
+                    <input type="text" name="primeiraCompra" id="primeiraCompra" class="form-control" readonly>
+                    <span class="input-group-addon"><i class="fas fa-virus"></i></span>
+                  </div>
+                </div>
+
+                <div class="form-group col-md-3">
+                  <label>Última compra</label>
+                  <div class="input-group">
+                    <input type="text" name="ultimaCompra" id="ultimaCompra" class="form-control" readonly>
+                    <span class="input-group-addon"><i class="fas fa-shield-virus"></i></span>
+                  </div>
+                </div>
+
+                <div class="form-group col-md-3">
+                  <label>Dias desde últ.compra</label>
+                  <div class="input-group">
+                    <input type="text" name="diasUltCompra" id="diasUltCompra" class="form-control" readonly>
+                    <span class="input-group-addon"><i class="fas fa-virus"></i></span>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="row">
+
+                <div class="form-group col-md-3">
+                  <label>Cod.cobrança</label>
+                  <div class="input-group">
+                    <input type="text" name="codCob" id="codCob" class="form-control" readonly>
+                    <span class="input-group-addon"><i class="fas fa-virus"></i></span>
+                  </div>
+                </div>
+
+                <div class="form-group col-md-3">
+                  <label>Cobrança</label>
+                  <div class="input-group">
+                    <input type="text" name="cobranca" id="cobranca" class="form-control" readonly>
+                    <span class="input-group-addon"><i class="fas fa-shield-virus"></i></span>
+                  </div>
+                </div>
+
+                <div class="form-group col-md-3">
+                  <label>Cod. plano de pgto</label>
+                  <div class="input-group">
+                    <input type="text" name="codPL" id="codPL" class="form-control" readonly>
+                    <span class="input-group-addon"><i class="fas fa-virus"></i></span>
+                  </div>
+                </div>
+
+                <div class="form-group col-md-3">
+                  <label>Crédito total</label>
+                  <div class="input-group">
+                    <input type="text" name="creditoTotal" id="creditoTotal" class="form-control" readonly>
+                    <span class="input-group-addon"><i class="fas fa-virus"></i></span>
+                  </div>
+                </div>
+
+              </div> <!--fecha row-->
+
+              <div class="row">
+
+                <div class="form-group col-md-3">
+                  <label>Saldo. disp. menos B e L</label>
+                  <div class="input-group">
+                    <input type="text" name="credDispBL" id="credDispBL" class="form-control" readonly>
+                    <span class="input-group-addon"><i class="fas fa-virus"></i></span>
+                  </div>
+                </div>
+
+                <div class="form-group col-md-3">
+                  <label>Saldo. disp. real</label>
+                  <div class="input-group">
+                    <input type="text" name="creditoReal" id="creditoReal" class="form-control" readonly>
+                    <span class="input-group-addon"><i class="fas fa-shield-virus"></i></span>
+                  </div>
+                </div>
+
+                <div class="form-group col-md-3">
+                  <label>Data venc. lim. crédito</label>
+                  <div class="input-group">
+                    <input type="text" name="dtVencLimCred" id="dtVencLimCred" class="form-control" readonly>
+                    <span class="input-group-addon"><i class="fas fa-virus"></i></span>
+                  </div>
+                </div>
+
+                <div class="form-group col-md-3">
+                  <label>Limite crédito 302</label>
+                  <div class="input-group">
+                    <input type="text" name="cred302" id="cred302" class="form-control" readonly>
+                    <span class="input-group-addon"><i class="fas fa-virus"></i></span>
+                  </div>
+                </div>
+
+              </div> <!--fecha row-->
+
+              <div class="row">
+
+                <div class="form-group col-md-3">
+                  <label>Pedidos Pend. e Bloq.</label>
+                  <div class="input-group">
+                    <input type="text" name="pedidosPB" id="pedidosPB" class="form-control" readonly>
+                    <span class="input-group-addon"><i class="fas fa-shield-virus"></i></span>
+                  </div>
+                </div>
+
+                <div class="form-group col-md-3">
+                  <label>Saldo disponível</label>
+                  <div class="input-group">
+                    <input type="text" name="saldoDisp" id="saldoDisp" class="form-control" readonly>
+                    <span class="input-group-addon"><i class="fas fa-virus"></i></span>
+                  </div>
+                </div>
+
+              </div> <!--fecha row-->
+
+              <div class="row">
+
+                <caption style="margin-bottom: 20px;"><i class="fas fa-info-circle"></i> Dados de cobrança</caption>
+                <div class="spacer"></div>
+
+              </div>
+
+              <div class="row">
+
+                <div class="form-group col-md-3">
+                  <label>Títulos em aberto</label>
+                  <div class="input-group">
+                    <input type="text" name="titulosAbertos" id="titulosAbertos" class="form-control" readonly>
+                    <span class="input-group-addon"><i class="fas fa-virus"></i></span>
+                  </div>
+                </div>
+
+                <div class="form-group col-md-3">
+                  <label>Valor aberto</label>
+                  <div class="input-group">
+                    <input type="text" name="valorAberto" id="valorAberto" class="form-control" readonly>
+                    <span class="input-group-addon"><i class="fas fa-virus"></i></span>
+                  </div>
+                </div>
+
+                <div class="form-group col-md-3">
+                  <label>Títulos vencidos</label>
+                  <div class="input-group">
+                    <input type="text" name="titulosVenc" id="titulosVenc" class="form-control" readonly>
+                    <span class="input-group-addon"><i class="fas fa-virus"></i></span>
+                  </div>
+                </div>
+
+                <div class="form-group col-md-3">
+                  <label>Valor vencido</label>
+                  <div class="input-group">
+                    <input type="text" name="valorVenc" id="valorVenc" class="form-control" readonly>
+                    <span class="input-group-addon"><i class="fas fa-virus"></i></span>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="row">
+
+                <div class="form-group col-md-3">
+                  <label>Títulos pagos atrasados</label>
+                  <div class="input-group">
+                    <input type="text" name="titulosPgAtraso" id="titulosPgAtraso" class="form-control" readonly>
+                    <span class="input-group-addon"><i class="fas fa-shield-virus"></i></span>
+                  </div>
+                </div>
+
+                <div class="form-group col-md-3">
+                  <label>Valor pago atrasado</label>
+                  <div class="input-group">
+                    <input type="text" name="valorPgAtrasado" id="valorPgAtrasado" class="form-control" readonly>
+                    <span class="input-group-addon"><i class="fas fa-virus"></i></span>
+                  </div>
+                </div>
+
+              </div> <!--fecha row-->
+
+              <div class="form-group col-md-12">
+                <label>Observação</label>
+                <div class="input-group">
+                  <textarea class="form-control" name="obs_cred" id="obs_cred" rows="4"></textarea>
+                  <span class="input-group-addon"><i class="fas fa-pen"></i></span>
+                </div>
+              </div>
+
+            </div> <!-- finaliza panel body-->
+          </div> <!--finaliza painel colapsável-->
+        </div> <!--finaliza panel-primary-->
+
+
+
+        <div class="panel panel-primary"> <!--declaração da primeira seção-->
+          <div class="panel-heading"> <!--início do cabeçalho da seção-->
+            <h3 class="panel-title subpanel_title">
+              <span id="led_tabela" class="led"></span>
+              <a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion" href="#tabela"><i
+                  class="far fa-clipboard"></i> ITENS</a>
+            </h3>
+          </div> <!--fim da declaração do cabeçalho da seção-->
+
+          <div id="tabela" class="panel-collapse collapse in">
+            <div class="panel-body">
+
+              <div class="form-field" data-type="tabledetail" data-show-properties="" data-field-name="pedido">
+                <table id="pedido" class="table pai-filho table-striped" tablename="pedido" noaddbutton="true"
+                  nodeletebutton="true">
+
+                  <thead>
+
+                    <tr>
+                      <th width="10%">Cód.produto</th>
+                      <th width="50%">Descrição
+                        produto&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      </th>
+                      <th width="20%">Tipo produto</th>
+                      <th width="10%">Qtd</th>
+                      <th width="15%">Ord.compra</th>
+
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><input type="text" name="codprod" id="codprod" class="form-control" readonly></td>
+                      <td><input type="text" name="descprod" id="descprod" class="form-control" readonly></td>
+                      <td><input type="text" name="tipo" id="tipo" class="form-control" readonly></td>
+                      <td><input type="text" name="qtd" id="qtd" class="form-control" readonly></td>
+                      <td><input type="text" name="oc" id="oc" class="form-control" readonly></td>
+                      <td class="remove"><span class="fs-display-block fs-sm-space">
+                          <i class="flaticon flaticon-close icon-md remove-button" onclick="fnWdkRemoveChild(this)"></i>
+                        </span></td>
+                    </tr>
+                  </tbody>
+                </table>
+
+              </div> <!--finaliza tabela-->
+
+            </div> <!-- finaliza body-->
+          </div> <!--finaliza colapsável-->
+        </div> <!--fecha o painel primary-->
+
+        <div class="panel-heading painel-master-heading">
+          <h3 class="panel-title">
+            <a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion" href="#MasterVendas">
+              <i class="fas fa-clipboard-check"></i> VENDEDOR</a>
+          </h3>
+        </div>
+
+        <div class="spacer"></div>
+
+        <!--declaração do  painel-->
+        <div class="panel panel-primary"> <!--declaração da primeira seção-->
+          <div class="panel-heading"> <!--início do cabeçalho da seção-->
+            <h3 class="panel-title subpanel_title">
+              <span id="led_vendedor" class="led"></span> <!-- led indicador de estado -->
+              <a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion" href="#vendedor"><i
+                  class="far fa-clipboard"></i> Ação do vendedor</a>
+            </h3>
+          </div> <!--fim da declaração do cabeçalho da seção-->
+
+          <div id="vendedor" class="panel-collapse collapse in">
+            <div class="panel-body">
+              <div class="row">
+                <div class="form-group col-md-3">
+                  <label class="required">Pagamento realizado?</label>
+                  <select name="acaoVendedor" id="acaoVendedor" class="form-control">
+                    <option value="">Selecione uma opção...</option>
+                    <option value="sim">Sim</option>
+                    <option value="nao">Não</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="row">
+
+                <div class="form-group col-md-12">
+                  <label>Observação do vendedor</label>
+                  <div class="input-group">
+                    <textarea class="form-control" name="obs_vendedor" id="obs_vendedor" rows="4"></textarea>
+                    <span class="input-group-addon"><i class="fas fa-pen"></i></span>
+                  </div>
+                </div>
+              </div>
+
+            </div> <!-- finaliza panel body-->
+          </div> <!--finaliza painel colapsável-->
+        </div> <!--finaliza panel-primary-->
+
+        <div class="panel panel-primary"> <!--declaração da primeira seção-->
+          <div class="panel-heading"> <!--início do cabeçalho da seção-->
+            <h3 class="panel-title subpanel_title">
+              <span id="led_anexarContratoEOC" class="led"></span> <!-- led indicador de estado -->
+              <a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion" href="#anexarContratoEOC"><i
+                  class="far fa-clipboard"></i> Anexar Contrato Social e OC</a>
+            </h3>
+          </div> <!--fim da declaração do cabeçalho da seção-->
+
+          <div id="anexarContratoEOC" class="panel-collapse collapse in">
+            <div class="panel-body">
+              <div class="row">
+                <div class="form-group col-md-3">
+                  <label class="required">Dar continuidade?</label>
+                  <select name="acaoVendedorAnexo" id="acaoVendedorAnexo" class="form-control">
+                    <option value="">Selecione uma opção...</option>
+                    <option value="sim">Sim</option>
+                    <option value="nao">Não</option>
+                  </select>
+                </div>
+              </div>
+            </div> <!-- finaliza panel body-->
+          </div> <!--finaliza painel colapsável-->
+        </div> <!--finaliza panel-primary-->
+
+        <div class="panel panel-primary"> <!--declaração da primeira seção-->
+          <div class="panel-heading"> <!--início do cabeçalho da seção-->
+            <h3 class="panel-title subpanel_title">
+              <span id="led_anexoOC" class="led"></span> <!-- led indicador de estado -->
+              <a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion" href="#anexoOC"><i
+                  class="far fa-clipboard"></i> Anexar somente OC</a>
+            </h3>
+          </div> <!--fim da declaração do cabeçalho da seção-->
+
+          <div id="anexoOC" class="panel-collapse collapse in">
+            <div class="panel-body">
+              <div class="row">
+                <div class="form-group col-md-3">
+                  <h4>Faça o anexo da OC</h4>
+                </div>
+              </div>
+            </div> <!-- finaliza panel body-->
+          </div> <!--finaliza painel colapsável-->
+        </div> <!--finaliza panel-primary-->
+
+        <div class="panel panel-primary"> <!--declaração da primeira seção-->
+          <div class="panel-heading"> <!--início do cabeçalho da seção-->
+            <h3 class="panel-title subpanel_title">
+              <span id="led_pagamentoEstipulado" class="led"></span> <!-- led indicador de estado -->
+              <a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion" href="#pagamentoEstipulado"><i
+                  class="far fa-clipboard"></i> Pagamento estipulado</a>
+            </h3>
+          </div> <!--fim da declaração do cabeçalho da seção-->
+
+          <div id="pagamentoEstipulado" class="panel-collapse collapse in">
+            <div class="panel-body">
+              <div class="row">
+                <div class="form-group col-md-3">
+                  <label class="required">Foi realizado o pagamento estipulado?</label>
+                  <select name="pagamentoEst" id="pagamentoEst" class="form-control">
+                    <option value="">Selecione uma opção...</option>
+                    <option value="sim">Sim</option>
+                    <option value="nao">Não</option>
+                  </select>
+                </div>
+              </div>
+            </div> <!-- finaliza panel body-->
+          </div> <!--finaliza painel colapsável-->
+        </div> <!--finaliza panel-primary-->
+
+        <!--declaração do  painel-->
+        <div class="panel panel-primary"> <!--declaração da primeira seção-->
+          <div class="panel-heading"> <!--início do cabeçalho da seção-->
+            <h3 class="panel-title subpanel_title">
+              <span id="led_reaval" class="led"></span> <!-- led indicador de estado -->
+              <a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion" href="#reavaliacao"><i
+                  class="far fa-clipboard"></i> Realivação do vendedor</a>
+            </h3>
+          </div> <!--fim da declaração do cabeçalho da seção-->
+
+          <div id="reavaliacao" class="panel-collapse collapse in">
+            <div class="panel-body">
+
+              <div class="form-field" data-type="radio" data-show-properties="" data-field-name="reenviar">
+                <div class="form-input">
+                  <div class="form-group">
+                    <label>Reenviar?</label>
+                    <div class="radio-options">
+                      <div class="radio">
+                        <label><input type="radio" name="reenviar" value="Reenviar" />Reenviar</label>
+                      </div>
+                      <div class="radio">
+                        <label><input type="radio" name="reenviar" value="Encerrar" />Encerrar</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+
+                <div class="form-group col-md-12">
+                  <label>Observação vendedor - reavaliação</label>
+                  <div class="input-group">
+                    <textarea class="form-control" name="obs_reaval" id="obs_reaval" rows="2"></textarea>
+                    <span class="input-group-addon"><i class="fas fa-pen"></i></span>
+                  </div>
+                </div>
+
+              </div>
+
+            </div> <!--fecha row-->
+          </div> <!--fecha panel body-->
+        </div> <!--fecha painel-->
+
+        <div class="panel-heading painel-master-heading">
+          <h3 class="panel-title">
+            <a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion" href="#credito">
+              <i class="fas fa-clipboard-check"></i> CRÉDITO</a>
+          </h3>
+        </div>
+
+        <div class="spacer"></div>
+
+        <div class="panel panel-primary"> <!--declaração da primeira seção-->
+          <div class="panel-heading"> <!--início do cabeçalho da seção-->
+            <h3 class="panel-title subpanel_title">
+              <span id="led_cred" class="led"></span> <!-- led indicador de estado -->
+              <a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion" href="#cred"><i
+                  class="far fa-clipboard"></i> Crédito</a>
+            </h3>
+          </div> <!--fim da declaração do cabeçalho da seção-->
+
+          <div id="cred" class="panel-collapse collapse in">
+            <div class="panel-body">
+              <div class="row">
+                <div class="form-group col-md-3">
+                  <label class="required">Análise Crédito</label>
+                  <select name="analiseCredito" id="analiseCredito" class="form-control">
+                    <option value="">Selecione uma opção...</option>
+                    <option value="limiteOk">Tem limite/liberado</option>
+                    <option value="enviarAnaliseNorberto">Enviar para análise do Norberto</option>
+                  </select>
+                </div>
+              </div>
+            </div> <!-- finaliza panel body-->
+          </div> <!--finaliza painel colapsável-->
+        </div> <!--finaliza panel-primary-->
+
+        <div class="panel panel-primary"> <!--declaração da primeira seção-->
+          <div class="panel-heading"> <!--início do cabeçalho da seção-->
+            <h3 class="panel-title subpanel_title">
+              <span id="led_liberacaoPedido" class="led"></span> <!-- led indicador de estado -->
+              <a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion" href="#liberacaoPedido"><i
+                  class="far fa-clipboard"></i> Liberação do pedido</a>
+            </h3>
+          </div> <!--fim da declaração do cabeçalho da seção-->
+
+          <div id="liberacaoPedido" class="panel-collapse collapse in">
+            <div class="panel-body">
+              <div class="row">
+                <div class="form-group col-md-3">
+                  <label class="required">Liberar pedido?</label>
+                  <select name="liberarPedido" id="liberarPedido" class="form-control">
+                    <option value="">Selecione uma opção...</option>
+                    <option value="sim">Sim</option>
+                    <option value="nao">Não</option>
+                  </select>
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-group col-md-12">
+                  <label>Observação da liberação</label>
+                  <div class="input-group">
+                    <textarea class="form-control" name="obs_liberacao" id="obs_liberacao" rows="4"></textarea>
+                    <span class="input-group-addon"><i class="fas fa-pen"></i></span>
+                  </div>
+                </div>
+              </div>
+            </div> <!-- finaliza panel body-->
+          </div> <!--finaliza painel colapsável-->
+        </div> <!--finaliza panel-primary-->
+
+        <div class="panel-heading painel-master-heading">
+          <h3 class="panel-title">
+            <a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion" href="#MasterNorberto">
+              <i class="fas fa-clipboard-check"></i> NORBERTO</a>
+          </h3>
+        </div>
+
+        <div class="spacer"></div>
+
+        <!--declaração do  painel-->
+        <div class="panel panel-primary"> <!--declaração da primeira seção-->
+          <div class="panel-heading"> <!--início do cabeçalho da seção-->
+            <h3 class="panel-title subpanel_title">
+              <span id="led_aprovacao" class="led"></span> <!-- led indicador de estado -->
+              <a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion" href="#norberto"><i
+                  class="far fa-clipboard"></i> Análise do Norberto</a>
+            </h3>
+          </div> <!--fim da declaração do cabeçalho da seção-->
+
+          <div id="norberto" class="panel-collapse collapse in">
+            <div class="panel-body">
+
+              <div class="row">
+
+                <div class="form-group col-md-3">
+                  <label class="required">Destino da solicitação</label>
+                  <select name="destinoNorberto" id="destinoNorberto" class="form-control">
+                    <option value="">Selecione uma opção...</option>
+                    <option>Anexar OC</option>
+                    <option>Reprovado</option>
+                    <option>Aprovado com restrição</option>
+                    <option value="4">Aprovado</option>
+                  </select>
+                </div>
+
+              </div> <!--fecha row-->
+
+              <div class="row">
+
+                <div class="form-group col-md-12">
+                  <label>Observação do Norberto</label>
+                  <div class="input-group">
+                    <textarea class="form-control" name="obsNorberto" id="obsNorberto" rows="4"></textarea>
+                    <span class="input-group-addon"><i class="fas fa-pen"></i></span>
+                  </div>
+                </div>
+
+              </div>
+
+            </div> <!-- finaliza panel body-->
+          </div> <!--finaliza painel colapsável-->
+        </div> <!--finaliza panel-primary-->
+
+        <div class="panel panel-primary"> <!--declaração da primeira seção-->
+          <div class="panel-heading"> <!--início do cabeçalho da seção-->
+            <h3 class="panel-title subpanel_title">
+              <span id="led_Reaprovacao" class="led"></span> <!-- led indicador de estado -->
+              <a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion" href="#ReanaliseNorberto"><i
+                  class="far fa-clipboard"></i> Reanálise de crédito do Norberto</a>
+            </h3>
+          </div> <!--fim da declaração do cabeçalho da seção-->
+
+          <div id="ReanaliseNorberto" class="panel-collapse collapse in">
+            <div class="panel-body">
+
+              <div class="row">
+
+                <div class="form-group col-md-3">
+                  <label class="required">Destino da solicitação</label>
+                  <select name="destinoReanaliseNorberto" id="destinoReanaliseNorberto" class="form-control">
+                    <option value="">Selecione uma opção...</option>
+                    <option value="">Anexar OC</option>
+                    <option value="">Reprovado</option>
+                    <option value="">Aprovado com restrição</option>
+                    <option value="4">Aprovado</option>
+                  </select>
+                </div>
+              </div> <!--fecha row-->
+              <div class="row">
+                <div class="form-group col-md-12">
+                  <label>Observação da reanálise do Norberto</label>
+                  <div class="input-group">
+                    <textarea class="form-control" name="obsReanaliseNorberto" id="obsReanaliseNorberto"
+                      rows="4"></textarea>
+                    <span class="input-group-addon"><i class="fas fa-pen"></i></span>
+                  </div>
+                </div>
+
+              </div>
+
+            </div> <!-- finaliza panel body-->
+          </div> <!--finaliza painel colapsável-->
+        </div> <!--finaliza panel-primary-->
+
+  </form>
+</body>
+
+</html>

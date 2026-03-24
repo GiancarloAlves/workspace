@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Form</title>
+
+  <link rel="stylesheet" type="text/css" href="/style-guide/css/fluig-style-guide.min.css" />
+  <script src="/resources/js/jquery/jquery.js"></script>
+  <script src="/resources/js/jquery/jquery-ui.min.js"></script>
+  <script src="/resources/js/mustache/mustache-min.js"></script>
+  <script src="/style-guide/js/fluig-style-guide.min.js"></script>
+
+  <!-- CUSTOM -->
+  <link href="/style-guide/css/fluig-style-guide-filter.min.css" rel="stylesheet" type="text/css" />
+  <link href="/style-guide/css/fluig-style-guide-ratingstars.min.css" rel="stylesheet" type="text/css" />
+  <script src="/style-guide/js/fluig-style-guide-filter.min.js"></script>
+  <script src="/style-guide/js/fluig-style-guide-ratingstars.min.js"></script>
+
+  <link href="/webdesk/customresources?cid=1&resourceName=temaFormulario/0.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body class="fluig-style-guide">
+  <form class="totvs-form grid vertical create-form-components ui-sortable t0" name="createFormComponents"
+    style="padding-left: 10px; padding-right: 10px">
+    <h1 class="title-form-application">Conciliação Diária</h1>
+
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          <i class="fluigicon fluigicon-file-download icon-md" aria-hidden="true"></i> Imprimir extratos e baixar
+          arquivos retorno de cobrança
+        </h3>
+      </div>
+      <div class="panel-body">
+
+        <div class="form-field" data-type="checkbox" data-show-properties="" data-field-name="extratos0"
+          style="position: relative; left: 0px; top: 0px">
+          <div class="form-input">
+            <div class="form-group">
+              <label>Imprimir extratos e baixar arquivos retorno cobrança</label>
+              <div class="check-options">
+                <div class="checkbox">
+                  <label><input type="checkbox" name="extratos00" value="Extrato Banco Itaú (25247-6)" />Extrato Banco
+                    Itaú (25247-6)</label>
+                </div>
+                <div class="checkbox">
+                  <label><input type="checkbox" name="extratos01" value="Retorno CNAB400 Banco Itaú (25247-6)" />Retorno
+                    CNAB400 Banco Itaú (25247-6)</label>
+                </div>
+                <div class="checkbox">
+                  <label><input type="checkbox" name="extratos02" value="Extrato Banco Itaú (20818-9)" />Extrato Banco
+                    Itaú (20818-9)</label>
+                </div>
+                <div class="checkbox">
+                  <label><input type="checkbox" name="extratos03" value="Retorno CNAB400 Banco Itaú (20818-9)" />Retorno
+                    CNAB400 Banco Itaú (20818-9)</label>
+                </div>
+                <div class="checkbox">
+                  <label><input type="checkbox" name="extratos04" value="Extrato Banco do Brasil (27351-1)" />Extrato
+                    Banco do Brasil (27351-1)</label>
+                </div>
+                <div class="checkbox">
+                  <label><input type="checkbox" name="extratos05"
+                      value="Retorno Cobrança CNAB400 Banco do Brasil (27351-1)" />Retorno Cobrança CNAB400 Banco do
+                    Brasil (27351-1)</label>
+                </div>
+                <div class="checkbox">
+                  <label><input type="checkbox" name="extratos06" value="Extrato Banrisul ()" />Extrato Banrisul
+                    ()</label>
+                </div>
+                <div class="checkbox">
+                  <label><input type="checkbox" name="extratos07" value="Relatório vendas Redecard" />Relatório vendas
+                    Redecard</label>
+                </div>
+                <div class="checkbox">
+                  <label><input type="checkbox" name="extratos08" value="Relatório recebimentos Redecard" />Relatório
+                    recebimentos Redecard</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-field" data-type="textarea" data-show-properties="" data-field-name="ObsExtratos"
+          style="position: relative; left: 0px; top: 0px">
+          <div class="form-input">
+            <div class="form-group">
+              <label>Observação</label><textarea class="form-control" rows="3" name="ObsExtratos" placeholder=""
+                data-size="big"></textarea>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          <i class="fluigicon fluigicon-calendar-refresh icon-md" aria-hidden="true"></i> Executar baixas dos arquivos
+          de retorno de cobrança
+        </h3>
+      </div>
+      <div class="panel-body">
+
+        <div class="form-field" data-type="checkbox" data-show-properties="" data-field-name="baixas0"
+          style="position: relative; left: 0px; top: 0px">
+          <div class="form-input">
+            <div class="form-group">
+              <label>Executar baixas dos arquivos de retorno de cobrança</label>
+              <div class="check-options">
+                <div class="checkbox">
+                  <label><input type="checkbox" name="baixas00" value="Baixar retorno Banco Itaú (25247-6)" />Baixar
+                    retorno Banco Itaú (25247-6)</label>
+                </div>
+                <div class="checkbox">
+                  <label><input type="checkbox" name="baixas01" value="Baixar retorno Banco Itaú (20818-9)" />Baixar
+                    retorno Banco Itaú (20818-9)</label>
+                </div>
+                <div class="checkbox">
+                  <label><input type="checkbox" name="baixas02" value="Baixar retorno Banco Itaú (20818-9)" />Baixar
+                    retorno Banco do Brasil (27351-1)</label>
+                </div>
+                <div class="checkbox">
+                  <label><input type="checkbox" name="baixas03" value="Realizar baixas manuais" />Realizar baixas
+                    manuais</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-field" data-type="textarea" data-show-properties="" data-field-name="ObsBaixas"
+          style="position: relative; left: 0px; top: 0px">
+          <div class="form-input">
+            <div class="form-group">
+              <label>Observação</label><textarea class="form-control" rows="3" name="ObsBaixas" placeholder=""
+                data-size="big"></textarea>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          <i class="fluigicon fluigicon-arroba icon-md" aria-hidden="true"></i> Lançar tarifas da Redecard
+        </h3>
+      </div>
+      <div class="panel-body">
+
+        <div class="form-field" data-type="textarea" data-show-properties="" data-field-name="ObsTarifasRedec"
+          style="position: relative; left: 0px; top: 0px">
+          <div class="form-input">
+            <div class="form-group">
+              <label>Observação</label><textarea class="form-control" rows="3" name="ObsTarifasRedec" placeholder=""
+                data-size="big"></textarea>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          <i class="fluigicon fluigicon-money-circle icon-md" aria-hidden="true"></i> Realizar conciliações bancárias
+        </h3>
+      </div>
+      <div class="panel-body">
+
+        <div class="form-field" data-type="checkbox" data-show-properties="" data-field-name="conciliacoes0">
+          <div class="form-input">
+            <div class="form-group">
+              <label>Realizar conciliações bancárias</label>
+              <div class="check-options">
+                <div class="checkbox">
+                  <label><input type="checkbox" name="conciliacoes00"
+                      value="Conciliação bancária (341F-D)" />Conciliação bancária (341F-D)</label>
+                </div>
+                <div class="checkbox">
+                  <label><input type="checkbox" name="conciliacoes01" value="Conciliação bancária (341-D)" />Conciliação
+                    bancária (341-D)</label>
+                </div>
+                <div class="checkbox">
+                  <label><input type="checkbox" name="conciliacoes02" value="Conciliação bancária (25-D)" />Conciliação
+                    bancária (25-D)</label>
+                </div>
+                <div class="checkbox">
+                  <label><input type="checkbox" name="conciliacoes03" value="Conciliação bancária (001-D)" />Conciliação
+                    bancária (001-D)</label>
+                </div>
+                <div class="checkbox">
+                  <label><input type="checkbox" name="conciliacoes04" value="Conciliação bancária (41-D)" />Conciliação
+                    bancária (41-D)</label>
+                </div>
+                <div class="checkbox">
+                  <label><input type="checkbox" name="conciliacoes05" value="Conciliação bancária (18-D)" />Conciliação
+                    bancária (18-D)</label>
+                </div>
+                <div class="checkbox">
+                  <label><input type="checkbox" name="conciliacoes06" value="Conciliação bancária (10-D)" />Conciliação
+                    bancária (10-D)</label>
+                </div>
+                <div class="checkbox">
+                  <label><input type="checkbox" name="conciliacoes07" value="Conciliação bancária (997-D)" />Conciliação
+                    bancária (997-D)</label>
+                </div>
+                <div class="checkbox">
+                  <label><input type="checkbox" name="conciliacoes08" value="Conciliação bancária (999-D)" />Conciliação
+                    bancária (999-D)</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-field" data-type="textarea" data-show-properties="" data-field-name="ObsConciliacoes"
+          style="position: relative; left: 0px; top: 0px">
+          <div class="form-input">
+            <div class="form-group">
+              <label>Observação</label><textarea class="form-control" rows="3" name="ObsConciliacoes" placeholder=""
+                data-size="big"></textarea>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          <i class="fluigicon fluigicon-manual-scores icon-md" aria-hidden="true"></i> Anexar arquivo
+          Extratos/Relatórios do dia
+        </h3>
+      </div>
+      <div class="panel-body">
+
+        <div class="form-field" data-type="textarea" data-show-properties="" data-field-name="ObsAnexarArquiv">
+          <div class="form-input">
+            <div class="form-group">
+              <label>Observação</label><textarea class="form-control" rows="3" name="ObsAnexarArquiv" placeholder=""
+                data-size="big"></textarea>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          <i class="fluigicon fluigicon-export icon-md" aria-hidden="true"></i> Executar Rotina 504 (Opção 7)
+        </h3>
+      </div>
+      <div class="panel-body">
+
+        <div class="form-field" data-type="textarea" data-show-properties="" data-field-name="ObsRotina504">
+          <div class="form-input">
+            <div class="form-group">
+              <label>Observação</label><textarea class="form-control" rows="3" name="ObsRotina504" placeholder=""
+                data-size="big"></textarea>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          <i class="flaticon flaticon-email icon-md" aria-hidden="true"></i> Enviar e-mail dos DNI's para o vendas
+        </h3>
+      </div>
+      <div class="panel-body">
+
+        <div class="form-field" data-type="textarea" data-show-properties="" data-field-name="ObsEmailDNI">
+          <div class="form-input">
+            <div class="form-group">
+              <label>Observação</label><textarea class="form-control" rows="3" name="ObsEmailDNI" placeholder=""
+                data-size="big"></textarea>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="panel panel-success">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          <i class="fluigicon fluigicon-money icon-md" aria-hidden="true"></i> Realizar acerto dos créditos de clientes
+        </h3>
+      </div>
+      <div class="panel-body">
+
+        <div class="form-field" data-type="textarea" data-show-properties="" data-field-name="ObsCobranca"
+          style="position: relative; left: 0px; top: 0px">
+          <div class="form-input">
+            <div class="form-group">
+              <label>Observação</label><textarea class="form-control" rows="3" name="ObsCobranca" placeholder=""
+                data-size="big"></textarea>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          <i class="fluigicon fluigicon-money icon-md" aria-hidden="true"></i> Revisar contas a pagar em aberto vencidas
+        </h3>
+      </div>
+      <div class="panel-body">
+
+        <div class="form-field" data-type="textarea" data-show-properties="" data-field-name="ObsCP">
+          <div class="form-input">
+            <div class="form-group">
+              <label>Observação</label><textarea class="form-control" rows="3" name="ObsCP" placeholder=""
+                data-size="big"></textarea>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </form>
+
+  <script type="text/javascript">
+    var keyDown = false,
+      ctrl = 17,
+      vKey = 86,
+      Vkey = 118;
+
+    $(document)
+      .keydown(function (e) {
+        if (e.keyCode == ctrl) keyDown = true;
+      })
+      .keyup(function (e) {
+        if (e.keyCode == ctrl) keyDown = false;
+      });
+
+    $("[data-only-numbers]")
+      .on("keypress", function (e) {
+        if (!e) {
+          var e = window.event;
+        }
+
+        if (e.keyCode > 0 && e.which == 0) {
+          return true;
+        }
+
+        if (e.keyCode) {
+          code = e.keyCode;
+        } else if (e.which) {
+          code = e.which;
+        }
+
+        if (code == 46) {
+          return true;
+        }
+
+        var character = String.fromCharCode(code);
+        if (character == "\b" || character == " " || character == "\t") {
+          return true;
+        }
+        if (keyDown && (code == vKey || code == Vkey)) {
+          return character;
+        } else {
+          return /[0-9]$/.test(character);
+        }
+      })
+      .on("focusout", function (e) {
+        var $this = $(this);
+        if ($this.val() == "") {
+          return true;
+        }
+        $this.val($this.val().replace(/[^0-9\.]/g, ""));
+      })
+      .on("paste", function (e) {
+        var $this = $(this);
+        setTimeout(function () {
+          $this.val($this.val().replace(/[^0-9\.]/g, ""));
+        }, 5);
+      });
+
+    $(".create-form-components").on(
+      "keyup",
+      'input[required="required"][type="text"], input[required="required"][type="number"], input[required="required"][type="date"], textarea[required="required"]',
+      function () {
+        validationFieldsForm(
+          $(this),
+          $(this).parents(".form-field").data("type")
+        );
+      }
+    );
+
+    $(".create-form-components").on(
+      "change",
+      'input[required="required"][type="checkbox"], input[required="required"][type="radio"], select[required="required"]',
+      function () {
+        validationFieldsForm(
+          $(this),
+          $(this).parents(".form-field").data("type")
+        );
+      }
+    );
+
+    function validationFieldsForm(field, type) {
+      if (type === "checkbox" || type === "radio") {
+        if (!field.is(":checked")) {
+          field.parents(".form-field").addClass("required");
+        } else {
+          field.parents(".form-field").removeClass("required");
+        }
+      } else {
+        if (!field.val().trim()) {
+          field.parents(".form-field").addClass("required");
+        } else {
+          field.parents(".form-field").removeClass("required");
+        }
+      }
+    }
+
+    var $zoomPreview = $(".zoom-preview");
+    if ($zoomPreview.length) {
+      $zoomPreview.parent().removeClass("input-group");
+      $zoomPreview.remove();
+    }
+
+    var ratings = $(".rating");
+    if (ratings.length > 0) ratingStars(ratings);
+    function ratingStars(stars) {
+      $.each(stars, function (i, obj) {
+        var field = $(this).closest(".form-group").find(".rating-value");
+        var tgt = $(obj);
+        tgt.html("");
+        var rating = FLUIGC.stars(tgt, { value: field.val() });
+        rating.on("click", function (o) {
+          field.val($(this).index() + 1);
+        });
+      });
+    }
+
+    $.each($("[data-date]"), function (i, o) {
+      var id = $(o).attr("id");
+      FLUIGC.calendar("#" + id);
+    });
+
+    $(document).ready(function () {
+      $.each($("[data-date]"), function (i, o) {
+        var id = $(o).attr("id");
+        if ($("#" + id).attr("readonly")) {
+          $("#" + id)
+            .data("DateTimePicker")
+            .disable();
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>

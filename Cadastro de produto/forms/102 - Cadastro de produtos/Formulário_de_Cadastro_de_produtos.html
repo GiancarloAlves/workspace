@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Form</title>
+
+  <link rel="stylesheet" type="text/css" href="/style-guide/css/fluig-style-guide.min.css" />
+  <script src="/resources/js/jquery/jquery.js"></script>
+  <script src="/resources/js/jquery/jquery-ui.min.js"></script>
+  <script src="/resources/js/mustache/mustache-min.js"></script>
+  <script src="/style-guide/js/fluig-style-guide.min.js"></script>
+
+  <!-- CUSTOM -->
+  <link href="/style-guide/css/fluig-style-guide-filter.min.css" rel="stylesheet" type="text/css" />
+  <link href="/style-guide/css/fluig-style-guide-ratingstars.min.css" rel="stylesheet" type="text/css" />
+  <script src="/style-guide/js/fluig-style-guide-filter.min.js"></script>
+  <script src="/style-guide/js/fluig-style-guide-ratingstars.min.js"></script>
+
+  <style>
+    .remove-button {
+      border-radius: 100px;
+      padding: 2px;
+      cursor: pointer;
+      background: #ff6363;
+      color: #FFFFFF;
+      float: right;
+      margin-top: -7px;
+    }
+
+    .blocked {
+      pointer-events: none;
+      opacity: 0.7;
+    }
+  </style>
+
+  <!-- JS -->
+  <script src="./app.js"></script>
+
+  <link href="/webdesk/customresources?cid=1&resourceName=temaFormulario/0.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body class="fluig-style-guide">
+  <form class="totvs-form grid vertical create-form-components ui-sortable t0" name="createFormComponents"
+    style="padding-left: 10px; padding-right: 10px">
+    <h1 class="title-form-application">Formulário de Cadastro de produtos</h1>
+
+    <!--início do painel-->
+
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          <i class="fluigicon fluigicon-calendar-top-right icon-md" aria-hidden="true"></i> Dados do cadastro
+        </h3>
+      </div>
+
+      <div class="panel-body">
+
+        <div class="alert alert-info alert-dismissible" role="alert">
+          <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">�</span><span
+              class="sr-only">Close</span></button>
+          Um produto só poderá ser cadastrado no momento em que o mesmo já possui uma venda.
+        </div>
+
+        <div class="row"> <!--inicio da primeira row-->
+
+          <div class="form-group col-md-2">
+            <label for="zoom">Código do cliente</label>
+            <div class="input-group">
+              <input type="zoom" class="form-control" name="cod_cliente" dataset="Ds_Consulta_Clientes_Winthor"
+                zoomvalue="CODCLI" datasetvalue="CODCLI"
+                data-zoom="{'displayKey':'CODCLI','datasetId':'Ds_Consulta_Clientes_Winthor','fields':[{'field':'CODCLI','label':'CODCLI','standard':true}]}" />
+              <div class="input-group-addon zoom-preview">
+                <span class="fluigicon fluigicon-zoom-in"></span>
+              </div>
+              <input type="hidden" name="hidden_cod_cliente" id="hidden_cod_cliente" />
+            </div>
+          </div>
+
+          <div class="form-group col-md-4">
+            <label for="zoom">Cliente</label>
+            <div class="input-group">
+              <input type="zoom" class="form-control" name="DSClient" dataset="Ds_Consulta_Clientes_Winthor"
+                zoomvalue="CLIENTE" datasetvalue="CLIENTE"
+                data-zoom="{'displayKey':'CLIENTE','datasetId':'Ds_Consulta_Clientes_Winthor','fields':[{'field':'CLIENTE','label':'CLIENTE','standard':true}]}" />
+              <div class="input-group-addon zoom-preview">
+                <span class="fluigicon fluigicon-zoom-in"></span>
+              </div>
+              <input type="hidden" name="hidden_DSClient" id="hidden_DSClient" />
+            </div>
+          </div>
+
+          <div class="form-group col-md-3">
+            <label>Nome do cliente</label>
+            <div group="input-group">
+              <input type="text" class="form-control" name="nome_cliente" value=""
+                placeholder="Pessoa de contato no cliente" data-size="big" />
+            </div>
+          </div>
+
+          <div class="form-group col-md-3">
+            <label>Nº NF/Pedido (se houver)</label>
+            <div group="input-group">
+              <input type="number" class="form-control" name="NumNF" value="" placeholder="" data-size="small" />
+            </div>
+          </div>
+
+        </div> <!--fecha a row-->
+
+        <div class="form-group">
+          <label>Observação</label>
+          <textarea class="form-control" name="obs" rows="2"></textarea>
+        </div>
+
+        <table id="cadastro" class="table pai-filho table-striped" tablename="cadastro" noaddbutton="true"
+          nodeletebutton="true">
+
+          <thead>
+            <tr>
+              <th width="5%" data-aprovacao-supervisor>Dados dos produtos</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>
+                <div class="row">
+                  <div class="form-group col-md-3">
+                    <label>NCM</label>
+                    <div class="input-group">
+                      <input type="text" name="ncm" id="ncm" class="form-control">
+                      <span class="input-group-addon">
+                        <i class="fas fa-fingerprint"></i>
+                      </span>
+                    </div>
+                  </div>
+
+                  <div class="form-group col-md-3">
+                    <label>Descr. prod</label>
+                    <div class="input-group">
+                      <input type="text" name="descrprod" id="descrprod" class="form-control">
+                      <span class="input-group-addon">
+                        <i class="fas fa-fingerprint"></i>
+                      </span>
+                    </div>
+                  </div>
+
+                  <div class="form-group col-md-3">
+                    <label>Marca</label>
+                    <div class="input-group">
+                      <input type="text" name="marca" id="marca" class="form-control">
+                      <span class="input-group-addon">
+                        <i class="fas fa-fingerprint"></i>
+                      </span>
+                    </div>
+                  </div>
+
+                  <div class="form-group col-md-3">
+                    <label>Cód. fábrica</label>
+                    <div class="input-group">
+                      <input type="text" name="codfabrica" id="codfabrica" class="form-control">
+                      <span class="input-group-addon">
+                        <i class="fas fa-fingerprint"></i>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+
+                  <div class="form-group col-md-3">
+                    <label>Preço de compra</label>
+                    <div class="input-group">
+                      <input type="text" name="precocompra" id="precocompra" class="form-control">
+                      <span class="input-group-addon">
+                        <i class="fas fa-fingerprint"></i>
+                      </span>
+                    </div>
+                  </div>
+
+                  <div class="form-group col-md-3">
+                    <label>Preço de venda</label>
+                    <div class="input-group">
+                      <input type="text" name="precovenda" id="precovenda" class="form-control">
+                      <span class="input-group-addon">
+                        <i class="fas fa-fingerprint"></i>
+                      </span>
+                    </div>
+                  </div>
+
+                  <div class="form-group col-md-3">
+                    <label>Quant.</label>
+                    <div class="input-group">
+                      <input type="text" name="quantidade" id="quantidade" class="form-control">
+                      <span class="input-group-addon">
+                        <i class="fas fa-fingerprint"></i>
+                      </span>
+                    </div>
+                  </div>
+
+                  <div class="form-group col-md-3">
+                    <label>Unidade do material</label>
+                    <div class="input-group">
+                      <input type="text" name="material" id="material" class="form-control">
+                      <span class="input-group-addon">
+                        <i class="fas fa-fingerprint"></i>
+                      </span>
+                    </div>
+                  </div>
+
+                </div>
+
+                <div class="row">
+
+                  <div class="form-group col-md-3">
+                    <label>Fornecedor negociado</label>
+                    <div class="input-group">
+                      <input type="text" name="fornecedor" id="fornecedor" class="form-control">
+                      <span class="input-group-addon">
+                        <i class="fas fa-fingerprint"></i>
+                      </span>
+                    </div>
+                  </div>
+
+                  <div class="form-group col-md-3">
+                    <label>Nome contato do fornecedor</label>
+                    <div class="input-group">
+                      <input type="text" name="nomefornecedor" id="nomefornecedor" class="form-control">
+                      <span class="input-group-addon">
+                        <i class="fas fa-fingerprint"></i>
+                      </span>
+                    </div>
+                  </div>
+
+                  <div class="form-group col-md-3">
+                    <label>Fone de contato do fornecedor</label>
+                    <div class="input-group">
+                      <input type="text" name="fonefornecedor" id="fonefornecedor" class="form-control">
+                      <span class="input-group-addon">
+                        <i class="fas fa-fingerprint"></i>
+                      </span>
+                    </div>
+                  </div>
+
+                  <div class="form-group col-md-3">
+                    <label>É material elétrico?</label>
+                    <div class="input-group">
+                      <input type="text" name="eletrico" id="eletrico" class="form-control">
+                      <span class="input-group-addon">
+                        <i class="fas fa-fingerprint"></i>
+                      </span>
+                    </div>
+                  </div>
+
+                </div>
+
+                <div class="row">
+
+                  <div class="form-group col-md-3">
+                    <label>Código do produto</label>
+                    <div class="input-group">
+                      <input type="text" name="codproduto" id="codproduto" class="form-control">
+                      <span class="input-group-addon">
+                        <i class="fas fa-fingerprint"></i>
+                      </span>
+                    </div>
+                  </div>
+
+                  <div class="form-group col-md-3">
+                    <label>Código EAN</label>
+                    <div class="input-group">
+                      <input type="text" name="ean" id="ean" class="form-control">
+                      <span class="input-group-addon">
+                        <i class="fas fa-fingerprint"></i>
+                      </span>
+                    </div>
+                  </div>
+
+                  <span class="fs-display-block fs-sm-space">
+                    <i class="flaticon flaticon-close icon-md remove-button" onclick="fnWdkRemoveChild(this)"></i>
+                  </span>
+
+                </div>
+
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <button type="button" class="btn btn-primary" onclick="wdkAddChild('cadastro')">Adicionar item</button>
+
+      </div>
+      </td>
+      </tr>
+      </tbody>
+      </table>
+
+    </div>
+    </div>
+    </div>
+
+    </div> <!--fecha panel body-->
+    </div> <!--fecha panel content-->
+
+    <!--início do segundo painel-->
+
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          <i class="fluigicon fluigicon-calendar-top-right icon-md" aria-hidden="true"></i> Aprovação do compras
+        </h3>
+      </div>
+
+      <div class="panel-body">
+
+        <div class="form-field" data-type="radio" data-show-properties="" data-field-name="dados_ok">
+          <div class="form-input">
+            <div class="form-group">
+              <label>Dados estão ok?</label>
+              <div class="radio-options">
+                <div class="radio">
+                  <label><input type="radio" name="dados_ok" value="Sim" />Sim</label>
+                </div>
+                <div class="radio">
+                  <label><input type="radio" name="dados_ok" value="Não" />Não</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-field" data-type="textbox" data-show-properties="" data-field-name="obs_compras">
+          <div class="form-input">
+            <div class="form-group">
+              <label>Observação</label><input type="text" class="form-control" name="obs_compras" value=""
+                placeholder="" data-size="big" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </form>
+
+  <script type="text/javascript">
+    var keyDown = false,
+      ctrl = 17,
+      vKey = 86,
+      Vkey = 118;
+
+    $(document)
+      .keydown(function (e) {
+        if (e.keyCode == ctrl) keyDown = true;
+      })
+      .keyup(function (e) {
+        if (e.keyCode == ctrl) keyDown = false;
+      });
+
+    $("[data-only-numbers]")
+      .on("keypress", function (e) {
+        if (!e) {
+          var e = window.event;
+        }
+
+        if (e.keyCode > 0 && e.which == 0) {
+          return true;
+        }
+
+        if (e.keyCode) {
+          code = e.keyCode;
+        } else if (e.which) {
+          code = e.which;
+        }
+
+        if (code == 46) {
+          return true;
+        }
+
+        var character = String.fromCharCode(code);
+        if (character == "\b" || character == " " || character == "\t") {
+          return true;
+        }
+        if (keyDown && (code == vKey || code == Vkey)) {
+          return character;
+        } else {
+          return /[0-9]$/.test(character);
+        }
+      })
+      .on("focusout", function (e) {
+        var $this = $(this);
+        if ($this.val() == "") {
+          return true;
+        }
+        $this.val($this.val().replace(/[^0-9\.]/g, ""));
+      })
+      .on("paste", function (e) {
+        var $this = $(this);
+        setTimeout(function () {
+          $this.val($this.val().replace(/[^0-9\.]/g, ""));
+        }, 5);
+      });
+
+    $(".create-form-components").on(
+      "keyup",
+      'input[required="required"][type="text"], input[required="required"][type="number"], input[required="required"][type="date"], textarea[required="required"]',
+      function () {
+        validationFieldsForm(
+          $(this),
+          $(this).parents(".form-field").data("type")
+        );
+      }
+    );
+
+    $(".create-form-components").on(
+      "change",
+      'input[required="required"][type="checkbox"], input[required="required"][type="radio"], select[required="required"]',
+      function () {
+        validationFieldsForm(
+          $(this),
+          $(this).parents(".form-field").data("type")
+        );
+      }
+    );
+
+    function validationFieldsForm(field, type) {
+      if (type === "checkbox" || type === "radio") {
+        if (!field.is(":checked")) {
+          field.parents(".form-field").addClass("required");
+        } else {
+          field.parents(".form-field").removeClass("required");
+        }
+      } else {
+        if (!field.val().trim()) {
+          field.parents(".form-field").addClass("required");
+        } else {
+          field.parents(".form-field").removeClass("required");
+        }
+      }
+    }
+
+    var $zoomPreview = $(".zoom-preview");
+    if ($zoomPreview.length) {
+      $zoomPreview.parent().removeClass("input-group");
+      $zoomPreview.remove();
+    }
+
+    var ratings = $(".rating");
+    if (ratings.length > 0) ratingStars(ratings);
+    function ratingStars(stars) {
+      $.each(stars, function (i, obj) {
+        var field = $(this).closest(".form-group").find(".rating-value");
+        var tgt = $(obj);
+        tgt.html("");
+        var rating = FLUIGC.stars(tgt, { value: field.val() });
+        rating.on("click", function (o) {
+          field.val($(this).index() + 1);
+        });
+      });
+    }
+
+    $.each($("[data-date]"), function (i, o) {
+      var id = $(o).attr("id");
+      FLUIGC.calendar("#" + id);
+    });
+
+    $(document).ready(function () {
+      $.each($("[data-date]"), function (i, o) {
+        var id = $(o).attr("id");
+        if ($("#" + id).attr("readonly")) {
+          $("#" + id)
+            .data("DateTimePicker")
+            .disable();
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>

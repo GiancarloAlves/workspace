@@ -1,0 +1,18 @@
+.btn-group.opc_prioridade .btn-default.normal.active {
+	  /* Verde - Normal */
+    color: #fff;
+    background-color: #449d44;
+    border-color: #398439;
+}
+.btn-group.opc_prioridade .btn-default.urgente.active {
+	  /* Laranja - Urgente */
+    color: #fff;
+    background-color: #f0ad4e;
+    border-color: #d89b46;
+}
+.btn-group.opc_prioridade .btn-default.urgentissimo.active {
+	  /* Vermelho - Urgentissismo */
+    color: #fff;
+    background-color: #d9534f;
+    border-color: #d43f3a;
+}

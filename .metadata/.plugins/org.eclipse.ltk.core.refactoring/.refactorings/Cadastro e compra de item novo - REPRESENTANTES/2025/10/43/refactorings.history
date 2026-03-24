@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Cadastro e compra de item novo - REPRESENTANTES/workflow/diagrams/wf_cadastro_compra_item_novo.process&apos; to &apos;wf_cadastro_compra_item_novo_representantes.process&apos;" description="Rename resource &apos;wf_cadastro_compra_item_novo.process&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="workflow/diagrams/wf_cadastro_compra_item_novo.process" name="wf_cadastro_compra_item_novo_representantes.process" stamp="1761048379706" updateReferences="true"/>
+</session>

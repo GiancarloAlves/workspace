@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<title>Form</title>
+
+            <link rel="stylesheet" type="text/css" href="/style-guide/css/fluig-style-guide.min.css">
+            <script src="/resources/js/jquery/jquery.js"></script>
+            <script src="/resources/js/jquery/jquery-ui.min.js"></script>
+            <script src="/resources/js/mustache/mustache-min.js"></script>
+            <script src="/style-guide/js/fluig-style-guide.min.js"></script>
+
+            <!-- CUSTOM -->
+            <link href="/style-guide/css/fluig-style-guide-filter.min.css" rel="stylesheet" type="text/css">
+            <link href="/style-guide/css/fluig-style-guide-ratingstars.min.css" rel="stylesheet" type="text/css">
+            <script src="/style-guide/js/fluig-style-guide-filter.min.js"></script>
+            <script src="/style-guide/js/fluig-style-guide-ratingstars.min.js"></script>
+
+            <link href='/webdesk/customresources?cid=1&resourceName=temaFormulario/0.css' type='text/css' rel='stylesheet' />
+		</head>
+        <body class="fluig-style-guide">
+			
+			<form class="totvs-form grid vertical create-form-components ui-sortable t0" name="createFormComponents" style="padding-left: 10px; padding-right: 10px;"><h1 class="title-form-application">Formulário de Devolução de compras</h1><div class="paragraph-is-required system-message-information alert alert-info" role="alert">Todos os campos com * são de preenchimento obrigatório.</div>
+			<div class="form-field" data-type="number" data-show-properties="" data-field-name="cod_fornec"><div class="form-input"><div class="form-group"><label>Código de fornecedor</label><span class="required text-danger"><strong>*</strong></span><input type="number" class="form-control" name="cod_fornec" value="" placeholder="" min="0" data-size="big" data-only-numbers="" required="required"></div></div></div><div class="form-field" data-type="textbox" data-show-properties="" data-field-name="nome_fornecedor"><div class="form-input"><div class="form-group"><label>Nome do fornecedor</label><span class="required text-danger"><strong>*</strong></span><input type="text" class="form-control" name="nome_fornecedor" value="" placeholder="" data-size="big" required="required"></div></div></div><div class="form-field" data-type="textbox" data-show-properties="" data-field-name="pessoa_forneced"><div class="form-input"><div class="form-group"><label>Pessoa que foi tratada a devolução (fornecedor)</label><span class="required text-danger"><strong>*</strong></span><input type="text" class="form-control" name="pessoa_forneced" value="" placeholder="" data-size="big" required="required"></div></div></div><div class="form-field" data-type="textbox" data-show-properties="" data-field-name="motivo"><div class="form-input"><div class="form-group"><label>Motivo da devolução</label><span class="required text-danger"><strong>*</strong></span><input type="text" class="form-control" name="motivo" value="" placeholder="" data-size="big" required="required"></div></div></div><div class="form-field" data-type="textbox" data-show-properties="" data-field-name="telefone"><div class="form-input"><div class="form-group"><label>Telefone da pessoa</label><span class="required text-danger"><strong>*</strong></span><input type="text" class="form-control" name="telefone" value="" placeholder="" data-size="big" required="required"></div></div></div><div class="form-field" data-type="textbox" data-show-properties="" data-field-name="email"><div class="form-input"><div class="form-group"><label>E-mail da pessoa</label><span class="required text-danger"><strong>*</strong></span><input type="text" class="form-control" name="email" value="" placeholder="" data-size="big" required="required"></div></div></div><div class="form-field" data-type="textbox" data-show-properties="" data-field-name="cont_financ_for"><div class="form-input"><div class="form-group"><label>Contato do financeiro do fornecedor para pedirmos o crédito</label><span class="required text-danger"><strong>*</strong></span><input type="text" class="form-control" name="cont_financ_for" value="" placeholder="" data-size="big" required="required"></div></div></div><div class="form-field" data-type="combo" data-show-properties="" data-field-name="frete"><div class="form-input"><div class="form-group"><label>Frete por conta</label><span class="required text-danger"><strong>*</strong></span><select class="form-control" name="frete" required="required"><option value="Cigame">Cigame</option><option value="Fornecedor">Fornecedor</option></select></div></div></div><div class="form-field" data-type="textbox" data-show-properties="" data-field-name="transportadora"><div class="form-input"><div class="form-group"><label>Transportadora</label><span class="required text-danger"><strong>*</strong></span><input type="text" class="form-control" name="transportadora" value="" placeholder="" data-size="big" required="required"></div></div></div><div class="form-field" data-type="combo" data-show-properties="" data-field-name="forma_receb_cre" style="position: relative; left: 0px; top: 0px;"><div class="form-input"><div class="form-group"><label>Como receberemos o crédito?</label><select class="form-control" name="forma_receb_cre"><option value="Abatemos em um débito que tínhamos">Abatemos em um débito que tínhamos</option><option value="Não tínhamos débitos e ficamos com crédito">Não tínhamos débitos e ficamos com crédito</option><option value="O fornecedor irá devolver o dinheiro">O fornecedor irá devolver o dinheiro</option><option value="Nota de remessa para conserto">Nota de remessa para conserto</option></select></div></div></div><div class="form-field" data-type="combo" data-show-properties="" data-field-name="aceite_fornec" style="position: relative; left: 0px; top: 0px;"><div class="form-input"><div class="form-group"><label>Aceite do fornecedor (anexo obrigatório)</label><select class="form-control" name="aceite_fornec"><option value="Sim">Sim</option><option value="Não">Não</option></select></div></div></div><div class="form-field" data-type="combo" data-show-properties="" data-field-name="tipo_dev" style="position: relative; left: 0px; top: 0px;"><div class="form-input"><div class="form-group"><label>Tipo de devolução</label><select class="form-control" name="tipo_dev"><option value="Conserto">Conserto</option><option value="Normal">Normal</option></select></div></div></div><div class="form-field" data-type="tabledetail" data-show-properties="" data-field-name="Produtos"><div class="form-input"><div class="form-group"><label>Produtos</label><table tablename="tabledetailname1" class="table" noaddbutton="true"><thead><tr class="tableHeadRow"><th class="tableColumn">Código do produto</th><th class="tableColumn">Quantidade</th><th class="tableColumn">Número da nota de origem</th><th class="tableColumn">O produto está avariado?</th><th class="tableColumn">Endereço do produto</th></tr></thead><tbody><tr class="tableBodyRow"><td class="fs-v-align-middle"><div class="form-input"><input type="text" name="column1_1" class="form-control" label="Código do produto"></div></td><td class="fs-v-align-middle"><div class="form-input"><input type="text" name="column2_1" class="form-control" label="Quantidade"></div></td><td class="fs-v-align-middle"><div class="form-input"><input type="text" name="column3_1" class="form-control" label="Número da nota de origem"></div></td><td class="fs-v-align-middle"><div class="form-input"><input type="text" name="column4_1" class="form-control" label="O produto está avariado?"></div></td><td class="fs-v-align-middle"><div class="form-input"><input type="text" name="column5_1" class="form-control" label="Endereço do produto"></div></td></tr></tbody></table><button type="button" class="btn btn-primary" onclick="wdkAddChild('tabledetailname1')">Novo Registro</button></div></div></div><div class="form-field" data-type="radio" data-show-properties="" data-field-name="radio21" style="position: relative; left: 0px; top: 0px;"><div class="form-input"><div class="form-group"><label>Quantidades estão ok?</label><div class="radio-options"><div class="radio"><label><input type="radio" name="radio21" value="Sim">Sim</label></div><div class="radio"><label><input type="radio" name="radio21" value="Não">Não</label></div></div></div></div></div><div class="form-field" data-type="number" data-show-properties="" data-field-name="num_volumes" style="position: relative; left: 0px; top: 0px;"><div class="form-input"><div class="form-group"><label>Número de volumes</label><input type="number" class="form-control" name="num_volumes" value="" placeholder="" min="0" data-size="big" data-only-numbers=""></div></div></div><div class="form-field" data-type="number" data-show-properties="" data-field-name="peso"><div class="form-input"><div class="form-group"><label>Peso</label><input type="number" class="form-control" name="peso" value="" placeholder="" min="0" data-size="big" data-only-numbers=""></div></div></div><div class="form-field" data-type="textbox" data-show-properties="" data-field-name="end_exped"><div class="form-input"><div class="form-group"><label>Endereço na expedição</label><input type="text" class="form-control" name="end_exped" value="" placeholder="" data-size="big"></div></div></div><div class="form-field" data-type="textbox" data-show-properties="" data-field-name="num_nf" style="position: relative; left: 0px; top: 0px;"><div class="form-input"><div class="form-group"><label>Número da nota de devolução</label><input type="text" class="form-control" name="num_nf" value="" placeholder="" data-size="big"></div></div></div><div class="form-field" data-type="textbox" data-show-properties="" data-field-name="data_envio" style="position: relative; left: 0px; top: 0px;"><div class="form-input"><div class="form-group"><label>Data do envio da mercadoria</label><input type="text" class="form-control" name="data_envio" value="" placeholder="Coloque data e hora" data-size="big" mask="00/00/0000 00:00:00" maxlength="19" data-only-numbers="true"></div></div></div><div class="form-field" data-type="textbox" data-show-properties="" data-field-name="data_prev_cheg" style="position: relative; left: 0px; top: 0px;"><div class="form-input"><div class="form-group"><label>Previsão de chegada da mercadoria no fornecedor</label><input type="text" class="form-control" name="data_prev_cheg" value="" placeholder="Coloque somente a data" data-size="big" mask="00/00/0000" maxlength="10" data-only-numbers="true"></div></div></div><div class="form-field" data-type="textbox" data-show-properties="" data-field-name="valor_nota"><div class="form-input"><div class="form-group"><label>Valor total da nota</label><input type="text" class="form-control" name="valor_nota" value="" placeholder="" data-size="big" mask="#00.000.000.000.000,00" maxlength="22" data-only-numbers="true"></div></div></div><div class="form-field" data-type="textbox" data-show-properties="" data-field-name="cred_nota"><div class="form-input"><div class="form-group"><label>Como foi creditado a nota?</label><input type="text" class="form-control" name="cred_nota" value="" placeholder="" data-size="big"></div></div></div><div class="form-field" data-type="textbox" data-show-properties="" data-field-name="acerto"><div class="form-input"><div class="form-group"><label>Descreva como foi o acerto</label><input type="text" class="form-control" name="acerto" value="" placeholder="" data-size="big"></div></div></div></form>
+		
+
+			<script type="text/javascript">
+				var keyDown = false, ctrl = 17, vKey = 86, Vkey = 118; 
+				  
+				$(document).keydown(function (e) {
+					if (e.keyCode == ctrl) keyDown = true;
+				}).keyup(function (e) {
+					if (e.keyCode == ctrl) keyDown = false;
+				});
+				
+				$('[data-only-numbers]').on('keypress', function (e) {
+				    if (!e) {
+					    var e = window.event;
+					}
+					
+				    if (e.keyCode > 0 && e.which == 0) {
+				    	 return true;
+					}
+					
+				    if (e.keyCode) {
+				        code = e.keyCode;
+					} else if (e.which) {
+				    	code = e.which;
+					}
+
+					if(code == 46) {
+						return true;
+					}
+					
+				    var character = String.fromCharCode(code);
+				    if (character == '\b' || character == ' ' || character == '\t') {
+				    	 return true;
+					}
+				    if (keyDown && (code == vKey || code == Vkey)) {
+				    	return (character);
+					} else  {
+						return (/[0-9]$/.test(character));
+					}
+				}).on('focusout', function (e) {
+				    var $this = $(this);
+					if($this.val() == "") {
+						return true;
+					}
+				    $this.val($this.val().replace(/[^0-9\.]/g, ''));
+				}).on('paste', function (e) {
+				    var $this = $(this);
+				    setTimeout(function () {
+				        $this.val($this.val().replace(/[^0-9\.]/g, ''));
+				    }, 5);
+				 });				
+
+				
+
+				$('.create-form-components').on('keyup', 'input[required="required"][type="text"], input[required="required"][type="number"], input[required="required"][type="date"], textarea[required="required"]', function(){
+					validationFieldsForm($(this), $(this).parents('.form-field').data('type'));
+				});
+
+				$('.create-form-components').on('change', 'input[required="required"][type="checkbox"], input[required="required"][type="radio"], select[required="required"]', function(){
+					validationFieldsForm($(this), $(this).parents('.form-field').data('type'));
+				});
+
+				function validationFieldsForm(field, type){
+					if(type === "checkbox" || type === "radio"){
+						if(!field.is(':checked')){
+							field.parents('.form-field').addClass('required');
+						}else{
+							field.parents('.form-field').removeClass('required');
+						}
+					}else{
+						if(!field.val().trim()){
+							field.parents('.form-field').addClass('required');
+						}else{
+							field.parents('.form-field').removeClass('required');
+						}
+					}
+				}
+
+				var $zoomPreview = $(".zoom-preview");
+				if ($zoomPreview.length) {
+                    $zoomPreview.parent().removeClass("input-group");
+                    $zoomPreview.remove();
+                }
+
+				var ratings = $(".rating");
+				if (ratings.length > 0) ratingStars(ratings);
+				function ratingStars(stars) {
+					$.each(stars, function(i, obj) {
+                        var field = $(this).closest(".form-group").find(".rating-value");
+						var tgt = $(obj);
+						tgt.html("");
+						var rating = FLUIGC.stars(tgt, { value: field.val() });
+                        rating.on("click", function(o) {
+                            field.val($(this).index() + 1);
+                        });
+					});
+				}
+
+				$.each($("[data-date]"), function(i, o) {
+                    var id = $(o).attr("id");
+					FLUIGC.calendar("#" + id);
+				});
+
+				$(document).ready(function() {
+					$.each($("[data-date]"), function(i, o) {
+	                    var id = $(o).attr("id");
+	                    if($("#" + id).attr("readonly")) {
+	                    	$("#" + id).data('DateTimePicker').disable();
+	                    }
+					});
+				});
+			</script>
+		</body>
+	</html>

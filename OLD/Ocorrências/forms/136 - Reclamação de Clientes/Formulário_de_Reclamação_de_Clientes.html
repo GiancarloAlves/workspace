@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Form</title>
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/style-guide/css/fluig-style-guide.min.css"
+    />
+    <script src="/resources/js/jquery/jquery.js"></script>
+    <script src="/resources/js/jquery/jquery-ui.min.js"></script>
+    <script src="/resources/js/mustache/mustache-min.js"></script>
+    <script src="/style-guide/js/fluig-style-guide.min.js"></script>
+
+    <!-- CUSTOM -->
+    <link
+      href="/style-guide/css/fluig-style-guide-filter.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="/style-guide/css/fluig-style-guide-ratingstars.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="/style-guide/js/fluig-style-guide-filter.min.js"></script>
+    <script src="/style-guide/js/fluig-style-guide-ratingstars.min.js"></script>
+
+    <link
+      href="/webdesk/customresources?cid=1&resourceName=temaFormulario/0.css"
+      type="text/css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="fluig-style-guide">
+    <form
+     class="totvs-form grid vertical create-form-components ui-sortable t0"
+      name="createFormComponents"
+      style="padding-left: 20px; padding-right: 20px"
+    >
+      <h1 class="title-form-application">
+        Formulário de Reclamação de Clientes
+      </h1>
+
+      <!--declaração do primeiro painel-->
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title">
+            <i class="fluigicon fluigicon-users icon-md" aria-hidden="true"></i>  Dados do cliente</h3>
+      </div>
+        <div class="panel-body">
+            
+      <!--início do primeiro row-->
+     <div class="row">
+
+      <!--declaração do campo - zoom nome do cliente-->
+      <div class="form-field"
+        data-type="zoomfield"
+        data-show-properties=""
+        data-field-name="Cliente"
+        style="position: relative; left: 0px; top: 0px"
+      >
+        <div class="form-input col-md-4">
+          <div class="form-group">
+            <label for="zoom">Cliente</label>
+            <div class="input-group">
+              <input
+                type="zoom"
+                class="form-control"
+                name="Cliente"
+                dataset="Ds_Consulta_Clientes_Winthor"
+                zoomvalue="CGC/CPF"
+                datasetvalue="CLIENTE"
+                data-zoom="{'displayKey':'CLIENTE','datasetId':'Ds_Consulta_Clientes_Winthor','fields':[{'field':'CLIENTE','label':'CLIENTE','standard':true}]}"
+              />
+              <div class="input-group-addon zoom-preview">
+                <span class="fluigicon fluigicon-zoom-in"></span>
+              </div>
+              <input type="hidden" name="hidden_Cliente" id="hidden_Cliente" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--declaração do campo - zoom código do cliente-->
+      <div
+        class="form-field"
+        data-type="zoomfield"
+        data-show-properties=""
+        data-field-name="CodCliente"
+        style="position: relative; left: 0px; top: 0px"
+      >
+        <div class="form-input col-md-2">
+          <div class="form-group">
+            <label for="zoom">Código do cliente</label>
+            <div class="input-group">
+              <input
+                type="zoom"
+                class="form-control"
+                name="CodCliente"
+                dataset="Ds_Consulta_Clientes_Winthor"
+                zoomvalue="CODCLI"
+                datasetvalue="CODCLI"
+                data-zoom="{'displayKey':'CODCLI','datasetId':'Ds_Consulta_Clientes_Winthor','fields':[{'field':'CODCLI','label':'CODCLI','standard':true}]}"
+              />
+              <div class="input-group-addon zoom-preview">
+                <span class="fluigicon fluigicon-zoom-in"></span>
+              </div>
+              <input
+                type="hidden"
+                name="hidden_CodCliente"
+                id="hidden_CodCliente"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- declaração de campo Nome do cliente-->
+      <div
+      class="form-field"
+      data-type="textbox"
+      data-show-properties=""
+      data-field-name="PessoaCliente"
+    >
+      <div class="form-input col-md-3">
+        <div class="form-group">
+          <label>Nome do cliente</label
+          ><input
+            type="text"
+            class="form-control"
+            name="PessoaCliente"
+            value=""
+            placeholder="Nome da pessoa que fez a reclamação"
+            data-size="big"
+          />
+        </div>
+      </div>
+    </div>
+
+        <!--campo num NF-->
+        <div
+        class="form-field"
+        data-type="textbox"
+        data-show-properties=""
+        data-field-name="NumNF"
+      >
+        <div class="form-input col-md-2">
+          <div class="form-group">
+            <label>Número da NF</label
+            ><input
+              type="text"
+              class="form-control"
+              name="NumNF"
+              value=""
+              placeholder=""
+              data-size="big"
+            />
+          </div>
+        </div>
+      </div>
+
+    </div> <!--fim do primeiro row-->
+    
+
+    <!--início do segundo row-->
+  <div class="row"> 
+
+     <!--campo setor do cliente-->
+      <div
+        class="form-field"
+        data-type="textbox"
+        data-show-properties=""
+        data-field-name="SetorCliente"
+      >
+        <div class="form-input">
+          <div class="form-group col-md-3">
+            <label>Setor do cliente</label
+            ><input
+              type="text"
+              class="form-control"
+              name="SetorCliente"
+              value=""
+              placeholder=""
+              data-size="big"
+            />
+          </div>
+        </div>
+      </div>
+      
+      <!-- campo origem do cliente (inativo)
+      <div
+        class="form-field"
+        data-type="number"
+        data-show-properties=""
+        data-field-name="OrigemEcommerce"
+      >
+        <div class="form-input">
+          <div class="form-group">
+            <label>Origem do cliente (somente para E-commerce)</label
+            ><input
+              type="number"
+              class="form-control"
+              name="OrigemEcommerce"
+              value=""
+              placeholder=""
+              min="0"
+              data-size="big"
+              data-only-numbers=""
+            />
+          </div>
+        </div>
+      </div>-->
+
+      <!-- campo contato telefonico direto-->
+      <div
+        class="form-field"
+        data-type="textbox"
+        data-show-properties=""
+        data-field-name="ContTelefonico"
+      >
+        <div class="form-input">
+          <div class="form-group col-md-3">
+            <label>Contato telefônico direto do cliente</label
+            ><input
+              type="text"
+              class="form-control"
+              name="ContTelefonico"
+              value=""
+              placeholder=""
+              data-size="big"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- campo email-->
+      <div
+        class="form-field"
+        data-type="textbox"
+        data-show-properties=""
+        data-field-name="EmailCliente"
+      >
+        <div class="form-input">
+          <div class="form-group col-md-3">
+            <label>E-mail do cliente</label
+            ><input
+              type="text"
+              class="form-control"
+              name="EmailCliente"
+              value=""
+              placeholder=""
+              data-size="big"
+            />
+          </div>
+        </div>
+      </div>
+    </div> <!-- encerra a row-->
+
+  </div> <!-- encerra o panel content-->
+</div> <!--encerra o painel-->
+
+      <!--declaração do segundo painel-->
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title">
+            <i class="fluigicon fluigicon-bullhorn icon-md" aria-hidden="true"></i>  Dados da reclamação</i></h3>
+      </div>
+        <div class="panel-body">
+            
+      <!--início da primeira row-->
+     <div class="row">
+
+
+      <!-- combo tipo de reclamação-->
+      <div
+        class="form-field"
+        data-type="combo"
+        data-show-properties=""
+        data-field-name="ComboTipoReclam"
+        style="position: relative; left: 0px; top: 0px"
+      >      
+          <div class="form-group col-md-4">
+            <label>Qual o tipo de reclamação do cliente?</label
+            ><select class="form-control" name="ComboTipoReclam">
+              <option value="Selecione">Selecione</option>
+              <option value="Mercadoria chegou em desacordo pela logistica">
+                Mercadoria chegou em desacordo pela logistica
+              </option>
+              <option value="Cobrança indevida">CobranÃ§a indevida</option>
+              <option value="Não consegue falar com o Vendedor">
+                Nao consegue falar com o Vendedor
+              </option>
+              <option value="Demora na entrega">Demora na entrega</option>
+              <option value="Protesto indevido">Protesto indevido</option>
+              <option value="Preco em desacordo">Preco em desacordo</option>
+              <option value="Mercadoria de baixa qualidade">
+                Mercadoria de baixa qualidade
+              </option>
+              <option value="Mercadoria chegou avariada">
+                Mercadoria chegou avariada
+              </option>
+              <option value="Material divergente com o pedido de compra">
+                Material divergente com o pedido de compra
+              </option>
+            </select>
+          </div>        
+      </div>
+
+      <!--campo sentimento do cliente-->
+      <div
+        class="form-field"
+        data-type="combo"
+        data-show-properties=""
+        data-field-name="SentimCliente"
+        style="position: relative; left: 0px; top: 0px"
+      >      
+          <div class="form-group col-md-3">
+            <label>Como o cliente está se sentindo?</label
+            ><select class="form-control" name="SentimCliente">
+              <option value="Selecione">Selecione</option>
+              <option value="Tranquilo">Tranquilo</option>
+              <option value="Impaciente">Impaciente</option>
+              <option value="Muito irritado">Muito irritado</option>
+            </select>
+          </div>        
+      </div>
+
+      <!-- campo setor que está gerando transtorno-->
+      <div
+        class="form-field"
+        data-type="combo"
+        data-show-properties=""
+        data-field-name="SetorTranstorno"
+        style="position: relative; left: 0px; top: 0px"
+      >        
+          <div class="form-group col-md-2">
+            <label>Qual setor está gerando transtorno para o cliente?</label
+            ><select class="form-control" name="SetorTranstorno">
+              <option value="Selecione">Selecione</option>
+              <option value="Vendas">Vendas</option>
+              <option value="Logística">Logística</option>
+              <option value="Compras">Compras</option>
+              <option value="Financeiro">Financeiro</option>
+              <option value="E-commerce">E-commerce</option>
+              <option value="RH">RH</option>
+              <option value="Diretoria">Diretoria</option>
+            </select>
+          </div>        
+      </div>
+
+      <div
+        class="form-field"
+        data-type="combo"
+        data-show-properties=""
+        data-field-name="ModoReclamacao"
+        style="position: relative; left: 0px; top: 0px"
+      >       
+          <div class="form-group col-md-3">
+            <label>Como este cliente está manifestando sua reclamação?</label
+            ><select class="form-control" name="ModoReclamacao">
+              <option value="Selecione">Selecione</option>
+              <option value="Telefone">Telefone</option>
+              <option value="Email">Email</option>
+              <option value="Em visita nossa">Em visita nossa</option>
+              <option value="Em visita do Cliente">Em visita do Cliente</option>
+            </select>
+          </div>       
+      </div>
+
+</div>
+      <!--campo ocorrencia-->
+        <div
+        class="form-field"
+        data-type="textarea"
+        data-show-properties=""
+        data-field-name="DescrOcorrencia"
+        style="position: relative; left: 0px; top: 0px"
+    >
+        <div class="form-group">
+          <label>Descreva aqui a ocorrência</label
+          ><textarea
+            class="form-control"
+            rows="3"
+            name="DescrOcorrencia"
+            placeholder=""
+            data-size="big"
+          ></textarea>
+        </div>
+      </div>
+  
+
+      <!-- campo sugestão de resolucao-->
+      <div
+        class="form-field"
+        data-type="textarea"
+        data-show-properties=""
+        data-field-name="SugestaoResoluc"
+        style="position: relative; left: 0px; top: 0px"
+      >        
+          <div class="form-group">
+            <label>Dê sua sugestão de como devemos resolver o problema</label>
+            <textarea
+              class="form-control"
+              rows="3"
+              name="SugestaoResoluc"
+              placeholder=""
+              data-size="big"
+            ></textarea>
+          </div>        
+      </div>
+
+</div> <!--finaliza o segundo panel body-->
+</div> <!--finaliza o segundo panel content-->
+
+      <!--declaração do terceiro painel-->
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title">
+            <i class="flaticon flaticon-find-replace icon-md" aria-hidden="true"></i>  Primeira tratativa</i></h3>
+      </div>
+        <div class="panel-body">
+            
+      <div
+        class="form-field"
+        data-type="textarea"
+        data-show-properties=""
+        data-field-name="PqReclamacao"
+        style="position: relative; left: 0px; top: 0px"
+      >
+        <div class="form-input">
+          <div class="form-group">
+            <label>Por que foi gerada a reclamação?</label
+            ><textarea
+              class="form-control"
+              rows="3"
+              name="PqReclamacao"
+              placeholder=""
+              data-size="big"
+            ></textarea>
+          </div>
+        </div>
+      </div>
+      <div
+        class="form-field"
+        data-type="textarea"
+        data-show-properties=""
+        data-field-name="SolucaoReclamac"
+        style="position: relative; left: 0px; top: 0px"
+      >
+        <div class="form-input">
+          <div class="form-group">
+            <label>O que você fez para solucionar a reclamação?</label
+            ><textarea
+              class="form-control"
+              rows="3"
+              name="SolucaoReclamac"
+              placeholder=""
+              data-size="big"
+            ></textarea>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+
+     
+      <div
+        class="form-field"
+        data-type="radio"
+        data-show-properties=""
+        data-field-name="RdContCliente"
+      >
+        <div class="form-input">
+          <div class="form-group col-md-4">
+            <label>você entrou em contato com o cliente?</label>
+            <div class="radio-options">
+              <div class="radio">
+                <label
+                  ><input
+                    type="radio"
+                    name="RdContCliente"
+                    value="Sim"
+                  />Sim</label
+                >
+              </div>
+              <div class="radio">
+                <label
+                  ><input
+                    type="radio"
+                    name="RdContCliente"
+                    value="Não"
+                  />Não</label
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="form-field"
+        data-type="radio"
+        data-show-properties=""
+        data-field-name="RdClienteSatisf"
+        style="position: relative; left: 0px; top: 0px"
+      >
+        <div class="form-input">
+          <div class="form-group col-md-4">
+            <label>O cliente ficou satisfeito?</label>
+            <div class="radio-options">
+              <div class="radio">
+                <label
+                  ><input
+                    type="radio"
+                    name="RdClienteSatisf"
+                    value="Sim"
+                  />Sim</label
+                >
+              </div>
+              <div class="radio">
+                <label
+                  ><input
+                    type="radio"
+                    name="RdClienteSatisf"
+                    value="Não"
+                  />Não</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="form-field"
+        data-type="combo"
+        data-show-properties=""
+        data-field-name="Gerente"
+        style="position: relative; left: 0px; top: 0px"
+      >
+        <div class="form-input">
+          <div class="form-group col-md-4">
+            <label>Selecione o gerente para fechamento da solicitação</label>
+            <select
+              class="form-control"
+              name="Gerente"
+              dataset="ds_supervisores_winthor"
+              datasetkey="MATRICULA"
+              datasetvalue="NOME"
+              datasetorder="NOME"
+            >
+              <option value="OpÃ§Ã£o 1">Op§Ã£o 1</option>
+              <option value="OpÃ§Ã£o 2">OpÃ§Ã£o 2</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> <!--finaliza o segundo panel body-->
+</div> <!--finaliza o segundo panel content-->
+
+      <!--declaração do terceiro painel-->
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title">
+            <i class="flaticon flaticon-handshake icon-md" aria-hidden="true"></i> Finalização da gerência</i></h3>
+      </div>
+        <div class="panel-body">
+
+      <div class="row">
+
+      <div
+        class="form-field"
+        data-type="radio"
+        data-show-properties=""
+        data-field-name="RdContGerencia"
+      >
+        <div class="form-input">
+          <div class="form-group col-md-4">
+            <label>Entrou em contato com o cliente?</label>
+            <div class="radio-options">
+              <div class="radio">
+                <label
+                  ><input
+                    type="radio"
+                    name="RdContGerencia"
+                    value="Sim"
+                  />Sim</label
+                >
+              </div>
+              <div class="radio">
+                <label
+                  ><input
+                    type="radio"
+                    name="RdContGerencia"
+                    value="Não"
+                  />Não</label
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="form-field"
+        data-type="radio"
+        data-show-properties=""
+        data-field-name="RdGerenSatisfei"
+      >
+        <div class="form-input">
+          <div class="form-group col-md-4">
+            <label>Cliente ficou satisfeito?</label>
+            <div class="radio-options">
+              <div class="radio">
+                <label
+                  ><input
+                    type="radio"
+                    name="RdGerenSatisfei"
+                    value="Sim"
+                  />Sim</label
+                >
+              </div>
+              <div class="radio">
+                <label
+                  ><input
+                    type="radio"
+                    name="RdGerenSatisfei"
+                    value="Não"
+                  />Não</label
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> <!--fecha a row-->
+
+      <div
+        class="form-field"
+        data-type="textarea"
+        data-show-properties=""
+        data-field-name="ObsGerente"
+        style="position: relative; left: 0px; top: 0px"
+      >
+        <div class="form-input">
+          <div class="form-group">
+            <label>Descreva algo</label
+            ><textarea
+              class="form-control"
+              rows="3"
+              name="ObsGerente"
+              placeholder=""
+              data-size="big"
+            ></textarea>
+          </div>
+        </div>
+      </div>
+    </div> <!--fecha panel body-->
+  </div> <!--fecha panel content-->
+  
+    </form>
+
+
+   
+    <script type="text/javascript">
+        var keyDown = false,
+        ctrl = 17,
+        vKey = 86,
+        Vkey = 118;
+
+      $(document)
+        .keydown(function (e) {
+          if (e.keyCode == ctrl) keyDown = true;
+        })
+        .keyup(function (e) {
+          if (e.keyCode == ctrl) keyDown = false;
+        });
+
+      $("[data-only-numbers]")
+        .on("keypress", function (e) {
+          if (!e) {
+            var e = window.event;
+          }
+
+          if (e.keyCode > 0 && e.which == 0) {
+            return true;
+          }
+
+          if (e.keyCode) {
+            code = e.keyCode;
+          } else if (e.which) {
+            code = e.which;
+          }
+
+          if (code == 46) {
+            return true;
+          }
+
+          var character = String.fromCharCode(code);
+          if (character == "\b" || character == " " || character == "\t") {
+            return true;
+          }
+          if (keyDown && (code == vKey || code == Vkey)) {
+            return character;
+          } else {
+            return /[0-9]$/.test(character);
+          }
+        })
+        .on("focusout", function (e) {
+          var $this = $(this);
+          if ($this.val() == "") {
+            return true;
+          }
+          $this.val($this.val().replace(/[^0-9\.]/g, ""));
+        })
+        .on("paste", function (e) {
+          var $this = $(this);
+          setTimeout(function () {
+            $this.val($this.val().replace(/[^0-9\.]/g, ""));
+          }, 5);
+        });
+
+      $(".create-form-components").on(
+        "keyup",
+        'input[required="required"][type="text"], input[required="required"][type="number"], input[required="required"][type="date"], textarea[required="required"]',
+        function () {
+          validationFieldsForm(
+            $(this),
+            $(this).parents(".form-field").data("type")
+          );
+        }
+      );
+
+      $(".create-form-components").on(
+        "change",
+        'input[required="required"][type="checkbox"], input[required="required"][type="radio"], select[required="required"]',
+        function () {
+          validationFieldsForm(
+            $(this),
+            $(this).parents(".form-field").data("type")
+          );
+        }
+      );
+
+      function validationFieldsForm(field, type) {
+        if (type === "checkbox" || type === "radio") {
+          if (!field.is(":checked")) {
+            field.parents(".form-field").addClass("required");
+          } else {
+            field.parents(".form-field").removeClass("required");
+          }
+        } else {
+          if (!field.val().trim()) {
+            field.parents(".form-field").addClass("required");
+          } else {
+            field.parents(".form-field").removeClass("required");
+          }
+        }
+      }
+
+      var $zoomPreview = $(".zoom-preview");
+      if ($zoomPreview.length) {
+        $zoomPreview.parent().removeClass("input-group");
+        $zoomPreview.remove();
+      }
+
+      var ratings = $(".rating");
+      if (ratings.length > 0) ratingStars(ratings);
+      function ratingStars(stars) {
+        $.each(stars, function (i, obj) {
+          var field = $(this).closest(".form-group").find(".rating-value");
+          var tgt = $(obj);
+          tgt.html("");
+          var rating = FLUIGC.stars(tgt, { value: field.val() });
+          rating.on("click", function (o) {
+            field.val($(this).index() + 1);
+          });
+        });
+      }
+
+      $.each($("[data-date]"), function (i, o) {
+        var id = $(o).attr("id");
+        FLUIGC.calendar("#" + id);
+      });
+
+      $(document).ready(function () {
+        $.each($("[data-date]"), function (i, o) {
+          var id = $(o).attr("id");
+          if ($("#" + id).attr("readonly")) {
+            $("#" + id)
+              .data("DateTimePicker")
+              .disable();
+          }
+        });
+      });
+    </script>  
+  </body>
+</html>

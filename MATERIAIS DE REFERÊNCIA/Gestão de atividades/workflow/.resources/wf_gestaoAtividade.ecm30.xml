@@ -1,0 +1,737 @@
+<list>
+  <ProcessDefinition>
+    <processDefinitionPK>
+      <companyId>1</companyId>
+      <processId>wf_gestaoAtividade</processId>
+    </processDefinitionPK>
+    <processDescription>Gestão de Atividade</processDescription>
+    <instruction>Controle de execução de tarefas&#xd;
+visibilidade de tarefas atrasadas, rastreabilidade do processo, &#xd;
+e indicadores de produtividade.</instruction>
+    <active>true</active>
+    <publicProcess>false</publicProcess>
+    <volumeId>Default</volumeId>
+    <categoryId>Templates</categoryId>
+    <managerEngineAllocationId></managerEngineAllocationId>
+    <snapshotFrequency>0</snapshotFrequency>
+    <baseDay>0</baseDay>
+    <baseMonth>0</baseMonth>
+    <periodId>Default</periodId>
+    <uniqueCardVersion>true</uniqueCardVersion>
+    <keyWord></keyWord>
+    <complementsLevel>0</complementsLevel>
+    <notifyRequisitionerComplements>false</notifyRequisitionerComplements>
+    <notifyManagerComplements>false</notifyManagerComplements>
+    <deadlineTime>0</deadlineTime>
+    <warningDeadlineTime>0</warningDeadlineTime>
+    <notifyAuthorityComplements>false</notifyAuthorityComplements>
+  </ProcessDefinition>
+  <ProcessDefinitionVersion>
+    <processDefinitionVersionPK>
+      <companyId>1</companyId>
+      <processId>Gestão de Atividade</processId>
+      <version>1</version>
+    </processDefinitionVersionPK>
+    <versionDescription></versionDescription>
+    <formId>0</formId>
+    <editionMode>true</editionMode>
+    <updateAttachmentsVersion>false</updateAttachmentsVersion>
+    <controlsAttachmentsSecurity>false</controlsAttachmentsSecurity>
+    <active>true</active>
+    <blockedVersion>false</blockedVersion>
+    <counterSign>false</counterSign>
+    <openInstances>0</openInstances>
+    <bpmnVersion>1</bpmnVersion>
+    <processStates/>
+    <favorito>false</favorito>
+    <inheritFormSecurity>true</inheritFormSecurity>
+    <mobileReady>true</mobileReady>
+  </ProcessDefinitionVersion>
+  <list>
+    <ProcessState>
+      <processStatePK>
+        <companyId>1</companyId>
+        <processId>wf_gestaoAtividade</processId>
+        <version>1</version>
+        <sequence>4</sequence>
+      </processStatePK>
+      <stateName>Adicionar tarefa</stateName>
+      <stateDescription>Adicionar tarefa</stateDescription>
+      <instruction>Preencher todos os campos permitidos do formulário e enviar o&#xd;
+processo para execução da atividade.</instruction>
+      <deadlineTime>60</deadlineTime>
+      <joint>false</joint>
+      <agreementPercentage>0</agreementPercentage>
+      <engineAllocationId></engineAllocationId>
+      <engineAllocationConfiguration></engineAllocationConfiguration>
+      <selectColleague>1</selectColleague>
+      <initialState>true</initialState>
+      <notifyAuthorityDelay>true</notifyAuthorityDelay>
+      <notifyRequisitionerDelay>false</notifyRequisitionerDelay>
+      <allowanceAuthorityTime>3600</allowanceAuthorityTime>
+      <frequenceAuthorityTime>3600</frequenceAuthorityTime>
+      <allowanceRequisitionerTime>60</allowanceRequisitionerTime>
+      <frequenceRequisitionerTime>60</frequenceRequisitionerTime>
+      <transferAttachments>false</transferAttachments>
+      <subProcessId></subProcessId>
+      <formFolder>0</formFolder>
+      <notifyAuthorityFollowUp>false</notifyAuthorityFollowUp>
+      <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
+      <automatic>false</automatic>
+      <positionX>156</positionX>
+      <positionY>32</positionY>
+      <forecastedEffortType>0</forecastedEffortType>
+      <forecastedEffort>60</forecastedEffort>
+      <notifyManagerFollowUp>false</notifyManagerFollowUp>
+      <notifyManagerDelay>false</notifyManagerDelay>
+      <allowanceManagerTime>60</allowanceManagerTime>
+      <frequenceManagerTime>60</frequenceManagerTime>
+      <inhibitTransfer>true</inhibitTransfer>
+      <periodId>Default</periodId>
+      <stateType>0</stateType>
+      <bpmnType>10</bpmnType>
+      <signalId>0</signalId>
+      <counterSign>false</counterSign>
+      <openInstances>0</openInstances>
+      <noticeExpirationAuthorityTime>60</noticeExpirationAuthorityTime>
+      <noticeExpirationRequisitionerTime>60</noticeExpirationRequisitionerTime>
+      <noticeExpirationManagerTime>60</noticeExpirationManagerTime>
+      <destinationStates/>
+      <digitalSignature>false</digitalSignature>
+    </ProcessState>
+    <ProcessState>
+      <processStatePK>
+        <companyId>1</companyId>
+        <processId>wf_gestaoAtividade</processId>
+        <version>1</version>
+        <sequence>18</sequence>
+      </processStatePK>
+      <stateName>Executar Atividade(s)</stateName>
+      <stateDescription>Executar Atividade(s)</stateDescription>
+      <instruction></instruction>
+      <deadlineTime>0</deadlineTime>
+      <deadlineFieldName></deadlineFieldName>
+      <joint>false</joint>
+      <agreementPercentage>0</agreementPercentage>
+      <engineAllocationId>Executor Atividade</engineAllocationId>
+      <engineAllocationConfiguration>&lt;AssignmentController&gt;&lt;BaseActivity&gt;4&lt;/BaseActivity&gt;&lt;Returns&gt;Last&lt;/Returns&gt;&lt;/AssignmentController&gt;</engineAllocationConfiguration>
+      <selectColleague>1</selectColleague>
+      <initialState>false</initialState>
+      <notifyAuthorityDelay>true</notifyAuthorityDelay>
+      <notifyRequisitionerDelay>false</notifyRequisitionerDelay>
+      <allowanceAuthorityTime>3600</allowanceAuthorityTime>
+      <frequenceAuthorityTime>3600</frequenceAuthorityTime>
+      <allowanceRequisitionerTime>0</allowanceRequisitionerTime>
+      <frequenceRequisitionerTime>0</frequenceRequisitionerTime>
+      <transferAttachments>false</transferAttachments>
+      <subProcessId></subProcessId>
+      <formFolder>0</formFolder>
+      <notifyAuthorityFollowUp>false</notifyAuthorityFollowUp>
+      <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
+      <automatic>false</automatic>
+      <positionX>121</positionX>
+      <positionY>129</positionY>
+      <forecastedEffortType>0</forecastedEffortType>
+      <forecastedEffort>0</forecastedEffort>
+      <notifyManagerFollowUp>false</notifyManagerFollowUp>
+      <notifyManagerDelay>false</notifyManagerDelay>
+      <allowanceManagerTime>0</allowanceManagerTime>
+      <frequenceManagerTime>0</frequenceManagerTime>
+      <inhibitTransfer>true</inhibitTransfer>
+      <periodId>Default</periodId>
+      <stateType>0</stateType>
+      <bpmnType>80</bpmnType>
+      <signalId>0</signalId>
+      <counterSign>false</counterSign>
+      <openInstances>0</openInstances>
+      <noticeExpirationAuthorityTime>0</noticeExpirationAuthorityTime>
+      <noticeExpirationRequisitionerTime>0</noticeExpirationRequisitionerTime>
+      <noticeExpirationManagerTime>0</noticeExpirationManagerTime>
+      <destinationStates/>
+      <digitalSignature>false</digitalSignature>
+      <executionType>0</executionType>
+    </ProcessState>
+    <ProcessState>
+      <processStatePK>
+        <companyId>1</companyId>
+        <processId>wf_gestaoAtividade</processId>
+        <version>1</version>
+        <sequence>5</sequence>
+      </processStatePK>
+      <stateName>Feito?</stateName>
+      <stateDescription>Feito?</stateDescription>
+      <joint>false</joint>
+      <initialState>false</initialState>
+      <transferAttachments>false</transferAttachments>
+      <subProcessId></subProcessId>
+      <formFolder>0</formFolder>
+      <automatic>true</automatic>
+      <positionX>144</positionX>
+      <positionY>263</positionY>
+      <inhibitTransfer>false</inhibitTransfer>
+      <stateType>1</stateType>
+      <bpmnType>120</bpmnType>
+      <signalId>0</signalId>
+      <openInstances>0</openInstances>
+      <destinationStates/>
+      <digitalSignature>false</digitalSignature>
+    </ProcessState>
+    <ProcessState>
+      <processStatePK>
+        <companyId>1</companyId>
+        <processId>wf_gestaoAtividade</processId>
+        <version>1</version>
+        <sequence>7</sequence>
+      </processStatePK>
+      <stateName>Fim</stateName>
+      <stateDescription>Fim</stateDescription>
+      <instruction>Atividade final do processo</instruction>
+      <deadlineTime>0</deadlineTime>
+      <joint>false</joint>
+      <agreementPercentage>0</agreementPercentage>
+      <engineAllocationId></engineAllocationId>
+      <engineAllocationConfiguration></engineAllocationConfiguration>
+      <selectColleague>0</selectColleague>
+      <initialState>false</initialState>
+      <notifyAuthorityDelay>true</notifyAuthorityDelay>
+      <notifyRequisitionerDelay>false</notifyRequisitionerDelay>
+      <allowanceAuthorityTime>0</allowanceAuthorityTime>
+      <frequenceAuthorityTime>1</frequenceAuthorityTime>
+      <allowanceRequisitionerTime>0</allowanceRequisitionerTime>
+      <frequenceRequisitionerTime>0</frequenceRequisitionerTime>
+      <transferAttachments>false</transferAttachments>
+      <subProcessId></subProcessId>
+      <formFolder>0</formFolder>
+      <notifyAuthorityFollowUp>false</notifyAuthorityFollowUp>
+      <notifyRequisitionerFollowUp>true</notifyRequisitionerFollowUp>
+      <automatic>false</automatic>
+      <positionX>264</positionX>
+      <positionY>290</positionY>
+      <forecastedEffortType>0</forecastedEffortType>
+      <forecastedEffort>0</forecastedEffort>
+      <notifyManagerFollowUp>false</notifyManagerFollowUp>
+      <notifyManagerDelay>false</notifyManagerDelay>
+      <allowanceManagerTime>0</allowanceManagerTime>
+      <frequenceManagerTime>0</frequenceManagerTime>
+      <inhibitTransfer>false</inhibitTransfer>
+      <periodId></periodId>
+      <stateType>6</stateType>
+      <bpmnType>60</bpmnType>
+      <signalId>0</signalId>
+      <counterSign>false</counterSign>
+      <openInstances>0</openInstances>
+      <destinationStates/>
+      <digitalSignature>false</digitalSignature>
+    </ProcessState>
+  </list>
+  <list>
+    <ConditionProcessState>
+      <conditionProcessStatePK>
+        <companyId>1</companyId>
+        <processId>wf_gestaoAtividade</processId>
+        <expressionOrder>1</expressionOrder>
+        <version>1</version>
+        <sequence>5</sequence>
+      </conditionProcessStatePK>
+      <condition>(hAPI.getCardValue(&quot;aprovado&quot;) == &quot;nao&quot;)</condition>
+      <destinationSequenceId>18</destinationSequenceId>
+      <engineAllocationConfiguration>&lt;AssignmentController&gt;&lt;BaseActivity&gt;4&lt;/BaseActivity&gt;&lt;Returns&gt;Last&lt;/Returns&gt;&lt;/AssignmentController&gt;</engineAllocationConfiguration>
+      <engineAllocationId>Executor Atividade</engineAllocationId>
+      <conditionType>0</conditionType>
+    </ConditionProcessState>
+    <ConditionProcessState>
+      <conditionProcessStatePK>
+        <companyId>1</companyId>
+        <processId>wf_gestaoAtividade</processId>
+        <expressionOrder>2</expressionOrder>
+        <version>1</version>
+        <sequence>5</sequence>
+      </conditionProcessStatePK>
+      <condition>true</condition>
+      <destinationSequenceId>7</destinationSequenceId>
+      <conditionType>0</conditionType>
+    </ConditionProcessState>
+  </list>
+  <list>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>wf_gestaoAtividade</processId>
+        <version>1</version>
+        <linkSequence>8</linkSequence>
+      </processLinkPK>
+      <actionLabel></actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>5</initialStateSequence>
+      <finalStateSequence>7</finalStateSequence>
+      <returnLabel></returnLabel>
+      <name></name>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>wf_gestaoAtividade</processId>
+        <version>1</version>
+        <linkSequence>10</linkSequence>
+      </processLinkPK>
+      <actionLabel></actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>4</initialStateSequence>
+      <finalStateSequence>18</finalStateSequence>
+      <returnLabel></returnLabel>
+      <name></name>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>wf_gestaoAtividade</processId>
+        <version>1</version>
+        <linkSequence>16</linkSequence>
+      </processLinkPK>
+      <actionLabel></actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>18</initialStateSequence>
+      <finalStateSequence>5</finalStateSequence>
+      <returnLabel></returnLabel>
+      <name></name>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>wf_gestaoAtividade</processId>
+        <version>1</version>
+        <linkSequence>19</linkSequence>
+      </processLinkPK>
+      <actionLabel></actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>5</initialStateSequence>
+      <finalStateSequence>18</finalStateSequence>
+      <returnLabel></returnLabel>
+      <name></name>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+    </ProcessLink>
+  </list>
+  <list/>
+  <list>
+    <WorkflowProcessEvent>
+      <workflowProcessEventPK>
+        <companyId>1</companyId>
+        <eventId>afterTaskComplete</eventId>
+        <processId>wf_gestaoAtividade</processId>
+        <version>1</version>
+      </workflowProcessEventPK>
+      <eventDescription>function afterTaskComplete(colleagueId,nextSequenceId,userList){&#xd;
+&#xd;
+}</eventDescription>
+    </WorkflowProcessEvent>
+    <WorkflowProcessEvent>
+      <workflowProcessEventPK>
+        <companyId>1</companyId>
+        <eventId>atividades</eventId>
+        <processId>wf_gestaoAtividade</processId>
+        <version>1</version>
+      </workflowProcessEventPK>
+      <eventDescription>var ADICIONAR_TAREFAS = 4;&#xd;
+var EXECUTAR_ATIVIDADES = 18;&#xd;
+var FEITO = 5;&#xd;
+var FIM = 7;&#xd;
+&#xd;
+var PROCESS_ATIVIDADES = &apos;gestaodetarefas&apos;;</eventDescription>
+    </WorkflowProcessEvent>
+    <WorkflowProcessEvent>
+      <workflowProcessEventPK>
+        <companyId>1</companyId>
+        <eventId>afterProcessFinish</eventId>
+        <processId>wf_gestaoAtividade</processId>
+        <version>1</version>
+      </workflowProcessEventPK>
+      <eventDescription>function afterProcessFinish(processId) {&#xd;
+	// data termino&#xd;
+	var data_transtermino = new Date();&#xd;
+	log.info(&quot;Data termino: &quot; + hAPI.getCardValue(&quot;date_terminoatividade&quot;));&#xd;
+	var arrdatatermino = hAPI.getCardValue(&quot;date_terminoatividade&quot;).split(&quot;/&quot;);&#xd;
+	var mestermino = arrdatatermino[1];&#xd;
+	var diatermino = arrdatatermino[0];&#xd;
+	var anotermino = arrdatatermino[2];&#xd;
+&#xd;
+	data_transtermino.setDate(diatermino);&#xd;
+	data_transtermino.setMonth(parseInt(mestermino - 1));&#xd;
+	data_transtermino.setFullYear(anotermino);&#xd;
+	data_transtermino.setHours(0, 0, 0, 0, 0);&#xd;
+	log.info(&quot;Datatrans termino: &quot; + data_transtermino);&#xd;
+&#xd;
+	// data finalizada&#xd;
+	var data_transfinal = new Date();&#xd;
+	log.info(&quot;Data finalizada: &quot; + hAPI.getCardValue(&quot;data_finalizacao&quot;));&#xd;
+	var arrdatafinal = hAPI.getCardValue(&quot;data_finalizacao&quot;).split(&quot;-&quot;);&#xd;
+	var mesfinal = arrdatafinal[1];&#xd;
+	var diafinal = arrdatafinal[2];&#xd;
+	var anofinal = arrdatafinal[0];&#xd;
+&#xd;
+	data_transfinal.setDate(diafinal);&#xd;
+	data_transfinal.setMonth(parseInt(mesfinal - 1));&#xd;
+	data_transfinal.setFullYear(anofinal);&#xd;
+	data_transfinal.setHours(0, 0, 0, 0, 0);&#xd;
+	log.info(&quot;Datatrans final: &quot; + data_transfinal);&#xd;
+&#xd;
+	if (data_transfinal &lt;= data_transtermino) {&#xd;
+&#xd;
+		hAPI.setCardValue(&quot;txt_pontuacao&quot;, parseFloat(hAPI&#xd;
+				.getCardValue(&quot;txt_pontuacaoprioridade&quot;)&#xd;
+				* hAPI.getCardValue(&quot;txt_noprazo&quot;) / 100));&#xd;
+		log.info(&quot;Pontuacao alcanda: &quot; + hAPI.getCardValue(&quot;txt_pontuacao&quot;));&#xd;
+&#xd;
+	} else {&#xd;
+		hAPI.setCardValue(&quot;txt_pontuacao&quot;, parseFloat(hAPI&#xd;
+				.getCardValue(&quot;txt_pontuacaoprioridade&quot;)&#xd;
+				* hAPI.getCardValue(&quot;txt_foraprazo&quot;) / 100));&#xd;
+		log.info(&quot;Pontuacao alcanda: &quot; + hAPI.getCardValue(&quot;txt_pontuacao&quot;));&#xd;
+&#xd;
+	}&#xd;
+}</eventDescription>
+    </WorkflowProcessEvent>
+    <WorkflowProcessEvent>
+      <workflowProcessEventPK>
+        <companyId>1</companyId>
+        <eventId>onNotify</eventId>
+        <processId>wf_gestaoAtividade</processId>
+        <version>1</version>
+      </workflowProcessEventPK>
+      <eventDescription>function onNotify(subject, receivers, template, params) {&#xd;
+	&#xd;
+	var ATIVIDADE = hAPI.getCardValue(&apos;txt_descatividade&apos;);&#xd;
+	var PRAZO     = hAPI.getCardValue(&apos;date_terminoatividade&apos;);&#xd;
+    var msg       = &quot;Tarefa - &quot;+ ATIVIDADE +&quot; até &quot;+ PRAZO;&#xd;
+	&#xd;
+	// BUSCAR DADOS DA TABELA PAI-FILHA ONDE ESTÃO LANÇADAS AS MOVIMENTAÇÕES DO COLABORADOR&#xd;
+    var numProcess = getValue(&quot;WKNumProces&quot;);&#xd;
+    &#xd;
+    // Busca a Lista com o número da solicitação dos filhos&#xd;
+    var childrenProcess = hAPI.getChildrenInstances(numProcess);&#xd;
+ &#xd;
+    // Busca os dados do formulário da solicitação filha&#xd;
+    var childCardData = hAPI.getCardData(childrenProcess.get(childrenProcess.size()));&#xd;
+ &#xd;
+    // Replica um dado do formulário da solicitação filha para o formulário da solicitação pai&#xd;
+    var my_date  = childCardData.get(&quot;date_Status&quot;);&#xd;
+    var my_Espec = childCardData.get(&quot;txtEspecificacao&quot;);&#xd;
+    &#xd;
+    // SE TEM MSG NO ULTIMO MOVIMENTO ADICIONA EM SUBJECT&#xd;
+    if (my_Espec !=null) {&#xd;
+    	msg = msg +(&quot; em &quot;+my_date+&quot; obs &quot;+my_espec);&#xd;
+    }&#xd;
+    &#xd;
+    // SUBJECT&#xd;
+	subject.add( msg );	&#xd;
+}</eventDescription>
+    </WorkflowProcessEvent>
+    <WorkflowProcessEvent>
+      <workflowProcessEventPK>
+        <companyId>1</companyId>
+        <eventId>beforeSendData</eventId>
+        <processId>wf_gestaoAtividade</processId>
+        <version>1</version>
+      </workflowProcessEventPK>
+      <eventDescription>function beforeSendData(customFields, customFacts) {
+	customFields[0]  = hAPI.getCardValue( &quot;txt_projeto&quot; );
+	customFields[2]  = hAPI.getCardValue( &quot;txt_descatividade&quot; );
+	customFields[4]  = hAPI.getCardValue( &quot;txt_areaprojeto&quot; );
+	customFields[6]  = hAPI.getCardValue( &quot;txt_nomeresponsavel&quot; );
+	customFields[7]  = hAPI.getCardValue( &quot;txt_descpriorid&quot; );
+	customFields[8]  = hAPI.getCardValue( &quot;txt_pontuacao_dis&quot; );
+	customFields[9]  = hAPI.getCardValue( &quot;txt_pontuacao&quot; );
+	customFields[10] = hAPI.getCardValue( &quot;date_inicioatividade&quot; );
+	customFields[11] = hAPI.getCardValue( &quot;date_terminoatividade&quot; );
+	customFields[12] = hAPI.getCardValue( &quot;date_reprogramacao&quot; );
+	customFields[13] = hAPI.getCardValue( &quot;data_finalizacao&quot; );
+
+}
+</eventDescription>
+    </WorkflowProcessEvent>
+    <WorkflowProcessEvent>
+      <workflowProcessEventPK>
+        <companyId>1</companyId>
+        <eventId>beforeStateEntry</eventId>
+        <processId>wf_gestaoAtividade</processId>
+        <version>1</version>
+      </workflowProcessEventPK>
+      <eventDescription>function beforeStateEntry(sequenceId) {&#xd;
+	var cardData = new java.util.HashMap();&#xd;
+&#xd;
+	var userList = new java.util.ArrayList();&#xd;
+	userList.add(getValue(&quot;WKUser&quot;));&#xd;
+&#xd;
+	// GERAR TAREFAS&#xd;
+	if (sequenceId == EXECUTAR_ATIVIDADES || sequenceId == FEITO) {&#xd;
+&#xd;
+&#xd;
+		// criarAtividades(hAPI);&#xd;
+&#xd;
+		reprogramacaoDeFinalizacao();&#xd;
+&#xd;
+	}&#xd;
+}&#xd;
+&#xd;
+// function criarAtividades(hAPI) {&#xd;
+// 	var processTarefa = getValue(&quot;WKNumProces&quot;);&#xd;
+&#xd;
+// 	cardData = hAPI.getCardData(processTarefa);&#xd;
+// 	var keys = cardData.keySet().toArray();&#xd;
+&#xd;
+// 	var txt_projeto = cardData.get(&quot;txt_projeto&quot;);&#xd;
+&#xd;
+// 	var field = &apos;&apos;;&#xd;
+// 	var index = &apos;&apos;;&#xd;
+// 	var criacaoAdHoc = &apos;&apos;;&#xd;
+// 	var hdnrespativ = &apos;&apos;;&#xd;
+// 	var dtprazoativ = &apos;&apos;;&#xd;
+// 	var nomeativ = &apos;&apos;;&#xd;
+// 	var data_finalizacao = cardData.get(&quot;data_finalizacao&quot;);&#xd;
+&#xd;
+// 	log.info(&apos;xxxbeforeStateEntry data_finalizacao=&apos;);&#xd;
+// 	log.info(data_finalizacao);&#xd;
+&#xd;
+// 	for ( var key in keys) {&#xd;
+// 		field = keys[key];&#xd;
+&#xd;
+// 		if (field.indexOf(&quot;nomeativ___&quot;) &gt; -1) {&#xd;
+// 			index = field.replace(&quot;nomeativ___&quot;, &quot;&quot;);&#xd;
+&#xd;
+// 			// Criar solicitação Gestão de Atividade&#xd;
+// 			if (cardData.get(&quot;criacaoAdHoc___&quot; + index) != 1) {&#xd;
+&#xd;
+// 				// Regra de validacao&#xd;
+// 				validacaoAddRegistroEfinalizacao(data_finalizacao);&#xd;
+&#xd;
+// 				// Responsavel pela atividade&#xd;
+// 				matriculaUser = cardData.get(&quot;hdnrespativ___&quot; + index);&#xd;
+&#xd;
+// 				// Data do prazo da atividade&#xd;
+// 				dtprazoativ = cardData.get(&quot;dtprazoativ___&quot; + index);&#xd;
+&#xd;
+// 				nomeAtividade = cardData.get(&quot;nomeativ___&quot; + index);&#xd;
+&#xd;
+// 				idSolicitacao = criarAtividade(hAPI, matriculaUser, processTarefa, dtprazoativ,&#xd;
+// 						nomeAtividade, txt_projeto);&#xd;
+&#xd;
+// 				hAPI.setCardValue(&quot;criacaoAdHoc___&quot; + index, 1);&#xd;
+// 				hAPI.setCardValue(&quot;atividadeId___&quot; + index, idSolicitacao);&#xd;
+// 			}&#xd;
+// 		}&#xd;
+// 	}&#xd;
+// }&#xd;
+&#xd;
+function validacaoAddRegistroEfinalizacao(data_finalizacao){&#xd;
+	if(data_finalizacao != &apos;&apos; &amp;&amp; data_finalizacao != &apos; &apos;){&#xd;
+		throw &quot;Não é permitido finalizar a tarefa e adicionar atividade na mesma a&amp;ccedil;&amp;atilde;o!&quot;;&#xd;
+	}&#xd;
+}&#xd;
+&#xd;
+// function criarAtividade(hAPI, matriculaUser, processTarefa, dtprazoativ,&#xd;
+// 		nomeAtividade, txt_projeto) {&#xd;
+// 	// código do processo;&#xd;
+// 	var processId = PROCESS_ATIVIDADES;&#xd;
+&#xd;
+// 	// código da atividade de destino;&#xd;
+// 	var ativDest = &apos;0&apos;;&#xd;
+&#xd;
+// 	// lista (do tipo String) de usuários;&#xd;
+// 	var listaColab = new java.util.ArrayList();&#xd;
+// 	listaColab.add(matriculaUser);&#xd;
+&#xd;
+// 	// texto da observação;&#xd;
+// 	var obs = &apos;Solicita&amp;ccedil;&amp;atilde;o criada autom&amp;aacute;tica via processo gest&amp;atilde;o de tarefas&apos;;&#xd;
+&#xd;
+// 	// indica se deve completar a tarefa (true) ou apenas salvar (false);&#xd;
+// 	var completarTarefa = true;&#xd;
+&#xd;
+// 	// um Mapa com os valores do formulário do processo;&#xd;
+// 	var valoresForm = new java.util.HashMap();&#xd;
+// 	valoresForm.put(&quot;txt_numGestaoTarefas&quot;, processTarefa.toString());&#xd;
+// 	valoresForm.put(&quot;txtrespativ&quot;, matriculaUser);&#xd;
+// 	valoresForm.put(&quot;prazo_conclusao&quot;, dtprazoativ);&#xd;
+// 	valoresForm.put(&quot;nomeativ&quot;, nomeAtividade);&#xd;
+// 	valoresForm.put(&quot;txt_projeto&quot;, txt_projeto);&#xd;
+// 	valoresForm.put(&quot;data_abertura&quot;, diaAtual());&#xd;
+&#xd;
+// 	// indica que o usuário iniciará a solicitação como gestor (true) ou que o&#xd;
+// 	// usuário iniciará a solicitação apenas como solicitante (false).&#xd;
+// 	var modoGestor = false;&#xd;
+&#xd;
+// 	// Retorna um mapa com informações da solicitação criada. Entre elas, o&#xd;
+// 	// iProcess que é o número da solicitação criada.&#xd;
+// 	var solicitacao = hAPI.startProcess(processId, ativDest, listaColab, obs, completarTarefa, valoresForm, modoGestor);&#xd;
+&#xd;
+// 	solicitacaoId = solicitacao.get(&apos;iProcess&apos;);&#xd;
+&#xd;
+// 	return solicitacaoId;&#xd;
+// }&#xd;
+&#xd;
+function reprogramacaoDeFinalizacao() {&#xd;
+	// Gravar Numero de Reprogramação caso o mesmo seja alterado&#xd;
+	var ant_Reprogramacao = hAPI.getCardValue(&quot;cnt_date_Reprogramacao&quot;);&#xd;
+	var nov_Reprogramacao = hAPI.getCardValue(&quot;date_reprogramacao&quot;);&#xd;
+&#xd;
+	// SE AS DATAS ESTÃO DIFERENTES SOMAR 1&#xd;
+	if (ant_Reprogramacao != nov_Reprogramacao) {&#xd;
+		var Num = parseInt(hAPI.getCardValue(&quot;txt_NumReprogramacao&quot;)) + 1;&#xd;
+&#xd;
+		hAPI.setCardValue(&quot;txt_NumReprogramacao&quot;, Num);&#xd;
+		hAPI.setCardValue(&quot;cnt_date_Reprogramacao&quot;, nov_Reprogramacao);&#xd;
+	}&#xd;
+}&#xd;
+&#xd;
+function buscarIdSolicitacao() {&#xd;
+	return getParametro(&quot;WKNumProces&quot;);&#xd;
+}&#xd;
+&#xd;
+function buscarEmpresa() {&#xd;
+	return getParametro(&quot;WKCompany&quot;);&#xd;
+}&#xd;
+&#xd;
+function diaAtual() {&#xd;
+	var data = new Date();&#xd;
+	var dia = data.getDate();&#xd;
+&#xd;
+	if (dia.toString().length == 1) {&#xd;
+		dia = &quot;0&quot; + dia;&#xd;
+	}&#xd;
+&#xd;
+	var mes = data.getMonth() + 1;&#xd;
+&#xd;
+	if (mes.toString().length == 1) {&#xd;
+		mes = &quot;0&quot; + mes;&#xd;
+	}&#xd;
+&#xd;
+	var ano = data.getFullYear();&#xd;
+&#xd;
+	return dia + &quot;/&quot; + mes + &quot;/&quot; + ano;&#xd;
+}&#xd;
+&#xd;
+function validacaoTarefaPendente() {&#xd;
+	log.info(&quot;beforeStateEntry fn buscarStatusTarefas&quot;);&#xd;
+&#xd;
+	var processAtividade = getValue(&quot;WKNumProces&quot;);&#xd;
+&#xd;
+	var cardData = new java.util.HashMap();&#xd;
+	cardData = hAPI.getCardData(processAtividade);&#xd;
+	var keys = cardData.keySet().toArray();&#xd;
+&#xd;
+	var field = &apos;&apos;;&#xd;
+	var index = &apos;&apos;;&#xd;
+	var flag_tarefa = &apos;&apos;;&#xd;
+&#xd;
+	for ( var key in keys) {&#xd;
+		field = keys[key];&#xd;
+&#xd;
+		if (field.indexOf(&quot;nomeativ___&quot;) &gt; -1) {&#xd;
+			index = field.replace(&quot;nomeativ___&quot;, &quot;&quot;);&#xd;
+&#xd;
+			flag_tarefa = cardData.get(&quot;flag_tarefa___&quot; + index);&#xd;
+&#xd;
+			// Bloquear movimentacao da solicitacao Gestao de tarefas&#xd;
+			if (flag_tarefa == &quot;1&quot; || flag_tarefa == &quot;2&quot;) {&#xd;
+				throw &quot;N&amp;atilde;o foi poss&amp;iacute;vel finalizar a atividade, existem tarefas pendentes!&quot;;&#xd;
+			}&#xd;
+		}&#xd;
+	}&#xd;
+}</eventDescription>
+    </WorkflowProcessEvent>
+  </list>
+  <list/>
+  <list>
+    <SwimLane>
+      <color>d0daae</color>
+      <height>145</height>
+      <width>361</width>
+      <positionX>0</positionX>
+      <positionY>216</positionY>
+      <stateName>Decisão</stateName>
+      <type>2</type>
+      <parentSequence>0</parentSequence>
+      <swimLanePK>
+        <companyId>1</companyId>
+        <processId>wf_gestaoAtividade</processId>
+        <version>1</version>
+        <sequence>1</sequence>
+      </swimLanePK>
+    </SwimLane>
+    <SwimLane>
+      <color>adc9ac</color>
+      <height>113</height>
+      <width>361</width>
+      <positionX>0</positionX>
+      <positionY>108</positionY>
+      <stateName>Executor de tarefa</stateName>
+      <type>2</type>
+      <parentSequence>0</parentSequence>
+      <swimLanePK>
+        <companyId>1</companyId>
+        <processId>wf_gestaoAtividade</processId>
+        <version>1</version>
+        <sequence>2</sequence>
+      </swimLanePK>
+    </SwimLane>
+    <SwimLane>
+      <color>82b0b7</color>
+      <height>97</height>
+      <width>361</width>
+      <positionX>0</positionX>
+      <positionY>12</positionY>
+      <stateName>Planejamento</stateName>
+      <type>2</type>
+      <parentSequence>0</parentSequence>
+      <swimLanePK>
+        <companyId>1</companyId>
+        <processId>wf_gestaoAtividade</processId>
+        <version>1</version>
+        <sequence>3</sequence>
+      </swimLanePK>
+    </SwimLane>
+  </list>
+  <list/>
+  <list/>
+  <list>
+    <ProcessLinkBend>
+      <processLinkBendPK>
+        <companyId>1</companyId>
+        <processId>wf_gestaoAtividade</processId>
+        <version>1</version>
+        <linkSequence>19</linkSequence>
+        <bendSequence>1</bendSequence>
+      </processLinkBendPK>
+      <positionX>78</positionX>
+      <positionY>307</positionY>
+    </ProcessLinkBend>
+    <ProcessLinkBend>
+      <processLinkBendPK>
+        <companyId>1</companyId>
+        <processId>wf_gestaoAtividade</processId>
+        <version>1</version>
+        <linkSequence>19</linkSequence>
+        <bendSequence>2</bendSequence>
+      </processLinkBendPK>
+      <positionX>78</positionX>
+      <positionY>164</positionY>
+    </ProcessLinkBend>
+  </list>
+  <list/>
+  <list/>
+  <list/>
+  <list/>
+  <list/>
+  <list/>
+  <list/>
+  <list/>
+</list>

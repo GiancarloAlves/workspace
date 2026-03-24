@@ -1,0 +1,682 @@
+<html>
+
+<head>
+	<link type="text/css" rel="stylesheet" href="/style-guide/css/fluig-style-guide.min.css" />
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/mustache/mustache-min.js"></script>
+	<script type="text/javascript" src="/style-guide/js/fluig-style-guide.min.js" charset="utf-8"></script>
+
+	<!-- Dataset -->
+	<script type="text/javascript" src="/webdesk/vcXMLRPC.js"></script>
+
+	<!-- sweetalert2 -->
+	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+	<!-- FontAwesome -->
+	<link type="text/css" rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+	<!-- JQuery Mask Plugin -->
+	<script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
+
+	<!-- Custom -->
+	<link type="text/css" rel="stylesheet" href="./style_comp.css">
+	<script type="text/javascript" src="./app1.js"></script>
+
+<body class="fluig-style-guide process-style" id="devkit-style">
+	<form name="form" role="form" id="form-processo">
+
+		<div class="panel panel-primary panel-border">
+			<!--Painel geral do formulário - fecha no extremo do arquivo e contém todas as seções-->
+
+			<div class="panel-heading panel-bg panel-border"> <!--início da declaração do cabeçalho principal (azul)-->
+				<div class="container-fluid">
+					<section id="logo">
+						<img src="./images/logoCigame.png" alt="NOME-CLIENTE" width="130" style="padding: 10px;">
+						<h3 class="panel-title">SOLICITAÇÃO DE COMPRA NA PRAÇA (ITENS CADASTRADOS)</h3>
+					</section>
+				</div>
+			</div> <!--fim da declaração do cabeçalho principal (azul)-->
+
+			<div class="panel-body"> <!--panel body geral do arquivo - fecha no extremo e contém todas as seções-->
+
+				<div class="panel panel-primary"> <!--declaração da primeira seção-->
+					<div class="panel-heading"> <!--início do cabeçalho da seção-->
+						<h3 class="panel-title subpanel_title">
+							<span id="led_abertura" class="led"></span>
+							<a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion"
+								href="#abertura"><i class="far fa-clipboard"></i> DADOS DO PEDIDO</a>
+						</h3>
+					</div> <!--fim da declaração do cabeçalho da seção-->
+
+					<div id="abertura" class="panel-collapse collapse in">
+						<div class="panel-body">
+
+							<div class="row">
+
+								<div class="form-group col-md-3">
+									<label>Solicitante</label>
+									<div class="input-group">
+										<input type="text" name="solicitante" id="solicitante" class="form-control"
+											readonly>
+										<span class="input-group-addon"><i class="fas fa-user"></i></span>
+									</div>
+								</div>
+
+								<div class="form-group col-md-3">
+									<label>Supervisor</label>
+									<div class="input-group">
+										<input type="text" name="supervisorSolicitante" id="supervisorSolicitante"
+											class="form-control" readonly>
+										<span class="input-group-addon"><i class="fas fa-user-shield"></i></span>
+									</div>
+								</div>
+
+								<div class="form-group col-md-2">
+									<label>Tipo solicitante</label>
+									<div class="input-group">
+										<input type="text" name="tipoSolicitante" id="tipoSolicitante"
+											class="form-control" readonly>
+										<span class="input-group-addon"><i class="fas fa-graduation-cap"></i></span>
+									</div>
+								</div>
+
+								<div class="form-group col-md-2">
+									<label>Mat. solicitante</label>
+									<div class="input-group">
+										<input type="text" name="matSolicitante" id="matSolicitante"
+											class="form-control" readonly>
+										<!-- <span class="input-group-addon"><i class="fas fa-graduation-cap"></i></span> -->
+									</div>
+								</div>
+
+								<div class="form-group col-md-2">
+									<label>Mat. supervisor</label>
+									<div class="input-group">
+										<input type="text" name="matSupervisor" id="matSupervisor" class="form-control"
+											readonly>
+										<!-- <span class="input-group-addon"><i class="fas fa-graduation-cap"></i></span> -->
+									</div>
+								</div>
+
+							</div>
+
+							<div class="row">
+
+								<div class="form-group col-md-3">
+									<label class="required">Número do pedido</label>
+									<input type="zoom" name="numped" id="numped" class="form-control" data-zoom="
+					{
+						'displayKey':'A01_PEDIDO',
+						'datasetId':'ds_compra_praca_form_winthor',
+						'maximumSelectionLength':'1',
+						'placeholder':'Buscar...',
+						'fields':[
+							{'field':'A01_PEDIDO','label':'Num. pedido','standard':'true'}
+						]
+					}">
+								</div>
+
+
+								<div class="form-group col-md-3">
+									<label class="required">Cod.cliente</label>
+									<input type="zoom" name="codcli" id="codcli" class="form-control" data-zoom="
+				{
+					'displayKey':'A02_COD_CLI',
+					'datasetId':'ds_compra_praca_form_winthor',
+					'maximumSelectionLength':'1',
+					'placeholder':'Buscar...',
+					'fields':[
+						{'field':'A02_COD_CLI','label':'Codcli','standard':'true'}
+					]
+				}">
+								</div>
+
+								<div class="form-group col-md-6">
+									<label class="required">Cliente</label>
+									<input type="zoom" name="cliente" id="cliente" class="form-control" data-zoom="
+				{
+					'displayKey':'A03_CLIENTE',
+					'datasetId':'ds_compra_praca_form_winthor',
+					'maximumSelectionLength':'1',
+					'placeholder':'Buscar...',
+					'fields':[
+						{'field':'A03_CLIENTE','label':'Cliente','standard':'true'}
+					]
+				}">
+								</div>
+
+							</div>
+
+							<div class="row">
+
+								<div class="form-group col-md-3">
+									<label>Data pedido</label>
+									<div class="input-group">
+										<input type="text" name="dataped" id="dataped" class="form-control" readonly>
+										<span class="input-group-addon">
+											<i class="fas fa-calendar"></i>
+										</span>
+									</div>
+								</div>
+
+								<div class="form-group col-md-3">
+									<label>Dt. integr. WMS</label>
+									<div class="input-group">
+										<input type="text" name="dtwms" id="dtwms" class="form-control" readonly>
+										<span class="input-group-addon">
+											<i class="fas fa-money-bill"></i>
+										</span>
+									</div>
+								</div>
+
+								<div class="form-group col-md-4">
+									<label>Validação</label>
+									<div class="input-group">
+										<input type="text" name="validacao" id="validacao" class="form-control"
+											readonly>
+										<span class="input-group-addon">
+											<i class="fas fa-exclamation"></i>
+										</span>
+									</div>
+								</div>
+
+								<div class="form-group col-md-2">
+									<label>Qt.item esp</label>
+									<div class="input-group">
+										<input type="text" name="qtditensesp" id="qtditensesp" class="form-control"
+											readonly>
+										<span class="input-group-addon">
+											<i class="fas fa-money-bill"></i>
+										</span>
+									</div>
+								</div>
+
+							</div>
+
+							<div class="row">
+
+								<div class="form-group col-md-4">
+									<label>Status pedido</label>
+									<div class="input-group">
+										<input type="text" name="status" id="status" class="form-control" readonly
+											onchange="validaStatus()">
+										<span class="input-group-addon">
+											<i class="fas fa-exclamation"></i>
+										</span>
+									</div>
+								</div>
+
+								<div class="form-group col-md-4">
+									<label>Status WMS</label>
+									<div class="input-group">
+										<input type="text" name="statuswms" id="statuswms" class="form-control"
+											readonly>
+										<span class="input-group-addon">
+											<i class="fas fa-exclamation"></i>
+										</span>
+									</div>
+								</div>
+
+							</div>
+
+							<div class="row">
+
+								<div class="form-group col-md-2">
+								  <label for="zoom">Cod. fornecedor</label>
+								  <input type="zoom" class="form-control zoom-input" name="codfornec" id="codfornec"
+									dataset="ds_fornecedores_winthor" zoomvalue="CODFORNEC" datasetvalue="CODFORNEC"
+									data-zoom="{'displayKey':'CODFORNEC','datasetId':'ds_fornecedores_winthor','fields':[{'field':'CODFORNEC','label':'Cod','standard':true}]}" />
+								</div>
+				
+								<div class="form-group col-md-4">
+								  <label for="zoom">Fornecedor</label>
+								  <input type="zoom" class="form-control zoom-input" name="fornecedor" id="fornecedor"
+									dataset="ds_fornecedores_winthor" zoomvalue="FORNECEDOR" datasetvalue="FORNECEDOR"
+									data-zoom="{'displayKey':'FORNECEDOR','datasetId':'ds_fornecedores_winthor','fields':[{'field':'FORNECEDOR','label':'Fornecedor','standard':true}]}" />
+								</div>
+				
+								<div class="form-group col-md-4">
+								  <label>Comprador</label>
+								  <div group="input-group">
+									<input type="text" class="form-control" name="comprador" id="comprador" readonly>
+								  </div>
+								</div>
+				
+								<div class="form-group col-md-2">
+								  <label>Mat. comprador</label>
+								  <div group="input-group">
+									<input type="text" class="form-control" name="matcomprador" id="matcomprador" readonly>
+								  </div>
+								</div>
+				
+							  </div>
+
+							<div class="row">
+
+								<div class="form-group col-md-12">
+									<label>Observação</label>
+									<div class="input-group">
+										<textarea class="form-control" name="observacao" id="observacao"
+											rows="2"></textarea>
+										<span class="input-group-addon"><i class="fas fa-pen"></i></span>
+									</div>
+								</div>
+
+							</div>
+
+						</div> <!-- finaliza body-->
+					</div> <!--finaliza colapsável-->
+				</div> <!--fecha o painel primary-->
+
+				<div class="panel panel-primary"> <!--declaração da primeira seção-->
+					<div class="panel-heading"> <!--início do cabeçalho da seção-->
+						<h3 class="panel-title subpanel_title">
+							<span id="led_tabela" class="led"></span>
+							<a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion"
+								href="#tabela"><i class="far fa-clipboard"></i> ITENS</a>
+						</h3>
+					</div> <!--fim da declaração do cabeçalho da seção-->
+
+					<div id="tabela" class="panel-collapse collapse in">
+						<div class="panel-body">
+
+							<div class="form-field" data-type="tabledetail" data-show-properties=""
+								data-field-name="pedido">
+								<table id="pedido" class="table pai-filho table-striped" tablename="pedido"
+									noaddbutton="true" nodeletebutton="true">
+
+									<thead>
+
+										<tr>
+											<th width="10%">
+												Cód.produto&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+											</th>
+											<th width="30%">Descrição
+												produto&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+											</th>
+											<th width="20%">Tipo
+												produto&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+											</th>
+											<th width="10%">
+												Qtd&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+											</th>
+											<th width="10%">Qtd.compra&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+											<th width="10%">Valor
+												líquido&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+											<th width="10%">Preço
+												calculado&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+											<th>Qual data
+												necessita?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+											</th>
+											<th title="Data original da previsão de chegada" data-follow>Prev.chegada
+											</th>
+											<th title="Data real da previsão de chegada" data-follow>Prev.real.chegada
+											</th>
+											<th title="Foi alterada a previsão de chegada deste produto?" data-follow>
+												Alterada previsão?</th>
+											<th width="35%">
+												Observação&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+											</th>
+
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>
+												<input type="zoom" name="codprod" id="codprod" class="form-control"
+													data-zoom="
+							{
+							  'displayKey':'A09_COD_PROD',
+							  'datasetId':'ds_compra_praca_itens_winthor',
+							  'maximumSelectionLength':'1',
+							  'placeholder':'Buscar...',
+							  'fields':[
+								{'field':'A09_COD_PROD','label':'Cod','standard':'true'}
+							  ]
+							}">
+											</td>
+											<td><input type="text" name="descprod" id="descprod" class="form-control"
+													readonly></td>
+											<td><input type="text" name="tipo" id="tipo" class="form-control" readonly>
+											</td>
+											<td><input type="text" name="qtd" id="qtd" class="form-control" readonly>
+											</td>
+											<td><input type="text" name="qtdCompra" id="qtdCompra" class="form-control">
+											</td>
+											<td><input type="text" name="liquido" id="liquido" class="form-control">
+											</td>
+											<td><input type="text" name="precocalc" id="precocalc" class="form-control">
+											</td>
+											<td><input type="text" name="dataNec" id="dataNec" class="form-control">
+											</td>
+											<td data-follow><input type="text" name="prevCheg" id="prevCheg"
+													class="form-control"></td>
+											<td data-follow><input type="text" name="prevReal" id="prevReal"
+													class="form-control"></td>
+											<td>
+												<select name="alterPrevisao" id="alterPrevisao" class="form-control"
+													data-follow>
+													<option value="">...</option>
+													<option>Sim</option>
+													<option>Não</option>
+												</select>
+											</td>
+											<td><input type="text" name="obs" id="obs" class="form-control"></td>
+											<td class="remove"><span class="fs-display-block fs-sm-space">
+													<i class="flaticon flaticon-close icon-md remove-button"
+														onclick="fnWdkRemoveChild(this)"></i>
+												</span></td>
+										</tr>
+									</tbody>
+								</table>
+
+							</div> <!--finaliza tabela-->
+
+							<hr>
+							<div class="form-group" id="additem">
+								<div class="row">
+									<div class="col-xs-6">
+										<button class="btn btn-primary btn-custom btn-custom-primary js-add">
+											<i class="fas fa-plus-circle"></i> ADICIONAR ITEM
+										</button>
+									</div>
+								</div>
+							</div>
+
+						</div> <!-- finaliza body-->
+					</div> <!--finaliza colapsável-->
+				</div> <!--fecha o painel primary-->
+
+				<div class="panel panel-primary"> <!--declaração seção-->
+					<div class="panel-heading"> <!--início do cabeçalho da seção-->
+						<h3 class="panel-title subpanel_title">
+							<span id="led_compra" class="led"></span>
+							<a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion"
+								href="#compra"><i class="far fa-clipboard"></i> COMPRA DOS ITENS</a>
+						</h3>
+
+					</div> <!--fim da declaração do cabeçalho da seção-->
+
+					<div id="compra" class="panel-collapse collapse in">
+						<div class="panel-body">
+
+							<div class="row">
+
+
+								<div class="form-group col-md-3">
+									<label for="zoom">Ordem de compra</label>
+									<input type="zoom" class="form-control zoom-input" name="mainOC" id="mainOC"
+										dataset="ds_pedidos_follow_winthor" zoomvalue="A14_PEDIDO_COMPRA"
+										datasetvalue="A14_PEDIDO_COMPRA"
+										data-zoom="{'displayKey':'A14_PEDIDO_COMPRA','datasetId':'ds_pedidos_follow_winthor','fields':[{'field':'A14_PEDIDO_COMPRA','label':'oc','standard':true}]}" />
+								</div>
+
+								<div class="form-group col-md-3">
+									<label>Previsão de chegada</label>
+									<div class="input-group">
+										<input type="text" name="previsaoChegada" id="previsaoChegada"
+											class="form-control data" readonly>
+										<span class="input-group-addon">
+											<i class="far fa-calendar"></i>
+										</span>
+									</div>
+								</div>
+
+								<div class="form-group col-md-3">
+									<label class="required">Aplicado rastreio?</label>
+									<div class="form-check" id="aprovgerente">
+										<label class="form-check-label">
+											<input type="radio" class="form-check-input" id="rastreio" name="rastreio"
+												value="sim">Sim</label>
+									</div>
+									<div class="form-check">
+										<label class="form-check-label">
+											<input type="radio" class="form-check-input" id="rastreio" name="rastreio"
+												value="nao" checked>Não</label>
+									</div>
+								</div>
+
+							</div>
+
+							<div class="row">
+
+								<div class="form-input col-md-12">
+									<label>Observação do compras</label>
+									<div class="input-group">
+										<textarea class="form-control" rows="3" name="obscompras"
+											id="obscompras"></textarea>
+										<span class="input-group-addon"><i class="fas fa-pen"></i></span>
+									</div>
+								</div>
+
+							</div>
+
+						</div> <!-- finaliza body-->
+					</div> <!--finaliza colapsável-->
+				</div> <!--fecha o painel primary-->
+
+				<div class="panel panel-primary"> <!--declaração seção-->
+					<div class="panel-heading"> <!--início do cabeçalho da seção-->
+						<h3 class="panel-title subpanel_title">
+							<span id="led_recebimento" class="led"></span>
+							<a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion"
+								href="#recebimento"><i class="far fa-clipboard"></i> RECEBIMENTO</a>
+						</h3>
+					</div> <!--fim da declaração do cabeçalho da seção-->
+
+					<div id="recebimento" class="panel-collapse collapse in">
+						<div class="panel-body">
+
+
+							<div class="row">
+
+								<div class="form-group col-md-3">
+									<label class="required">Produto recebido?</label>
+									<div class="form-check">
+										<label class="form-check-label">
+											<input type="radio" class="form-check-input" id="recebido" name="recebido"
+												value="sim">Sim</label>
+									</div>
+									<div class="form-check">
+										<label class="form-check-label">
+											<input type="radio" class="form-check-input" id="recebido" name="recebido"
+												value="nao" checked>Não</label>
+									</div>
+								</div>
+
+								<div class="form-input col-md-12">
+									<label>Observação supervisor</label>
+									<div class="input-group">
+										<textarea class="form-control" rows="2" name="obsreceb"
+											id="obsreceb"></textarea>
+										<span class="input-group-addon"><i class="fas fa-pen"></i></span>
+									</div>
+								</div>
+
+							</div>
+
+						</div> <!-- finaliza body-->
+					</div> <!--finaliza colapsável-->
+				</div> <!--fecha o painel primary-->
+
+				<div class="panel panel-primary"> <!--declaração seção-->
+					<div class="panel-heading"> <!--início do cabeçalho da seção-->
+						<h3 class="panel-title subpanel_title">
+							<span id="led_rastreio" class="led"></span>
+							<a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion"
+								href="#rastreio"><i class="far fa-clipboard"></i>REMOÇÃO DO RASTREIO </a>
+						</h3>
+					</div> <!--fim da declaração do cabeçalho da seção-->
+
+					<div id="rastreio" class="panel-collapse collapse in">
+						<div class="panel-body">
+
+							<div class="row">
+
+								<div class="form-group col-md-3">
+									<label class="required">Removido rastreio?</label>
+									<div class="form-check" id="aprovgerente">
+										<label class="form-check-label">
+											<input type="radio" class="form-check-input" id="remove_rast"
+												name="remove_rast" value="sim">Sim</label>
+									</div>
+									<div class="form-check">
+										<label class="form-check-label">
+											<input type="radio" class="form-check-input" id="remove_rast"
+												name="remove_rast" value="nao" checked>Não</label>
+									</div>
+								</div>
+
+								<div class="form-input col-md-6" id="obscompras">
+									<label>Observação Compras</label>
+									<div class="input-group">
+										<textarea class="form-control" rows="2" name="obsrastreio"
+											id="obsrastreio"></textarea>
+										<span class="input-group-addon"><i class="fas fa-pen"></i></span>
+									</div>
+								</div>
+
+							</div>
+
+						</div> <!-- finaliza body-->
+					</div> <!--finaliza colapsável-->
+				</div> <!--fecha o painel primary-->
+
+				<div class="panel panel-primary"> <!--declaração seção-->
+					<div class="panel-heading"> <!--início do cabeçalho da seção-->
+						<h3 class="panel-title subpanel_title">
+							<span id="led_liberacao" class="led"></span>
+							<a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion"
+								href="#liberacao"><i class="far fa-clipboard"></i> LIBERAÇÃO DO PEDIDO</a>
+						</h3>
+					</div> <!--fim da declaração do cabeçalho da seção-->
+
+					<div id="liberacao" class="panel-collapse collapse in">
+						<div class="panel-body">
+
+							<div class="row">
+
+								<div class="form-group col-md-4">
+									<label>Status pedido</label>
+									<div class="input-group">
+										<input type="text" name="status2" id="status2" class="form-control" readonly>
+										<span class="input-group-addon">
+											<i class="fas fa-exclamation"></i>
+										</span>
+									</div>
+								</div>
+
+							</div>
+
+							<div class="row">
+
+								<div class="form-input col-md-12">
+									<label>Observação liberação do pedido</label>
+									<div class="input-group">
+										<textarea class="form-control" rows="2" name="obsliberacao"
+											id="obsliberacao"></textarea>
+										<span class="input-group-addon"><i class="fas fa-pen"></i></span>
+									</div>
+								</div>
+
+							</div>
+
+						</div> <!-- finaliza body-->
+					</div> <!--finaliza colapsável-->
+				</div> <!--fecha o painel primary-->
+
+				<div class="panel panel-primary"> <!--declaração seção-->
+					<div class="panel-heading"> <!--início do cabeçalho da seção-->
+						<h3 class="panel-title subpanel_title">
+							<span id="led_finalizacao" class="led"></span>
+							<a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion"
+								href="#finalizacao"><i class="far fa-clipboard"></i> FINALIZAÇÃO DO COMPRAS</a>
+						</h3>
+					</div> <!--fim da declaração do cabeçalho da seção-->
+
+					<div id="finalizacao" class="panel-collapse collapse in">
+						<div class="panel-body">
+
+
+							<div class="row">
+
+								<div class="form-group col-md-3">
+									<label class="required">Número NF</label>
+									<input type="zoom" name="numNF" id="numNF" class="form-control" data-zoom="
+								  {
+									  'displayKey':'A03_NOTA',
+									  'datasetId':'ds_cancelamento_de_notas_Winthor',
+									  'maximumSelectionLength':'1',
+									  'placeholder':'Buscar...',
+									  'fields':[
+										  {'field':'A03_NOTA','label':'NF','standard':'true'}
+									  ]
+								  }">
+								</div>
+
+								<div class="form-group col-md-3">
+									<label class="required">Código do cliente</label>
+									<input type="zoom" name="codClienteVal" id="codClienteVal" class="form-control"
+										data-zoom="
+			  {
+			  'displayKey':'A01_COD_CLI',
+			  'datasetId':'ds_cancelamento_de_notas_Winthor',
+			  'maximumSelectionLength':'1',
+			  'placeholder':'Buscar...',
+			  'fields':[
+			  {'field':'A01_COD_CLI','label':'Código','standard':'true'}
+			  ]
+			  }">
+								</div>
+
+								<div class="form-group col-md-3">
+									<label class="required">Cliente</label>
+									<input type="zoom" name="clienteVal" id="clienteVal" class="form-control" data-zoom="
+								  {
+									  'displayKey':'A02_CLIENTE',
+									  'datasetId':'ds_cancelamento_de_notas_Winthor',
+									  'maximumSelectionLength':'1',
+									  'placeholder':'Buscar...',
+									  'fields':[
+										  {'field':'A02_CLIENTE','label':'Cliente','standard':'true'}
+									  ]
+								  }">
+								</div>
+
+								<div class="form-group col-md-3">
+									<label>Número do pedido</label>
+									<div class="input-group">
+										<input type="text" name="pedido2" id="pedido2" class="form-control" readonly>
+										<span class="input-group-addon">
+											<i class="fas fa-exclamation"></i>
+										</span>
+									</div>
+								</div>
+
+							</div>
+
+							<div class="row">
+
+								<div class="form-input col-md-6" id="obsdev">
+									<label>Observação final</label>
+									<div class="input-group">
+										<textarea class="form-control" rows="2" name="obsfim"></textarea>
+										<span class="input-group-addon"><i class="fas fa-pen"></i></span>
+									</div>
+								</div>
+
+							</div>
+
+						</div> <!-- finaliza body-->
+					</div> <!--finaliza colapsável-->
+				</div> <!--fecha o painel primary-->
+
+			</div> <!--fim do formulário-->
+		</div> <!--fim do formulário-->
+
+	</form>
+</body>
+
+</html>

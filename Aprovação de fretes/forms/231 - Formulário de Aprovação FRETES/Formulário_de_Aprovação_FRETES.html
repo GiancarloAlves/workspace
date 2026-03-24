@@ -1,0 +1,164 @@
+<html>
+
+<head>
+  <link type="text/css" rel="stylesheet" href="/style-guide/css/fluig-style-guide.min.css" />
+  <script type="text/javascript" src="/portal/resources/js/jquery/jquery.js"></script>
+  <script type="text/javascript" src="/portal/resources/js/jquery/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="/portal/resources/js/mustache/mustache-min.js"></script>
+  <script type="text/javascript" src="/style-guide/js/fluig-style-guide.min.js" charset="utf-8"></script>
+
+  <!-- sweetalert2 -->
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <!-- FontAwesome -->
+  <link type="text/css" rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+  <!-- JQuery Mask Plugin -->
+  <script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
+
+  <!-- Custom -->
+  <link type="text/css" rel="stylesheet" href="./style_log.css">
+  <script type="text/javascript" src="./app.js"></script>
+
+
+<body class="fluig-style-guide process-style" id="devkit-style">
+  <form name="form" role="form" id="form-processo">
+
+
+    <div class="panel panel-primary panel-border">
+      <!--Painel geral do formulário - fecha no extremo do arquivo e contém todas as seções-->
+
+      <div class="panel-heading panel-bg panel-border"> <!--início da declaração do cabeçalho principal (azul)-->
+        <div class="container-fluid">
+          <section id="logo">
+            <img src="./images/logoCigame.png" alt="NOME-CLIENTE" width="130" style="padding: 10px;">
+            <h3 class="panel-title">APROVAÇÃO DE FRETES</h3>
+          </section>
+        </div>
+      </div> <!--fim da declaração do cabeçalho principal (azul)-->
+
+      <div class="panel-body"> <!--panel body geral do arquivo - fecha no extremo e contém todas as seções-->
+
+        <div class="panel panel-primary"> <!--declaração da primeira seção-->
+          <div class="panel-heading"> <!--início do cabeçalho da seção-->
+            <h3 class="panel-title subpanel_title">
+              <a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion" href="#abertura"><i
+                  class="far fa-clipboard"></i> ABERTURA</a> 
+            </h3>
+          </div> <!--fim da declaração do cabeçalho da seção-->
+
+          <div id="abertura" class="panel-collapse collapse in">
+            <div class="panel-body">
+
+              <input type="hidden" name="matSolicitante" id="matSolicitante">
+              <input type="hidden" name="matSupervisor" id="matSupervisor">
+
+              <div class="row">
+
+                <div class="form-group col-md-6">
+                  <label class="required">Fornecedor</label>
+                  <div class="input-group">
+                    <input type="text" name="Fornecedor" id="Fornecedor" class="form-control">
+                    <span class="input-group-addon"><i class="fas fa-user"></i></span>
+                  </div>
+                </div>
+
+                <div class="form-group col-md-6">
+                  <label class="required">Número do documento</label>
+                  <div class="input-group">
+                    <input type="text" name="NroDoc" id="NroDoc" class="form-control">
+                    <span class="input-group-addon"><i class="fas fa-user-shield"></i></span>
+                  </div>
+                </div>
+
+
+              </div> <!--fecha row-->
+
+              <div class="row">
+
+                <div class="form-group col-md-12">
+                  <label>Observação</label><textarea class="form-control" rows="5" name="obs" id="obs" placeholder=""
+                    data-size="big"></textarea>
+                </div>
+
+              </div>
+
+            </div> <!--fecha panel body -->
+          </div> <!--fecha parte colapsável-->
+        </div> <!--fecha panel-primary-->
+
+        <div class="panel panel-primary"> <!--declaração da primeira seção-->
+          <div class="panel-heading"> <!--início do cabeçalho da seção-->
+            <h3 class="panel-title subpanel_title">
+              <a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion" href="#aprovacao"><i
+                  class="far fa-clipboard"></i> Aprovação Gerência</a>
+            </h3>
+          </div> <!--fim da declaração do cabeçalho da seção-->
+
+          <div id="aprovacao" class="panel-collapse collapse in">
+            <div class="panel-body">
+
+              <div class="row">
+
+                <div class="form-input">
+                  <div class="form-group col-md-2">
+                    <label class="required">Aprovação da gerência</label>
+                    <div class="radio-options">
+                      <div class="radio"><label><input type="radio" name="aprov_sup" value="Aprovar" />Aprovar</label>
+                      </div>
+                      <div class="radio"><label><input type="radio" name="aprov_sup" value="Reprovar" />Reprovar</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group col-md-12">
+                  <label>Observação da gerência</label><textarea class="form-control" rows="5" name="obs_supervisor"
+                    id="obs_supervisor" placeholder="" data-size="big"></textarea>
+                </div>
+
+              </div> <!--fecha row-->
+
+            </div> <!--fecha panel body -->
+          </div> <!--fecha parte colapsável-->
+        </div> <!--fecha panel-primary-->
+
+        <div class="panel panel-primary"> <!--declaração da primeira seção-->
+          <div class="panel-heading"> <!--início do cabeçalho da seção-->
+            <h3 class="panel-title subpanel_title">
+              <a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion" href="#financeiro"><i
+                  class="far fa-clipboard"></i> Avaliação Diretoria</a>
+            </h3>
+          </div> <!--fim da declaração do cabeçalho da seção-->
+
+          <div id="financeiro" class="panel-collapse collapse in">
+            <div class="panel-body">
+
+              <div class="form-input">
+                <div class="form-group col-md-2">
+                  <label class="required">Destino da solicitação</label>
+                  <div class="radio-options">
+                    <div class="radio"><label><input type="radio" name="clareza" value="clareza" />Obter
+                        esclarecimento</label></div>
+                    <div class="radio"><label><input type="radio" name="clareza" value="fim" />Finalizar</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group col-md-12">
+                <label>Observação</label><textarea class="form-control" rows="5" name="obs_financeiro"
+                  id="obs_financeiro" placeholder="" data-size="big"></textarea>
+              </div>
+
+            </div> <!--fecha row-->
+          </div> <!--fecha panel body-->
+        </div> <!--fecha panel primary-->
+
+
+  </form>
+
+</body>
+
+</html>

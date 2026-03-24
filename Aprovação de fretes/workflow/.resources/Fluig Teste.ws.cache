@@ -1,0 +1,1261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.8.0_202" class="java.beans.XMLDecoder">
+ <object class="java.util.HashMap">
+  <void method="put">
+   <string>volume</string>
+   <array class="java.lang.String" length="1">
+    <void index="0">
+     <string>Default</string>
+    </void>
+   </array>
+  </void>
+  <void method="put">
+   <string>expediente</string>
+   <array class="java.lang.String" length="2">
+    <void index="0">
+     <string>Default</string>
+    </void>
+    <void index="1">
+     <string>Tecnologia da Informação</string>
+    </void>
+   </array>
+  </void>
+  <void method="put">
+   <string>mecanismoPapel</string>
+   <object class="java.util.ArrayList">
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>admin</string>
+      </void>
+      <void property="roleId">
+       <string>admin</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>Vendedores</string>
+      </void>
+      <void property="roleId">
+       <string>Vendedores</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>Representante Externo</string>
+      </void>
+      <void property="roleId">
+       <string>Representante_ext</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>Cobrança</string>
+      </void>
+      <void property="roleId">
+       <string>COBRANCA</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>Vendedor</string>
+      </void>
+      <void property="roleId">
+       <string>VENDEDOR</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>Diretor</string>
+      </void>
+      <void property="roleId">
+       <string>DIRETOR</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>Gerente de Vendas</string>
+      </void>
+      <void property="roleId">
+       <string>GERENTE_DE_VENDAS</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>Supervisor de Vendas</string>
+      </void>
+      <void property="roleId">
+       <string>SUPERVISOR_DE_VENDAS</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>Recebimento</string>
+      </void>
+      <void property="roleId">
+       <string>RECEBIMENTO</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>credito</string>
+      </void>
+      <void property="roleId">
+       <string>CREDITO</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>Contas a Pagar</string>
+      </void>
+      <void property="roleId">
+       <string>CONTAS_A_PAGAR</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>Contas a Receber</string>
+      </void>
+      <void property="roleId">
+       <string>CONTAS_A_RECEBER</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>Gerente de Compras</string>
+      </void>
+      <void property="roleId">
+       <string>GERENTE_DE_COMPRAS</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>Comprador</string>
+      </void>
+      <void property="roleId">
+       <string>COMPRADOR</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>Recursos Humanos</string>
+      </void>
+      <void property="roleId">
+       <string>RECURSOS_HUMANOS</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>Cadastro setor de compras</string>
+      </void>
+      <void property="roleId">
+       <string>CADASTRO_COMPRAS</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>Faturamento</string>
+      </void>
+      <void property="roleId">
+       <string>FATURAMENTO</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>Marketing</string>
+      </void>
+      <void property="roleId">
+       <string>MARKETING</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>Suporte</string>
+      </void>
+      <void property="roleId">
+       <string>SUPORTE</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>Gerente de logística</string>
+      </void>
+      <void property="roleId">
+       <string>GERENTE_DE_LOGISTICA</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>Estoque</string>
+      </void>
+      <void property="roleId">
+       <string>ESTOQUE</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>Expedição</string>
+      </void>
+      <void property="roleId">
+       <string>EXPEDICAO</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>Fios e cabos</string>
+      </void>
+      <void property="roleId">
+       <string>FIOS_E_CABOS</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>Supervisor de logística</string>
+      </void>
+      <void property="roleId">
+       <string>SUPERVISOR_DE_LOGISTICA</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>Ocorrências</string>
+      </void>
+      <void property="roleId">
+       <string>OCORRENCIAS</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>Rotas</string>
+      </void>
+      <void property="roleId">
+       <string>ROTAS</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>Motorista</string>
+      </void>
+      <void property="roleId">
+       <string>MOTORISTA</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>Infraestrutura</string>
+      </void>
+      <void property="roleId">
+       <string>INFRAESTRUTURA</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>Sistemas</string>
+      </void>
+      <void property="roleId">
+       <string>SISTEMAS</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>Processo</string>
+      </void>
+      <void property="roleId">
+       <string>PROCESSO</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>Devoluções</string>
+      </void>
+      <void property="roleId">
+       <string>DEVOLUCOES</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>Agendamentos</string>
+      </void>
+      <void property="roleId">
+       <string>AGENDAMENTO</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>Departamento Pessoal</string>
+      </void>
+      <void property="roleId">
+       <string>DP</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>Cadastro de clientes</string>
+      </void>
+      <void property="roleId">
+       <string>CADASTRO_CLIENTES</string>
+      </void>
+     </object>
+    </void>
+   </object>
+  </void>
+  <void method="put">
+   <string>mecanismo</string>
+   <array class="[Ljava.lang.Object;" length="9">
+    <void index="0">
+     <array class="java.lang.Object" length="2">
+      <void index="0">
+       <string>Atribuição por Associação</string>
+      </void>
+      <void index="1">
+       <string>Associado</string>
+      </void>
+     </array>
+    </void>
+    <void index="1">
+     <array class="java.lang.Object" length="2">
+      <void index="0">
+       <string>Atribuição por Campo de Formulário</string>
+      </void>
+      <void index="1">
+       <string>Campo Formulário</string>
+      </void>
+     </array>
+    </void>
+    <void index="2">
+     <array class="java.lang.Object" length="2">
+      <void index="0">
+       <string>Atribuição por Executor de Atividade</string>
+      </void>
+      <void index="1">
+       <string>Executor Atividade</string>
+      </void>
+     </array>
+    </void>
+    <void index="3">
+     <array class="java.lang.Object" length="2">
+      <void index="0">
+       <string>Atribuição por Grupo</string>
+      </void>
+      <void index="1">
+       <string>Grupo</string>
+      </void>
+     </array>
+    </void>
+    <void index="4">
+     <array class="java.lang.Object" length="2">
+      <void index="0">
+       <string>Atribuição por Grupos do Colaborador</string>
+      </void>
+      <void index="1">
+       <string>Grupos Colaborador</string>
+      </void>
+     </array>
+    </void>
+    <void index="5">
+     <array class="java.lang.Object" length="2">
+      <void index="0">
+       <string>Atribuição por Papel</string>
+      </void>
+      <void index="1">
+       <string>Papel</string>
+      </void>
+     </array>
+    </void>
+    <void index="6">
+     <array class="java.lang.Object" length="2">
+      <void index="0">
+       <string>Atribuição para um Grupo</string>
+      </void>
+      <void index="1">
+       <string>Pool Grupo</string>
+      </void>
+     </array>
+    </void>
+    <void index="7">
+     <array class="java.lang.Object" length="2">
+      <void index="0">
+       <string>Atribuição para um Papel</string>
+      </void>
+      <void index="1">
+       <string>Pool Papel</string>
+      </void>
+     </array>
+    </void>
+    <void index="8">
+     <array class="java.lang.Object" length="2">
+      <void index="0">
+       <string>Atribuição por Usuário</string>
+      </void>
+      <void index="1">
+       <string>Usuário</string>
+      </void>
+     </array>
+    </void>
+   </array>
+  </void>
+  <void method="put">
+   <string>mecanismoColaborador</string>
+   <object class="java.util.ArrayList">
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ColleagueDtoLite">
+      <void property="colleagueId">
+       <string>administrador</string>
+      </void>
+      <void property="colleagueName">
+       <string>Administrador Fluig</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ColleagueDtoLite">
+      <void property="colleagueId">
+       <string>15</string>
+      </void>
+      <void property="colleagueName">
+       <string>Adriano Costa</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ColleagueDtoLite">
+      <void property="colleagueId">
+       <string>144</string>
+      </void>
+      <void property="colleagueName">
+       <string>Alexandre Rodrigues</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ColleagueDtoLite">
+      <void property="colleagueId">
+       <string>406</string>
+      </void>
+      <void property="colleagueName">
+       <string>Amanda Santos</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ColleagueDtoLite">
+      <void property="colleagueId">
+       <string>158</string>
+      </void>
+      <void property="colleagueName">
+       <string>Anderson Souza</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ColleagueDtoLite">
+      <void property="colleagueId">
+       <string>54</string>
+      </void>
+      <void property="colleagueName">
+       <string>Andrew Ritter</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ColleagueDtoLite">
+      <void property="colleagueId">
+       <string>403</string>
+      </void>
+      <void property="colleagueName">
+       <string>Bruna Santos</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ColleagueDtoLite">
+      <void property="colleagueId">
+       <string>411</string>
+      </void>
+      <void property="colleagueName">
+       <string>Bruno Pires</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ColleagueDtoLite">
+      <void property="colleagueId">
+       <string>114</string>
+      </void>
+      <void property="colleagueName">
+       <string>Bruno Soares</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ColleagueDtoLite">
+      <void property="colleagueId">
+       <string>145</string>
+      </void>
+      <void property="colleagueName">
+       <string>Cesar Oliveira</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ColleagueDtoLite">
+      <void property="colleagueId">
+       <string>314</string>
+      </void>
+      <void property="colleagueName">
+       <string>Daiana Pedroso</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ColleagueDtoLite">
+      <void property="colleagueId">
+       <string>69</string>
+      </void>
+      <void property="colleagueName">
+       <string>Daniel Farias</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ColleagueDtoLite">
+      <void property="colleagueId">
+       <string>66</string>
+      </void>
+      <void property="colleagueName">
+       <string>Daniel Moura</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ColleagueDtoLite">
+      <void property="colleagueId">
+       <string>241</string>
+      </void>
+      <void property="colleagueName">
+       <string>Daniel Rambo</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ColleagueDtoLite">
+      <void property="colleagueId">
+       <string>82</string>
+      </void>
+      <void property="colleagueName">
+       <string>Davi Peixoto</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ColleagueDtoLite">
+      <void property="colleagueId">
+       <string>147</string>
+      </void>
+      <void property="colleagueName">
+       <string>Débora Alessandra</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ColleagueDtoLite">
+      <void property="colleagueId">
+       <string>162</string>
+      </void>
+      <void property="colleagueName">
+       <string>Débora Franca</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ColleagueDtoLite">
+      <void property="colleagueId">
+       <string>16</string>
+      </void>
+      <void property="colleagueName">
+       <string>Eduardo Ribeiro</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ColleagueDtoLite">
+      <void property="colleagueId">
+       <string>137</string>
+      </void>
+      <void property="colleagueName">
+       <string>Elaine Sanchez</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ColleagueDtoLite">
+      <void property="colleagueId">
+       <string>292</string>
+      </void>
+      <void property="colleagueName">
+       <string>Faturamento Cigame</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ColleagueDtoLite">
+      <void property="colleagueId">
+       <string>177</string>
+      </void>
+      <void property="colleagueName">
+       <string>Felipe Borges</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ColleagueDtoLite">
+      <void property="colleagueId">
+       <string>184</string>
+      </void>
+      <void property="colleagueName">
+       <string>Francielle Silva</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ColleagueDtoLite">
+      <void property="colleagueId">
+       <string>182</string>
+      </void>
+      <void property="colleagueName">
+       <string>Francine Oliveira</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ColleagueDtoLite">
+      <void property="colleagueId">
+       <string>157</string>
+      </void>
+      <void property="colleagueName">
+       <string>Gabriel Becker</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ColleagueDtoLite">
+      <void property="colleagueId">
+       <string>188</string>
+      </void>
+      <void property="colleagueName">
+       <string>Gabriel Correia</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ColleagueDtoLite">
+      <void property="colleagueId">
+       <string>185</string>
+      </void>
+      <void property="colleagueName">
+       <string>Gabriel Marques</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ColleagueDtoLite">
+      <void property="colleagueId">
+       <string>134</string>
+      </void>
+      <void property="colleagueName">
+       <string>Gabriela Escobar</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ColleagueDtoLite">
+      <void property="colleagueId">
+       <string>347</string>
+      </void>
+      <void property="colleagueName">
+       <string>Gabriela Silva</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ColleagueDtoLite">
+      <void property="colleagueId">
+       <string>463</string>
+      </void>
+      <void property="colleagueName">
+       <string>Guilherme Ferreira</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ColleagueDtoLite">
+      <void property="colleagueId">
+       <string>136</string>
+      </void>
+      <void property="colleagueName">
+       <string>Guilherme Ledur</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ColleagueDtoLite">
+      <void property="colleagueId">
+       <string>294</string>
+      </void>
+      <void property="colleagueName">
+       <string>Jefferson Reinoldi</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ColleagueDtoLite">
+      <void property="colleagueId">
+       <string>150</string>
+      </void>
+      <void property="colleagueName">
+       <string>João Brum</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ColleagueDtoLite">
+      <void property="colleagueId">
+       <string>166</string>
+      </void>
+      <void property="colleagueName">
+       <string>Jonas Diel</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ColleagueDtoLite">
+      <void property="colleagueId">
+       <string>203</string>
+      </void>
+      <void property="colleagueName">
+       <string>Jonas Malaquias</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ColleagueDtoLite">
+      <void property="colleagueId">
+       <string>156</string>
+      </void>
+      <void property="colleagueName">
+       <string>Jonatan Pereira</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ColleagueDtoLite">
+      <void property="colleagueId">
+       <string>356</string>
+      </void>
+      <void property="colleagueName">
+       <string>Jucimara Souza</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ColleagueDtoLite">
+      <void property="colleagueId">
+       <string>201</string>
+      </void>
+      <void property="colleagueName">
+       <string>Kelly Santos</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ColleagueDtoLite">
+      <void property="colleagueId">
+       <string>315</string>
+      </void>
+      <void property="colleagueName">
+       <string>Kiane Santos</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ColleagueDtoLite">
+      <void property="colleagueId">
+       <string>138</string>
+      </void>
+      <void property="colleagueName">
+       <string>Larissa Fernandes</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ColleagueDtoLite">
+      <void property="colleagueId">
+       <string>17</string>
+      </void>
+      <void property="colleagueName">
+       <string>Leandro Rosa</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ColleagueDtoLite">
+      <void property="colleagueId">
+       <string>14</string>
+      </void>
+      <void property="colleagueName">
+       <string>Leandro Valls</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ColleagueDtoLite">
+      <void property="colleagueId">
+       <string>151</string>
+      </void>
+      <void property="colleagueName">
+       <string>Lindomar Cordeiro</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ColleagueDtoLite">
+      <void property="colleagueId">
+       <string>407</string>
+      </void>
+      <void property="colleagueName">
+       <string>Lorenzo Araujo</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ColleagueDtoLite">
+      <void property="colleagueId">
+       <string>228</string>
+      </void>
+      <void property="colleagueName">
+       <string>Luana Pedroso</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ColleagueDtoLite">
+      <void property="colleagueId">
+       <string>202</string>
+      </void>
+      <void property="colleagueName">
+       <string>Luciana Almeida</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ColleagueDtoLite">
+      <void property="colleagueId">
+       <string>175</string>
+      </void>
+      <void property="colleagueName">
+       <string>Luciano Castro</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ColleagueDtoLite">
+      <void property="colleagueId">
+       <string>58</string>
+      </void>
+      <void property="colleagueName">
+       <string>Luciano Ribeiro</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ColleagueDtoLite">
+      <void property="colleagueId">
+       <string>94</string>
+      </void>
+      <void property="colleagueName">
+       <string>Magda Barbosa</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ColleagueDtoLite">
+      <void property="colleagueId">
+       <string>209</string>
+      </void>
+      <void property="colleagueName">
+       <string>Maicon Conceição</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ColleagueDtoLite">
+      <void property="colleagueId">
+       <string>378</string>
+      </void>
+      <void property="colleagueName">
+       <string>Maicon Marta</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ColleagueDtoLite">
+      <void property="colleagueId">
+       <string>161</string>
+      </void>
+      <void property="colleagueName">
+       <string>Mateus Machado</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ColleagueDtoLite">
+      <void property="colleagueId">
+       <string>50</string>
+      </void>
+      <void property="colleagueName">
+       <string>Matheus Aguiar</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ColleagueDtoLite">
+      <void property="colleagueId">
+       <string>430</string>
+      </void>
+      <void property="colleagueName">
+       <string>Matheus Arruda</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ColleagueDtoLite">
+      <void property="colleagueId">
+       <string>408</string>
+      </void>
+      <void property="colleagueName">
+       <string>Maximiano Rodrigues</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ColleagueDtoLite">
+      <void property="colleagueId">
+       <string>170</string>
+      </void>
+      <void property="colleagueName">
+       <string>Murilo Silva</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ColleagueDtoLite">
+      <void property="colleagueId">
+       <string>13</string>
+      </void>
+      <void property="colleagueName">
+       <string>Norberto Junior</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ColleagueDtoLite">
+      <void property="colleagueId">
+       <string>39</string>
+      </void>
+      <void property="colleagueName">
+       <string>Roger Silva</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ColleagueDtoLite">
+      <void property="colleagueId">
+       <string>172</string>
+      </void>
+      <void property="colleagueName">
+       <string>Roger Vedoy</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ColleagueDtoLite">
+      <void property="colleagueId">
+       <string>99</string>
+      </void>
+      <void property="colleagueName">
+       <string>Ronaldo Marquezotti</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ColleagueDtoLite">
+      <void property="colleagueId">
+       <string>327</string>
+      </void>
+      <void property="colleagueName">
+       <string>Stefany Souza</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ColleagueDtoLite">
+      <void property="colleagueId">
+       <string>37</string>
+      </void>
+      <void property="colleagueName">
+       <string>Taina Farias</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ColleagueDtoLite">
+      <void property="colleagueId">
+       <string>104</string>
+      </void>
+      <void property="colleagueName">
+       <string>Thais Carvalho</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ColleagueDtoLite">
+      <void property="colleagueId">
+       <string>384</string>
+      </void>
+      <void property="colleagueName">
+       <string>Thiago Couto</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ColleagueDtoLite">
+      <void property="colleagueId">
+       <string>163</string>
+      </void>
+      <void property="colleagueName">
+       <string>Tiza Rosa</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ColleagueDtoLite">
+      <void property="colleagueId">
+       <string>232</string>
+      </void>
+      <void property="colleagueName">
+       <string>Toni Manito</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ColleagueDtoLite">
+      <void property="colleagueId">
+       <string>354</string>
+      </void>
+      <void property="colleagueName">
+       <string>Victor Martins</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ColleagueDtoLite">
+      <void property="colleagueId">
+       <string>240</string>
+      </void>
+      <void property="colleagueName">
+       <string>Victoria Ferreira</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ColleagueDtoLite">
+      <void property="colleagueId">
+       <string>12</string>
+      </void>
+      <void property="colleagueName">
+       <string>Vitor Ledur</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ColleagueDtoLite">
+      <void property="colleagueId">
+       <string>192</string>
+      </void>
+      <void property="colleagueName">
+       <string>Yago Ribeiro</string>
+      </void>
+     </object>
+    </void>
+   </object>
+  </void>
+ </object>
+</java>

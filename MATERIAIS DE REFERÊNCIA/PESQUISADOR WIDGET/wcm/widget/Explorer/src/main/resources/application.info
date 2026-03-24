@@ -1,0 +1,17 @@
+application.type=widget
+application.code=Explorer
+application.title=Explorer
+application.description=Explorer
+application.category=WSA
+application.renderer=freemarker
+developer.code=willian.eti.br
+developer.name=Willian Mascimiano
+developer.url=http://willian.eti.br
+application.uiwidget=true
+application.mobileapp=true
+view.file=view.ftl
+edit.file=edit.ftl
+locale.file.base.name=Explorer
+application.resource.js.1=/resources/js/explorer.js
+application.resource.css.2=/resources/css/explorer.css
+application.resource.component.1=fluigfilter

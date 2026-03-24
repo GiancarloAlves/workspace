@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Fechamento Fiscal Contável&apos; to &apos;Fechamento Fiscal Contábil&apos;" description="Rename resource &apos;Fechamento Fiscal Contável&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/Fechamento Fiscal Contável" name="Fechamento Fiscal Contábil" stamp="1737639489818" updateReferences="true"/>
+</session>

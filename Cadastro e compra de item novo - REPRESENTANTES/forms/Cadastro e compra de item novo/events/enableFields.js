@@ -1,0 +1,1 @@
+// function enableFields(form) {		var activity = getValue('WKNumState');if (activity == 4) {form.setEnabled('motivo', false);form.setEnabled('num_pedido', false);form.setEnabled('cod_cliente', false);form.setEnabled('descr_solicit', false);}}

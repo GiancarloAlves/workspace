@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<title>Form</title>
+
+            <link rel="stylesheet" type="text/css" href="/style-guide/css/fluig-style-guide.min.css">
+            <script src="/resources/js/jquery/jquery.js"></script>
+            <script src="/resources/js/jquery/jquery-ui.min.js"></script>
+            <script src="/resources/js/mustache/mustache-min.js"></script>
+            <script src="/style-guide/js/fluig-style-guide.min.js"></script>
+
+            <!-- CUSTOM -->
+            <link href="/style-guide/css/fluig-style-guide-filter.min.css" rel="stylesheet" type="text/css">
+            <link href="/style-guide/css/fluig-style-guide-ratingstars.min.css" rel="stylesheet" type="text/css">
+            <script src="/style-guide/js/fluig-style-guide-filter.min.js"></script>
+            <script src="/style-guide/js/fluig-style-guide-ratingstars.min.js"></script>
+
+            <link href='/webdesk/customresources?cid=1&resourceName=temaFormulario/0.css' type='text/css' rel='stylesheet' />
+		</head>
+        <body class="fluig-style-guide">
+			
+			<form class="totvs-form grid vertical create-form-components ui-sortable t0" name="createFormComponents" style="padding-left: 10px; padding-right: 10px;"><h1 class="title-form-application">Devolução de Clientes</h1>
+			<div class="form-field" data-type="textbox" data-show-properties="" data-field-name="vendedor" style="position: relative; left: 0px; top: 0px;"><div class="form-input"><div class="form-group"><label>Vendedor</label><input type="text" class="form-control" name="vendedor" value="" placeholder="" data-size="big"></div></div></div><div class="form-field" data-type="combo" data-show-properties="" data-field-name="tipoDevolucao" style="position: relative; left: 0px; top: 0px;"><div class="form-input"><div class="form-group"><label>Tipo de Devolução</label><select class="form-control" name="tipoDevolucao"><option value="Selecione o Tipo">Selecione o Tipo</option><option value="Total">Total</option><option value="Parcial">Parcial</option></select></div></div></div><div class="form-field" data-type="zoomfield" data-show-properties="" data-field-name="Cliente" style="position: relative; left: 0px; top: 0px;"><div class="form-input"><div class="form-group"><label for="zoom">Código Cliente</label><div class="input-group"><input type="zoom" class="form-control" name="Cliente" dataset="Ds_Consulta_Clientes_Winthor" zoomvalue="CLIENTE" datasetvalue="CLIENTE" data-zoom="{'displayKey':'CLIENTE','datasetId':'Ds_Consulta_Clientes_Winthor','fields':[{'field':'CLIENTE','label':'CLIENTE','standard':true}]}"><div class="input-group-addon zoom-preview"><span class="fluigicon fluigicon-zoom-in"></span></div><input type="hidden" name="hidden_Cliente" id="hidden_Cliente"></div></div></div></div><div class="form-field" data-type="zoomfield" data-show-properties="" data-field-name="codCliente" style="position: relative; left: 0px; top: 0px;"><div class="form-input"><div class="form-group"><label for="zoom">Cliente</label><div class="input-group"><input type="zoom" class="form-control" name="codCliente" dataset="Ds_Consulta_Clientes_Winthor" zoomvalue="CODCLI" datasetvalue="CLIENTE" data-zoom="{'displayKey':'CLIENTE','datasetId':'Ds_Consulta_Clientes_Winthor','fields':[{'field':'CLIENTE','label':'CLIENTE','standard':true}]}"><div class="input-group-addon zoom-preview"><span class="fluigicon fluigicon-zoom-in"></span></div><input type="hidden" name="hidden_codCliente" id="hidden_codCliente"></div></div></div></div><div class="form-field" data-type="zoomfield" data-show-properties="" data-field-name="numeroNF" style="position: relative; left: 0px; top: 0px;"><div class="form-input"><div class="form-group"><label for="zoom">Número NF</label><div class="input-group"><input type="zoom" class="form-control" name="numeroNF" data-zoom="{'fields':[{'standard':true}]}"><div class="input-group-addon zoom-preview"><span class="fluigicon fluigicon-zoom-in"></span></div><input type="hidden" name="hidden_numeroNF" id="hidden_numeroNF"></div></div></div></div><div class="form-field" data-type="date" data-show-properties="" data-field-name="DataEmissaoNF" style="position: relative; left: 0px; top: 0px;"><div class="form-input"><div class="form-group"><label>Data de emissão da NF</label><input id="date20" type="text" class="form-control" name="DataEmissaoNF" data-date=""></div></div></div><div class="form-field" data-type="zoomfield" data-show-properties="" data-field-name="motivoDevolucao" style="position: relative; left: 0px; top: 0px;"><div class="form-input"><div class="form-group"><label for="zoom">Motivo da Devolução</label><div class="input-group"><input type="zoom" class="form-control" name="motivoDevolucao" data-zoom="{'fields':[{'standard':true}]}"><div class="input-group-addon zoom-preview"><span class="fluigicon fluigicon-zoom-in"></span></div><input type="hidden" name="hidden_motivoDevolucao" id="hidden_motivoDevolucao"></div></div></div></div><div class="form-field" data-type="combo" data-show-properties="" data-field-name="LocalCliente" style="position: relative; left: 0px; top: 0px;"><div class="form-input"><div class="form-group"><label>Aonde está o cliente?</label><select class="form-control" name="LocalCliente"><option value="Selecione">Selecione</option><option value="Na Cigame">Na Cigame</option><option value="Em outro local">Em outro local</option><option value="Troca NF">Troca NF</option></select></div></div></div><div class="form-field" data-type="radio" data-show-properties="" data-field-name="RdPossuiColeta" style="position: relative; left: 0px; top: 0px;"><div class="form-input"><div class="form-group"><label>Possui Coleta? (se sim, anexar foto)</label><div class="radio-options"><div class="radio"><label><input type="radio" name="RdPossuiColeta" value="Sim">Sim</label></div><div class="radio"><label><input type="radio" name="RdPossuiColeta" value="Não">Não</label></div></div></div></div></div><div class="form-field" data-type="textbox" data-show-properties="" data-field-name="EndColeta" style="position: relative; left: 0px; top: 0px;"><div class="form-input"><div class="form-group"><label>Local (end) da coleta</label><input type="text" class="form-control" name="EndColeta" value="" placeholder="" data-size="big"></div></div></div><div class="form-field" data-type="radio" data-show-properties="" data-field-name="ProdEspecial" style="position: relative; left: 0px; top: 0px;"><div class="form-input"><div class="form-group"><label>Produto Especial</label><div class="radio-options"><div class="radio"><label><input type="radio" name="ProdEspecial" value="Sim">Sim</label></div><div class="radio"><label><input type="radio" name="ProdEspecial" value="Não">Não</label></div></div></div></div></div><div class="form-field" data-type="textbox" data-show-properties="" data-field-name="ValorDevolvido" style="position: relative; left: 0px; top: 0px;"><div class="form-input"><div class="form-group"><label>Valor a ser devolvido</label><input type="text" class="form-control" name="ValorDevolvido" value="" placeholder="" data-size="big" mask="#00.000.000.000.000,00" maxlength="22" data-only-numbers="true"></div></div></div><div class="form-field" data-type="number" data-show-properties="" data-field-name="PedidoSubstitut" style="position: relative; left: 0px; top: 0px;"><div class="form-input"><div class="form-group"><label>Número do pedido substituto</label><input type="number" class="form-control" name="PedidoSubstitut" value="" placeholder="" min="0" data-size="big" data-only-numbers=""></div></div></div><div class="form-field" data-type="radio" data-show-properties="" data-field-name="RdEmiteNFdev" style="position: relative; left: 0px; top: 0px;"><div class="form-input"><div class="form-group"><label>Cliente emite NF de devolução?</label><div class="radio-options"><div class="radio"><label><input type="radio" name="RdEmiteNFdev" value="Sim">Sim</label></div><div class="radio"><label><input type="radio" name="RdEmiteNFdev" value="Não">Não</label></div></div></div></div></div><div class="form-field" data-type="radio" data-show-properties="" data-field-name="RdLigarCliente" style="position: relative; left: 0px; top: 0px;"><div class="form-input"><div class="form-group"><label>Ligar para o cliente para acertar crédito?</label><div class="radio-options"><div class="radio"><label><input type="radio" name="RdLigarCliente" value="Sim">Sim</label></div><div class="radio"><label><input type="radio" name="RdLigarCliente" value="Não">Não</label></div></div></div></div></div><div class="form-field" data-type="textarea" data-show-properties="" data-field-name="ObsVendedor" style="position: relative; left: 0px; top: 0px;"><div class="form-input"><div class="form-group"><label>Observação do vendedor</label><textarea class="form-control" rows="3" name="ObsVendedor" placeholder="" data-size="big"></textarea></div></div></div><div class="form-field" data-type="combo" data-show-properties="" data-field-name="ComboSupAprov" style="position: relative; left: 0px; top: 0px;"><div class="form-input"><div class="form-group"><label>Selecione o supervisor para aprovação</label><select class="form-control" name="ComboSupAprov" dataset="ds_supervisores_winthor" datasetkey="MATRICULA" datasetvalue="CODFUNCAO" datasetorder="NOME"><option value="Opção 1">Opção 1</option><option value="Opção 2">Opção 2</option></select></div></div></div><div class="form-field" data-type="tabledetail" data-show-properties="" data-field-name="Tabela_de_produ" style="position: relative; left: 0px; top: 0px;"><div class="form-input"><div class="form-group"><label>Tabela de produtos</label><table tablename="tabledetailname1" class="table" noaddbutton="true"><thead><tr class="tableHeadRow"><th class="tableColumn">Cód. do produto</th><th class="tableColumn">Quantidade</th><th class="tableColumn">Observação</th><th class="tableColumn">O produto foi comprado especialmente para o pedido?</th><th class="tableColumn">Produto é DDD?</th><th class="tableColumn">Observação</th><th class="tableColumn">Deve ser devolvido?</th></tr></thead><tbody><tr class="tableBodyRow"><td class="fs-v-align-middle"><div class="form-input"><input type="text" name="column1_1" class="form-control" label="Cód. do produto"></div></td><td class="fs-v-align-middle"><div class="form-input"><input type="text" name="column2_1" class="form-control" label="Quantidade"></div></td><td class="fs-v-align-middle"><div class="form-input"><input type="text" name="column3_1" class="form-control" label="Observação"></div></td><td class="fs-v-align-middle"><div class="form-input"><input type="text" name="column4_1" class="form-control" label="O produto foi comprado especialmente para o pedido?"></div></td><td class="fs-v-align-middle"><div class="form-input"><input type="text" name="column5_1" class="form-control" label="Produto é DDD?"></div></td><td class="fs-v-align-middle"><div class="form-input"><input type="text" name="column6_1" class="form-control" label="Observação"></div></td><td class="fs-v-align-middle"><div class="form-input"><input type="text" name="column7_1" class="form-control" label="Deve ser devolvido?"></div></td></tr></tbody></table><button type="button" class="btn btn-primary" onclick="wdkAddChild('tabledetailname1')">Novo Registro</button></div></div></div><div class="form-field" data-type="radio" data-show-properties="" data-field-name="RdAprovaSup" style="position: relative; left: 0px; top: 0px;"><div class="form-input"><div class="form-group"><label>Aprovação Supervisor</label><div class="radio-options"><div class="radio"><label><input type="radio" name="RdAprovaSup" value="Aprovado">Aprovado</label></div><div class="radio"><label><input type="radio" name="RdAprovaSup" value="Reprovado">Reprovado</label></div><div class="radio"><label><input type="radio" name="RdAprovaSup" value="Ajustar Solicitação">Ajustar Solicitação</label></div></div></div></div></div><div class="form-field" data-type="textarea" data-show-properties="" data-field-name="ObsSuperv" style="position: relative; left: 0px; top: 0px;"><div class="form-input"><div class="form-group"><label>Observação do supervisor</label><textarea class="form-control" rows="3" name="ObsSuperv" placeholder="" data-size="big"></textarea></div></div></div><div class="form-field" data-type="radio" data-show-properties="" data-field-name="RdAprovGerente"><div class="form-input"><div class="form-group"><label>Aprovação Gerente</label><div class="radio-options"><div class="radio"><label><input type="radio" name="RdAprovGerente" value="Aprovado">Aprovado</label></div><div class="radio"><label><input type="radio" name="RdAprovGerente" value="Reprovado">Reprovado</label></div></div></div></div></div><div class="form-field" data-type="textarea" data-show-properties="" data-field-name="ObsGerente" style="position: relative; left: 0px; top: 0px;"><div class="form-input"><div class="form-group"><label>Observação do gerente</label><textarea class="form-control" rows="3" name="ObsGerente" placeholder="" data-size="big"></textarea></div></div></div><div class="form-field" data-type="radio" data-show-properties="" data-field-name="alerta_DP" style="position: relative; left: 0px; top: 0px;"><div class="form-input"><div class="form-group"><label>Aplicar Registro Comportamental? (se sim, selecionar no campo abaixo qual ação será aplicada)</label><div class="radio-options"><div class="radio"><label><input type="radio" name="alerta_DP" value="Sim">Sim</label></div><div class="radio"><label><input type="radio" name="alerta_DP" value="Não">Não</label></div></div></div></div></div><div class="form-field" data-type="combo" data-show-properties="" data-field-name="AcaoPenalidade" style="position: relative; left: 0px; top: 0px;"><div class="form-input"><div class="form-group"><label>Tipo de ação</label><select class="form-control" name="AcaoPenalidade"><option value="Selecione">Selecione</option><option value="Verbal">Verbal</option><option value="Escrita">Escrita</option><option value="Desconto em folha">Desconto em folha</option></select></div></div></div><div class="form-field" data-type="radio" data-show-properties="" data-field-name="RdDevAjustada" style="position: relative; left: 0px; top: 0px;"><div class="form-input"><div class="form-group"><label>Devolução ajustada</label><div class="radio-options"><div class="radio"><label><input type="radio" name="RdDevAjustada" value="Sim">Sim</label></div><div class="radio"><label><input type="radio" name="RdDevAjustada" value="Cancelar">Cancelar</label></div></div></div></div></div><div class="form-field" data-type="radio" data-show-properties="" data-field-name="RdAlteraCobranc"><div class="form-input"><div class="form-group"><label>Alterado o tipo de cobrança?</label><div class="radio-options"><div class="radio"><label><input type="radio" name="RdAlteraCobranc" value="Sim">Sim</label></div><div class="radio"><label><input type="radio" name="RdAlteraCobranc" value="Não">Não</label></div></div></div></div></div><div class="form-field" data-type="radio" data-show-properties="" data-field-name="AvalColeta" style="position: relative; left: 0px; top: 0px;"><div class="form-input"><div class="form-group"><label>Material ok na coleta?</label><div class="radio-options"><div class="radio"><label><input type="radio" name="AvalColeta" value="Sim">Sim</label></div><div class="radio"><label><input type="radio" name="AvalColeta" value="Não">Não</label></div></div></div></div></div><div class="form-field" data-type="textbox" data-show-properties="" data-field-name="Conferente"><div class="form-input"><div class="form-group"><label>Conferente</label><input type="text" class="form-control" name="Conferente" value="" placeholder="" data-size="big"></div></div></div><div class="form-field" data-type="textbox" data-show-properties="" data-field-name="EndLogistico"><div class="form-input"><div class="form-group"><label>Endereço logístico</label><input type="text" class="form-control" name="EndLogistico" value="" placeholder="" data-size="big"></div></div></div><div class="form-field" data-type="textbox" data-show-properties="" data-field-name="NFEntrada"><div class="form-input"><div class="form-group"><label>Nº NF Entrada</label><input type="text" class="form-control" name="NFEntrada" value="" placeholder="" data-size="big"></div></div></div><div class="form-field" data-type="textbox" data-show-properties="" data-field-name="ObsConferente"><div class="form-input"><div class="form-group"><label>Observação do conferente</label><input type="text" class="form-control" name="ObsConferente" value="" placeholder="" data-size="big"></div></div></div><div class="form-field" data-type="radio" data-show-properties="" data-field-name="RecebimentoOK" style="position: relative; left: 0px; top: 0px;"><div class="form-input"><div class="form-group"><label>Recebimento OK?</label><div class="radio-options"><div class="radio"><label><input type="radio" name="RecebimentoOK" value="Sim">Sim</label></div><div class="radio"><label><input type="radio" name="RecebimentoOK" value="Não">Não</label></div></div></div></div></div><div class="form-field" data-type="combo" data-show-properties="" data-field-name="AcertoCredito"><div class="form-input"><div class="form-group"><label>Acerto de crédito</label><select class="form-control" name="AcertoCredito"><option value="Selecione">Selecione</option><option value="Abater duplicata em aberto">Abater duplicata em aberto</option><option value="Devolução dinheiro">Devolução dinheiro</option><option value="Crédito p/ próxima compra">Crédito p/ próxima compra</option></select></div></div></div><div class="form-field" data-type="textarea" data-show-properties="" data-field-name="ObsRevisaoDevol"><div class="form-input"><div class="form-group"><label>Observação da revisão da devolução</label><textarea class="form-control" rows="3" name="ObsRevisaoDevol" placeholder="" data-size="big"></textarea></div></div></div><div class="form-field" data-type="radio" data-show-properties="" data-field-name="ColetaReprovada"><div class="form-input"><div class="form-group"><label>Material reprovado na coleta, coletar mesmo assim?</label><div class="radio-options"><div class="radio"><label><input type="radio" name="ColetaReprovada" value="Sim">Sim</label></div><div class="radio"><label><input type="radio" name="ColetaReprovada" value="Não">Não</label></div></div></div></div></div><div class="form-field" data-type="radio" data-show-properties="" data-field-name="RdDevRevisada"><div class="form-input"><div class="form-group"><label>Devolução revisada pelo supervisor, continuar?</label><div class="radio-options"><div class="radio"><label><input type="radio" name="RdDevRevisada" value="Enviar novamente">Enviar novamente</label></div><div class="radio"><label><input type="radio" name="RdDevRevisada" value="Cancelar">Cancelar</label></div></div></div></div></div></form>
+		
+
+			<script type="text/javascript">
+				var keyDown = false, ctrl = 17, vKey = 86, Vkey = 118; 
+				  
+				$(document).keydown(function (e) {
+					if (e.keyCode == ctrl) keyDown = true;
+				}).keyup(function (e) {
+					if (e.keyCode == ctrl) keyDown = false;
+				});
+				
+				$('[data-only-numbers]').on('keypress', function (e) {
+				    if (!e) {
+					    var e = window.event;
+					}
+					
+				    if (e.keyCode > 0 && e.which == 0) {
+				    	 return true;
+					}
+					
+				    if (e.keyCode) {
+				        code = e.keyCode;
+					} else if (e.which) {
+				    	code = e.which;
+					}
+
+					if(code == 46) {
+						return true;
+					}
+					
+				    var character = String.fromCharCode(code);
+				    if (character == '\b' || character == ' ' || character == '\t') {
+				    	 return true;
+					}
+				    if (keyDown && (code == vKey || code == Vkey)) {
+				    	return (character);
+					} else  {
+						return (/[0-9]$/.test(character));
+					}
+				}).on('focusout', function (e) {
+				    var $this = $(this);
+					if($this.val() == "") {
+						return true;
+					}
+				    $this.val($this.val().replace(/[^0-9\.]/g, ''));
+				}).on('paste', function (e) {
+				    var $this = $(this);
+				    setTimeout(function () {
+				        $this.val($this.val().replace(/[^0-9\.]/g, ''));
+				    }, 5);
+				 });				
+
+				
+
+				$('.create-form-components').on('keyup', 'input[required="required"][type="text"], input[required="required"][type="number"], input[required="required"][type="date"], textarea[required="required"]', function(){
+					validationFieldsForm($(this), $(this).parents('.form-field').data('type'));
+				});
+
+				$('.create-form-components').on('change', 'input[required="required"][type="checkbox"], input[required="required"][type="radio"], select[required="required"]', function(){
+					validationFieldsForm($(this), $(this).parents('.form-field').data('type'));
+				});
+
+				function validationFieldsForm(field, type){
+					if(type === "checkbox" || type === "radio"){
+						if(!field.is(':checked')){
+							field.parents('.form-field').addClass('required');
+						}else{
+							field.parents('.form-field').removeClass('required');
+						}
+					}else{
+						if(!field.val().trim()){
+							field.parents('.form-field').addClass('required');
+						}else{
+							field.parents('.form-field').removeClass('required');
+						}
+					}
+				}
+
+				var $zoomPreview = $(".zoom-preview");
+				if ($zoomPreview.length) {
+                    $zoomPreview.parent().removeClass("input-group");
+                    $zoomPreview.remove();
+                }
+
+				var ratings = $(".rating");
+				if (ratings.length > 0) ratingStars(ratings);
+				function ratingStars(stars) {
+					$.each(stars, function(i, obj) {
+                        var field = $(this).closest(".form-group").find(".rating-value");
+						var tgt = $(obj);
+						tgt.html("");
+						var rating = FLUIGC.stars(tgt, { value: field.val() });
+                        rating.on("click", function(o) {
+                            field.val($(this).index() + 1);
+                        });
+					});
+				}
+
+				$.each($("[data-date]"), function(i, o) {
+                    var id = $(o).attr("id");
+					FLUIGC.calendar("#" + id);
+				});
+
+				$(document).ready(function() {
+					$.each($("[data-date]"), function(i, o) {
+	                    var id = $(o).attr("id");
+	                    if($("#" + id).attr("readonly")) {
+	                    	$("#" + id).data('DateTimePicker').disable();
+	                    }
+					});
+				});
+			</script>
+		</body>
+	</html>

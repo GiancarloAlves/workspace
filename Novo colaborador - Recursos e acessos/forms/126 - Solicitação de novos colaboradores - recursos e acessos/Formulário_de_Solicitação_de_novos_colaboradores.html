@@ -1,0 +1,373 @@
+<html>
+
+<head>
+	<link type="text/css" rel="stylesheet" href="/style-guide/css/fluig-style-guide.min.css" />
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/mustache/mustache-min.js"></script>
+	<script type="text/javascript" src="/style-guide/js/fluig-style-guide.min.js" charset="utf-8"></script>
+
+	<!-- sweetalert2 -->
+	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+	<!-- FontAwesome -->
+	<link type="text/css" rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+	<!-- JQuery Mask Plugin -->
+	<script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script> 
+
+	<!-- Custom -->
+	<link type="text/css" rel="stylesheet" href="./style_dp.css">
+	<script type="text/javascript" src="./app.js"></script>
+
+
+<body class="fluig-style-guide process-style" id="devkit-style">
+	<form name="form" role="form" id="form-processo">
+
+
+		<div class="panel panel-primary panel-border">
+			<!--Painel geral do formulário - fecha no extremo do arquivo e contém todas as seções-->
+
+			<div class="panel-heading panel-bg panel-border"> <!--início da declaração do cabeçalho principal (azul)-->
+				<div class="container-fluid">
+					<section id="logo">
+            			<img src="./images/logoCigame.png" alt="NOME-CLIENTE" width="130" style="padding: 10px;">
+						<h3 class="panel-title">Solicitação de acesso dos novos colaboradores</h3>
+					</section>
+				</div>
+			</div> <!--fim da declaração do cabeçalho principal (azul)-->
+
+			<div class="panel-body"> <!--panel body geral do arquivo - fecha no extremo e contém todas as seções-->
+
+
+				<div class="panel panel-primary"> <!--declaração da primeira seção-->
+					<div class="panel-heading"> <!--início do cabeçalho da seção-->
+						<h3 class="panel-title subpanel_title">
+							<a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion"
+								href="#abertura"><i class="fas fa-user-shield"></i>Abertura pelo gestor</a>
+						</h3>
+					</div> <!--fim da declaração do cabeçalho da seção-->
+
+					<div id="abertura" class="panel-collapse collapse in">
+						<div class="panel-body">
+
+							<div class="row">
+
+								<div class="form-group col-md-4">
+									<label>Solicitante</label>
+									<div class="input-group">
+										<input type="text" name="solicitante" id="solicitante" class="form-control" readonly>
+										<span class="input-group-addon">
+											<i class="far fa-user"></i>
+										</span>
+									</div>
+								</div>
+
+								<div class="form-group col-md-4">
+									<label>Matricula</label>
+									<div class="input-group">
+										<input type="text" name="matSolicitante" id="matSolicitante" class="form-control" readonly>
+										<span class="input-group-addon">
+											<i class="far fa-user"></i>
+										</span>
+									</div>
+								</div>
+
+								<div class="form-group col-md-4">
+									<label required>Nº Fluig</label>
+									<div class="input-group">
+										<input type="text" name="nrSolicFluig" id="nrSolicFluig" class="form-control">
+										<span class="input-group-addon">
+											<i class="fas fa-user-shield"></i>
+										</span>
+									</div>
+								</div>
+
+							</div>
+
+							<div class="row">
+
+								<div class="form-group col-md-4">
+									<label required>Nome</label>
+									<div class="input-group">
+										<input type="text" name="nome" id="nome" class="form-control">
+										<span class="input-group-addon">
+											<i class="fas fa-user"></i>
+										</span>
+									</div>
+								</div>
+
+								<div class="form-group col-md-4">
+									<label required>Setor</label>
+									<div class="input-group">
+										<input type="text" name="setor" id="setor" class="form-control">
+										<span class="input-group-addon">
+											<i class="far fa-address-book"></i>
+										</span>
+									</div>
+								</div>
+
+								<div class="form-group col-md-4">
+									<label required>Função / cargo </label>
+									<div class="input-group">
+										<input type="text" name="cargo" id="cargo" class="form-control">
+										<span class="input-group-addon">
+											<i class="fas fa-address-card"></i>
+										</span>
+									</div>
+								</div>
+
+							</div> <!--fecha row -->
+
+							<div class="row">
+
+								<div class="form-group col-md-4">
+									<label>Local de trabalho</label>
+									<div class="input-group">
+										<input type="text" name="localtrab" id="localtrab" class="form-control">
+										<span class="input-group-addon">
+											<i class="fas fa-money-bill"></i>
+										</span>
+									</div>
+								</div>
+
+								<div class="form-group col-md-4">
+									<label class="required">Computador (PC, Monitor, Teclado/Mouse, etc)</label>
+									<div class="input-group">
+									<select name="localCliente" id="localCliente" class="form-control">
+										<option value="">Selecione uma opção...</option>
+										<option>1 - Computador e demais itens novos</option>
+										<option>2 - Tem no setor, não precisa</option>
+										<option>3 - Não vai usar PC</option>
+									</select>
+									<span class="input-group-addon"><i class="fas fa-mouse"></i></span>
+								</div>
+								</div>
+
+
+								<div class="form-group col-md-4">
+									<label>Local de instalação do colaborador</label>
+									<div class="input-group">
+										<input type="text" name="workstation" id="workstation" class="form-control" placeholder="Diga a localização, ilha, setor, pavilhão, etc">
+										<span class="input-group-addon"><i class="fas fa-compact-disc"></i></span>
+									</div>
+								</div>
+
+							</div> <!--fecha row-->
+
+							<div class="row">
+
+								<div class="form-group col-md-4">
+									<label>Data início</label>
+									<div class="input-group">
+										<input type="text" name="datainicio" id="datainicio" class="form-control"
+											placeholder="dd/mm/aaaa" mask="00/00/0000" onchange="somar40Dias()">
+										<span class="input-group-addon">
+											<i class="fas fa-calendar"></i>
+										</span>
+									</div>
+								</div>
+
+								<div class="form-group col-md-4">
+									<label>Data 40 dias (1ª avaliação)</label>
+									<div class="input-group">
+										<input type="text" name="data45" id="data45" class="form-control"
+											placeholder="dd/mm/aaaa" mask="00/00/0000" readonly>
+										<span class="input-group-addon">
+											<i class="fas fa-calendar"></i>
+										</span>
+									</div>
+								</div>
+
+								<div class="form-group col-md-4">
+									<label>Data 80 dias (2ª avaliação)</label>
+									<div class="input-group">
+										<input type="text" name="data90" id="data90" class="form-control"
+											placeholder="dd/mm/aaaa" mask="00/00/0000" readonly>
+										<span class="input-group-addon">
+											<i class="fas fa-calendar"></i>
+										</span>
+									</div>
+								</div>
+
+								<div class="form-group col-md-3" hidden>
+									<label class="required">Setar para 40 dias</label>
+									<div class="input-group">
+									<select class="form-control" name="contrato40" id="contrato40">
+									  <option value="quarenta" checked>Avaliação 40 dias</option>
+									 </select>
+								  <span class="input-group-addon"><i class="fas fa-flag-checkered"></i></span>
+								</div>	
+							  </div>
+
+								<input type="hidden" name="dia" id="dia">
+								<input type="hidden" name="mes" id="mes">
+								<input type="hidden" name="ano" id="ano">
+
+							</div>
+
+						</div> <!-- finaliza panel body-->
+					</div> <!--finaliza painel colapsável-->
+				</div> <!--finaliza panel-primary-->
+
+				<div class="panel panel-primary"> <!--declaração da primeira seção-->
+					<div class="panel-heading"> <!--início do cabeçalho da seção-->
+						<h3 class="panel-title subpanel_title">
+							<a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion"
+								href="#dadosacesso"><i class="fas fa-info"></i> DADOS DE ACESSO</a>
+						</h3>
+					</div> <!--fim da declaração do cabeçalho da seção-->
+
+					<div id="dadosacesso" class="panel-collapse collapse in">
+						<div class="panel-body">
+
+    								<!-- PaixFilho Devolução -->
+									<table id="acessos" class="table pai-filho table-striped" tablename="acessos" noaddbutton="true"  nodeletebutton="true">
+										<caption><i class="fas fa-info"></i> Acessos</caption>
+					  
+										<thead>
+										  <tr>
+											<th>Excluir</th>
+											<th width="13%">Acessos</th>
+											<th width="20%">Ação</th>
+											<th width="25%">Tipo usuário</th> 
+											<th width="40%">Observação</th>                 
+											<th>Checklist TI</th>
+										  </tr>
+										</thead>
+					  
+										<tbody>								
+											  
+											  <tr>	
+												
+												<td class="remove">
+													<span class="fs-display-block fs-sm-space">
+													  <i class="flaticon flaticon-close icon-md remove-button" onclick="fnWdkRemoveChild(this)"></i>
+													</span>
+												  </td>
+															
+											<td>
+											  <input type="text" class="form-control" id="tipo" name="tipo">
+											</td>
+
+											<td data-analisar-devolucao>
+												<select name="destino" id="destino" class="form-control">
+												  <option value="">Selecione</option>
+												  <option>Criar</option>
+												  <option>Migrar de outro usuário</option>
+												  <option>Instalar/Configurar</option>
+				
+												</select>
+											  </td>
+											
+											<td data-valor-unitario>
+											  <input type="text" class="form-control" id="novo" name="novo">
+											</td>
+					  
+											<td>
+											  <input type="text" class="form-control" id="obsacessos" name="obsacessos">
+											</td>  	
+											
+											<td class="center-content" data-aprovacao-supervisor>
+												<input type="checkbox" id="reprovar" name="reprovar" value="Sim" class="checkbox">
+											</td>						  
+							
+										  </tr>					
+
+										</tbody>
+					  
+								  </table>
+				  
+									  <hr>
+									  <div class="form-group" id="additem">
+										<div class="row">
+										  <div class="col-xs-6">
+											<button class="btn btn-primary btn-custom btn-custom-primary js-add" data-tablename="acessos">
+											  <i class="fas fa-plus-circle"></i> ADICIONAR ITEM
+											</button>
+										  </div>
+										</div>	
+									  </div>
+
+									  <div class="form-input">
+										<label>Observação geral</label>
+										<div class="input-group">
+											<textarea class="form-control" rows="2" name="obsgeral"></textarea>
+											<span class="input-group-addon"><i class="fas fa-pen"></i></span>
+										</div>
+
+									  </div>
+							
+						</div> <!-- finaliza panel body-->
+					</div> <!--finaliza painel colapsável-->
+				</div> <!--finaliza panel-primary-->
+
+
+				
+				<div class="panel panel-primary"> <!--declaração da primeira seção-->
+					<div class="panel-heading"> <!--início do cabeçalho da seção-->
+						<h3 class="panel-title subpanel_title">
+							<a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion"
+								href="#rh"><i class="far fa-clipboard"></i> RH/DP</a>
+						</h3>
+					</div> <!--fim da declaração do cabeçalho da seção-->
+
+					<div id="rh" class="panel-collapse collapse in">
+						<div class="panel-body">
+
+							<div class="row">
+
+								<div class="form-group col-md-4">
+									<label>Nome cadastrado</label>
+									<div class="input-group">
+										<input type="text" name="nome_rh" id="nome_rh" class="form-control">
+										<span class="input-group-addon"><i class="fas fa-money-bill"></i></span>
+									</div>
+								</div>
+
+								<div class="form-group col-md-4">
+									<label>Matrícula</label>
+									<div class="input-group">
+										<input type="text" name="matricula" id="matricula" class="form-control">
+										<span class="input-group-addon"><i class="fas fa-calendar"></i></span>
+									</div>
+								</div>
+
+								<div class="form-group col-md-4">
+									<label>RCA</label>
+									<div class="input-group">
+										<input type="text" name="rca" id="rca" class="form-control">
+										<span class="input-group-addon"><i class="fas fa-exclamation"></i></span>
+									</div>
+								</div>
+
+							</div>
+
+				<div class="row">
+
+							<div class="form-group">
+								<div class="input-group"><label>Cadastro concluído no WinThor?</label>
+									<div class="left-content">
+										<div class="radio"><label><input type="radio" name="radio13"
+													value="Concluído">Concluído</label>
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+
+						</div> <!-- finaliza panel body-->
+					</div> <!--finaliza painel colapsável-->
+				</div> <!--finaliza panel-primary-->
+
+
+			</div> <!--finaliza painel colapsável-->
+		</div> <!--finaliza panel-primary-->
+
+	</form>
+
+</body>
+
+</html>

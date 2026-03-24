@@ -1,0 +1,659 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.8.0_391" class="java.beans.XMLDecoder">
+<void class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto" id="WorkflowRoleDto0">
+ <void property="roleDescription">
+  <string>Cobrança</string>
+ </void>
+ <void property="roleId">
+  <string>COBRANCA</string>
+ </void>
+ <void property="companyId">
+  <long>1</long>
+ </void>
+</void>
+<void class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto" id="WorkflowRoleDto1">
+ <void property="roleDescription">
+  <string>Recursos Humanos</string>
+ </void>
+ <void property="roleId">
+  <string>RECURSOS_HUMANOS</string>
+ </void>
+ <void property="companyId">
+  <long>1</long>
+ </void>
+</void>
+<void class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto" id="WorkflowRoleDto2">
+ <void property="roleDescription">
+  <string>Devoluções</string>
+ </void>
+ <void property="roleId">
+  <string>DEVOLUCOES</string>
+ </void>
+ <void property="companyId">
+  <long>1</long>
+ </void>
+</void>
+<void class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto" id="WorkflowRoleDto3">
+ <void property="roleDescription">
+  <string>Ocorrências</string>
+ </void>
+ <void property="roleId">
+  <string>OCORRENCIAS</string>
+ </void>
+ <void property="companyId">
+  <long>1</long>
+ </void>
+</void>
+<void class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto" id="WorkflowRoleDto4">
+ <void property="roleDescription">
+  <string>Recebimento</string>
+ </void>
+ <void property="roleId">
+  <string>RECEBIMENTO</string>
+ </void>
+ <void property="companyId">
+  <long>1</long>
+ </void>
+</void>
+<void class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto" id="WorkflowRoleDto5">
+ <void property="roleDescription">
+  <string>Estoque</string>
+ </void>
+ <void property="roleId">
+  <string>ESTOQUE</string>
+ </void>
+ <void property="companyId">
+  <long>1</long>
+ </void>
+</void>
+<void class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto" id="WorkflowRoleDto6">
+ <void property="roleDescription">
+  <string>Infraestrutura</string>
+ </void>
+ <void property="roleId">
+  <string>INFRAESTRUTURA</string>
+ </void>
+ <void property="companyId">
+  <long>1</long>
+ </void>
+</void>
+<void class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto" id="WorkflowRoleDto7">
+ <void property="roleDescription">
+  <string>Fluxo logística</string>
+ </void>
+ <void property="roleId">
+  <string>FLUXO_LOGISTICA</string>
+ </void>
+ <void property="companyId">
+  <long>1</long>
+ </void>
+</void>
+<void class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto" id="WorkflowRoleDto8">
+ <void property="roleDescription">
+  <string>Gerente de compras</string>
+ </void>
+ <void property="roleId">
+  <string>GERENTE_DE_COMPRAS</string>
+ </void>
+ <void property="companyId">
+  <long>1</long>
+ </void>
+</void>
+<void class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto" id="WorkflowRoleDto9">
+ <void property="roleDescription">
+  <string>Agendamento</string>
+ </void>
+ <void property="roleId">
+  <string>AGENDAMENTO</string>
+ </void>
+ <void property="companyId">
+  <long>1</long>
+ </void>
+</void>
+<void class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto" id="WorkflowRoleDto10">
+ <void property="roleDescription">
+  <string>Suporte Financeiro</string>
+ </void>
+ <void property="roleId">
+  <string>SUPORTE_FINANCEIRO</string>
+ </void>
+ <void property="companyId">
+  <long>1</long>
+ </void>
+</void>
+<void class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto" id="WorkflowRoleDto11">
+ <void property="roleDescription">
+  <string>Diretor</string>
+ </void>
+ <void property="roleId">
+  <string>DIRETOR</string>
+ </void>
+ <void property="companyId">
+  <long>1</long>
+ </void>
+</void>
+<void class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto" id="WorkflowRoleDto12">
+ <void property="roleDescription">
+  <string>Departamento Pessoal</string>
+ </void>
+ <void property="roleId">
+  <string>DP</string>
+ </void>
+ <void property="companyId">
+  <long>1</long>
+ </void>
+</void>
+<void class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto" id="WorkflowRoleDto13">
+ <void property="roleDescription">
+  <string>Rotas</string>
+ </void>
+ <void property="roleId">
+  <string>ROTAS</string>
+ </void>
+ <void property="companyId">
+  <long>1</long>
+ </void>
+</void>
+<void class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto" id="WorkflowRoleDto14">
+ <void property="roleDescription">
+  <string>Crédito à vista</string>
+ </void>
+ <void property="roleId">
+  <string>CREDITO_VISTA</string>
+ </void>
+ <void property="companyId">
+  <long>1</long>
+ </void>
+</void>
+<void class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto" id="WorkflowRoleDto15">
+ <void property="roleDescription">
+  <string>Suporte</string>
+ </void>
+ <void property="roleId">
+  <string>SUPORTE</string>
+ </void>
+ <void property="companyId">
+  <long>1</long>
+ </void>
+</void>
+<void class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto" id="WorkflowRoleDto16">
+ <void property="roleDescription">
+  <string>Transportes</string>
+ </void>
+ <void property="roleId">
+  <string>TRANSPORTES</string>
+ </void>
+ <void property="companyId">
+  <long>1</long>
+ </void>
+</void>
+<void class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto" id="WorkflowRoleDto17">
+ <void property="roleDescription">
+  <string>Cadastro setor de compras</string>
+ </void>
+ <void property="roleId">
+  <string>CADASTRO_COMPRAS</string>
+ </void>
+ <void property="companyId">
+  <long>1</long>
+ </void>
+</void>
+<void class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto" id="WorkflowRoleDto18">
+ <void property="roleDescription">
+  <string>Comprador</string>
+ </void>
+ <void property="roleId">
+  <string>COMPRADOR</string>
+ </void>
+ <void property="companyId">
+  <long>1</long>
+ </void>
+</void>
+<void class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto" id="WorkflowRoleDto19">
+ <void property="roleDescription">
+  <string>Supervisor de logística</string>
+ </void>
+ <void property="roleId">
+  <string>SUPERVISOR_DE_LOGISTICA</string>
+ </void>
+ <void property="companyId">
+  <long>1</long>
+ </void>
+</void>
+<void class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto" id="WorkflowRoleDto20">
+ <void property="roleDescription">
+  <string>Contas a pagar</string>
+ </void>
+ <void property="roleId">
+  <string>CONTAS_A_PAGAR</string>
+ </void>
+ <void property="companyId">
+  <long>1</long>
+ </void>
+</void>
+<void class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto" id="WorkflowRoleDto21">
+ <void property="roleDescription">
+  <string>Ajudante</string>
+ </void>
+ <void property="roleId">
+  <string>AJUDANTE</string>
+ </void>
+ <void property="companyId">
+  <long>1</long>
+ </void>
+</void>
+<void class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto" id="WorkflowRoleDto22">
+ <void property="roleDescription">
+  <string>Expedição</string>
+ </void>
+ <void property="roleId">
+  <string>EXPEDICAO</string>
+ </void>
+ <void property="companyId">
+  <long>1</long>
+ </void>
+</void>
+<void class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto" id="WorkflowRoleDto23">
+ <void property="roleDescription">
+  <string>Contas a Receber</string>
+ </void>
+ <void property="roleId">
+  <string>CONTAS_A_RECEBER</string>
+ </void>
+ <void property="companyId">
+  <long>1</long>
+ </void>
+</void>
+<void class="java.util.ArrayList" id="ArrayList0">
+ <void method="add">
+  <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+   <void property="companyId">
+    <long>1</long>
+   </void>
+   <void property="roleDescription">
+    <string>Analista TI</string>
+   </void>
+   <void property="roleId">
+    <string>ANALISTA_TI</string>
+   </void>
+  </object>
+ </void>
+ <void method="add">
+  <object idref="WorkflowRoleDto17"/>
+ </void>
+ <void method="add">
+  <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+   <void property="companyId">
+    <long>1</long>
+   </void>
+   <void property="roleDescription">
+    <string>Cadastro de clientes</string>
+   </void>
+   <void property="roleId">
+    <string>CADASTRO_CLIENTES</string>
+   </void>
+  </object>
+ </void>
+ <void method="add">
+  <object idref="WorkflowRoleDto0"/>
+ </void>
+ <void method="add">
+  <object idref="WorkflowRoleDto18"/>
+ </void>
+ <void method="add">
+  <object idref="WorkflowRoleDto20"/>
+ </void>
+ <void method="add">
+  <object idref="WorkflowRoleDto23"/>
+ </void>
+ <void method="add">
+  <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+   <void property="companyId">
+    <long>1</long>
+   </void>
+   <void property="roleDescription">
+    <string>Crédito</string>
+   </void>
+   <void property="roleId">
+    <string>CREDITO</string>
+   </void>
+  </object>
+ </void>
+ <void method="add">
+  <object idref="WorkflowRoleDto12"/>
+ </void>
+ <void method="add">
+  <object idref="WorkflowRoleDto11"/>
+ </void>
+ <void method="add">
+  <object idref="WorkflowRoleDto5"/>
+ </void>
+ <void method="add">
+  <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+   <void property="companyId">
+    <long>1</long>
+   </void>
+   <void property="roleDescription">
+    <string>Faturamento</string>
+   </void>
+   <void property="roleId">
+    <string>FATURAMENTO</string>
+   </void>
+  </object>
+ </void>
+ <void method="add">
+  <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+   <void property="companyId">
+    <long>1</long>
+   </void>
+   <void property="roleDescription">
+    <string>Fios e cabos</string>
+   </void>
+   <void property="roleId">
+    <string>FIOS_E_CABOS</string>
+   </void>
+  </object>
+ </void>
+ <void method="add">
+  <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+   <void property="companyId">
+    <long>1</long>
+   </void>
+   <void property="roleDescription">
+    <string>Gerente de logística</string>
+   </void>
+   <void property="roleId">
+    <string>GERENTE_DE_LOGISTICA</string>
+   </void>
+  </object>
+ </void>
+ <void method="add">
+  <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+   <void property="companyId">
+    <long>1</long>
+   </void>
+   <void property="roleDescription">
+    <string>Gerente de vendas</string>
+   </void>
+   <void property="roleId">
+    <string>GERENTE_DE_VENDAS</string>
+   </void>
+  </object>
+ </void>
+ <void method="add">
+  <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+   <void property="companyId">
+    <long>1</long>
+   </void>
+   <void property="roleDescription">
+    <string>Marketing</string>
+   </void>
+   <void property="roleId">
+    <string>MARKETING</string>
+   </void>
+  </object>
+ </void>
+ <void method="add">
+  <object idref="WorkflowRoleDto3"/>
+ </void>
+ <void method="add">
+  <object idref="WorkflowRoleDto4"/>
+ </void>
+ <void method="add">
+  <object idref="WorkflowRoleDto1"/>
+ </void>
+ <void method="add">
+  <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+   <void property="companyId">
+    <long>1</long>
+   </void>
+   <void property="roleDescription">
+    <string>Representante externo</string>
+   </void>
+   <void property="roleId">
+    <string>REPRESENTANTE_EXTERNO</string>
+   </void>
+  </object>
+ </void>
+ <void method="add">
+  <object idref="WorkflowRoleDto13"/>
+ </void>
+ <void method="add">
+  <object idref="WorkflowRoleDto19"/>
+ </void>
+ <void method="add">
+  <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+   <void property="companyId">
+    <long>1</long>
+   </void>
+   <void property="roleDescription">
+    <string>Supervisor de Vendas</string>
+   </void>
+   <void property="roleId">
+    <string>SUPERVISOR_DE_VENDAS</string>
+   </void>
+  </object>
+ </void>
+ <void method="add">
+  <object idref="WorkflowRoleDto15"/>
+ </void>
+ <void method="add">
+  <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+   <void property="companyId">
+    <long>1</long>
+   </void>
+   <void property="roleDescription">
+    <string>Vendedor</string>
+   </void>
+   <void property="roleId">
+    <string>VENDEDOR</string>
+   </void>
+  </object>
+ </void>
+ <void method="add">
+  <object idref="WorkflowRoleDto8"/>
+ </void>
+ <void method="add">
+  <object idref="WorkflowRoleDto6"/>
+ </void>
+ <void method="add">
+  <object idref="WorkflowRoleDto22"/>
+ </void>
+ <void method="add">
+  <object idref="WorkflowRoleDto21"/>
+ </void>
+ <void method="add">
+  <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+   <void property="companyId">
+    <long>1</long>
+   </void>
+   <void property="roleDescription">
+    <string>Motorista</string>
+   </void>
+   <void property="roleId">
+    <string>MOTORISTA</string>
+   </void>
+  </object>
+ </void>
+ <void method="add">
+  <object idref="WorkflowRoleDto7"/>
+ </void>
+ <void method="add">
+  <object idref="WorkflowRoleDto2"/>
+ </void>
+ <void method="add">
+  <object idref="WorkflowRoleDto9"/>
+ </void>
+ <void method="add">
+  <object idref="WorkflowRoleDto16"/>
+ </void>
+ <void method="add">
+  <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+   <void property="companyId">
+    <long>1</long>
+   </void>
+   <void property="roleDescription">
+    <string>Gestor do processo de devolução</string>
+   </void>
+   <void property="roleId">
+    <string>GESTOR_DEVOLUCAO</string>
+   </void>
+  </object>
+ </void>
+ <void method="add">
+  <object idref="WorkflowRoleDto14"/>
+ </void>
+ <void method="add">
+  <object idref="WorkflowRoleDto10"/>
+ </void>
+ <void method="add">
+  <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+   <void property="companyId">
+    <long>1</long>
+   </void>
+   <void property="roleDescription">
+    <string>admin</string>
+   </void>
+   <void property="roleId">
+    <string>admin</string>
+   </void>
+  </object>
+ </void>
+</void>
+<void class="java.util.HashMap">
+ <void method="put">
+  <string>mecanismoPapel</string>
+  <object idref="ArrayList0"/>
+ </void>
+</void>
+</java>
+roperty="roleId">
+       <string>GESTOR_DEVOLUCAO</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>Crédito à vista</string>
+      </void>
+      <void property="roleId">
+       <string>CREDITO_VISTA</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>Suporte Financeiro</string>
+      </void>
+      <void property="roleId">
+       <string>SUPORTE_FINANCEIRO</string>
+      </void>
+     </object>
+    </void>
+   </object>
+  </void>
+  <void method="put">
+   <string>mecanismo</string>
+   <array class="[Ljava.lang.Object;" length="9">
+    <void index="0">
+     <array class="java.lang.Object" length="2">
+      <void index="0">
+       <string>Atribuição por Associação</string>
+      </void>
+      <void index="1">
+       <string>Associado</string>
+      </void>
+     </array>
+    </void>
+    <void index="1">
+     <array class="java.lang.Object" length="2">
+      <void index="0">
+       <string>Atribuição por Campo de Formulário</string>
+      </void>
+      <void index="1">
+       <string>Campo Formulário</string>
+      </void>
+     </array>
+    </void>
+    <void index="2">
+     <array class="java.lang.Object" length="2">
+      <void index="0">
+       <string>Atribuição por Executor de Atividade</string>
+      </void>
+      <void index="1">
+       <string>Executor Atividade</string>
+      </void>
+     </array>
+    </void>
+    <void index="3">
+     <array class="java.lang.Object" length="2">
+      <void index="0">
+       <string>Atribuição por Grupo</string>
+      </void>
+      <void index="1">
+       <string>Grupo</string>
+      </void>
+     </array>
+    </void>
+    <void index="4">
+     <array class="java.lang.Object" length="2">
+      <void index="0">
+       <string>Atribuição por Grupos do Colaborador</string>
+      </void>
+      <void index="1">
+       <string>Grupos Colaborador</string>
+      </void>
+     </array>
+    </void>
+    <void index="5">
+     <array class="java.lang.Object" length="2">
+      <void index="0">
+       <string>Atribuição por Papel</string>
+      </void>
+      <void index="1">
+       <string>Papel</string>
+      </void>
+     </array>
+    </void>
+    <void index="6">
+     <array class="java.lang.Object" length="2">
+      <void index="0">
+       <string>Atribuição para um Grupo</string>
+      </void>
+      <void index="1">
+       <string>Pool Grupo</string>
+      </void>
+     </array>
+    </void>
+    <void index="7">
+     <array class="java.lang.Object" length="2">
+      <void index="0">
+       <string>Atribuição para um Papel</string>
+      </void>
+      <void index="1">
+       <string>Pool Papel</string>
+      </void>
+     </array>
+    </void>
+    <void index="8">
+     <array class="java.lang.Object" length="2">
+      <void index="0">
+       <string>Atribuição por Usuário</string>
+      </void>
+      <void index="1">
+       <string>Usuário</string>
+      </void>
+     </array>
+    </void>
+   </array>
+  </void>
+ </object>
+</java>

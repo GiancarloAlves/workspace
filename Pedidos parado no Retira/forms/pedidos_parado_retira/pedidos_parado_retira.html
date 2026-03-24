@@ -1,0 +1,228 @@
+<html>
+
+<head>
+	<link type="text/css" rel="stylesheet" href="/style-guide/css/fluig-style-guide.min.css" />
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/mustache/mustache-min.js"></script>
+	<script type="text/javascript" src="/style-guide/js/fluig-style-guide.min.js" charset="utf-8"></script>
+
+	<!-- Dataset -->
+	<script type="text/javascript" src="/webdesk/vcXMLRPC.js"></script>
+
+	<!-- sweetalert2 -->
+	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+	<!-- FontAwesome -->
+	<link type="text/css" rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+	<!-- JQuery Mask Plugin -->
+	<script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
+
+	<!-- Custom -->
+	<link type="text/css" rel="stylesheet" href="./style.css">
+	<script type="text/javascript" src="./app.js"></script>
+</head>
+
+<body class="fluig-style-guide process-style" id="devkit-style">
+	<form name="form" role="form" id="form-processo">
+		<input type="text" name="exibe" id="exibe" hidden>
+
+		<div class="panel panel-primary panel-border">
+
+			<div class="panel-heading panel-bg panel-border">
+				<!-- início da declaração do cabeçalho principal (azul) -->
+				<div class="container-fluid">
+					<section id="logo">
+						<img src="./images/logoCigame.png" alt="NOME-CLIENTE" width="130" style="padding: 10px;">
+						<h3 class="panel-title">Formulário de Pedidos Parados no Retira</h3>
+					</section>
+				</div>
+			</div>
+
+			<div class="panel-body">
+				<div class="panel panel-primary">
+
+					<div class="panel-heading">
+						<h3 class="panel-title subpanel_title">
+							<span id="led_abertura" class="led"></span>
+							<a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion"
+								href="#dadosSolicitacao"><i class="far fa-clipboard"></i> DADOS SOLICITAÇÃO</a>
+						</h3>
+					</div>
+
+					<div id="dadosSolicitacao" class="panel-collapse collapse in">
+						<div class="panel-body">
+							<div class="row">
+								<div class="col-md-12 group-item">
+									<div class="form-field">
+										<div class="row divButton">
+											<div class="col-md-4">
+												<h4>Exibir pedidos</h4>
+												<button onclick="addNewRow()"
+													class="btn btn-primary btn-custom btn-custom-primary btn-exibe-pedidos">
+													<i class="fas fa-plus-circle"></i> Exibir
+												</button>
+											</div>
+										</div>
+										<div class="message"></div>
+										<div class="form-group">
+											<div class="form-field" data-type="tabledetail"
+												data-field-name="Dados_do_t_tulo">
+												<table id="tabelaPedidos" class="table pai-filho table-striped"
+													tablename="tabelaPedidos" noaddbutton="true" nodeletebutton="true">
+
+													<thead>
+														<tr>
+															<th>Selecione</th>
+															<th>N°. Pedido</th>
+															<th>Qtd Item Especial</th>
+															<th>Cód. Cliente</th>
+															<th>Cliente</th>
+															<th>Data Pedido</th>
+															<th>Data Liberação</th>
+															<th>Data Integrou WMS</th>
+															<th>Tempo parado Retira (Horas)</th>
+															<th>Vendedor</th>
+															<th>E-mail vendedor</th>
+															<th>Supervisor</th>
+															<th>E-mail supervisor</th>
+														</tr>
+													</thead>
+
+													<tbody>
+														<tr class="rowPedido">
+															<td class="center-content">
+																<input type="checkbox" id="checkPedido"
+																	name="checkPedido" class="checkbox">
+																</input>
+															</td>
+
+															<td>
+																<input readonly class="infoTabela" name="numPedido"
+																	id="numPedido">
+																</input>
+															</td>
+
+															<td>
+																<input readonly class="infoTabela"
+																	name="qtdItemEspecial" id="qtdItemEspecial"></input>
+															</td>
+
+															<td>
+																<input readonly class="infoTabela" name="codCliente"
+																	id="codCliente">
+																</input>
+															</td>
+
+															<td>
+																<input readonly class="infoTabela" name="cliente"
+																	id="cliente">
+																</input>
+															</td>
+
+															<td>
+																<input readonly class="infoTabela" name="dataPedido"
+																	id="dataPedido">
+																</input>
+															</td>
+
+															<td>
+																<input readonly class="infoTabela" name="dataLibPedido"
+																	id="dataLibPedido"></input>
+															</td>
+
+															<td>
+																<input readonly class="infoTabela" name="dataIntegraWms"
+																	id="dataIntegraWms"></input>
+															</td>
+
+															<td>
+																<input readonly class="infoTabela"
+																	name="tempoParadoRetira" id="tempoParadoRetira">
+																</input>
+															</td>
+
+															<td>
+																<input readonly class="infoTabela" name="vendedor"
+																	id="vendedor">
+																</input>
+															</td>
+
+															<td>
+																<input readonly class="infoTabela" name="emailVendedor"
+																	id="emailVendedor">
+																</input>
+															</td>
+
+															<td>
+																<input readonly class="infoTabela" name="supervisor"
+																	id="supervisor">
+																</input>
+															</td>
+
+															<td>
+																<input readonly class="infoTabela"
+																	name="emailSupervisor" id="emailSupervisor">
+																</input>
+															</td>
+														</tr>
+													</tbody>
+												</table>
+											</div> <!-- finaliza a tabela -->
+										</div> <!--fecha o panel body-->
+									</div>
+								</div>
+							</div>
+
+							<div class="panel panel-primary"> <!--declaração da primeira seção-->
+								<div class="panel-heading"> <!--início do cabeçalho da seção-->
+									<h3 class="panel-title subpanel_title">
+										<span id="led_vendedores" class="led"></span> <!-- led indicador de estado -->
+										<a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion"
+											href="#vendedores"><i
+												class="flaticon flaticon-account-qualification icon-sm"></i> Vendedores
+											Selecionados</a>
+									</h3>
+								</div> <!--fim da declaração do cabeçalho da seção-->
+
+								<div id="vendedores" class="panel-collapse collapse in">
+									<div class="panel-body">
+										<div class="row">
+											<div class="col-md-6">
+												<button onclick="verificaPedidoEstaChecked()"
+													class="botaoVerificaPedidos btn btn-primary btn-custom btn-custom-primary">
+													<i class="fas fa-plus-circle"></i> Exibir Vendedores
+												</button>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-12">
+												<input type="hidden" name="qtdVendedoresInput" id="qtdVendedoresInput"
+													value="vazio">
+												<h4>
+													Total de Vendedores: <span name="qtdVendedores" id="qtdVendedores"
+														class="qtdVendedores"></span>
+												</h4>
+											</div>
+											<div class="row divVendedores">
+											</div>
+											<div class="col-md-12 success-message hidden">
+												<h2>Email(s) enviado(s) com sucesso! ✅</h2>
+											</div>
+										</div>
+									</div> <!--fecha o panel body-->
+								</div> <!--fecha o painel-->
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+		</div>
+	</form>
+</body>
+
+</html>

@@ -1,0 +1,476 @@
+<html>
+
+<head>
+  <link type="text/css" rel="stylesheet" href="/style-guide/css/fluig-style-guide.min.css" />
+  <script type="text/javascript" src="/portal/resources/js/jquery/jquery.js"></script>
+  <script type="text/javascript" src="/portal/resources/js/jquery/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="/portal/resources/js/mustache/mustache-min.js"></script>
+  <script type="text/javascript" src="/style-guide/js/fluig-style-guide.min.js" charset="utf-8"></script>
+
+  <!-- Dataset -->
+  <script type="text/javascript" src="/webdesk/vcXMLRPC.js"></script>
+
+  <!-- sweetalert2 -->
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <!-- FontAwesome -->
+  <link type="text/css" rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+  <!-- JQuery Mask Plugin -->
+  <script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
+
+  <!-- Custom -->
+  <link type="text/css" rel="stylesheet" href="./style_fin.css">
+  <script type="text/javascript" src="./app1.js"></script>
+
+
+<body class="fluig-style-guide process-style" id="devkit-style">
+  <form name="form" role="form" id="form-processo">
+
+    <div class="panel panel-primary panel-border">
+      <!--Painel geral do formulário - fecha no extremo do arquivo e contém todas as seções-->
+
+      <div class="panel-heading panel-bg panel-border"> <!--início da declaração do cabeçalho principal (azul)-->
+        <div class="container-fluid">
+          <section id="logo">
+            <img src="./images/logoCigame.png" alt="NOME-CLIENTE" width="130" style="padding: 10px;">
+            <h3 class="panel-title">PRORROGAÇÃO DE TÍTULOS</h3>
+          </section>
+        </div>
+      </div> <!--fim da declaração do cabeçalho principal (azul)-->
+
+      <div class="panel-body"> <!--panel body geral do arquivo - fecha no extremo e contém todas as seções-->
+        <div class="panel panel-primary"> <!--declaração da primeira seção-->
+          <div class="panel-heading"> <!--início do cabeçalho da seção-->
+            <h3 class="panel-title subpanel_title">
+              <span id="led_abertura" class="led"></span> <!-- led indicador de estado -->
+              <a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion" href="#dadoscliente"><i
+                  class="far fa-clipboard"></i> DADOS DO CLIENTE</a>
+            </h3>
+          </div> <!--fim da declaração do cabeçalho da seção-->
+
+          <div id="dadoscliente" class="panel-collapse collapse in">
+            <div class="panel-body">
+
+              <input type="hidden" name="matSolicitante" id="matSolicitante">
+              <input type="hidden" name="matSupervisor" id="matSupervisor">
+              <input type="hidden" name="tipoSolicitante" id="tipoSolicitante">
+              <input type="hidden" name="supervisorSolicitante" id="supervisorSolicitante">
+
+              <!--início do primeiro row-->
+
+              <div class="row">
+
+                <div class="form-group col-md-1">
+                  <label>Matrícula</label>
+                  <div class="input-group">
+                    <input type="text" class="form-control" name="matricula" id="matricula" readonly>
+                  </div>
+                </div>
+
+                <div class="form-group col-md-3">
+                  <label for="zoom">Cód. cliente</label>
+                  <input type="zoom" class="form-control" id="cod_cliente" name="cod_cliente"
+                    dataset="Ds_Consulta_Clientes_Winthor" zoomvalue="CODCLI" datasetvalue="CODCLI"
+                    data-zoom="{'displayKey':'CODCLI','datasetId':'Ds_Consulta_Clientes_Winthor','fields':[{'field':'CODCLI','label':'CODCLI','standard':true}]}" />
+                  <input type="hidden" name="hidden_cod_cliente" id="hidden_cod_cliente" />
+                </div>
+
+
+                <div class="form-group col-md-4">
+                  <label for="zoom">Cliente</label>
+                  <input type="zoom" class="form-control" name="cliente" dataset="Ds_Consulta_Clientes_Winthor"
+                    zoomvalue="CLIENTE" datasetvalue="CLIENTE"
+                    data-zoom="{'displayKey':'CLIENTE','datasetId':'Ds_Consulta_Clientes_Winthor','fields':[{'field':'CLIENTE','label':'CLIENTE','standard':true}]}" />
+                  <input type="hidden" name="hidden_cliente" id="hidden_cliente" />
+                </div>
+
+                <div class="form-group col-md-4">
+                  <label class="required">Número do título / NF</label>
+                  <input type="zoom" name="numNF" id="numNF" class="form-control" data-zoom="
+                    {
+                      'displayKey':'A06_NUMNOTA',
+                      'datasetId':'ds_titulos_winthor',
+                      'maximumSelectionLength':'1',
+                      'placeholder':'Buscar...',
+                      'fields':[
+                        {'field':'A06_NUMNOTA','label':'NF','standard':'true'},
+                        {'field':'A09_PREST','label':'Parcela','standard':'true'}
+                      ]
+                    }">
+                </div>
+
+              </div> <!--fecha o primeiro row-->
+
+              <div class="row">
+
+                <div class="form-group col-md-4">
+                  <label>E-mail contato</label>
+                  <div class="input-group">
+                    <input type="text" class="form-control" name="email_solicitan" id="email_solicitan" required>
+                    <span class="input-group-addon"><i class="fas fa-mail-bulk"></i></span>
+                  </div>
+                </div>
+
+                <div class="form-group col-md-4">
+                  <label>Forma de envio do boleto</label>
+                  <div class="input-group">
+                    <input type="text" class="form-control" name="boleto" id="boleto"
+                      placeholder="Como o cliente quer receber o boleto?">
+                    <span class="input-group-addon"><i class="fas fa-money-bill"></i></span>
+                  </div>
+                </div>
+
+                <div class="form-group col-md-4">
+                  <label>Contato</label>
+                  <div class="input-group">
+                    <input type="text" class="form-control" name="solicitante" id="solicitante"
+                      placeholder="Pessoa de contato no cliente">
+                    <span class="input-group-addon"><i class="fas fa-wallet"></i></span>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="row">
+
+                <div class="form-group col-md-4">
+                  <label>Risco</label>
+                  <div class="input-group">
+                    <input type="text" name="risco" id="risco" class="form-control" readonly>
+                    <span class="input-group-addon"><i class="fas fa-shield-virus"></i></span>
+                  </div>
+                </div>
+
+
+                <div class="form-group col-md-4">
+                  <label>Posição (há títulos vencidos?)</label>
+                  <div class="input-group">
+                    <input type="text" name="posicao" id="posicao" class="form-control" readonly>
+                    <span class="input-group-addon"><i class="fas fa-virus"></i></span>
+                  </div>
+                </div>
+
+                <div class="form-group col-md-1">
+                  <!-- <label>Matric. vend.</label> -->
+                  <div class="input-group">
+                    <input type="hidden" class="form-control" name="vendedor" id="vendedor" value="" placeholder="">
+                  </div>
+                </div>
+
+              </div> <!--fecha row-->
+
+              <div class="row">
+
+                <div class="form-group col-md-6">
+                  <label>Motivo</label>
+                  <div class="input-group">
+                    <textarea class="form-control" name="justif" id="justif" rows="4"></textarea>
+                    <span class="input-group-addon"><i class="fas fa-pen"></i></span>
+                  </div>
+                </div>
+
+                <div class="form-group col-md-6">
+                  <label>Observação vendedor</label>
+                  <div class="input-group">
+                    <textarea class="form-control" name="obs_vendedor" id="obs_vendedor" rows="4"></textarea>
+                    <span class="input-group-addon"><i class="fas fa-pen"></i></span>
+                  </div>
+                </div>
+
+              </div>
+            </div> <!-- finaliza panel body-->
+          </div> <!--finaliza painel colapsável-->
+        </div> <!--finaliza panel-primary-->
+
+        <!--declaração do grid de títulos-->
+        <div class="panel panel-primary"> <!--declaração da primeira seção-->
+          <div class="panel-heading"> <!--início do cabeçalho da seção-->
+            <h3 class="panel-title subpanel_title">
+              <span id="led_tabela" class="led"></span> <!-- led indicador de estado -->
+              <a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion" href="#tabela-titulos"><i
+                  class="fas fa-dollar-sign"></i> DADOS DO TÍTULO</a>
+            </h3>
+          </div> <!--fim da declaração do cabeçalho da seção-->
+
+          <div id="tabela-titulos" class="panel-collapse collapse in">
+            <div class="panel-body">
+
+
+              <div class="form-field" data-type="tabledetail" data-show-properties="" data-field-name="Dados_do_t_tulo">
+                <table id="TabelaTitulos" class="table pai-filho table-striped" tablename="TabelaTitulos"
+                  noaddbutton="true" nodeletebutton="true">
+
+                  <thead>
+                    <tr>
+                      <th>Parcela</th>
+                      <th>Vencimento original</th>
+                      <th>Valor do título</th>
+                      <th>Título já foi prorrogado?</th>
+                      <th>Status</th>
+                      <th>Venc. desejado</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                    <tr>
+                      <td>
+                        <input type="zoom" name="parcela" id="parcela" class="form-control" data-zoom="
+                      {
+                        'displayKey':'A09_PREST',
+                        'datasetId':'ds_titulos_winthor',
+                        'maximumSelectionLength':'1',
+                        'placeholder':'Buscar...',
+                        'fields':[
+                          {'field':'A09_PREST','label':'Parcela','standard':'true'}
+                        ]
+                      }">
+                      </td>
+
+                      <td>
+                        <input type="text" name="vencimentoOriginal" id="vencimentoOriginal" class="form-control"
+                          readonly>
+                      </td>
+
+                      <td>
+                        <input type="text" name="valorTitulo" id="valorTitulo" class="form-control" readonly>
+                      </td>
+
+                      <td>
+                        <input type="text" name="tituloProrrogado" id="tituloProrrogado" class="form-control" readonly>
+                      </td>
+
+                      <td>
+                        <input type="text" name="status" id="status" class="form-control" readonly>
+                      </td>
+
+                      <td>
+                        <input type="text" name="vencimentoDesejado" id="vencimentoDesejado" class="form-control">
+                      </td>
+
+                      <td class="remove">
+                        <span class="fs-display-block fs-sm-space">
+                          <i class="flaticon flaticon-close icon-md remove-button" onclick="fnWdkRemoveChild(this)"></i>
+                        </span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+
+                <hr>
+                <div class="form-group" id="additem" hidden>
+                  <div class="row">
+                    <div class="col-xs-6">
+                      <button class="btn btn-primary btn-custom btn-custom-primary js-add">
+                        <i class="fas fa-plus-circle"></i> ADICIONAR PARCELA
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+              </div> <!-- finaliza a tabela -->
+            </div> <!--fecha o panel body-->
+          </div> <!--fecha o painel-->
+
+        </div>
+
+
+        <!--declaração do  painel-->
+        <div class="panel panel-primary"> <!--declaração da primeira seção-->
+          <div class="panel-heading"> <!--início do cabeçalho da seção-->
+            <h3 class="panel-title subpanel_title">
+              <span id="led_financeiro" class="led"></span> <!-- led indicador de estado -->
+              <a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion" href="#analise-financeira"><i
+                  class="far fa-clipboard"></i> Análise do financeiro</a>
+            </h3>
+          </div> <!--fim da declaração do cabeçalho da seção-->
+
+          <div id="analise-financeira" class="panel-collapse collapse in">
+            <div class="panel-body">
+
+              <div class="row">
+
+                <!--primeira linha da row do financeiro-->
+                <!--<div
+        class="form-field"
+        data-type="textbox"
+        data-show-properties=""
+        data-field-name="titulos_vencido"
+        style="position: relative; left: 0px; top: 0px"
+       >
+        <div class="form-input">
+          <div class="form-group col-md-2">
+            <label>O cliente possui títulos vencidos?</label
+            ><input
+              type="text"
+              class="form-control"
+              name="titulos_vencido"
+              value=""
+              placeholder=""
+              data-size=""
+            />
+          </div>
+        </div>
+       </div> -->
+
+                <div class="form-field" data-type="radio" data-show-properties="" data-field-name="aprov_financ"
+                  style="position: relative; left: 0px; top: 0px">
+                  <div class="form-input">
+                    <div class="form-group col-md-2">
+                      <label>Aprovação financeiro</label>
+                      <div class="radio-options">
+                        <div class="radio">
+                          <label><input type="radio" name="aprov_financ" value="Aprovar" />Aprovar</label>
+                        </div>
+                        <div class="radio">
+                          <label><input type="radio" name="aprov_financ" value="Reprovar" />Reprovar</label>
+                        </div>
+                        <div class="radio">
+                          <label><input type="radio" name="aprov_financ" value="Enviar para a diretoria" />Enviar para a
+                            gerência</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div> <!--fecha row-->
+
+              <div class="row">
+
+                <div class="form-group col-md-12">
+                  <label>Observação Financeiro</label>
+                  <div class="input-group">
+                    <textarea class="form-control" name="obs_financeiro" id="obs_financeiro" rows="2"></textarea>
+                    <span class="input-group-addon"><i class="fas fa-pen"></i></span>
+                  </div>
+                </div>
+
+              </div>
+
+            </div> <!-- finaliza panel body-->
+          </div> <!--finaliza painel colapsável-->
+        </div> <!--finaliza panel-primary-->
+
+        <!--declaração do  painel-->
+        <div class="panel panel-primary"> <!--declaração da primeira seção-->
+          <div class="panel-heading"> <!--início do cabeçalho da seção-->
+            <h3 class="panel-title subpanel_title">
+              <span id="led_aprovacao" class="led"></span> <!-- led indicador de estado -->
+              <a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion" href="#aprovacao"><i
+                  class="far fa-clipboard"></i> Aprovação da gerência</a>
+            </h3>
+          </div> <!--fim da declaração do cabeçalho da seção-->
+
+          <div id="aprovacao" class="panel-collapse collapse in">
+            <div class="panel-body">
+
+              <div class="row">
+
+                <div class="form-group col-md-2">
+                  <label>Aprovação diretoria</label>
+                  <div class="form-input">
+                    <div class="radio-options">
+                      <div class="radio">
+                        <label><input type="radio" name="aprov_diret" value="Aprovar" />Aprovar</label>
+                      </div>
+                      <div class="radio">
+                        <label><input type="radio" name="aprov_diret" value="Reprovar" />Reprovar</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group col-md-2">
+                  <label>Prorrogar com juros?</label>
+                  <div class="form-input">
+                    <div class="radio-options">
+                      <div class="radio">
+                        <label><input type="radio" name="juros" value="Com_juros" />Com juros</label>
+                      </div>
+                      <div class="radio">
+                        <label><input type="radio" name="juros" value="Sem_juros" checked />Sem juros</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div> <!--fecha row-->
+
+              <div class="row">
+
+                <div class="form-group col-md-12">
+                  <label>Observação Gerência</label>
+                  <div class="input-group">
+                    <textarea class="form-control" name="obs_gerente" id="obs_gerente" rows="2"></textarea>
+                    <span class="input-group-addon"><i class="fas fa-pen"></i></span>
+                  </div>
+                </div>
+
+              </div>
+
+            </div> <!-- finaliza panel body-->
+          </div> <!--finaliza painel colapsável-->
+        </div> <!--finaliza panel-primary-->
+
+        <!--declaração do  painel-->
+        <div class="panel panel-primary"> <!--declaração da primeira seção-->
+          <div class="panel-heading"> <!--início do cabeçalho da seção-->
+            <h3 class="panel-title subpanel_title">
+              <span id="led_reaval" class="led"></span> <!-- led indicador de estado -->
+              <a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion" href="#reavaliacao"><i
+                  class="far fa-clipboard"></i> Realivação do vendedor</a>
+            </h3>
+          </div> <!--fim da declaração do cabeçalho da seção-->
+
+          <div id="reavaliacao" class="panel-collapse collapse in">
+            <div class="panel-body">
+
+              <!--<div class="alert alert-warning alert-dismissible" role="alert">
+       <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+       Se o processo voltou para a etapa inicial, é porque o financeiro ou diretoria reprovaram a solicitação. Escolha se quer alterar os dados e reenviar a solicitação ou cancelar.
+       </div> -->
+
+              <div class="row">
+
+                <div class="form-field" data-type="radio" data-show-properties="" data-field-name="reenviar">
+                  <div class="form-input">
+                    <div class="form-group">
+                      <label>Reenviar?</label>
+                      <div class="radio-options">
+                        <div class="radio">
+                          <label><input type="radio" name="reenviar" value="Reenviar" />Reenviar</label>
+                        </div>
+                        <div class="radio">
+                          <label><input type="radio" name="reenviar" value="Encerrar" />Encerrar</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+
+                  <div class="form-group col-md-12">
+                    <label>Observação vendedor - reavaliação</label>
+                    <div class="input-group">
+                      <textarea class="form-control" name="obs_reaval" id="obs_reaval" rows="2"></textarea>
+                      <span class="input-group-addon"><i class="fas fa-pen"></i></span>
+                    </div>
+                  </div>
+
+                </div>
+
+              </div> <!--fecha row-->
+            </div> <!--fecha panel body-->
+          </div> <!--fecha painel-->
+
+        </div> <!--fim do formulário-->
+      </div> <!--fim do formulário-->
+
+  </form>
+</body>
+
+</html>

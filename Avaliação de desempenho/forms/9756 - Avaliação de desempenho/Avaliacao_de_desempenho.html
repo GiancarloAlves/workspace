@@ -1,0 +1,539 @@
+<html>
+
+<head>
+	<link type="text/css" rel="stylesheet" href="/style-guide/css/fluig-style-guide.min.css" />
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery.js"></script>
+	<!-- <script type="text/javascript" src="./jquery-3.6.0.min.js"></script> -->
+
+	<script type="text/javascript" src="./dom-to-image.min.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/mustache/mustache-min.js"></script>
+	<script type="text/javascript" src="/style-guide/js/fluig-style-guide.min.js" charset="utf-8"></script>
+	<script src="/style-guide/js/fluig-style-guide-chart.min.js"></script>
+	
+	<!-- sweetalert2 -->
+	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+	<!-- FontAwesome -->
+	<link type="text/css" rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+	<!-- JQuery Mask Plugin -->
+	<script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
+
+	<!-- Custom -->
+	<link type="text/css" rel="stylesheet" href="./style_dp.css">
+	<script type="text/javascript" src="./app1.js"></script>
+	<script type="text/javascript" src="./Moment.js"></script>
+	<script type="text/javascript" src="./html2canvas.min.js"></script>
+
+
+<body class="fluig-style-guide process-style" id="devkit-style">
+	<form name="form" role="form" id="form-processo">
+
+
+		<div class="panel panel-primary panel-border">
+			<!--Painel geral do formulário - fecha no extremo do arquivo e contém todas as seções-->
+
+			<div class="panel-heading panel-bg panel-border"> <!--início da declaração do cabeçalho principal (azul)-->
+				<div class="container-fluid">
+					<section id="logo">
+						<img src="https://api-site.cigame.com.br/images/logo-150px-x-35-px-(2)-1653585063932-(1)-(1)-(1)-(1)-1655820026572.png"
+							alt="NOME-CLIENTE" title="LOGO-CLIENTE" width="100">
+						<h3 class="panel-title">Avaliação de desempenho</h3>
+					</section>
+				</div>
+			</div> <!--fim da declaração do cabeçalho principal (azul)-->
+
+			<div class="panel-body"> <!--panel body geral do arquivo - fecha no extremo e contém todas as seções-->
+
+
+				<div class="panel panel-primary"> <!--declaração da primeira seção-->
+					<div class="panel-heading"> <!--início do cabeçalho da seção-->
+						<h3 class="panel-title subpanel_title">
+							<span id="led_abertura" class="led"></span>
+							<a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion"
+								href="#abertura"><i class="fas fa-user-shield"></i>Abertura pelo gestor</a>
+						</h3>
+					</div> <!--fim da declaração do cabeçalho da seção-->
+
+					<div id="abertura" class="panel-collapse collapse in">
+						<div class="panel-body">
+
+							<div class="row">
+
+								<div class="form-group col-md-3">
+									<label>Solicitante</label>
+									<div class="input-group">
+										<input type="text" name="solicitante" id="solicitante" class="form-control" readonly>
+										<span class="input-group-addon">
+											<i class="far fa-user"></i>
+										</span>
+									</div>
+								</div>
+
+								<div class="form-group col-md-3">
+									<label>Matricula solicitante/avaliador</label>
+									<div class="input-group">
+										<input type="text" name="matSolicitante" id="matSolicitante" class="form-control" readonly>
+										<span class="input-group-addon">
+											<i class="far fa-user"></i>
+										</span>
+									</div>
+								</div>
+
+								<div class="form-group col-md-3">
+									<label required>Nº Fluig Avaliação</label>
+									<div class="input-group">
+										<input type="text" name="nrSolicFluigAval" id="nrSolicFluigAval" class="form-control" readonly>
+										<span class="input-group-addon">
+											<i class="fas fa-user-shield"></i>
+										</span>
+									</div>
+								</div>
+
+								<div class="form-group col-md-3" id="divAvaliador">
+									<label class="required">Avaliador</label>
+									<input type="zoom" name="avaliador" id="avaliador" class="form-control" data-zoom="
+												  {
+													  'displayKey':'NOME',
+													  'datasetId':'ds_supervisores_winthor',
+													  'maximumSelectionLength':'1',
+													  'placeholder':'Buscar...',
+													  'fields':[
+														  {'field':'NOME','label':'nome','standard':'true'}
+													  ]
+												  }">
+								</div>
+
+							</div>
+
+							<div class="row">
+
+								<div class="form-group col-md-3">
+									<label class="required">Contrato de experiência?</label>
+									<div class="input-group">
+									<select class="form-control" name="tipoContrato" id="tipoContrato" onchange="definirTipo()" readonly>
+									  <option value="">Selecione</option>
+									  <option value="aval">Avaliação periódica</option>
+									  <option value="quarenta">Avaliação 40 dias</option>
+									  <option value="oitenta">Avaliação 80 dias</option>
+									 </select>
+								  <span class="input-group-addon"><i class="fas fa-flag-checkered"></i></span>
+									</div>
+							  </div>
+
+								<div class="form-group col-md-3">
+									<label class="required">Matrícula do funcionário</label>
+									<input type="zoom" name="matricula" id="matricula" class="form-control" data-zoom="
+												  {
+													  'displayKey':'A01_MATRICULA',
+													  'datasetId':'ds_desligamento_colaborador_winthor',
+													  'maximumSelectionLength':'1',
+													  'placeholder':'Buscar...',
+													  'fields':[
+														  {'field':'A01_MATRICULA','label':'Matrícula','standard':'true'}
+													  ]
+												  }">
+								</div>
+
+							
+
+								<div class="form-group col-md-3">
+									<label class="required">Nome</label>
+									<input type="zoom" name="nome" id="nome" class="form-control"
+										data-zoom="
+												  {
+													  'displayKey':'A03_NOME',
+													  'datasetId':'ds_desligamento_colaborador_winthor',
+													  'maximumSelectionLength':'1',
+													  'placeholder':'Buscar...',
+													  'fields':[
+														  {'field':'A03_NOME','label':'Nome','standard':'true'}
+													  ]
+												  }">
+								</div>
+
+
+								<div class="form-group col-md-3">
+									<label required>Setor</label>
+									<div class="input-group">
+										<input type="text" name="setor" id="setor" class="form-control">
+										<span class="input-group-addon">
+											<i class="far fa-address-book"></i>
+										</span>
+									</div>
+								</div>
+
+								
+							</div>
+
+							<div class="row">
+
+								<div class="form-group col-md-3">
+									<label required>Função / cargo </label>
+									<div class="input-group">
+										<input type="text" name="cargo" id="cargo" class="form-control">
+										<span class="input-group-addon">
+											<i class="fas fa-address-card"></i>
+										</span>
+									</div>
+								</div>
+
+								<div class="form-group col-md-2"  id="divFluigAcesso">
+									<label required>Nº Fluig Solic. acesso</label>
+									<div class="input-group">
+										<input type="text" name="nrSolicFluig" id="nrSolicFluig" class="form-control" readonly>
+										<span class="input-group-addon">
+											<i class="fas fa-user-shield"></i>
+										</span>
+									</div>
+								</div>
+
+
+
+								<div class="form-group col-md-4">
+									<label>Data início</label>
+									<div class="input-group">
+										<input type="text" name="datainicio" id="datainicio" class="form-control"
+											placeholder="dd/mm/aaaa" mask="00/00/0000" onchange="somar40Dias()">
+										<span class="input-group-addon">
+											<i class="fas fa-calendar"></i>
+										</span>
+									</div>
+								</div>
+
+							</div> <!--fecha row -->
+
+							<div class="row">
+
+								<div class="form-group col-md-4" id="divData45">
+									<label>Data 40 dias</label>
+									<div class="input-group">
+										<input type="text" name="data45" id="data45" class="form-control"
+											placeholder="dd/mm/aaaa" mask="00/00/0000" readonly>
+										<span class="input-group-addon">
+											<i class="fas fa-calendar"></i>
+										</span>
+									</div>
+								</div>
+
+								<div class="form-group col-md-4" id="divData80">
+									<label>Data 80 dias</label>
+									<div class="input-group">
+										<input type="text" name="data90" id="data90" class="form-control"
+											placeholder="dd/mm/aaaa" mask="00/00/0000" readonly>
+										<span class="input-group-addon">
+											<i class="fas fa-calendar"></i>
+										</span>
+									</div>
+								</div>
+
+								<input type="hidden" name="dia" id="dia">
+								<input type="hidden" name="mes" id="mes">
+								<input type="hidden" name="ano" id="ano">
+
+							</div>							
+
+						</div> <!-- finaliza panel body-->
+					</div> <!--finaliza painel colapsável-->
+				</div> <!--finaliza panel-primary-->
+
+				<div class="panel panel-primary"> <!--declaração da primeira seção-->
+					<div class="panel-heading"> <!--início do cabeçalho da seção-->
+						<h3 class="panel-title subpanel_title">
+							<span id="led_avaliacao" class="led"></span>
+							<a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion"
+								href="#avaliacao"><i class="fas fa-info"></i>AVALIAÇÃO</a>
+						</h3>
+					</div> <!--fim da declaração do cabeçalho da seção-->
+
+					<div id="avaliacao" class="panel-collapse collapse in">
+						<div class="panel-body">
+
+    				
+									<!-- <table id="avaliacao" class="table pai-filho" tablename="avaliacao" noaddbutton="true"  nodeletebutton="true">
+										<caption><i class="fas fa-info"></i> Tabela de avaliação</caption>
+					  
+										<thead>
+										  <tr>
+											<th width="3%">Itens</th>
+											<th width="22%">Fatores</th>
+											<th width="3%">4</th>	
+											<th width="3%">3</th> 
+											<th width="3%">2</th>	
+											<th width="3%">1</th>  
+
+										  </tr>
+										</thead>
+					  
+										<tbody>								
+											<tr>																								<td><input type="text" class="form-control" id="item" name="item" readonly></td>
+											<td><input type="text" class="form-control" id="fator" name="fator" readonly></td>		
+											<td><input type="checkbox" id="f4" name="f4" value="Sim" class="checkbox checkbox-center checkbox-f4"></td>
+											<td><input type="checkbox" id="f3" name="f3" value="Sim" class="checkbox checkbox-center"></td>
+											<td><input type="checkbox" id="f2" name="f2" value="Sim" class="checkbox checkbox-center"></td>
+											<td><input type="checkbox" id="f1" name="f1" value="Sim" class="checkbox checkbox-center"></td>
+										  </tr>					
+										</tbody>
+								  		</table>
+				  
+									  <hr>
+									  <div class="form-group" id="additem">
+										<div class="row">
+										  <div class="col-xs-6">
+											<button class="btn btn-primary btn-custom btn-custom-primary js-add" data-tablename="acessos">
+											  <i class="fas fa-plus-circle"></i> ADICIONAR ITEM
+											</button>
+										  </div>
+										</div>	
+									  </div>	-->
+
+									  	<!-- PaixFilho Avaliação -->
+									<table id="avaliacao" class="table pai-filho" tablename="avaliacao" noaddbutton="true"  nodeletebutton="true">
+										<caption><i class="fas fa-info"></i> Tabela de avaliação</caption>
+					  
+										<thead>
+										  <tr>
+											<th width="3%">Itens</th>
+											<th width="22%">Fatores</th>
+											<th width="3%">Avaliação</th>
+											<th hidden>Excluir</th>	
+										  </tr>
+										</thead>
+					  
+										<tbody>								
+											  
+											<tr>	
+												
+											<td><input type="text" class="form-control" id="item" name="item" readonly></td>						
+											<td><input type="text" class="form-control" id="fator" name="fator" readonly></td>
+			  											
+											<td>
+												<select name="nota" id="nota" class="form-control">
+												  <option value="">Selecione</option>
+												  <option value="4">4</option>
+												  <option value="3">3</option>
+												  <option value="2">2</option>
+												  <option value="1">1</option>
+											</select>
+											  </td>
+
+											  <td class="remove" hidden>
+												<span class="fs-display-block fs-sm-space">
+													<i class="flaticon flaticon-close icon-md remove-button"
+														onclick="fnWdkRemoveChild(this)"></i>
+												</span>
+											</td>
+							
+										  </tr>					
+
+										</tbody>
+					  
+								  </table>
+
+								  <div class="row">
+									<div class="col-md-3 col-md-offset-9">
+										<button class="btn btn-primary btn-custom btn-custom-primary btn-custom-primary--file showcamera" onclick="validarPaiFilho()">
+											<i class="fas fa-images"></i> Gerar avaliação
+										</button>
+									</div>
+								</div>								
+
+								<div class="spacer"></div>
+								  <div class="row">						
+
+									<div id="grafico" style="margin-top: 50px; margin-bottom: 30px;"></div>
+									<div class="spacer"></div>
+
+									</div>
+									<div class="spacer"></div>
+
+									<div class="row">
+
+									  <div class="form-group col-md-2">
+										<label required>Pontuação </label>
+										<div class="input-group">
+										  <input type="text" name="soma" id="soma" class="form-control" style="font-size: 30px;">
+										  <span class="input-group-addon">
+											<i class="fas fa-calculator"></i>
+										  </span>
+										</div>
+									  </div>
+
+									  <div class="form-group col-md-10">
+										<label required>Resultado </label>
+										<div class="input-group">
+										  <input type="text" name="resultado" id="resultado" class="form-control">
+										  <span class="input-group-addon">
+											<i class="fas fa-calculator"></i>
+										  </span>
+										</div>
+									  </div>
+
+									</div>
+
+									<div class="row">
+
+									  <div class="form-input">
+										<label>Observação geral</label>
+										<div class="input-group">
+											<textarea class="form-control" rows="2" name="obsgeral"></textarea>
+											<span class="input-group-addon"><i class="fas fa-pen"></i></span>
+										</div>
+									  </div>
+
+									  </div>
+
+									  <div class="spacer"></div>	
+
+									  <div class="row" id="caption40">
+								
+										<caption style="margin-bottom: 20px;"><i class="fas fa-atlas"></i> Os campos abaixo serão utilizados na etapa de avaliação de 40 dias</caption>
+		
+									<!-- </div> -->
+
+									<div class="spacer"></div>	
+
+									<!-- <div class="row"> -->
+
+									<div class="form-group col-md-3" id="divAcao">
+                                        <label class="required">Escolha a ação a ser seguida</label>
+										<select name="acao" id="acao" class="form-control" data-ligar>
+											<option value="">Selecione uma opção...</option>
+											<option value="prorrogar">Prorrogar</option>
+											<option value="rescindir">Rescindir</option>
+										</select>
+                                    </div>
+
+								</div>
+
+								<div class="form-group col-md-3" hidden>
+									<label class="required">Setar para 80 dias</label>
+									<div class="input-group">
+									<select class="form-control" name="contrato80" id="contrato80">
+									  <option value="">Selecione</option>
+									  <option value="aval">Avaliação periódica</option>
+									  <option value="quarenta">Avaliação 40 dias</option>
+									  <option value="oitenta">Avaliação 80 dias</option>
+									 </select>
+								  <span class="input-group-addon"><i class="fas fa-flag-checkered"></i></span>
+								</div>	
+							  </div>
+
+									<div class="row" id="caption80">
+										
+										<caption id="caption80" style="margin-bottom: 20px;" ><i class="fas fa-atlas"></i> Os campos abaixo serão utilizados na etapa de avaliação de 80 dias</caption>
+		
+									<!-- </div> -->
+									<div class="spacer"></div>
+
+									<!-- <div class="row"> -->
+									
+									<div class="form-group col-md-3" id="divAcaofim">
+                                        <label class="required">Escolha a ação final</label>
+										<select name="acaofim" id="acaofim" class="form-control" data-ligar>
+											<option value="">Selecione uma opção...</option>
+											<option value="efetivar">Efetivar</option>
+											<option value="rescindir">Rescindir</option>
+										</select>
+                                    </div>
+
+								</div>
+
+								<div class="row" id="desligamento">
+
+									<div class="form-group col-md-3">
+										<label class="required">Data que deve ocorrer o desligamento</label>
+										<div class="input-group">
+											<input type="text" name="desligamento" id="desligamento" class="form-control" placeholder="dd/mm/aaaa" mask="00/00/0000">
+											<span class="input-group-addon">
+												<i class="fas fa-calendar"></i>
+											</span>
+										</div>
+									</div>
+	
+									<div class="form-group col-md-3">
+										<label class="required">Tipo de aviso</label>
+										<select name="aviso" id="aviso" class="form-control">
+											<option value="">Selecione uma opção...</option>
+											<option>Indenizado</option>
+											<option>Trabalhado</option>			
+										</select>
+									</div>
+	
+									<div class="form-group col-md-3">
+										<label class="required">Tipo de aviso</label>
+										<select name="automatico" id="automatico" class="form-control">
+											<option value="">Selecione uma opção...</option>
+											<option value="sim">Sim</option>
+											<option value="nao" checked>Não</option>			
+										</select>
+									</div>
+	
+								</div>
+							
+						</div> <!-- finaliza panel body-->
+					</div> <!--finaliza painel colapsável-->
+				</div> <!--finaliza panel-primary-->
+				
+				<div class="panel panel-primary"> <!--declaração da primeira seção-->
+					<div class="panel-heading"> <!--início do cabeçalho da seção-->
+						<h3 class="panel-title subpanel_title">
+							<span id="led_rh" class="led"></span>
+							<a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion"
+								href="#rh"><i class="far fa-clipboard"></i> RH/DP</a>
+						</h3>
+					</div> <!--fim da declaração do cabeçalho da seção-->
+
+					<div id="rh" class="panel-collapse collapse in">
+						<div class="panel-body">
+
+							<div class="row">
+
+							</div>
+
+						<div class="row">
+
+							<div class="form-input">
+								<label>Observação RH</label>
+								<div class="input-group">
+									<textarea class="form-control" rows="2" name="obsrh"></textarea>
+									<span class="input-group-addon"><i class="fas fa-pen"></i></span>
+								</div>
+							  </div>
+
+							<!-- <div class="form-group">
+								<div class="input-group"><label>Cadastro concluído no WinThor?</label>
+									<div class="left-content">
+										<div class="radio"><label><input type="radio" name="radio13"
+													value="Concluído">Concluído</label>
+										</div>
+									</div>
+								</div>
+							</div> -->
+
+						</div>
+
+						</div> <!-- finaliza panel body-->
+					</div> <!--finaliza painel colapsável-->
+				</div> <!--finaliza panel-primary-->
+
+			</div> <!--finaliza painel colapsável-->
+		</div> <!--finaliza panel-primary-->
+
+<script>manipulaGrafico()</script>
+
+	</form>
+
+</body>
+
+</html>
+
+<!-- $(document).ready(function() {
+	FLUIGC.form.hide('nome'); // Substitua 'nome' pelo nome do grupo de campos ou campo que deseja ocultar.
+	FLUIGC.form.hide('setor');
+	FLUIGC.form.hide('cargo');
+	FLUIGC.form.hide('divFluigAcesso');
+  }); -->
+  
