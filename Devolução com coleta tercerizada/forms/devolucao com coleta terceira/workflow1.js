@@ -44,3 +44,14 @@ function taskHandler() {
       break;
   }
 }
+
+function updateLED(ledID) {
+  $(".led").not(`#${ledID}`).removeClass("ativo").addClass("inativo");
+  $(`#${ledID}`).removeClass("inativo").addClass("ativo");
+}
+
+function ligarLED(ledID) {
+  $("#" + ledID)
+  .removeClass("inativo")
+  .addClass("ativo");
+}
