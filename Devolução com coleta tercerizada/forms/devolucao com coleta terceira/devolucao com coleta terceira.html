@@ -440,45 +440,35 @@
                       </div>
                     </div>
 
-                    <div class="row">
-                      <div class="col-md-6" id="card">
-                        <div class="card">
-                          <div class="card-header">
-                            <h3 class="card-title">LISTAR TODA A NF</h3>
-                          </div>
-                          <div>
-                            <div class="card-body">
-                              <div class="form-group col-md-4">
-                                <label class="required">FILTRO NF</label>
-                                <input
-                                  type="zoom"
-                                  name="filtroNF"
-                                  id="filtroNF"
-                                  class="form-control"
-                                  data-zoom="{
-												'displayKey':'NUMNOTA',
-												'datasetId':'ds_nf_saida_winthor',
-												'maximumSelectionLength':'1',
-												'placeholder':'Buscar...',
-												'fields':[
-												  {'field':'NUMNOTA','label':'NF','standard':'true'}
-												]
-											  }"
-                                />
-                              </div>
-
-                              <div class="form-group" id="addNF">
-                                <div class="col-xs-6">
-                                  <button
-                                    class="btn btn-primary btn-custom btn-custom-primary js-nf"
-                                    onclick="deployNota()"
-                                  >
-                                    <i class="fas fa-plus-circle"></i> LISTAR NF
-                                  </button>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
+                    <div class="section-label"><i class="fas fa-file-invoice"></i> Importar Nota Fiscal</div>
+                    <div class="form-box" id="card" style="padding: 15px 15px 10px;">
+                      <div class="row" style="align-items: flex-end;">
+                        <div class="form-group col-md-3">
+                          <label class="required">Filtro NF</label>
+                          <input
+                            type="zoom"
+                            name="filtroNF"
+                            id="filtroNF"
+                            class="form-control"
+                            data-zoom="{
+											'displayKey':'NUMNOTA',
+											'datasetId':'ds_nf_saida_winthor',
+											'maximumSelectionLength':'1',
+											'placeholder':'Buscar...',
+											'fields':[
+											  {'field':'NUMNOTA','label':'NF','standard':'true'}
+											]
+										  }"
+                          />
+                        </div>
+                        <div class="form-group col-md-2" id="addNF">
+                          <button
+                            class="btn btn-primary btn-custom btn-custom-primary js-nf"
+                            onclick="deployNota()"
+                            style="margin-top: 24px;"
+                          >
+                            <i class="fas fa-list-ul"></i> LISTAR NF
+                          </button>
                         </div>
                       </div>
                     </div>
@@ -488,13 +478,13 @@
                       class="alert alert-warning alert-dismissible"
                       role="alert"
                     >
-                      Linha <strong>amarela</strong> significa produto
-                      <strong>fora do prazo</strong>! Linha
-                      <strong>vermelha</strong> significa produto
-                      <strong>especial</strong>!
+                      <i class="fas fa-exclamation-triangle" style="margin-right:6px;"></i>
+                      Linha <strong>amarela</strong> = produto <strong>fora do prazo</strong>&nbsp;&nbsp;|&nbsp;&nbsp;
+                      Linha <strong>vermelha</strong> = produto <strong>especial</strong>
                     </div>
 
                     <!-- PaixFilho Devolução -->
+                    <div class="table-responsive">
                     <table
                       id="gridDevolucao"
                       class="table pai-filho table-striped"
@@ -509,67 +499,28 @@
 
                       <thead>
                         <tr>
-                          <th width="5%" data-aprovacao-supervisor>Reprovar</th>
-                          <th width="10%">N da NF</th>
-                          <th width="10%">Cód. Produto</th>
-                          <th width="10%">
-                            Desc. do
-                            produto&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                          </th>
-                          <th width="7%">
-                            Quantidade&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                          </th>
-                          <th width="7%" data-valor-unitario>
-                            VL
-                            unit.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                          </th>
-                          <th width="10%">
-                            Qtde.
-                            devolvida&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                          </th>
-                          <th width="10%" data-valor-total>
-                            Valor
-                            total&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                          </th>
+                          <th class="col-reprovar" data-aprovacao-supervisor>Reprovar</th>
+                          <th class="col-nf">N da NF</th>
+                          <th class="col-cod">Cód. Produto</th>
+                          <th class="col-desc">Desc. do produto</th>
+                          <th class="col-qtde">Quantidade</th>
+                          <th class="col-vlunit" data-valor-unitario>VL unit.</th>
+                          <th class="col-qtdedev">Qtde. devolvida</th>
+                          <th class="col-vltotal" data-valor-total>Valor total</th>
                           <th
-                            width="5%"
+                            class="col-pe"
                             data-especialmente
                             title="O produto foi comprado especialmente para o pedido?"
-                          >
-                            P.E?
-                          </th>
-                          <th width="10%" data-especial>
-                            Prod.
-                            especial?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                          </th>
-                          <th width="5%" data-ddd>DDD?</th>
-                          <th width="30%" data-observacao>
-                            Observação&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                          </th>
-                          <th width="5%" data-realizar-recebimento>
-                            Qtde.
-                            Recebida&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                          </th>
-                          <th width="5%" data-realizar-recebimento>Avaria?</th>
-                          <th
-                            width="5%"
-                            data-realizar-recebimento
-                            data-divergente
-                          >
-                            Qtde. divergente
-                          </th>
-                          <th
-                            width="10%"
-                            data-realizar-recebimento
-                            data-conferente
-                          >
-                            Obs. do
-                            conferente&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                          </th>
-                          <th width="5%" data-revisar-devolucao>Receber</th>
-                          <th width="20%" data-analisar-devolucao>
-                            Destino&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                          </th>
+                          >P.E?</th>
+                          <th class="col-especial" data-especial>Prod. especial?</th>
+                          <th class="col-ddd" data-ddd>DDD?</th>
+                          <th class="col-obs" data-observacao>Observação</th>
+                          <th class="col-recebida" data-realizar-recebimento>Qtde. Recebida</th>
+                          <th class="col-avaria" data-realizar-recebimento>Avaria?</th>
+                          <th class="col-divergente" data-realizar-recebimento data-divergente>Qtde. divergente</th>
+                          <th class="col-obsconf" data-realizar-recebimento data-conferente>Obs. conferente</th>
+                          <th class="col-receber" data-revisar-devolucao>Receber</th>
+                          <th class="col-destino" data-analisar-devolucao>Destino</th>
                           <th></th>
                         </tr>
                       </thead>
@@ -831,6 +782,7 @@
                         </tr>
                       </tfoot>
                     </table>
+                    </div><!-- /.table-responsive -->
 
                     <hr />
                     <div class="form-group" id="additem">
@@ -890,6 +842,7 @@
                   class="panel-collapse collapse in"
                 >
                   <div class="panel-body">
+                    <div class="section-label"><i class="fas fa-gavel"></i> Decisão do Supervisor</div>
                     <div class="row">
                       <div class="form-group col-md-3">
                         <label class="required">Aprovar solicitação?</label>
@@ -959,6 +912,7 @@
                   class="panel-collapse collapse in"
                 >
                   <div class="panel-body">
+                    <div class="section-label"><i class="fas fa-search"></i> Análise e Aprovação</div>
                     <div class="row">
                       <div class="form-group col-md-3">
                         <label class="required">Aprovar solicitação?</label>
@@ -1092,6 +1046,7 @@
                   class="panel-collapse collapse in"
                 >
                   <div class="panel-body">
+                    <div class="section-label"><i class="fas fa-warehouse"></i> Dados do Recebimento</div>
                     <div class="row">
                       <div class="form-group col-md-3">
                         <label>Conferente</label>

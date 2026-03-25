@@ -847,3 +847,36 @@ span.form-control {
     font-size: 0.75rem;
     opacity: 0.85;
 }
+
+/* gridDevolucao – column min-widths (replaces &nbsp; hacks) */
+#gridDevolucao th.col-reprovar, #gridDevolucao td:nth-child(1)  { min-width: 70px;  }
+#gridDevolucao th.col-nf,       #gridDevolucao td:nth-child(2)  { min-width: 110px; }
+#gridDevolucao th.col-cod,      #gridDevolucao td:nth-child(3)  { min-width: 110px; }
+#gridDevolucao th.col-desc,     #gridDevolucao td:nth-child(4)  { min-width: 220px; }
+#gridDevolucao th.col-qtde,     #gridDevolucao td:nth-child(5)  { min-width: 100px; }
+#gridDevolucao th.col-vlunit,   #gridDevolucao td:nth-child(6)  { min-width: 100px; }
+#gridDevolucao th.col-qtdedev,  #gridDevolucao td:nth-child(7)  { min-width: 120px; }
+#gridDevolucao th.col-vltotal,  #gridDevolucao td:nth-child(8)  { min-width: 120px; }
+#gridDevolucao th.col-pe,       #gridDevolucao td:nth-child(9)  { min-width: 60px;  }
+#gridDevolucao th.col-especial, #gridDevolucao td:nth-child(10) { min-width: 120px; }
+#gridDevolucao th.col-ddd,      #gridDevolucao td:nth-child(11) { min-width: 60px;  }
+#gridDevolucao th.col-obs,      #gridDevolucao td:nth-child(12) { min-width: 200px; }
+#gridDevolucao th.col-recebida, #gridDevolucao td:nth-child(13) { min-width: 110px; }
+#gridDevolucao th.col-avaria,   #gridDevolucao td:nth-child(14) { min-width: 80px;  }
+#gridDevolucao th.col-divergente,#gridDevolucao td:nth-child(15){ min-width: 120px; }
+#gridDevolucao th.col-obsconf,  #gridDevolucao td:nth-child(16) { min-width: 160px; }
+#gridDevolucao th.col-receber,  #gridDevolucao td:nth-child(17) { min-width: 80px;  }
+#gridDevolucao th.col-destino,  #gridDevolucao td:nth-child(18) { min-width: 180px; }
+
+/* NF filter form-box */
+#card .form-control[type="zoom"] {
+    width: 100%;
+}
+
+/* tfoot value highlight */
+#devkit-style tfoot .valorTotalDevolucao,
+#devkit-style tfoot .valorTotalDevolucaoReal {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #28a745;
+}
