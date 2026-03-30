@@ -527,52 +527,23 @@ function mostrarAtividadesExecutadas() {
 function gridHandler() {
   const TABLE_ID = `#gridDevolucao`;
   const CURRENT_TASK = Number(getWKNumState());
-  const DESFAZ_ALTERACAO = DESFAZ_ALTERACAO_COBRANCA.includes(CURRENT_TASK)
-    ? CURRENT_TASK
-    : "";
 
   switch (CURRENT_TASK) {
-    case APROVACAO_GERENTE_VENDAS:
-    case ALTERACAO_COBRANCA:
-      $(`${TABLE_ID} tbody td`).addClass("blocked");
-      $(`.js-add`).addClass("blocked");
-      break;
-
-    case CRIAR_ROTEIRO:
-    case REALIZAR_COLETA:
-    case REALIZAR_RECEBIMENTO:
-    case CONFIRMAR_COLETA:
-    case DESFAZ_ALTERACAO:
-    case DECISAO_GERENTE:
-    case ACERTO_CREDITO:
-    case RECEBIMENTO_AJUSTADO:
+    case DEVOLUCAO:
       $(`${TABLE_ID} tbody td`).addClass("blocked");
 
       $(`[data-valor-unitario]`).hide();
       $(`[data-especialmente`).hide();
       $(`[data-especial]`).hide();
       $(`[data-ddd]`).hide();
-      $(`:input[id*=receber___]`).parent().removeClass("center-content");
       $(`.js-add`).addClass("blocked");
 
       setTimeout(() => redimensionarTabela(TABLE_ID), TIMER);
       break;
 
-    case CONFIRMAR_DEVOLUCAO:
+    case FINALIZACAO_AVALIACAO:
       $(`${TABLE_ID} tbody td`).addClass("blocked");
-
-      $(`[data-valor-unitario]`).hide();
-      $(`[data-especialmente`).hide();
-      $(`[data-especial]`).hide();
-      $(`[data-ddd]`).hide();
-      $(`[data-revisar-devolucao]`).hide();
       $(`.js-add`).addClass("blocked");
-
-      $(`th[data-realizar-recebimento]:lt(2)`).show();
-      $(`:input[id*=qtdeRecebida___]`).parent().show();
-      $(`:input[id*=avaria___]`).parent().show();
-
-      setTimeout(() => redimensionarTabela(TABLE_ID), TIMER);
       break;
   }
 }
