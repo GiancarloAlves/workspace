@@ -43,7 +43,6 @@ function validateForm(form) {
     var frete = form.getValue("freteConta");
     var codCliente = form.getValue("codCliente");
     var motivoDevolucao = form.getValue("motivoDevolucao");
-    var localCliente = form.getValue("localCliente");
     var rdPossuiColeta = form.getValue("rdPossuiColeta");
     var credito = form.getValue("credito");
 
@@ -57,10 +56,6 @@ function validateForm(form) {
 
     if (motivoDevolucao == "" || motivoDevolucao == null) {
       throw "Preencha o campo <strong>Motivo da devolução!</strong>";
-    }
-
-    if (localCliente == "" || localCliente == null) {
-      throw "Preencha o campo <strong>Onde está o cliente?</strong>";
     }
 
     if (rdPossuiColeta == "" || rdPossuiColeta == null) {
