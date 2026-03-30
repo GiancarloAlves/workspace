@@ -253,7 +253,7 @@ function aplicarBinds() {
 
   // Habilita ou desabilita zoom endereço de coleta
   $(`[data-coleta]`).on("change", (e) => {
-    const EL = $(e.target).parent().next();
+    const EL = $(`#endColeta`).closest(".form-group");
     e.target.value == "Sim"
       ? EL.removeClass("blocked")
       : EL.addClass("blocked");
@@ -513,7 +513,7 @@ function mostrarAtividadesExecutadas() {
     if (INPUT_VALUES.length) {
       exibirSecaoForm(SECTION_ID);
 
-      $(`${SECTION_ID} :input:not([type="hidden"]):not(".js-add")`)
+      $(`${SECTION_ID} :input:not([type="hidden"]):not(".js-add"):not(".showcamera")`)
         .parent()
         .addClass("blocked");
       $(SECTION_ID).removeClass("in");
