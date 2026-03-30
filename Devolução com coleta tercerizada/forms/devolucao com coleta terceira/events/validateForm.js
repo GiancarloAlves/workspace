@@ -23,7 +23,6 @@ function validateForm(form) {
 
     case APROVACAO_SUPERVISOR:
       validarAprovacaoSupervisor();
-      validarNFdeDevolucao();
       break;
 
     case DEVOLUCAO:
@@ -123,22 +122,13 @@ function validateForm(form) {
   }
 
   function validarAprovacaoSupervisor() {
-    var itemReprovado = form.getValue("itemReprovado");
-    if (itemReprovado == "Não") {
       var rdAprovaSup = form.getValue("rdAprovaSup");
       if (rdAprovaSup == "" || rdAprovaSup == null) {
         throw "Preencha o campo <strong>Aprovar solicitação?</strong>";
       }
-      if (rdAprovaSup == "Não") {
-        var obsSuperv = form.getValue("obsSuperv");
-        if (obsSuperv == "" || obsSuperv == null) {
-          throw "Escreva no campo de observação o motivo da reprovação!";
-        }
-      }
-    }
   }
 
-  function validarNFdeDevolucao() {
+  function validarDevolucao() {
     var rdEmiteNFDevSup = form.getValue("rdEmiteNFDevSup");
 
     if (rdEmiteNFDevSup == "" || rdEmiteNFDevSup == null) {

@@ -5,7 +5,7 @@ const TIMER = 1000;
 
 const ETAPA_1 = `#registro-devolucao`;
 const ETAPA_2 = `#aprovacao-supervisor`;
-const ETAPA_3 = `#realizar-recebimento`;
+const ETAPA_3 = `#pos-venda`;
 const ETAPA_4 = `#finalizacao-pos-venda`;
 
 const VENDAS = `#MasterVendas`;
@@ -73,7 +73,7 @@ function taskHandlerAprovacaoSupervisor() {
 }
 
 function taskHandlerValidacaoAprovacao() {
-  const SECTION_ID = `#realizar-recebimento`;
+  const SECTION_ID = `#pos-venda`;
 
   exibirSecaoForm(SECTION_ID);
 
@@ -86,7 +86,7 @@ function taskHandlerValidacaoAprovacao() {
 }
 
 function taskHandlerDevolucao() {
-  const SECTION_ID = `#realizar-recebimento`;
+  const SECTION_ID = `#realizar-devolucao`;
   const CONFERENTE = parent.WCMAPI.getUser();
   const MATRICULA_CONFERENTE = parent.WCMAPI.getUserCode();
 

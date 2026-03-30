@@ -11,15 +11,6 @@ const DEVOLUCAO = 18;
 const VALIDACAO_APROVACAO = 11;
 const FINALIZACAO_AVALIACAO = 21;
 
-// Ordem sequencial dos LEDs no processo
-const LED_SEQUENCE = [
-  "led_abertura",
-  "led_supervisor",
-  "led_posvenda",
-  "led_devolucao",
-  "led_finalizacao_avaliacao",
-];
-
 function taskHandler() {
   const TASK = Number(getWKNumState());
 
@@ -29,48 +20,42 @@ function taskHandler() {
     case 0:
     case EVENTO_INICIO:
       taskHandlerInicio();
-      atualizarLEDs("led_abertura");
-      recolherPainel("#registro-devolucao");
+      updateLED("led_abertura");
       break;
 
     case APROVACAO_SUPERVISOR:
       taskHandlerAprovacaoSupervisor();
-      atualizarLEDs("led_supervisor");
-      recolherPainel("#aprovacao-supervisor");
+      updateLED("led_supervisor");
       break;
 
     case VALIDACAO_APROVACAO:
       taskHandlerValidacaoAprovacao();
-      atualizarLEDs("led_posvenda");
-      recolherPainel("#registro-devolucao");
+      updateLED("led_posvenda");
       break;
 
     case DEVOLUCAO:
       taskHandlerDevolucao();
-      atualizarLEDs("led_devolucao");
-      recolherPainel("#realizar-recebimento");
+      updateLED("led_devolucao");
       break;
 
     case FINALIZACAO_AVALIACAO:
       taskHandlerFinalizacaoAvaliacao();
-      atualizarLEDs("led_finalizacao_avaliacao");
-      recolherPainel("#finalizacao-pos-venda");
+      updateLED("led_finalizacao_avaliacao");
       break;
   }
 }
 
-// Liga apenas o LED da etapa atual, desliga todos os outros
-function atualizarLEDs(ledAtual) {
-  LED_SEQUENCE.forEach((led) => {
-    if (led === ledAtual) {
-      $(`#${led}`).removeClass("inativo").addClass("ativo");
-    } else {
-      $(`#${led}`).removeClass("ativo").addClass("inativo");
-    }
-  });
+function updateLED(ledID) {
+  $(".led").not(`#${ledID}`).removeClass("ativo").addClass("inativo");
+  $(`#${ledID}`).removeClass("inativo").addClass("ativo");
+}
+
+function ligarLED(ledID) {
+  $("#" + ledID)
+    .removeClass("inativo")
+    .addClass("ativo");
 }
 
 function recolherPainel(painel) {
   $(".panel-collapse").not(painel).removeClass("in");
 }
-
