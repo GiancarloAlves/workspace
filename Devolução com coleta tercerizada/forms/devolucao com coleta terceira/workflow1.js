@@ -20,29 +20,34 @@ function taskHandler() {
     //MASTER VENDAS
     case 0:
     case EVENTO_INICIO:
+      taskHandlerInicio();
       updateLED("led_abertura");
       recolherPainel("#registro-devolucao");
       break;
 
     case APROVACAO_SUPERVISOR:
+      taskHandlerAprovacaoSupervisor();
       updateLED("led_supervisor");
       ligarLED("led_abertura");
       recolherPainel("#aprovacao-supervisor");
       break;
 
     case VALIDACAO_APROVACAO:
+      taskHandlerValidacaoAprovacao();
       updateLED("led_posvenda");
       ligarLED("led_abertura");
       recolherPainel("#registro-devolucao");
       break;
 
     case DEVOLUCAO:
+      taskHandlerDevolucao();
       updateLED("led_devolucao");
       ligarLED("led_abertura");
       recolherPainel("#realizar-recebimento");
       break;
 
     case FINALIZACAO_AVALIACAO:
+      taskHandlerFinalizacaoAvaliacao();
       updateLED("led_finalizacao_avaliacao");
       recolherPainel("#finalizacao-pos-venda");
       break;
