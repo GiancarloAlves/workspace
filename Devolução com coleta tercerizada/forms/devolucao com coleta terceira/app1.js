@@ -28,7 +28,7 @@ function gerenciarPaiFilho() {
 
   // Adiciona linha no pai-filho
   $(document).on("click", ".js-add", (e) => {
-    const tablename = $(e.target).attr("data-tablename");
+    const tablename = $(e.currentTarget).attr("data-tablename");
     INDEX = wdkAddChild(tablename);
     filtrarZoom();
 

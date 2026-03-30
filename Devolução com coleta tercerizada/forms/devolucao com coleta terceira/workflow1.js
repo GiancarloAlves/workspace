@@ -21,31 +21,29 @@ function taskHandler() {
     case 0:
     case EVENTO_INICIO:
       updateLED("led_abertura");
-      ligarLED("led_abertura");
       recolherPainel("#registro-devolucao");
       break;
 
     case APROVACAO_SUPERVISOR:
-      updateLED("led_abertura");
-      ligarLED("led_supervisor");
+      updateLED("led_supervisor");
+      ligarLED("led_abertura");
       recolherPainel("#aprovacao-supervisor");
       break;
 
     case VALIDACAO_APROVACAO:
-      updateLED("led_supervisor");
-      ligarLED("led_posvenda");
+      updateLED("led_posvenda");
+      ligarLED("led_abertura");
       recolherPainel("#registro-devolucao");
       break;
 
     case DEVOLUCAO:
-      updateLED("led_posvenda");
-      ligarLED("led_devolucao");
+      updateLED("led_devolucao");
+      ligarLED("led_abertura");
       recolherPainel("#realizar-recebimento");
       break;
 
     case FINALIZACAO_AVALIACAO:
-      updateLED("led_devolucao");
-      ligarLED("led_finalizacao_avaliacao");
+      updateLED("led_finalizacao_avaliacao");
       recolherPainel("#finalizacao-pos-venda");
       break;
   }
