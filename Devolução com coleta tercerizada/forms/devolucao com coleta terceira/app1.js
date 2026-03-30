@@ -445,7 +445,6 @@ function popularPaiFilhoProdutosReprovados() {
       window[`numeroNFRep___${INDEX}`].setValue(el.numeroNF);
       window[`codProdutoRep___${INDEX}`].setValue(el.codProduto);
       window[`descProdutoRep___${INDEX}`].setValue(el.descProduto);
-
       $(`#foraPrazoRep___${INDEX}`).val(el.foraPrazo);
       $(`#qtdeRep___${INDEX}`).val(el.qtde);
       $(`#valorUnitarioRep___${INDEX}`).val(el.valorUnitario);

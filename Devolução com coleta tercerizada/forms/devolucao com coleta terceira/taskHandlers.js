@@ -27,8 +27,17 @@ function bloquearOutrasSecoes(secaoAtual) {
 async function taskHandlerInicio() {
   bloquearOutrasSecoes(ETAPA_1);
 
+  // Habilita form e abre seção antes do await
+  $(`${SECTION_ID_INICIO} :input`).parent().removeClass("blocked");
+  $(SECTION_ID_INICIO).addClass("in");
+  $(VENDAS).addClass("in");
+  $(POS_VENDA).removeClass("in");
+  $(LOGISTICA).removeClass("in");
+
   $(`.data`).val(moment().format("L"));
   getSupervisorVendedor();
+  $(`#rdPossuiColeta`).trigger("change");
+  subprocesso();
 
   const TIPO_SOLICITANTE = await userSupervisorVendas();
   const VENDEDOR = parent.WCMAPI.getUser();
@@ -37,19 +46,6 @@ async function taskHandlerInicio() {
   $(`#vendedor`).val(VENDEDOR);
   $(`#tipoSolicitante`).val(TIPO_SOLICITANTE);
   $(`#matSolicitante`).val(MATRICULA_VENDEDOR);
-
-  // Habilita form
-  $(`${SECTION_ID_INICIO} :input`).parent().removeClass("blocked");
-
-  $(`#rdPossuiColeta`).trigger("change");
-
-  $(SECTION_ID_INICIO).addClass("in");
-
-  $(VENDAS).addClass("in");
-  $(POS_VENDA).removeClass("in");
-  $(LOGISTICA).removeClass("in");
-
-  subprocesso();
 }
 
 function taskHandlerAprovacaoSupervisor() {
