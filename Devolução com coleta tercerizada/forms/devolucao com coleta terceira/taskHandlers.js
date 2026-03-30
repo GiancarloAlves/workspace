@@ -6,15 +6,27 @@ const TIMER = 1000;
 const ETAPA_1 = `#registro-devolucao`;
 const ETAPA_2 = `#aprovacao-supervisor`;
 const ETAPA_3 = `#pos-venda`;
-const ETAPA_4 = `#finalizacao-pos-venda`;
+const ETAPA_4 = `#realizar-devolucao`;
+const ETAPA_5 = `#finalizacao-pos-venda`;
 
 const VENDAS = `#MasterVendas`;
 const POS_VENDA = `#MasterPosVenda`;
 const LOGISTICA = `#MasterLog`;
 
-const etapas = [ETAPA_1, ETAPA_2, ETAPA_3, ETAPA_4];
+const etapas = [ETAPA_1, ETAPA_2, ETAPA_3, ETAPA_4, ETAPA_5];
+
+// Bloqueia todas as seções e desbloqueia apenas a seção atual
+function bloquearOutrasSecoes(secaoAtual) {
+  etapas.forEach((etapa) => {
+    if (etapa !== secaoAtual) {
+      $(`${etapa} :input`).parent().addClass("blocked");
+    }
+  });
+}
 
 async function taskHandlerInicio() {
+  bloquearOutrasSecoes(ETAPA_1);
+
   $(`.data`).val(moment().format("L"));
   getSupervisorVendedor();
 
@@ -43,6 +55,8 @@ async function taskHandlerInicio() {
 function taskHandlerAprovacaoSupervisor() {
   const SECTION_ID = `#aprovacao-supervisor`;
   const SELECTOR = `:input[id*=incluirNovamente___]`;
+
+  bloquearOutrasSecoes(SECTION_ID);
 
   $(`[data-aprovacao-supervisor]`).show();
 
@@ -75,6 +89,8 @@ function taskHandlerAprovacaoSupervisor() {
 function taskHandlerValidacaoAprovacao() {
   const SECTION_ID = `#pos-venda`;
 
+  bloquearOutrasSecoes(SECTION_ID);
+
   exibirSecaoForm(SECTION_ID);
 
   $(`${SECTION_ID} :input`).parent().removeClass("blocked");
@@ -89,6 +105,8 @@ function taskHandlerDevolucao() {
   const SECTION_ID = `#realizar-devolucao`;
   const CONFERENTE = parent.WCMAPI.getUser();
   const MATRICULA_CONFERENTE = parent.WCMAPI.getUserCode();
+
+  bloquearOutrasSecoes(SECTION_ID);
 
   $(`#conferenteRecebimento`).val(CONFERENTE);
   $(`#matConferenteRecebimento`).val(MATRICULA_CONFERENTE);
@@ -117,6 +135,8 @@ function taskHandlerDevolucao() {
 
 function taskHandlerFinalizacaoAvaliacao() {
   const SECTION_ID = `#finalizacao-pos-venda`;
+
+  bloquearOutrasSecoes(SECTION_ID);
 
   $(`[data-realizar-recebimento]`).show();
 

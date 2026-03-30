@@ -30,7 +30,7 @@ function validateForm(form) {
       break;
 
     case VALIDACAO_APROVACAO:
-      validarAprovacao();
+      validarAprovacaoPosVenda();
       break;
 
     case FINALIZACAO_AVALIACAO:
@@ -129,10 +129,46 @@ function validateForm(form) {
   }
 
   function validarDevolucao() {
-    var rdEmiteNFDevSup = form.getValue("rdEmiteNFDevSup");
+    var nfEntradaRecebimento = form.getValue("nfEntradaRecebimento");
+    var boxRecebimento = form.getValue("boxRecebimento");
+    var recebimentoOk = form.getValue("recebimentoOk");
 
-    if (rdEmiteNFDevSup == "" || rdEmiteNFDevSup == null) {
-      throw "Preencha o campo <strong>IE sem NF de devolução?</strong>";
+    if (nfEntradaRecebimento == "" || nfEntradaRecebimento == null) {
+      throw "Preencha o campo <strong>N NF entrada</strong>";
+    }
+
+    if (boxRecebimento == "" || boxRecebimento == null) {
+      throw "Preencha o campo <strong>Box</strong>";
+    }
+
+    if (recebimentoOk == "" || recebimentoOk == null) {
+      throw "Preencha o campo <strong>Recebimento OK?</strong>";
+    }
+  }
+
+  function validarAprovacaoPosVenda() {
+    var rdAprovaPosVenda = form.getValue("rdAprovaPosVenda");
+    var origemProblema = form.getValue("origemProblema");
+    var ordemColeta = form.getValue("ordemColeta");
+
+    if (rdAprovaPosVenda == "" || rdAprovaPosVenda == null) {
+      throw "Preencha o campo <strong>Aprovar solicitação?</strong>";
+    }
+
+    if (origemProblema == "" || origemProblema == null) {
+      throw "Preencha o campo <strong>Origem do problema</strong>";
+    }
+
+    if (ordemColeta == "" || ordemColeta == null) {
+      throw "Preencha o campo <strong>Ordem de coleta</strong>";
+    }
+  }
+
+  function validarFinalizacao() {
+    var acertoCredito = form.getValue("acertoCredito");
+
+    if (acertoCredito == "" || acertoCredito == null) {
+      throw "Preencha o campo <strong>Acerto de crédito</strong>";
     }
   }
 }
