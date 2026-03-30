@@ -21,26 +21,32 @@ function taskHandler() {
     case 0:
     case EVENTO_INICIO:
       updateLED("led_abertura");
+      ligarLED("led_abertura");
+      recolherPainel("#registro-devolucao");
       break;
 
     case APROVACAO_SUPERVISOR:
-      updateLED("led_supervisor");
-      ligarLED("led_abertura");
+      updateLED("led_abertura");
+      ligarLED("led_supervisor");
+      recolherPainel("#aprovacao-supervisor");
       break;
 
     case VALIDACAO_APROVACAO:
-      updateLED("led_posvenda");
-      ligarLED("led_abertura");
+      updateLED("led_supervisor");
+      ligarLED("led_posvenda");
+      recolherPainel("#registro-devolucao");
       break;
 
     case DEVOLUCAO:
-      updateLED("led_devolucao");
-      ligarLED("led_abertura");
+      updateLED("led_posvenda");
+      ligarLED("led_devolucao");
+      recolherPainel("#realizar-recebimento");
       break;
 
     case FINALIZACAO_AVALIACAO:
-      updateLED("led_finalizacao_avaliacao");
-      ligarLED("led_abertura");
+      updateLED("led_devolucao");
+      ligarLED("led_finalizacao_avaliacao");
+      recolherPainel("#finalizacao-pos-venda");
       break;
   }
 }
@@ -55,3 +61,8 @@ function ligarLED(ledID) {
   .removeClass("inativo")
   .addClass("ativo");
 }
+
+function recolherPainel(painel) {
+  $(".panel-collapse").not(painel).removeClass("in");
+}
+

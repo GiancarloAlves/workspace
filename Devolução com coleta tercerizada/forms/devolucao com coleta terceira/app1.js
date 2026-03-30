@@ -702,17 +702,6 @@ function mostrarTodasSecoes() {
   $(`.panel-primary`).show();
 }
 
-function confirmarMaterial() {}
-
-function recolherPainel(painel) {
-  $(".panel-collapse").not(painel).removeClass("in");
-}
-
-
-function recolherPainel(painel) {
-  $(".panel-collapse").not(painel).removeClass("in");
-}
-
 function contabilizaFrete() {
   const MOTIVO = $("#motivoDevolucao").val();
   const motivoString = MOTIVO[0];
