@@ -75,8 +75,8 @@
       <notifyAuthorityFollowUp>false</notifyAuthorityFollowUp>
       <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
       <automatic>false</automatic>
-      <positionX>80</positionX>
-      <positionY>82</positionY>
+      <positionX>70</positionX>
+      <positionY>70</positionY>
       <forecastedEffortType>0</forecastedEffortType>
       <forecastedEffort>0</forecastedEffort>
       <notifyManagerFollowUp>false</notifyManagerFollowUp>
@@ -124,8 +124,8 @@
       <notifyAuthorityFollowUp>true</notifyAuthorityFollowUp>
       <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
       <automatic>false</automatic>
-      <positionX>310</positionX>
-      <positionY>66</positionY>
+      <positionX>300</positionX>
+      <positionY>54</positionY>
       <forecastedEffortType>0</forecastedEffortType>
       <forecastedEffort>0</forecastedEffort>
       <notifyManagerFollowUp>false</notifyManagerFollowUp>
@@ -174,8 +174,8 @@
       <notifyAuthorityFollowUp>true</notifyAuthorityFollowUp>
       <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
       <automatic>false</automatic>
-      <positionX>310</positionX>
-      <positionY>208</positionY>
+      <positionX>300</positionX>
+      <positionY>196</positionY>
       <forecastedEffortType>0</forecastedEffortType>
       <forecastedEffort>0</forecastedEffort>
       <notifyManagerFollowUp>false</notifyManagerFollowUp>
@@ -224,8 +224,8 @@
       <notifyAuthorityFollowUp>true</notifyAuthorityFollowUp>
       <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
       <automatic>false</automatic>
-      <positionX>310</positionX>
-      <positionY>359</positionY>
+      <positionX>540</positionX>
+      <positionY>499</positionY>
       <forecastedEffortType>0</forecastedEffortType>
       <forecastedEffort>0</forecastedEffort>
       <notifyManagerFollowUp>false</notifyManagerFollowUp>
@@ -274,8 +274,58 @@
       <notifyAuthorityFollowUp>true</notifyAuthorityFollowUp>
       <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
       <automatic>false</automatic>
-      <positionX>550</positionX>
-      <positionY>208</positionY>
+      <positionX>540</positionX>
+      <positionY>196</positionY>
+      <forecastedEffortType>0</forecastedEffortType>
+      <forecastedEffort>0</forecastedEffort>
+      <notifyManagerFollowUp>false</notifyManagerFollowUp>
+      <notifyManagerDelay>false</notifyManagerDelay>
+      <allowanceManagerTime>0</allowanceManagerTime>
+      <frequenceManagerTime>0</frequenceManagerTime>
+      <inhibitTransfer>false</inhibitTransfer>
+      <periodId></periodId>
+      <stateType>0</stateType>
+      <bpmnType>80</bpmnType>
+      <signalId>0</signalId>
+      <counterSign>false</counterSign>
+      <openInstances>0</openInstances>
+      <noticeExpirationAuthorityTime>0</noticeExpirationAuthorityTime>
+      <noticeExpirationRequisitionerTime>0</noticeExpirationRequisitionerTime>
+      <noticeExpirationManagerTime>0</noticeExpirationManagerTime>
+      <destinationStates/>
+      <digitalSignature>false</digitalSignature>
+      <executionType>0</executionType>
+    </ProcessState>
+    <ProcessState>
+      <processStatePK>
+        <companyId>1</companyId>
+        <processId>devolucao_coleta_tercerizada</processId>
+        <version>1</version>
+        <sequence>26</sequence>
+      </processStatePK>
+      <stateName>Gerar ordem de coleta</stateName>
+      <stateDescription>Gerar ordem de coleta</stateDescription>
+      <instruction></instruction>
+      <deadlineTime>0</deadlineTime>
+      <deadlineFieldName></deadlineFieldName>
+      <joint>false</joint>
+      <agreementPercentage>0</agreementPercentage>
+      <selectColleague>1</selectColleague>
+      <initialState>false</initialState>
+      <notifyAuthorityDelay>true</notifyAuthorityDelay>
+      <notifyRequisitionerDelay>false</notifyRequisitionerDelay>
+      <allowanceAuthorityTime>3600</allowanceAuthorityTime>
+      <frequenceAuthorityTime>3600</frequenceAuthorityTime>
+      <allowanceRequisitionerTime>0</allowanceRequisitionerTime>
+      <frequenceRequisitionerTime>0</frequenceRequisitionerTime>
+      <transferAttachments>false</transferAttachments>
+      <subProcessId></subProcessId>
+      <formFolder>0</formFolder>
+      <notifyAuthorityFollowUp>true</notifyAuthorityFollowUp>
+      <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
+      <automatic>false</automatic>
+      <positionX>300</positionX>
+      <positionY>344</positionY>
       <forecastedEffortType>0</forecastedEffortType>
       <forecastedEffort>0</forecastedEffort>
       <notifyManagerFollowUp>false</notifyManagerFollowUp>
@@ -311,8 +361,8 @@
       <subProcessId></subProcessId>
       <formFolder>0</formFolder>
       <automatic>true</automatic>
-      <positionX>190</positionX>
-      <positionY>50</positionY>
+      <positionX>180</positionX>
+      <positionY>38</positionY>
       <inhibitTransfer>false</inhibitTransfer>
       <stateType>1</stateType>
       <bpmnType>120</bpmnType>
@@ -336,8 +386,8 @@
       <subProcessId></subProcessId>
       <formFolder>0</formFolder>
       <automatic>true</automatic>
-      <positionX>460</positionX>
-      <positionY>56</positionY>
+      <positionX>450</positionX>
+      <positionY>44</positionY>
       <inhibitTransfer>false</inhibitTransfer>
       <stateType>1</stateType>
       <bpmnType>120</bpmnType>
@@ -375,8 +425,8 @@
       <notifyAuthorityFollowUp>false</notifyAuthorityFollowUp>
       <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
       <automatic>false</automatic>
-      <positionX>580</positionX>
-      <positionY>82</positionY>
+      <positionX>570</positionX>
+      <positionY>70</positionY>
       <forecastedEffortType>0</forecastedEffortType>
       <forecastedEffort>0</forecastedEffort>
       <notifyManagerFollowUp>false</notifyManagerFollowUp>
@@ -422,8 +472,8 @@
       <notifyAuthorityFollowUp>false</notifyAuthorityFollowUp>
       <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
       <automatic>false</automatic>
-      <positionX>690</positionX>
-      <positionY>224</positionY>
+      <positionX>680</positionX>
+      <positionY>212</positionY>
       <forecastedEffortType>0</forecastedEffortType>
       <forecastedEffort>0</forecastedEffort>
       <notifyManagerFollowUp>false</notifyManagerFollowUp>
@@ -584,23 +634,6 @@ hAPI.getCardValue(&quot;foraPrazo&quot;) != &quot;Fora do Prazo&quot; </conditio
         <companyId>1</companyId>
         <processId>devolucao_coleta_tercerizada</processId>
         <version>1</version>
-        <linkSequence>19</linkSequence>
-      </processLinkPK>
-      <actionLabel></actionLabel>
-      <returnPermited>false</returnPermited>
-      <initialStateSequence>11</initialStateSequence>
-      <finalStateSequence>18</finalStateSequence>
-      <returnLabel></returnLabel>
-      <name></name>
-      <automaticLink>false</automaticLink>
-      <defaultLink>false</defaultLink>
-      <type>0</type>
-    </ProcessLink>
-    <ProcessLink>
-      <processLinkPK>
-        <companyId>1</companyId>
-        <processId>devolucao_coleta_tercerizada</processId>
-        <version>1</version>
         <linkSequence>20</linkSequence>
       </processLinkPK>
       <actionLabel></actionLabel>
@@ -647,6 +680,40 @@ hAPI.getCardValue(&quot;foraPrazo&quot;) != &quot;Fora do Prazo&quot; </conditio
       <defaultLink>false</defaultLink>
       <type>0</type>
     </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>devolucao_coleta_tercerizada</processId>
+        <version>1</version>
+        <linkSequence>27</linkSequence>
+      </processLinkPK>
+      <actionLabel></actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>11</initialStateSequence>
+      <finalStateSequence>26</finalStateSequence>
+      <returnLabel></returnLabel>
+      <name></name>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>devolucao_coleta_tercerizada</processId>
+        <version>1</version>
+        <linkSequence>28</linkSequence>
+      </processLinkPK>
+      <actionLabel></actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>26</initialStateSequence>
+      <finalStateSequence>18</finalStateSequence>
+      <returnLabel></returnLabel>
+      <name></name>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+    </ProcessLink>
   </list>
   <list/>
   <list/>
@@ -656,8 +723,8 @@ hAPI.getCardValue(&quot;foraPrazo&quot;) != &quot;Fora do Prazo&quot; </conditio
       <color>82b0b7</color>
       <height>149</height>
       <width>711</width>
-      <positionX>30</positionX>
-      <positionY>166</positionY>
+      <positionX>20</positionX>
+      <positionY>154</positionY>
       <stateName>Pós venda</stateName>
       <type>2</type>
       <parentSequence>0</parentSequence>
@@ -672,8 +739,8 @@ hAPI.getCardValue(&quot;foraPrazo&quot;) != &quot;Fora do Prazo&quot; </conditio
       <color>82b0b7</color>
       <height>145</height>
       <width>711</width>
-      <positionX>30</positionX>
-      <positionY>26</positionY>
+      <positionX>20</positionX>
+      <positionY>14</positionY>
       <stateName>Vendedor</stateName>
       <type>2</type>
       <parentSequence>0</parentSequence>
@@ -685,12 +752,12 @@ hAPI.getCardValue(&quot;foraPrazo&quot;) != &quot;Fora do Prazo&quot; </conditio
       </swimLanePK>
     </SwimLane>
     <SwimLane>
-      <color>adc9ac</color>
+      <color>ADC9DB</color>
       <height>149</height>
       <width>711</width>
-      <positionX>30</positionX>
-      <positionY>310</positionY>
-      <stateName>Devolução</stateName>
+      <positionX>20</positionX>
+      <positionY>302</positionY>
+      <stateName>Rotas</stateName>
       <type>2</type>
       <parentSequence>0</parentSequence>
       <swimLanePK>
@@ -698,6 +765,22 @@ hAPI.getCardValue(&quot;foraPrazo&quot;) != &quot;Fora do Prazo&quot; </conditio
         <processId>devolucao_coleta_tercerizada</processId>
         <version>1</version>
         <sequence>3</sequence>
+      </swimLanePK>
+    </SwimLane>
+    <SwimLane>
+      <color>adc9ac</color>
+      <height>149</height>
+      <width>711</width>
+      <positionX>20</positionX>
+      <positionY>450</positionY>
+      <stateName>Devolução</stateName>
+      <type>2</type>
+      <parentSequence>0</parentSequence>
+      <swimLanePK>
+        <companyId>1</companyId>
+        <processId>devolucao_coleta_tercerizada</processId>
+        <version>1</version>
+        <sequence>4</sequence>
       </swimLanePK>
     </SwimLane>
   </list>
@@ -712,8 +795,8 @@ hAPI.getCardValue(&quot;foraPrazo&quot;) != &quot;Fora do Prazo&quot; </conditio
         <linkSequence>12</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
-      <positionX>219</positionX>
-      <positionY>241</positionY>
+      <positionX>209</positionX>
+      <positionY>229</positionY>
     </ProcessLinkBend>
     <ProcessLinkBend>
       <processLinkBendPK>
@@ -723,8 +806,8 @@ hAPI.getCardValue(&quot;foraPrazo&quot;) != &quot;Fora do Prazo&quot; </conditio
         <linkSequence>15</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
-      <positionX>489</positionX>
-      <positionY>241</positionY>
+      <positionX>479</positionX>
+      <positionY>229</positionY>
     </ProcessLinkBend>
     <ProcessLinkBend>
       <processLinkBendPK>
@@ -734,8 +817,19 @@ hAPI.getCardValue(&quot;foraPrazo&quot;) != &quot;Fora do Prazo&quot; </conditio
         <linkSequence>22</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
-      <positionX>602</positionX>
-      <positionY>386</positionY>
+      <positionX>592</positionX>
+      <positionY>374</positionY>
+    </ProcessLinkBend>
+    <ProcessLinkBend>
+      <processLinkBendPK>
+        <companyId>1</companyId>
+        <processId>devolucao_coleta_tercerizada</processId>
+        <version>14</version>
+        <linkSequence>28</linkSequence>
+        <bendSequence>1</bendSequence>
+      </processLinkBendPK>
+      <positionX>352</positionX>
+      <positionY>525</positionY>
     </ProcessLinkBend>
   </list>
   <list/>
