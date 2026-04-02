@@ -634,6 +634,17 @@ function deployNota() {
     </tr>`);
 }
 
+function togglePedidoSubstituto() {
+  const possui = $("#possuiPedidoSubstituto").val();
+  const input = $("#pedidoSubst");
+  if (possui === "Sim") {
+    input.prop("disabled", false);
+  } else {
+    input.prop("disabled", true).val("");
+    pedidoSubstituto();
+  }
+}
+
 function pedidoSubstituto() {
   const PEDIDO_SUBSTITUTO = $("#pedidoSubst").val();
   const COLETA = $("#rdPossuiColeta").val();

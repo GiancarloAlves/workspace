@@ -314,22 +314,9 @@
                           <option>Crédito compra futura</option>
                         </select>
                       </div>
-
-                      <div class="form-group col-md-3">
-                        <label class="required">Frete por conta</label>
-                        <select
-                          name="freteConta"
-                          id="freteConta"
-                          class="form-control"
-                        >
-                          <option value="">Selecione uma opção...</option>
-                          <option>Cliente</option>
-                          <option>Cigame</option>
-                        </select>
-                      </div>
                     </div>
 
-                    <div class="section-label"><i class="fas fa-truck"></i> Coleta &amp; Anexos</div>
+                    <div class="section-label"><i class="fas fa-truck"></i> Anexos</div>
                     <div class="row">
                       <div class="form-group col-md-3">
                         <button
@@ -338,7 +325,6 @@
                           <i class="fas fa-images"></i> ANEXAR FOTO
                         </button>
                       </div>
-
                       <div class="form-group col-md-3 blocked">
                         <label class="required">Qtd. anexos</label>
                         <div class="input-group">
@@ -354,57 +340,17 @@
                           </span>
                         </div>
                       </div>
+                    </div>
 
+                    <div class="section-label"><i class="fas fa-map-marker-alt"></i> Pedido</div>
+                    <div class="row">
                       <div class="form-group col-md-3">
-                        <label class="required">Possui coleta?</label>
-                        <select
-                          name="rdPossuiColeta"
-                          id="rdPossuiColeta"
-                          class="form-control"
-                          data-coleta
-                          onchange="pedidoSubstituto()"
-                        >
+                        <label>Possui pedido substituto?</label>
+                        <select name="possuiPedidoSubstituto" id="possuiPedidoSubstituto" class="form-control" onchange="togglePedidoSubstituto()">
                           <option value="">Selecione uma opção...</option>
                           <option>Sim</option>
                           <option>Não</option>
                         </select>
-                      </div>
-
-                      <div class="form-group col-md-3 blocked hidden">
-                        <label class="required"
-                          >Usuário conferência material</label
-                        >
-                        <div class="input-group">
-                          <input
-                            type="text"
-                            name="usuarioConferenciaMaterial"
-                            id="usuarioConferenciaMaterial"
-                            class="form-control"
-                          />
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="section-label"><i class="fas fa-map-marker-alt"></i> Endereço de Coleta</div>
-                    <div class="row">
-                      <div class="form-group col-md-3">
-                        <label class="required">Endereço da coleta</label>
-                        <input
-                          type="zoom"
-                          name="endColeta"
-                          id="endColeta"
-                          class="form-control"
-                          data-zoom="
-										{
-											'displayKey':'ENDERCOM',
-											'datasetId':'ds_enderecos_entrega_winthor',
-											'maximumSelectionLength':'1',
-											'placeholder':'Buscar...',
-											'fields':[
-												{'field':'ENDERCOM','label':'Endereço','standard':'true'}
-											]
-										}"
-                        />
                       </div>
 
                       <div class="form-group col-md-3">
@@ -416,6 +362,7 @@
                             id="pedidoSubst"
                             class="form-control"
                             onchange="pedidoSubstituto()"
+                            disabled
                           />
                           <span class="input-group-addon">
                             <i class="fas fa-fingerprint"></i>
@@ -423,21 +370,6 @@
                         </div>
                       </div>
 
-                      <div class="form-group col-md-6">
-                        <label>Endereço completo</label>
-                        <div class="input-group">
-                          <input
-                            type="text"
-                            name="enderecoCompletoB"
-                            id="enderecoCompletoB"
-                            class="form-control"
-                            readonly
-                          />
-                          <span class="input-group-addon">
-                            <i class="fas fa-map-marker-alt"></i>
-                          </span>
-                        </div>
-                      </div>
                     </div>
 
                     <div class="section-label"><i class="fas fa-file-invoice"></i> Importar Nota Fiscal</div>
@@ -1029,6 +961,46 @@
               <div class="panel panel-primary">
                 <div class="panel-heading">
                   <h3 class="panel-title subpanel_title">
+                    <span id="led_liberacao_pedido_substituto" class="led"></span>
+                    <a
+                      class="collapse-icon up"
+                      data-toggle="collapse"
+                      data-parent="#accordion"
+                      href="#liberacao-pedido-substituto"
+                      ><i class="fas fa-exchange-alt"></i> LIBERAÇÃO PEDIDO SUBSTITUTO - RESP: LOGÍSTICA</a
+                    >
+                  </h3>
+                </div>
+
+                <div
+                  id="liberacao-pedido-substituto"
+                  class="panel-collapse collapse in"
+                >
+                  <div class="panel-body">
+                    <div class="section-label"><i class="fas fa-clipboard-check"></i> Dados do Pedido Substituto</div>
+                    <div class="row">
+                      <div class="form-group col-md-3">
+                        <label>Número do pedido substituto liberado</label>
+                        <div class="input-group">
+                          <input
+                            type="text"
+                            name="pedidoSubstLiberado"
+                            id="pedidoSubstLiberado"
+                            class="form-control"
+                          />
+                          <span class="input-group-addon">
+                            <i class="fas fa-fingerprint"></i>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="panel panel-primary">
+                <div class="panel-heading">
+                  <h3 class="panel-title subpanel_title">
                     <span id="led_devolucao" class="led"></span>
                     <a
                       class="collapse-icon up"
@@ -1117,6 +1089,7 @@
                   />
                 </div>
               </div>
+
             </div>
             <!-- finaliza body MASTER-->
           </div>

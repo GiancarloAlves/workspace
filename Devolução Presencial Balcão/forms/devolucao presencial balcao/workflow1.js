@@ -6,6 +6,7 @@ const APROVACAO_SUPERVISOR = 9;
 
 //LOGISTICA
 const DEVOLUCAO = 18;
+const LIBERACAO_PEDIDO_SUBSTITUTO = 30;
 
 //PÓS VENDA
 const VALIDACAO_APROVACAO = 11;
@@ -31,6 +32,11 @@ function taskHandler() {
     case VALIDACAO_APROVACAO:
       taskHandlerValidacaoAprovacao();
       updateLED("led_posvenda");
+      break;
+
+    case LIBERACAO_PEDIDO_SUBSTITUTO:
+      taskHandlerLiberacaoPedidoSubstituto();
+      updateLED("led_liberacao_pedido_substituto");
       break;
 
     case DEVOLUCAO:
