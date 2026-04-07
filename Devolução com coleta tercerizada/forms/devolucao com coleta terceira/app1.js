@@ -636,18 +636,13 @@ function deployNota() {
 
 function togglePedidoSubstituto() {
   var frete = document.getElementById("freteConta").value;
-  var campoPedido = document.getElementById("campoPedidoSubst");
-  var campoStatus = document.getElementById("campoStatus");
-  var inputPedido = document.getElementById("pedidoSubst");
-  var inputStatus = document.getElementById("status");
+  var secao = document.getElementById("secaoPedidoSubstituto");
   if (frete === "Pedido substituto") {
-    campoPedido.style.display = "";
-    campoStatus.style.display = "";
+    secao.style.display = "";
   } else {
-    campoPedido.style.display = "none";
-    campoStatus.style.display = "none";
-    inputPedido.value = "";
-    inputStatus.value = "";
+    secao.style.display = "none";
+    document.getElementById("pedidoSubst").value = "";
+    document.getElementById("status").value = "";
   }
 }
 
