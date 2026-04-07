@@ -156,14 +156,6 @@ function taskHandlerFinalizacaoAvaliacao() {
   $(ROTAS).removeClass("in");
 }
 
-function exibirSecaoForm(sectionID) {
-  $(sectionID).parent().show();
-}
-
-function ocultarSecaoForm(sectionID) {
-  $(sectionID).parent().hide();
-}
-
 function taskHandlerRotas() {
   const SECTION_ID = `#ordem-coleta`;
 
@@ -178,4 +170,12 @@ function taskHandlerRotas() {
   $(VENDAS).removeClass("in");
   $(POS_VENDA).removeClass("in");
   $(LOGISTICA).addClass("in");
+}
+
+function exibirSecaoForm(sectionID) {
+  $(sectionID).parent().show();
+}
+
+function ocultarSecaoForm(sectionID) {
+  $(sectionID).parent().hide();
 }
