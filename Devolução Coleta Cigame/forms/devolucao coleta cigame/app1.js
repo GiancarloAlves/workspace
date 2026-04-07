@@ -749,24 +749,14 @@ function IEsemNF() {
   console.log(EMISSAO);
   console.log(ANEXO);
 
-  if (EMISSAO == "Sim" && ANEXO == "0") {
-    FISCAL.value = "Sim";
-    console.log("ENTREI NO SIM");
-  } else {
-    FISCAL.value = "Não";
-    console.log("ENTREI NO NÃO");
-  }
-}
-
-function subprocesso() {
-  const SUBPROCESSO = $(`#subprocesso`).val();
-  console.log(SUBPROCESSO);
-
-  if (SUBPROCESSO == "Sim") {
-    // $(`#freteConta`).removeClass("blocked")
-    deployNota();
-    deploySub();
-    fiscal();
+  if (FISCAL) {
+    if (EMISSAO == "Sim" && ANEXO == "0") {
+      FISCAL.value = "Sim";
+      console.log("ENTREI NO SIM");
+    } else {
+      FISCAL.value = "Não";
+      console.log("ENTREI NO NÃO");
+    }
   }
 }
 
