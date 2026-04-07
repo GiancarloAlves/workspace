@@ -1213,6 +1213,74 @@
           </div>
           <!--finaliza colapsável MASTER-->
           <!--finaliza colapsável MASTER-->
+
+          <div class="panel-heading painel-master-heading">
+            <h3 class="panel-title">
+              <a
+                class="collapse-icon up"
+                data-toggle="collapse"
+                data-parent="#accordion"
+                href="#MasterRotas"
+              >
+                <i class="fas fa-route"></i> ROTAS
+              </a>
+            </h3>
+          </div>
+
+          <div id="MasterRotas" class="panel-collapse collapse in">
+            <div class="panel-body">
+              <div class="panel panel-primary">
+                <div class="panel-heading">
+                  <h3 class="panel-title subpanel_title">
+                    <span id="led_rotas" class="led"></span>
+                    <a
+                      class="collapse-icon up"
+                      data-toggle="collapse"
+                      data-parent="#accordion"
+                      href="#ordem-coleta"
+                      ><i class="fas fa-clipboard-list"></i> ORDEM DE COLETA</a
+                    >
+                  </h3>
+                </div>
+
+                <div id="ordem-coleta" class="panel-collapse collapse in">
+                  <div class="panel-body">
+                    <div class="section-label"><i class="fas fa-truck-loading"></i> Ordem de coleta</div>
+                    <div class="row">
+                      <div class="form-group col-md-3">
+                        <label>Número de Rota/Romaneio</label>
+                        <div class="input-group">
+                          <input
+                            type="text"
+                            name="numRotaRomaneio"
+                            id="numRotaRomaneio"
+                            class="form-control"
+                          />
+                          <span class="input-group-addon">
+                            <i class="fas fa-route"></i>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="form-group col-md-12">
+                        <label>Observação</label>
+                        <textarea
+                          name="obsOrdemColeta"
+                          id="obsOrdemColeta"
+                          class="form-control"
+                        ></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- finaliza body MASTER-->
+          </div>
+          <!--finaliza colapsável MASTER-->
+
         </div>
         <!--fecha o painel primary MASTER-->
       </div>
