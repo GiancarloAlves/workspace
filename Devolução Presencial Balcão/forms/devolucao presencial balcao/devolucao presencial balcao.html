@@ -59,7 +59,7 @@
                 width="130"
                 style="padding: 10px"
               />
-              <h3 class="panel-title">Devolução com coleta terceirizada</h3>
+              <h3 class="panel-title">Devolução Presencial Balcão</h3>
             </section>
           </div>
         </div>
@@ -107,7 +107,9 @@
                   <div class="panel-body">
                     <!--panel body normal da seção-->
 
-                    <div class="section-label"><i class="fas fa-info-circle"></i> Informações Gerais</div>
+                    <div class="section-label">
+                      <i class="fas fa-info-circle"></i> Informações Gerais
+                    </div>
                     <div class="row">
                       <div class="form-group col-md-3">
                         <label>Número</label>
@@ -194,7 +196,9 @@
                       </div>
                     </div>
 
-                    <div class="section-label"><i class="fas fa-user"></i> Dados do Cliente</div>
+                    <div class="section-label">
+                      <i class="fas fa-user"></i> Dados do Cliente
+                    </div>
                     <div class="row">
                       <div class="form-group col-md-4">
                         <label class="required">Cliente</label>
@@ -269,10 +273,14 @@
                       </div>
                     </div>
 
-                    <div class="section-label"><i class="fas fa-undo-alt"></i> Detalhes da Devolução</div>
+                    <div class="section-label">
+                      <i class="fas fa-undo-alt"></i> Detalhes da Devolução
+                    </div>
                     <div class="row">
                       <div class="form-group col-md-3">
-                        <label class="required">Cliente emite NF de devolução?</label>
+                        <label class="required"
+                          >Cliente emite NF de devolução?</label
+                        >
                         <input
                           type="text"
                           name="rdEmiteNFDev"
@@ -316,7 +324,9 @@
                       </div>
                     </div>
 
-                    <div class="section-label"><i class="fas fa-truck"></i> Anexos</div>
+                    <div class="section-label">
+                      <i class="fas fa-truck"></i> Anexos
+                    </div>
                     <div class="row">
                       <div class="form-group col-md-3">
                         <button
@@ -342,11 +352,18 @@
                       </div>
                     </div>
 
-                    <div class="section-label"><i class="fas fa-map-marker-alt"></i> Pedido</div>
+                    <div class="section-label">
+                      <i class="fas fa-map-marker-alt"></i> Pedido
+                    </div>
                     <div class="row">
                       <div class="form-group col-md-3">
                         <label>Possui pedido substituto?</label>
-                        <select name="possuiPedidoSubstituto" id="possuiPedidoSubstituto" class="form-control" onchange="togglePedidoSubstituto()">
+                        <select
+                          name="possuiPedidoSubstituto"
+                          id="possuiPedidoSubstituto"
+                          class="form-control"
+                          onchange="togglePedidoSubstituto()"
+                        >
                           <option value="">Selecione uma opção...</option>
                           <option>Sim</option>
                           <option>Não</option>
@@ -369,12 +386,17 @@
                           </span>
                         </div>
                       </div>
-
                     </div>
 
-                    <div class="section-label"><i class="fas fa-file-invoice"></i> Importar Nota Fiscal</div>
-                    <div class="form-box" id="card" style="padding: 15px 15px 10px;">
-                      <div class="row" style="align-items: flex-end;">
+                    <div class="section-label">
+                      <i class="fas fa-file-invoice"></i> Importar Nota Fiscal
+                    </div>
+                    <div
+                      class="form-box"
+                      id="card"
+                      style="padding: 15px 15px 10px"
+                    >
+                      <div class="row" style="align-items: flex-end">
                         <div class="form-group col-md-3">
                           <label class="required">Filtro NF</label>
                           <input
@@ -397,7 +419,7 @@
                           <button
                             class="btn btn-primary btn-custom btn-custom-primary js-nf"
                             onclick="deployNota()"
-                            style="margin-top: 24px;"
+                            style="margin-top: 24px"
                           >
                             <i class="fas fa-list-ul"></i> LISTAR NF
                           </button>
@@ -410,72 +432,110 @@
                       class="alert alert-warning alert-dismissible"
                       role="alert"
                     >
-                      <i class="fas fa-exclamation-triangle" style="margin-right:6px;"></i>
-                      Linha <strong>amarela</strong> = produto <strong>fora do prazo</strong>&nbsp;&nbsp;|&nbsp;&nbsp;
-                      Linha <strong>vermelha</strong> = produto <strong>especial</strong>
+                      <i
+                        class="fas fa-exclamation-triangle"
+                        style="margin-right: 6px"
+                      ></i>
+                      Linha <strong>amarela</strong> = produto
+                      <strong>fora do prazo</strong>&nbsp;&nbsp;|&nbsp;&nbsp;
+                      Linha <strong>vermelha</strong> = produto
+                      <strong>especial</strong>
                     </div>
 
                     <!-- PaixFilho Devolução -->
                     <div class="table-responsive">
-                    <table
-                      id="gridDevolucao"
-                      class="table pai-filho table-striped"
-                      tablename="gridDevolucao"
-                      noaddbutton="true"
-                      nodeletebutton="true"
-                    >
-                      <caption>
-                        <i class="fas fa-undo-alt"></i>
-                        Devolução
-                      </caption>
+                      <table
+                        id="gridDevolucao"
+                        class="table pai-filho table-striped"
+                        tablename="gridDevolucao"
+                        noaddbutton="true"
+                        nodeletebutton="true"
+                      >
+                        <caption>
+                          <i class="fas fa-undo-alt"></i>
+                          Devolução
+                        </caption>
 
-                      <thead>
-                        <tr>
-                          <th class="col-reprovar" data-aprovacao-supervisor>Reprovar</th>
-                          <th class="col-nf">N da NF</th>
-                          <th class="col-cod">Cód. Produto</th>
-                          <th class="col-desc">Desc. do produto</th>
-                          <th class="col-qtde">Quantidade</th>
-                          <th class="col-vlunit" data-valor-unitario>VL unit.</th>
-                          <th class="col-qtdedev">Qtde. devolvida</th>
-                          <th class="col-vltotal" data-valor-total>Valor total</th>
-                          <th
-                            class="col-pe"
-                            data-especialmente
-                            title="O produto foi comprado especialmente para o pedido?"
-                          >P.E?</th>
-                          <th class="col-especial" data-especial>Prod. especial?</th>
-                          <th class="col-ddd" data-ddd>DDD?</th>
-                          <th class="col-obs" data-observacao>Observação</th>
-                          <th class="col-recebida" data-realizar-recebimento>Qtde. Recebida</th>
-                          <th class="col-avaria" data-realizar-recebimento>Avaria?</th>
-                          <th class="col-divergente" data-realizar-recebimento data-divergente>Qtde. divergente</th>
-                          <th class="col-obsconf" data-realizar-recebimento data-conferente>Obs. conferente</th>
-                          <th class="col-receber" data-revisar-devolucao>Receber</th>
-                          <th class="col-destino" data-analisar-devolucao>Destino</th>
-                          <th></th>
-                        </tr>
-                      </thead>
+                        <thead>
+                          <tr>
+                            <th class="col-reprovar" data-aprovacao-supervisor>
+                              Reprovar
+                            </th>
+                            <th class="col-nf">N da NF</th>
+                            <th class="col-cod">Cód. Produto</th>
+                            <th class="col-desc">Desc. do produto</th>
+                            <th class="col-qtde">Quantidade</th>
+                            <th class="col-vlunit" data-valor-unitario>
+                              VL unit.
+                            </th>
+                            <th class="col-qtdedev">Qtde. devolvida</th>
+                            <th class="col-vltotal" data-valor-total>
+                              Valor total
+                            </th>
+                            <th
+                              class="col-pe"
+                              data-especialmente
+                              title="O produto foi comprado especialmente para o pedido?"
+                            >
+                              P.E?
+                            </th>
+                            <th class="col-especial" data-especial>
+                              Prod. especial?
+                            </th>
+                            <th class="col-ddd" data-ddd>DDD?</th>
+                            <th class="col-obs" data-observacao>Observação</th>
+                            <th class="col-recebida" data-realizar-recebimento>
+                              Qtde. Recebida
+                            </th>
+                            <th class="col-avaria" data-realizar-recebimento>
+                              Avaria?
+                            </th>
+                            <th
+                              class="col-divergente"
+                              data-realizar-recebimento
+                              data-divergente
+                            >
+                              Qtde. divergente
+                            </th>
+                            <th
+                              class="col-obsconf"
+                              data-realizar-recebimento
+                              data-conferente
+                            >
+                              Obs. conferente
+                            </th>
+                            <th class="col-receber" data-revisar-devolucao>
+                              Receber
+                            </th>
+                            <th class="col-destino" data-analisar-devolucao>
+                              Destino
+                            </th>
+                            <th></th>
+                          </tr>
+                        </thead>
 
-                      <tbody>
-                        <tr>
-                          <td class="center-content" data-aprovacao-supervisor>
-                            <input
-                              type="checkbox"
-                              id="reprovar"
-                              name="reprovar"
-                              value="Sim"
-                              class="checkbox"
-                            />
-                          </td>
+                        <tbody>
+                          <tr>
+                            <td
+                              class="center-content"
+                              data-aprovacao-supervisor
+                            >
+                              <input
+                                type="checkbox"
+                                id="reprovar"
+                                name="reprovar"
+                                value="Sim"
+                                class="checkbox"
+                              />
+                            </td>
 
-                          <td>
-                            <input
-                              type="zoom"
-                              name="numeroNF"
-                              id="numeroNF"
-                              class="form-control"
-                              data-zoom="
+                            <td>
+                              <input
+                                type="zoom"
+                                name="numeroNF"
+                                id="numeroNF"
+                                class="form-control"
+                                data-zoom="
 													{
 														'displayKey':'NUMNOTA',
 														'datasetId':'ds_nf_saida_winthor',
@@ -485,16 +545,16 @@
 															{'field':'NUMNOTA','label':'NF','standard':'true'}
 														]
 													}"
-                            />
-                          </td>
+                              />
+                            </td>
 
-                          <td>
-                            <input
-                              type="zoom"
-                              name="codProduto"
-                              id="codProduto"
-                              class="form-control"
-                              data-zoom="
+                            <td>
+                              <input
+                                type="zoom"
+                                name="codProduto"
+                                id="codProduto"
+                                class="form-control"
+                                data-zoom="
 													{
 														'displayKey':'CODPROD',
 														'datasetId':'ds_produtos_nf_saida_winthor',
@@ -504,23 +564,23 @@
 															{'field':'CODPROD','label':'Código','standard':'true'}
 														]
 													}"
-                            />
+                              />
 
-                            <input
-                              type="hidden"
-                              name="foraPrazo"
-                              id="foraPrazo"
-                              class="fora-prazo"
-                            />
-                          </td>
+                              <input
+                                type="hidden"
+                                name="foraPrazo"
+                                id="foraPrazo"
+                                class="fora-prazo"
+                              />
+                            </td>
 
-                          <td>
-                            <input
-                              type="zoom"
-                              name="descProduto"
-                              id="descProduto"
-                              class="form-control"
-                              data-zoom="
+                            <td>
+                              <input
+                                type="zoom"
+                                name="descProduto"
+                                id="descProduto"
+                                class="form-control"
+                                data-zoom="
 													{
 														'displayKey':'DESCRICAO',
 														'datasetId':'ds_produtos_nf_saida_winthor',
@@ -530,191 +590,192 @@
 															{'field':'DESCRICAO','label':'Descrição','standard':'true'}
 														]
 													}"
-                            />
-                          </td>
+                              />
+                            </td>
 
-                          <td>
-                            <input
-                              type="text"
-                              class="form-control"
-                              id="qtde"
-                              name="qtde"
-                              readonly
-                            />
-                          </td>
+                            <td>
+                              <input
+                                type="text"
+                                class="form-control"
+                                id="qtde"
+                                name="qtde"
+                                readonly
+                              />
+                            </td>
 
-                          <td data-valor-unitario>
-                            <input
-                              type="text"
-                              class="form-control"
-                              id="valorUnitario"
-                              name="valorUnitario"
-                              readonly
-                            />
-                          </td>
+                            <td data-valor-unitario>
+                              <input
+                                type="text"
+                                class="form-control"
+                                id="valorUnitario"
+                                name="valorUnitario"
+                                readonly
+                              />
+                            </td>
 
-                          <td>
-                            <input
-                              type="number"
-                              class="form-control calc"
-                              id="qtdeDevolvida"
-                              name="qtdeDevolvida"
-                              min="0"
-                            />
-                          </td>
+                            <td>
+                              <input
+                                type="number"
+                                class="form-control calc"
+                                id="qtdeDevolvida"
+                                name="qtdeDevolvida"
+                                min="0"
+                              />
+                            </td>
 
-                          <td>
-                            <input
-                              type="text"
-                              class="form-control valorTotal"
-                              id="valorTotal"
-                              name="valorTotal"
-                              readonly
-                            />
-                          </td>
+                            <td>
+                              <input
+                                type="text"
+                                class="form-control valorTotal"
+                                id="valorTotal"
+                                name="valorTotal"
+                                readonly
+                              />
+                            </td>
 
-                          <td
-                            data-especialmente
-                            class="center-content"
-                            class="hide"
-                          >
-                            <input
-                              type="checkbox"
-                              id="especialmentePedido"
-                              name="especialmentePedido"
-                              value="Sim"
-                              class="checkbox"
-                            />
-                          </td>
-
-                          <td data-especial>
-                            <input
-                              type="text"
-                              class="form-control especial"
-                              id="pedidoEspecial"
-                              name="pedidoEspecial"
-                              readonly
-                            />
-                          </td>
-
-                          <td data-ddd class="center-content">
-                            <input
-                              type="checkbox"
-                              id="produtoDDD"
-                              name="produtoDDD"
-                              value="Sim"
-                              class="checkbox"
-                            />
-                          </td>
-
-                          <td data-observacao>
-                            <input
-                              type="text"
-                              class="form-control"
-                              id="observacao"
-                              name="observacao"
-                            />
-                          </td>
-
-                          <td data-realizar-recebimento>
-                            <input
-                              type="number"
-                              class="form-control qtde-recebida"
-                              id="qtdeRecebida"
-                              name="qtdeRecebida"
-                            />
-                          </td>
-
-                          <td data-realizar-recebimento>
-                            <input
-                              type="checkbox"
-                              id="avaria"
-                              name="avaria"
-                              value="Sim"
-                              class="checkbox"
-                            />
-                          </td>
-
-                          <td data-realizar-recebimento data-divergente>
-                            <input
-                              type="checkbox"
-                              id="qtdeDivergente"
-                              name="qtdeDivergente"
-                              value="Sim"
-                              class="checkbox"
-                            />
-                          </td>
-
-                          <td data-realizar-recebimento data-conferente>
-                            <input
-                              type="text"
-                              class="form-control"
-                              id="observacaoConferente"
-                              name="observacaoConferente"
-                            />
-                          </td>
-
-                          <td data-revisar-devolucao>
-                            <input
-                              type="checkbox"
-                              id="receber"
-                              name="receber"
-                              value="Sim"
-                              class="checkbox"
-                            />
-                          </td>
-
-                          <td data-analisar-devolucao>
-                            <select
-                              name="destino"
-                              id="destino"
-                              class="form-control"
+                            <td
+                              data-especialmente
+                              class="center-content"
+                              class="hide"
                             >
-                              <option value="">Selecione uma opção...</option>
-                              <option>Devolução para fornecedor</option>
-                              <option>Manter no estoque</option>
-                            </select>
-                          </td>
+                              <input
+                                type="checkbox"
+                                id="especialmentePedido"
+                                name="especialmentePedido"
+                                value="Sim"
+                                class="checkbox"
+                              />
+                            </td>
 
-                          <td class="remove">
-                            <span class="fs-display-block fs-sm-space">
-                              <i
-                                class="flaticon flaticon-close icon-md remove-button"
-                              ></i>
-                            </span>
-                          </td>
-                        </tr>
-                      </tbody>
+                            <td data-especial>
+                              <input
+                                type="text"
+                                class="form-control especial"
+                                id="pedidoEspecial"
+                                name="pedidoEspecial"
+                                readonly
+                              />
+                            </td>
 
-                      <tfoot>
-                        <tr>
-                          <th colspan="2" scope="row" class="align-middle">
-                            <i class="fas fa-dollar-sign"></i> VALOR TOTAL DA
-                            DEVOLUÇÃO (Previsto)
-                          </th>
-                          <td colspan="17">
-                            R$ <span class="valorTotalDevolucao"></span>
-                          </td>
-                          <input
-                            type="hidden"
-                            name="valorTotalDevolucao"
-                            id="valorTotalDevolucao"
-                            class="form-control"
-                          />
-                        </tr>
+                            <td data-ddd class="center-content">
+                              <input
+                                type="checkbox"
+                                id="produtoDDD"
+                                name="produtoDDD"
+                                value="Sim"
+                                class="checkbox"
+                              />
+                            </td>
 
-                        <tr style="display: none">
-                          <th colspan="2" scope="row" class="align-middle">
-                            <i class="fas fa-dollar-sign"></i> VALOR TOTAL DA
-                            DEVOLUÇÃO (Real)
-                          </th>
-                          <td colspan="17">
-                            R$ <span class="valorTotalDevolucaoReal"></span>
-                          </td>
-                        </tr>
-                      </tfoot>
-                    </table>
-                    </div><!-- /.table-responsive -->
+                            <td data-observacao>
+                              <input
+                                type="text"
+                                class="form-control"
+                                id="observacao"
+                                name="observacao"
+                              />
+                            </td>
+
+                            <td data-realizar-recebimento>
+                              <input
+                                type="number"
+                                class="form-control qtde-recebida"
+                                id="qtdeRecebida"
+                                name="qtdeRecebida"
+                              />
+                            </td>
+
+                            <td data-realizar-recebimento>
+                              <input
+                                type="checkbox"
+                                id="avaria"
+                                name="avaria"
+                                value="Sim"
+                                class="checkbox"
+                              />
+                            </td>
+
+                            <td data-realizar-recebimento data-divergente>
+                              <input
+                                type="checkbox"
+                                id="qtdeDivergente"
+                                name="qtdeDivergente"
+                                value="Sim"
+                                class="checkbox"
+                              />
+                            </td>
+
+                            <td data-realizar-recebimento data-conferente>
+                              <input
+                                type="text"
+                                class="form-control"
+                                id="observacaoConferente"
+                                name="observacaoConferente"
+                              />
+                            </td>
+
+                            <td data-revisar-devolucao>
+                              <input
+                                type="checkbox"
+                                id="receber"
+                                name="receber"
+                                value="Sim"
+                                class="checkbox"
+                              />
+                            </td>
+
+                            <td data-analisar-devolucao>
+                              <select
+                                name="destino"
+                                id="destino"
+                                class="form-control"
+                              >
+                                <option value="">Selecione uma opção...</option>
+                                <option>Devolução para fornecedor</option>
+                                <option>Manter no estoque</option>
+                              </select>
+                            </td>
+
+                            <td class="remove">
+                              <span class="fs-display-block fs-sm-space">
+                                <i
+                                  class="flaticon flaticon-close icon-md remove-button"
+                                ></i>
+                              </span>
+                            </td>
+                          </tr>
+                        </tbody>
+
+                        <tfoot>
+                          <tr>
+                            <th colspan="2" scope="row" class="align-middle">
+                              <i class="fas fa-dollar-sign"></i> VALOR TOTAL DA
+                              DEVOLUÇÃO (Previsto)
+                            </th>
+                            <td colspan="17">
+                              R$ <span class="valorTotalDevolucao"></span>
+                            </td>
+                            <input
+                              type="hidden"
+                              name="valorTotalDevolucao"
+                              id="valorTotalDevolucao"
+                              class="form-control"
+                            />
+                          </tr>
+
+                          <tr style="display: none">
+                            <th colspan="2" scope="row" class="align-middle">
+                              <i class="fas fa-dollar-sign"></i> VALOR TOTAL DA
+                              DEVOLUÇÃO (Real)
+                            </th>
+                            <td colspan="17">
+                              R$ <span class="valorTotalDevolucaoReal"></span>
+                            </td>
+                          </tr>
+                        </tfoot>
+                      </table>
+                    </div>
+                    <!-- /.table-responsive -->
 
                     <hr />
                     <div class="form-group" id="additem">
@@ -774,7 +835,9 @@
                   class="panel-collapse collapse in"
                 >
                   <div class="panel-body">
-                    <div class="section-label"><i class="fas fa-gavel"></i> Decisão do Supervisor</div>
+                    <div class="section-label">
+                      <i class="fas fa-gavel"></i> Decisão do Supervisor
+                    </div>
                     <div class="row">
                       <div class="form-group col-md-3">
                         <label class="required">Aprovar solicitação?</label>
@@ -834,17 +897,17 @@
                       data-toggle="collapse"
                       data-parent="#accordion"
                       href="#pos-venda"
-                      ><i class="fas fa-tasks"></i> VALIDAÇÃO E IDENTIFICAÇÃO DO PROBLEMA</a
+                      ><i class="fas fa-tasks"></i> VALIDAÇÃO E IDENTIFICAÇÃO DO
+                      PROBLEMA</a
                     >
                   </h3>
                 </div>
 
-                <div
-                  id="pos-venda"
-                  class="panel-collapse collapse in"
-                >
+                <div id="pos-venda" class="panel-collapse collapse in">
                   <div class="panel-body">
-                    <div class="section-label"><i class="fas fa-search"></i> Análise e Aprovação</div>
+                    <div class="section-label">
+                      <i class="fas fa-search"></i> Análise e Aprovação
+                    </div>
                     <div class="row">
                       <div class="form-group col-md-3">
                         <label class="required">Aprovar solicitação?</label>
@@ -890,8 +953,6 @@
                       </div>
                     </div>
 
-
-
                     <div class="row">
                       <div class="form-group col-md-12">
                         <label>Observação pós venda</label>
@@ -915,7 +976,8 @@
                       data-toggle="collapse"
                       data-parent="#accordion"
                       href="#finalizacao-pos-venda"
-                      ><i class="fas fa-check-circle"></i> FINALIZAÇÃO PÓS VENDA</a
+                      ><i class="fas fa-check-circle"></i> FINALIZAÇÃO PÓS
+                      VENDA</a
                     >
                   </h3>
                 </div>
@@ -928,7 +990,11 @@
                     <div class="row">
                       <div class="form-group col-md-3">
                         <label>Acerto de crédito</label>
-                        <select name="acertoCredito" id="acertoCredito" class="form-control">
+                        <select
+                          name="acertoCredito"
+                          id="acertoCredito"
+                          class="form-control"
+                        >
                           <option value="">Selecione uma opção...</option>
                           <option>Abater duplicata em aberto</option>
                           <option>Devolução dinheiro</option>
@@ -961,13 +1027,17 @@
               <div class="panel panel-primary">
                 <div class="panel-heading">
                   <h3 class="panel-title subpanel_title">
-                    <span id="led_liberacao_pedido_substituto" class="led"></span>
+                    <span
+                      id="led_liberacao_pedido_substituto"
+                      class="led"
+                    ></span>
                     <a
                       class="collapse-icon up"
                       data-toggle="collapse"
                       data-parent="#accordion"
                       href="#liberacao-pedido-substituto"
-                      ><i class="fas fa-exchange-alt"></i> LIBERAÇÃO PEDIDO SUBSTITUTO - RESP: LOGÍSTICA</a
+                      ><i class="fas fa-exchange-alt"></i> LIBERAÇÃO PEDIDO
+                      SUBSTITUTO - RESP: LOGÍSTICA</a
                     >
                   </h3>
                 </div>
@@ -977,7 +1047,10 @@
                   class="panel-collapse collapse in"
                 >
                   <div class="panel-body">
-                    <div class="section-label"><i class="fas fa-clipboard-check"></i> Dados do Pedido Substituto</div>
+                    <div class="section-label">
+                      <i class="fas fa-clipboard-check"></i> Dados do Pedido
+                      Substituto
+                    </div>
                     <div class="row">
                       <div class="form-group col-md-3">
                         <label>Número do pedido substituto liberado</label>
@@ -1013,12 +1086,11 @@
                   </h3>
                 </div>
 
-                <div
-                  id="realizar-devolucao"
-                  class="panel-collapse collapse in"
-                >
+                <div id="realizar-devolucao" class="panel-collapse collapse in">
                   <div class="panel-body">
-                    <div class="section-label"><i class="fas fa-warehouse"></i> Dados do Recebimento</div>
+                    <div class="section-label">
+                      <i class="fas fa-warehouse"></i> Dados do Recebimento
+                    </div>
                     <div class="row">
                       <div class="form-group col-md-3">
                         <label>Conferente</label>
@@ -1089,7 +1161,6 @@
                   />
                 </div>
               </div>
-
             </div>
             <!-- finaliza body MASTER-->
           </div>
