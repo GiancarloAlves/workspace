@@ -13,7 +13,7 @@ const ETAPA_6 = `#ordem-coleta`;
 const VENDAS = `#MasterVendas`;
 const POS_VENDA = `#MasterPosVenda`;
 const LOGISTICA = `#MasterLog`;
-const ROTAS = `#MasterRotas`;
+const MASTER_ROTAS = `#MasterRotas`;
 
 const etapas = [ETAPA_1, ETAPA_2, ETAPA_3, ETAPA_4, ETAPA_5, ETAPA_6];
 
@@ -35,7 +35,7 @@ async function taskHandlerInicio() {
   $(VENDAS).addClass("in");
   $(POS_VENDA).removeClass("in");
   $(LOGISTICA).removeClass("in");
-  $(ROTAS).removeClass("in");
+  $(MASTER_ROTAS).removeClass("in");
 
   $(`.data`).val(moment().format("L"));
   getSupervisorVendedor();
@@ -82,7 +82,7 @@ function taskHandlerAprovacaoSupervisor() {
   $(VENDAS).addClass("in");
   $(POS_VENDA).removeClass("in");
   $(LOGISTICA).removeClass("in");
-  $(ROTAS).removeClass("in");
+  $(MASTER_ROTAS).removeClass("in");
 
   IEsemNF();
 }
@@ -100,7 +100,7 @@ function taskHandlerValidacaoAprovacao() {
   $(VENDAS).addClass("in");
   $(POS_VENDA).addClass("in");
   $(LOGISTICA).removeClass("in");
-  $(ROTAS).removeClass("in");
+  $(MASTER_ROTAS).removeClass("in");
 }
 
 function taskHandlerDevolucao() {
@@ -133,7 +133,7 @@ function taskHandlerDevolucao() {
   $(VENDAS).addClass("in");
   $(POS_VENDA).removeClass("in");
   $(LOGISTICA).addClass("in");
-  $(ROTAS).removeClass("in");
+  $(MASTER_ROTAS).removeClass("in");
 }
 
 function taskHandlerFinalizacaoAvaliacao() {
@@ -153,24 +153,24 @@ function taskHandlerFinalizacaoAvaliacao() {
   $(VENDAS).addClass("in");
   $(POS_VENDA).addClass("in");
   $(LOGISTICA).removeClass("in");
-  $(ROTAS).removeClass("in");
+  $(MASTER_ROTAS).removeClass("in");
 }
 
-// function taskHandlerRotas() {
-//   const SECTION_ID = `#ordem-coleta`;
+function taskHandlerRotas() {
+  const SECTION_ID = `#ordem-coleta`;
 
-//   bloquearOutrasSecoes(SECTION_ID);
+  bloquearOutrasSecoes(SECTION_ID);
 
-//   exibirSecaoForm(SECTION_ID);
+  exibirSecaoForm(SECTION_ID);
 
-//   $(`${SECTION_ID} :input`).parent().removeClass("blocked");
-//   $(SECTION_ID).addClass("in");
+  $(`${SECTION_ID} :input`).parent().removeClass("blocked");
+  $(SECTION_ID).addClass("in");
 
-//   $(ROTAS).addClass("in");
-//   $(VENDAS).removeClass("in");
-//   $(POS_VENDA).removeClass("in");
-//   $(LOGISTICA).addClass("in");
-// }
+  $(MASTER_ROTAS).addClass("in");
+  $(VENDAS).removeClass("in");
+  $(POS_VENDA).removeClass("in");
+  $(LOGISTICA).addClass("in");
+}
 
 function exibirSecaoForm(sectionID) {
   $(sectionID).parent().show();
