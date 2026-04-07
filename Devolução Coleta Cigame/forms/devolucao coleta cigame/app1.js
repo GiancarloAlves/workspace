@@ -632,6 +632,8 @@ function deployNota() {
     <tr>
         <td class="js-pai-filho-polyfill" colspan="${tableHeaders}">NF listada por completo</td>
     </tr>`);
+
+  document.getElementById("campoProdutoEspecial").style.display = "";
 }
 
 function togglePedidoSubstituto() {
@@ -654,16 +656,20 @@ function pedidoSubstituto() {
     "usuarioConferenciaMaterial"
   );
 
-  if (COLETA === "Não") {
-    usuarioConferencia.value = 430;
-  } else {
-    usuarioConferencia.value = [182, 426];
+  if (usuarioConferencia) {
+    if (COLETA === "Não") {
+      usuarioConferencia.value = 430;
+    } else {
+      usuarioConferencia.value = [182, 426];
+    }
   }
 
-  if (PEDIDO_SUBSTITUTO === "" && COLETA === "Sim") {
-    tipoRemessa.value = "Sim";
-  } else {
-    tipoRemessa.value = "Não";
+  if (tipoRemessa) {
+    if (PEDIDO_SUBSTITUTO === "" && COLETA === "Sim") {
+      tipoRemessa.value = "Sim";
+    } else {
+      tipoRemessa.value = "Não";
+    }
   }
 }
 
