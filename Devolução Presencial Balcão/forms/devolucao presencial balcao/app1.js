@@ -635,12 +635,16 @@ function deployNota() {
 }
 
 function togglePedidoSubstituto() {
-  const possui = $("#possuiPedidoSubstituto").val();
-  const input = $("#pedidoSubst");
+  var possui = document.getElementById("possuiPedidoSubstituto").value;
+  var input = document.getElementById("pedidoSubst");
+  console.log('entrou no toogle')
   if (possui === "Sim") {
-    input.prop("disabled", false);
+    console.log('sim')
+    input.disabled = false;
   } else {
-    input.prop("disabled", true).val("");
+    input.disabled = true;
+    input.value = "";
+    console.log('não')
     pedidoSubstituto();
   }
 }
