@@ -634,6 +634,18 @@ function deployNota() {
     </tr>`);
 }
 
+function togglePedidoSubstituto() {
+  var frete = document.getElementById("freteConta").value;
+  var campo = document.getElementById("campoPedidoSubst");
+  var input = document.getElementById("pedidoSubst");
+  if (frete === "Pedido substituto") {
+    campo.style.display = "";
+  } else {
+    campo.style.display = "none";
+    input.value = "";
+  }
+}
+
 function pedidoSubstituto() {
   const PEDIDO_SUBSTITUTO = $("#pedidoSubst").val();
   const COLETA = $("#rdPossuiColeta").val();

@@ -316,15 +316,17 @@
                       </div>
 
                       <div class="form-group col-md-3">
-                        <label class="required">Frete por conta</label>
+                        <label class="required">Custo da entrega</label>
                         <select
                           name="freteConta"
                           id="freteConta"
                           class="form-control"
+                          onchange="togglePedidoSubstituto()"
                         >
                           <option value="">Selecione uma opção...</option>
-                          <option>Cliente</option>
                           <option>Cigame</option>
+                          <option>Cliente</option>
+                          <option>Pedido substituto</option>
                         </select>
                       </div>
                     </div>
@@ -407,7 +409,7 @@
                         />
                       </div>
 
-                      <div class="form-group col-md-3">
+                      <div class="form-group col-md-3" id="campoPedidoSubst" style="display: none;">
                         <label>Número do pedido substituto</label>
                         <div class="input-group">
                           <input
@@ -1002,6 +1004,17 @@
                           <option>Devolução dinheiro</option>
                           <option>Crédito p/ próxima compra</option>
                         </select>
+                      </div>
+                    </div>
+
+                     <div class="row">
+                      <div class="form-group col-md-12">
+                        <label>Observação</label>
+                        <textarea
+                          name="obsAcertoCredito"
+                          id="obsAcertoCredito"
+                          class="form-control"
+                        ></textarea>
                       </div>
                     </div>
                   </div>
