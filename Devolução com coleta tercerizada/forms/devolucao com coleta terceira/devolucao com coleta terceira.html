@@ -409,6 +409,25 @@
                         />
                       </div>
 
+                      <div class="form-group col-md-6">
+                        <label>Endereço completo</label>
+                        <div class="input-group">
+                          <input
+                            type="text"
+                            name="enderecoCompletoB"
+                            id="enderecoCompletoB"
+                            class="form-control"
+                            readonly
+                          />
+                          <span class="input-group-addon">
+                            <i class="fas fa-map-marker-alt"></i>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="section-label"><i class="fas fa-map-marker-alt"></i> Pedido</div>
+                    <div class="row">
                       <div class="form-group col-md-3" id="campoPedidoSubst" style="display: none;">
                         <label>Número do pedido substituto</label>
                         <div class="input-group">
@@ -425,18 +444,12 @@
                         </div>
                       </div>
 
-                      <div class="form-group col-md-6">
-                        <label>Endereço completo</label>
+                      <div class="form-group col-md-3" id="campoStatus" style="display: none;">
+                        <label>Status pedido</label>
                         <div class="input-group">
-                          <input
-                            type="text"
-                            name="enderecoCompletoB"
-                            id="enderecoCompletoB"
-                            class="form-control"
-                            readonly
-                          />
+                          <input type="text" name="status" id="status" class="form-control" readonly onchange="validaStatus()">
                           <span class="input-group-addon">
-                            <i class="fas fa-map-marker-alt"></i>
+                            <i class="fas fa-exclamation"></i>
                           </span>
                         </div>
                       </div>
