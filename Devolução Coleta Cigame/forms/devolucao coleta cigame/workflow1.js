@@ -6,6 +6,7 @@ const APROVACAO_SUPERVISOR = 9;
 
 //LOGISTICA
 const DEVOLUCAO = 18;
+const ROTAS = 26;
 
 //PÓS VENDA
 const VALIDACAO_APROVACAO = 11;
@@ -36,6 +37,11 @@ function taskHandler() {
     case DEVOLUCAO:
       taskHandlerDevolucao();
       updateLED("led_devolucao");
+      break;
+    
+    case ROTAS:
+      taskHandlerRotas();
+      updateLED("led_rotas");
       break;
 
     case FINALIZACAO_AVALIACAO:

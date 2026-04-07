@@ -8,6 +8,7 @@ function validateForm(form) {
 
   //LOGISTICA
   const DEVOLUCAO = 18;
+  const ROTAS = 26;
 
   //PÓS VENDA
   const VALIDACAO_APROVACAO = 11;
@@ -29,6 +30,10 @@ function validateForm(form) {
       validarDevolucao();
       break;
 
+    case ROTAS:
+      validarOrdemColeta();
+      break;
+
     case VALIDACAO_APROVACAO:
       validarAprovacaoPosVenda();
       break;
@@ -43,8 +48,16 @@ function validateForm(form) {
     var frete = form.getValue("freteConta");
     var codCliente = form.getValue("codCliente");
     var motivoDevolucao = form.getValue("motivoDevolucao");
+    var numeroPedidoSubstituto = form.getValue("pedidoSubst");
+    var custoEntrega = form.getValue("custoEntrega");
     var rdPossuiColeta = form.getValue("rdPossuiColeta");
     var credito = form.getValue("credito");
+
+    if (custoEntrega == "Pedido substituto") {
+      if (numeroPedidoSubstituto == "" || numeroPedidoSubstituto == null) {
+        throw "Preencha o campo <strong>Número do pedido substituto!</strong>";
+      }
+    }
 
     if (cliente == "" || cliente == null) {
       throw "Preencha o campo <strong>Cliente!</strong>";
@@ -156,6 +169,14 @@ function validateForm(form) {
 
     if (ordemColeta == "" || ordemColeta == null) {
       throw "Preencha o campo <strong>Ordem de coleta</strong>";
+    }
+  }
+
+  function validarOrdemColeta() {
+    var numRotaRomaneio = form.getValue("numRotaRomaneio");
+
+    if (numRotaRomaneio == "" || numRotaRomaneio == null) {
+      throw "Preencha o campo <strong>Número de Rota/Romaneio</strong>";
     }
   }
 
