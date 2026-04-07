@@ -156,21 +156,21 @@ function taskHandlerFinalizacaoAvaliacao() {
   $(ROTAS).removeClass("in");
 }
 
-function taskHandlerRotas() {
-  const SECTION_ID = `#ordem-coleta`;
+// function taskHandlerRotas() {
+//   const SECTION_ID = `#ordem-coleta`;
 
-  bloquearOutrasSecoes(SECTION_ID);
+//   bloquearOutrasSecoes(SECTION_ID);
 
-  exibirSecaoForm(SECTION_ID);
+//   exibirSecaoForm(SECTION_ID);
 
-  $(`${SECTION_ID} :input`).parent().removeClass("blocked");
-  $(SECTION_ID).addClass("in");
+//   $(`${SECTION_ID} :input`).parent().removeClass("blocked");
+//   $(SECTION_ID).addClass("in");
 
-  $(ROTAS).addClass("in");
-  $(VENDAS).removeClass("in");
-  $(POS_VENDA).removeClass("in");
-  $(LOGISTICA).addClass("in");
-}
+//   $(ROTAS).addClass("in");
+//   $(VENDAS).removeClass("in");
+//   $(POS_VENDA).removeClass("in");
+//   $(LOGISTICA).addClass("in");
+// }
 
 function exibirSecaoForm(sectionID) {
   $(sectionID).parent().show();
