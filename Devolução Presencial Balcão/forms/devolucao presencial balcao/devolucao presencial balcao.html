@@ -370,7 +370,7 @@
                         </select>
                       </div>
 
-                      <div class="form-group col-md-3">
+                      <div class="form-group col-md-3" id="campoPedidoSubst" style="display: none;">
                         <label>Número do pedido substituto</label>
                         <div class="input-group">
                           <input
@@ -379,7 +379,6 @@
                             id="pedidoSubst"
                             class="form-control"
                             onchange="pedidoSubstituto()"
-                            disabled
                           />
                           <span class="input-group-addon">
                             <i class="fas fa-fingerprint"></i>
@@ -891,85 +890,6 @@
               <div class="panel panel-primary">
                 <div class="panel-heading">
                   <h3 class="panel-title subpanel_title">
-                    <span id="led_posvenda" class="led"></span>
-                    <a
-                      class="collapse-icon up"
-                      data-toggle="collapse"
-                      data-parent="#accordion"
-                      href="#pos-venda"
-                      ><i class="fas fa-tasks"></i> VALIDAÇÃO E IDENTIFICAÇÃO DO
-                      PROBLEMA</a
-                    >
-                  </h3>
-                </div>
-
-                <div id="pos-venda" class="panel-collapse collapse in">
-                  <div class="panel-body">
-                    <div class="section-label">
-                      <i class="fas fa-search"></i> Análise e Aprovação
-                    </div>
-                    <div class="row">
-                      <div class="form-group col-md-3">
-                        <label class="required">Aprovar solicitação?</label>
-                        <select
-                          name="rdAprovaPosVenda"
-                          id="rdAprovaPosVenda"
-                          class="form-control"
-                        >
-                          <option value="">Selecione uma opção...</option>
-                          <option>Sim</option>
-                          <option>Não</option>
-                        </select>
-                      </div>
-
-                      <div class="form-group col-md-3">
-                        <label class="required">Origem do problema</label>
-                        <select
-                          name="origemProblema"
-                          id="origemProblema"
-                          class="form-control"
-                        >
-                          <option value="">Selecione uma opção...</option>
-                          <option>opcao1</option>
-                          <option>opcao2</option>
-                          <option>opcao3</option>
-                          <option>opcao4</option>
-                        </select>
-                      </div>
-
-                      <div class="form-group col-md-3">
-                        <label>Ordem de coleta</label>
-                        <div class="input-group">
-                          <input
-                            type="text"
-                            name="ordemColeta"
-                            id="ordemColeta"
-                            class="form-control"
-                          />
-                          <span class="input-group-addon">
-                            <i class="fas fa-truck-loading"></i>
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="row">
-                      <div class="form-group col-md-12">
-                        <label>Observação pós venda</label>
-                        <textarea
-                          name="obsPosVenda"
-                          id="obsPosVenda"
-                          class="form-control"
-                        ></textarea>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="panel panel-primary">
-                <div class="panel-heading">
-                  <h3 class="panel-title subpanel_title">
                     <span id="led_finalizacao_avaliacao" class="led"></span>
                     <a
                       class="collapse-icon up"
@@ -1000,6 +920,17 @@
                           <option>Devolução dinheiro</option>
                           <option>Crédito p/ próxima compra</option>
                         </select>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="form-group col-md-12">
+                        <label>Observação</label>
+                        <textarea
+                          name="obsAcertoCredito"
+                          id="obsAcertoCredito"
+                          class="form-control"
+                        ></textarea>
                       </div>
                     </div>
                   </div>

@@ -636,13 +636,12 @@ function deployNota() {
 
 function togglePedidoSubstituto() {
   var possui = document.getElementById("possuiPedidoSubstituto").value;
+  var campo = document.getElementById("campoPedidoSubst");
   var input = document.getElementById("pedidoSubst");
-  console.log('entrou no toogle')
   if (possui === "Sim") {
-    console.log('sim')
-    input.disabled = false;
+    campo.style.display = "";
   } else {
-    input.disabled = true;
+    campo.style.display = "none";
     input.value = "";
   }
 }
