@@ -634,6 +634,18 @@ function deployNota() {
     </tr>`);
 }
 
+function togglePedidoSubstituto() {
+  var custo = document.getElementById("custoEntrega").value;
+  var secao = document.getElementById("secaoPedidoSubstituto");
+  if (custo === "Pedido substituto") {
+    secao.style.display = "";
+  } else {
+    secao.style.display = "none";
+    document.getElementById("pedidoSubst").value = "";
+    document.getElementById("status").value = "";
+  }
+}
+
 function pedidoSubstituto() {
   const PEDIDO_SUBSTITUTO = $("#pedidoSubst").val();
   const COLETA = $("#rdPossuiColeta").val();

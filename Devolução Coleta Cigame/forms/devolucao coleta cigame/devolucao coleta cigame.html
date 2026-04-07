@@ -335,6 +335,21 @@
                           <option>Cigame</option>
                         </select>
                       </div>
+
+                      <div class="form-group col-md-3">
+                        <label class="required">Custo da entrega</label>
+                        <select
+                          name="custoEntrega"
+                          id="custoEntrega"
+                          class="form-control"
+                          onchange="togglePedidoSubstituto()"
+                        >
+                          <option value="">Selecione uma opção...</option>
+                          <option>Cigame</option>
+                          <option>Cliente</option>
+                          <option>Pedido substituto</option>
+                        </select>
+                      </div>
                     </div>
 
                     <div class="section-label">
@@ -419,22 +434,6 @@
                         />
                       </div>
 
-                      <div class="form-group col-md-3">
-                        <label>Número do pedido substituto</label>
-                        <div class="input-group">
-                          <input
-                            type="text"
-                            name="pedidoSubst"
-                            id="pedidoSubst"
-                            class="form-control"
-                            onchange="pedidoSubstituto()"
-                          />
-                          <span class="input-group-addon">
-                            <i class="fas fa-fingerprint"></i>
-                          </span>
-                        </div>
-                      </div>
-
                       <div class="form-group col-md-6">
                         <label>Endereço completo</label>
                         <div class="input-group">
@@ -448,6 +447,37 @@
                           <span class="input-group-addon">
                             <i class="fas fa-map-marker-alt"></i>
                           </span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div id="secaoPedidoSubstituto" style="display: none;">
+                      <div class="section-label"><i class="fas fa-map-marker-alt"></i> Pedido</div>
+                      <div class="row">
+                        <div class="form-group col-md-3">
+                          <label>Número do pedido substituto</label>
+                          <div class="input-group">
+                            <input
+                              type="text"
+                              name="pedidoSubst"
+                              id="pedidoSubst"
+                              class="form-control"
+                              onchange="pedidoSubstituto()"
+                            />
+                            <span class="input-group-addon">
+                              <i class="fas fa-fingerprint"></i>
+                            </span>
+                          </div>
+                        </div>
+
+                        <div class="form-group col-md-3">
+                          <label>Status pedido</label>
+                          <div class="input-group">
+                            <input type="text" name="status" id="status" class="form-control" readonly onchange="validaStatus()">
+                            <span class="input-group-addon">
+                              <i class="fas fa-exclamation"></i>
+                            </span>
+                          </div>
                         </div>
                       </div>
                     </div>

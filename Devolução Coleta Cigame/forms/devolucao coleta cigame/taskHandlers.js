@@ -73,6 +73,7 @@ function taskHandlerAprovacaoSupervisor() {
 
   $(`.calc`).trigger("change");
 
+  togglePedidoSubstituto();
   pedidoSubstituto();
 
   $(VENDAS).addClass("in");
