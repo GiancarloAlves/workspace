@@ -644,7 +644,7 @@ function togglePedidoSubstituto() {
   } else {
     input.disabled = true;
     input.value = "";
-    console.log('não')
+    console.log('nãoo')
     pedidoSubstituto();
   }
 }
