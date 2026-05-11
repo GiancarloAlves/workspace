@@ -277,7 +277,9 @@ function setSelectedZoomItem(selectedItem) {
       $(`#tipo___${row}`).val(selectedItem.A11_TIPO_PRODUTO);
       $(`#qtd___${row}`).val(selectedItem.A12_QT);
       $(`#comprador___${row}`).val(selectedItem.A18_COMPRADOR);
-      $(`#matcomprador___${row}`).val(selectedItem.A17_MATRICULA_COMPRADOR);
+      $(`#codprod___${row}`)
+        .closest("tr")
+        .attr("data-matricula", selectedItem.A17_MATRICULA_COMPRADOR);
       validarTodasLinhasComprador();
 
       const PRODUTO_ESPECIAL = $(`#tipo___${row}`).val() == "PRODUTO ESPECIAL";
@@ -502,19 +504,29 @@ function filtrarZoomPaiFilho() {
 
 function validarTodasLinhasComprador() {
   let matReferencia = null;
+  let nomeReferencia = null;
+
   $(`${TABLE__GRID_ID} tbody tr`).each(function () {
-    const val = $(this).find(`input[id^="matcomprador"]`).val();
-    if (val) {
-      matReferencia = String(val);
+    const mat = $(this).attr("data-matricula");
+    if (mat) {
+      matReferencia = String(mat).trim();
+      nomeReferencia = $(this).find(`input[id^="comprador___"]`).val();
       return false;
     }
   });
 
+  $(`#compradorPrincipal`).val(nomeReferencia || "");
+  $(`#matcomprador`).val(matReferencia || "");
+
   $(`${TABLE__GRID_ID} tbody tr`).each(function () {
     const $tr = $(this);
-    const matLinha = $tr.find(`input[id^="matcomprador"]`).val();
+    const matLinha = $tr.attr("data-matricula");
 
-    if (!matLinha || !matReferencia || String(matLinha) === matReferencia) {
+    if (
+      !matLinha ||
+      !matReferencia ||
+      String(matLinha).trim() === matReferencia
+    ) {
       $tr.removeClass("linha-comprador-divergente");
     } else {
       $tr.addClass("linha-comprador-divergente");

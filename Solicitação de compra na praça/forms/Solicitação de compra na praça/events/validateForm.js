@@ -130,9 +130,9 @@ const FINALIZA = 75
             if(form.getValue("precocalc___" + indexes[i]) == null || form.getValue("precocalc___" + indexes[i]) == "") {
                 throw "<strong> Há campos de preço calculado em branco. Preencha todos<strong>";
               }
-            var matComp = form.getValue("matcomprador___" + indexes[i]);
-            if(matComp != null && matComp != "" && matriculasUnicas.indexOf(matComp) === -1) {
-                matriculasUnicas.push(matComp);
+            var compradorLinha = form.getValue("comprador___" + indexes[i]);
+            if(compradorLinha != null && compradorLinha != "" && matriculasUnicas.indexOf(compradorLinha) === -1) {
+                matriculasUnicas.push(compradorLinha);
             }
                     }
         if(matriculasUnicas.length > 1) {
