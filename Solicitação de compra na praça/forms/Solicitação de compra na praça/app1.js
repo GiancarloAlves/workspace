@@ -277,9 +277,26 @@ function setSelectedZoomItem(selectedItem) {
       $(`#tipo___${row}`).val(selectedItem.A11_TIPO_PRODUTO);
       $(`#qtd___${row}`).val(selectedItem.A12_QT);
       $(`#comprador___${row}`).val(selectedItem.A18_COMPRADOR);
-      $(`#codprod___${row}`)
-        .closest("tr")
-        .attr("data-matricula", selectedItem.A17_MATRICULA_COMPRADOR);
+      $(`#matCompProd___${row}`).val(selectedItem.A17_MATRICULA_COMPRADOR);
+
+      console.log(`[codprod___${row}] selectedItem completo:`, selectedItem);
+      console.log(
+        `[codprod___${row}] A18_COMPRADOR (nome):`,
+        JSON.stringify(selectedItem.A18_COMPRADOR),
+        "| tipo:",
+        typeof selectedItem.A18_COMPRADOR
+      );
+      console.log(
+        `[codprod___${row}] A17_MATRICULA_COMPRADOR (matrícula):`,
+        JSON.stringify(selectedItem.A17_MATRICULA_COMPRADOR),
+        "| tipo:",
+        typeof selectedItem.A17_MATRICULA_COMPRADOR
+      );
+      console.log(
+        `[codprod___${row}] valor gravado no input #matCompProd___${row}:`,
+        JSON.stringify($(`#matCompProd___${row}`).val())
+      );
+
       validarTodasLinhasComprador();
 
       const PRODUTO_ESPECIAL = $(`#tipo___${row}`).val() == "PRODUTO ESPECIAL";
@@ -506,27 +523,47 @@ function validarTodasLinhasComprador() {
   let matReferencia = null;
   let nomeReferencia = null;
 
-  $(`${TABLE__GRID_ID} tbody tr`).each(function () {
-    const mat = $(this).attr("data-matricula");
-    if (mat) {
+  console.log("===== validarTodasLinhasComprador =====");
+
+  $(`${TABLE__GRID_ID} tbody tr`).each(function (i) {
+    const mat = $(this).find(`input[id^="matCompProd___"]`).val();
+    const nome = $(this).find(`input[id^="comprador___"]`).val();
+    console.log(
+      `Linha ${i} | matrícula:`,
+      JSON.stringify(mat),
+      "| nome:",
+      JSON.stringify(nome)
+    );
+    if (mat && matReferencia === null) {
       matReferencia = String(mat).trim();
-      nomeReferencia = $(this).find(`input[id^="comprador___"]`).val();
-      return false;
+      nomeReferencia = nome;
     }
   });
+
+  console.log("Matrícula de referência:", JSON.stringify(matReferencia));
+  console.log("Nome de referência:", JSON.stringify(nomeReferencia));
 
   $(`#compradorPrincipal`).val(nomeReferencia || "");
   $(`#matcomprador`).val(matReferencia || "");
 
-  $(`${TABLE__GRID_ID} tbody tr`).each(function () {
+  $(`${TABLE__GRID_ID} tbody tr`).each(function (i) {
     const $tr = $(this);
-    const matLinha = $tr.attr("data-matricula");
+    const matLinha = $tr.find(`input[id^="matCompProd___"]`).val();
+    const matLinhaNorm = matLinha ? String(matLinha).trim() : "";
+    const igual = matLinhaNorm === matReferencia;
 
-    if (
-      !matLinha ||
-      !matReferencia ||
-      String(matLinha).trim() === matReferencia
-    ) {
+    console.log(
+      `Comparação linha ${i} | bruto:`,
+      JSON.stringify(matLinha),
+      "| normalizado:",
+      JSON.stringify(matLinhaNorm),
+      "| ref:",
+      JSON.stringify(matReferencia),
+      "| igual?",
+      igual
+    );
+
+    if (!matLinha || !matReferencia || igual) {
       $tr.removeClass("linha-comprador-divergente");
     } else {
       $tr.addClass("linha-comprador-divergente");
