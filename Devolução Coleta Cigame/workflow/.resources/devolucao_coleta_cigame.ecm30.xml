@@ -2,15 +2,16 @@
   <ProcessDefinition>
     <processDefinitionPK>
       <companyId>1</companyId>
-      <processId>devolucao_coleta_tercerizada</processId>
+      <processId>devolucao_coleta_cigame</processId>
     </processDefinitionPK>
-    <processDescription>Devolução Coleta Terceirizada</processDescription>
+    <processDescription>Devolução Coleta Cigame</processDescription>
     <instruction></instruction>
     <active>true</active>
     <publicProcess>false</publicProcess>
     <volumeId>Default</volumeId>
     <categoryId>Vendas</categoryId>
-    <managerEngineAllocationId></managerEngineAllocationId>
+    <managerEngineAllocationId>Grupo</managerEngineAllocationId>
+    <managerEngineAllocationConfiguration>&lt;AssignmentController&gt;&lt;Group&gt;POS_VENDA&lt;/Group&gt;&lt;/AssignmentController&gt;</managerEngineAllocationConfiguration>
     <snapshotFrequency>0</snapshotFrequency>
     <baseDay>0</baseDay>
     <baseMonth>0</baseMonth>
@@ -27,8 +28,8 @@
   <ProcessDefinitionVersion>
     <processDefinitionVersionPK>
       <companyId>1</companyId>
-      <processId>Devolução Coleta Terceirizada</processId>
-      <version>14</version>
+      <processId>Devolução Coleta Cigame</processId>
+      <version>1</version>
     </processDefinitionVersionPK>
     <versionDescription></versionDescription>
     <formId>0</formId>
@@ -49,7 +50,7 @@
     <ProcessState>
       <processStatePK>
         <companyId>1</companyId>
-        <processId>devolucao_coleta_tercerizada</processId>
+        <processId>devolucao_coleta_cigame</processId>
         <version>1</version>
         <sequence>4</sequence>
       </processStatePK>
@@ -59,8 +60,8 @@
       <deadlineTime>0</deadlineTime>
       <joint>false</joint>
       <agreementPercentage>0</agreementPercentage>
-      <engineAllocationId></engineAllocationId>
-      <engineAllocationConfiguration></engineAllocationConfiguration>
+      <engineAllocationId>Usuário</engineAllocationId>
+      <engineAllocationConfiguration>&lt;AssignmentController&gt;&lt;User&gt;50&lt;/User&gt;&lt;/AssignmentController&gt;</engineAllocationConfiguration>
       <selectColleague>1</selectColleague>
       <initialState>true</initialState>
       <notifyAuthorityDelay>true</notifyAuthorityDelay>
@@ -99,7 +100,7 @@
     <ProcessState>
       <processStatePK>
         <companyId>1</companyId>
-        <processId>devolucao_coleta_tercerizada</processId>
+        <processId>devolucao_coleta_cigame</processId>
         <version>1</version>
         <sequence>9</sequence>
       </processStatePK>
@@ -110,12 +111,14 @@
       <deadlineFieldName></deadlineFieldName>
       <joint>false</joint>
       <agreementPercentage>0</agreementPercentage>
+      <engineAllocationId>Campo Formulário</engineAllocationId>
+      <engineAllocationConfiguration>&lt;AssignmentController&gt;&lt;FormField&gt;matSupervisor&lt;/FormField&gt;&lt;/AssignmentController&gt;</engineAllocationConfiguration>
       <selectColleague>1</selectColleague>
       <initialState>false</initialState>
       <notifyAuthorityDelay>true</notifyAuthorityDelay>
       <notifyRequisitionerDelay>false</notifyRequisitionerDelay>
-      <allowanceAuthorityTime>3600</allowanceAuthorityTime>
-      <frequenceAuthorityTime>3600</frequenceAuthorityTime>
+      <allowanceAuthorityTime>1800</allowanceAuthorityTime>
+      <frequenceAuthorityTime>900</frequenceAuthorityTime>
       <allowanceRequisitionerTime>0</allowanceRequisitionerTime>
       <frequenceRequisitionerTime>0</frequenceRequisitionerTime>
       <transferAttachments>false</transferAttachments>
@@ -129,9 +132,9 @@
       <forecastedEffortType>0</forecastedEffortType>
       <forecastedEffort>0</forecastedEffort>
       <notifyManagerFollowUp>false</notifyManagerFollowUp>
-      <notifyManagerDelay>false</notifyManagerDelay>
-      <allowanceManagerTime>0</allowanceManagerTime>
-      <frequenceManagerTime>0</frequenceManagerTime>
+      <notifyManagerDelay>true</notifyManagerDelay>
+      <allowanceManagerTime>3600</allowanceManagerTime>
+      <frequenceManagerTime>3600</frequenceManagerTime>
       <inhibitTransfer>false</inhibitTransfer>
       <periodId></periodId>
       <stateType>0</stateType>
@@ -149,7 +152,7 @@
     <ProcessState>
       <processStatePK>
         <companyId>1</companyId>
-        <processId>devolucao_coleta_tercerizada</processId>
+        <processId>devolucao_coleta_cigame</processId>
         <version>1</version>
         <sequence>11</sequence>
       </processStatePK>
@@ -160,12 +163,14 @@
       <deadlineFieldName></deadlineFieldName>
       <joint>false</joint>
       <agreementPercentage>0</agreementPercentage>
+      <engineAllocationId>Grupo</engineAllocationId>
+      <engineAllocationConfiguration>&lt;AssignmentController&gt;&lt;Group&gt;POS_VENDA&lt;/Group&gt;&lt;/AssignmentController&gt;</engineAllocationConfiguration>
       <selectColleague>1</selectColleague>
       <initialState>false</initialState>
       <notifyAuthorityDelay>true</notifyAuthorityDelay>
       <notifyRequisitionerDelay>false</notifyRequisitionerDelay>
       <allowanceAuthorityTime>3600</allowanceAuthorityTime>
-      <frequenceAuthorityTime>3600</frequenceAuthorityTime>
+      <frequenceAuthorityTime>1200</frequenceAuthorityTime>
       <allowanceRequisitionerTime>0</allowanceRequisitionerTime>
       <frequenceRequisitionerTime>0</frequenceRequisitionerTime>
       <transferAttachments>false</transferAttachments>
@@ -175,7 +180,7 @@
       <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
       <automatic>false</automatic>
       <positionX>300</positionX>
-      <positionY>196</positionY>
+      <positionY>180</positionY>
       <forecastedEffortType>0</forecastedEffortType>
       <forecastedEffort>0</forecastedEffort>
       <notifyManagerFollowUp>false</notifyManagerFollowUp>
@@ -199,7 +204,7 @@
     <ProcessState>
       <processStatePK>
         <companyId>1</companyId>
-        <processId>devolucao_coleta_tercerizada</processId>
+        <processId>devolucao_coleta_cigame</processId>
         <version>1</version>
         <sequence>18</sequence>
       </processStatePK>
@@ -210,11 +215,13 @@
       <deadlineFieldName></deadlineFieldName>
       <joint>false</joint>
       <agreementPercentage>0</agreementPercentage>
+      <engineAllocationId>Pool Papel</engineAllocationId>
+      <engineAllocationConfiguration>&lt;AssignmentController&gt;&lt;Role&gt;DEVOLUCOES&lt;/Role&gt;&lt;/AssignmentController&gt;</engineAllocationConfiguration>
       <selectColleague>1</selectColleague>
       <initialState>false</initialState>
       <notifyAuthorityDelay>true</notifyAuthorityDelay>
       <notifyRequisitionerDelay>false</notifyRequisitionerDelay>
-      <allowanceAuthorityTime>3600</allowanceAuthorityTime>
+      <allowanceAuthorityTime>5400</allowanceAuthorityTime>
       <frequenceAuthorityTime>3600</frequenceAuthorityTime>
       <allowanceRequisitionerTime>0</allowanceRequisitionerTime>
       <frequenceRequisitionerTime>0</frequenceRequisitionerTime>
@@ -225,13 +232,13 @@
       <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
       <automatic>false</automatic>
       <positionX>540</positionX>
-      <positionY>499</positionY>
+      <positionY>585</positionY>
       <forecastedEffortType>0</forecastedEffortType>
       <forecastedEffort>0</forecastedEffort>
       <notifyManagerFollowUp>false</notifyManagerFollowUp>
-      <notifyManagerDelay>false</notifyManagerDelay>
-      <allowanceManagerTime>0</allowanceManagerTime>
-      <frequenceManagerTime>0</frequenceManagerTime>
+      <notifyManagerDelay>true</notifyManagerDelay>
+      <allowanceManagerTime>3600</allowanceManagerTime>
+      <frequenceManagerTime>2400</frequenceManagerTime>
       <inhibitTransfer>false</inhibitTransfer>
       <periodId></periodId>
       <stateType>0</stateType>
@@ -249,7 +256,7 @@
     <ProcessState>
       <processStatePK>
         <companyId>1</companyId>
-        <processId>devolucao_coleta_tercerizada</processId>
+        <processId>devolucao_coleta_cigame</processId>
         <version>1</version>
         <sequence>21</sequence>
       </processStatePK>
@@ -260,6 +267,8 @@
       <deadlineFieldName></deadlineFieldName>
       <joint>false</joint>
       <agreementPercentage>0</agreementPercentage>
+      <engineAllocationId>Grupo</engineAllocationId>
+      <engineAllocationConfiguration>&lt;AssignmentController&gt;&lt;Group&gt;POS_VENDA&lt;/Group&gt;&lt;/AssignmentController&gt;</engineAllocationConfiguration>
       <selectColleague>1</selectColleague>
       <initialState>false</initialState>
       <notifyAuthorityDelay>true</notifyAuthorityDelay>
@@ -299,7 +308,7 @@
     <ProcessState>
       <processStatePK>
         <companyId>1</companyId>
-        <processId>devolucao_coleta_tercerizada</processId>
+        <processId>devolucao_coleta_cigame</processId>
         <version>1</version>
         <sequence>26</sequence>
       </processStatePK>
@@ -310,12 +319,14 @@
       <deadlineFieldName></deadlineFieldName>
       <joint>false</joint>
       <agreementPercentage>0</agreementPercentage>
+      <engineAllocationId>Pool Papel</engineAllocationId>
+      <engineAllocationConfiguration>&lt;AssignmentController&gt;&lt;Role&gt;ROTAS&lt;/Role&gt;&lt;/AssignmentController&gt;</engineAllocationConfiguration>
       <selectColleague>1</selectColleague>
       <initialState>false</initialState>
       <notifyAuthorityDelay>true</notifyAuthorityDelay>
       <notifyRequisitionerDelay>false</notifyRequisitionerDelay>
       <allowanceAuthorityTime>3600</allowanceAuthorityTime>
-      <frequenceAuthorityTime>3600</frequenceAuthorityTime>
+      <frequenceAuthorityTime>900</frequenceAuthorityTime>
       <allowanceRequisitionerTime>0</allowanceRequisitionerTime>
       <frequenceRequisitionerTime>0</frequenceRequisitionerTime>
       <transferAttachments>false</transferAttachments>
@@ -324,14 +335,14 @@
       <notifyAuthorityFollowUp>true</notifyAuthorityFollowUp>
       <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
       <automatic>false</automatic>
-      <positionX>300</positionX>
-      <positionY>344</positionY>
+      <positionX>310</positionX>
+      <positionY>434</positionY>
       <forecastedEffortType>0</forecastedEffortType>
       <forecastedEffort>0</forecastedEffort>
-      <notifyManagerFollowUp>false</notifyManagerFollowUp>
-      <notifyManagerDelay>false</notifyManagerDelay>
-      <allowanceManagerTime>0</allowanceManagerTime>
-      <frequenceManagerTime>0</frequenceManagerTime>
+      <notifyManagerFollowUp>true</notifyManagerFollowUp>
+      <notifyManagerDelay>true</notifyManagerDelay>
+      <allowanceManagerTime>2700</allowanceManagerTime>
+      <frequenceManagerTime>3600</frequenceManagerTime>
       <inhibitTransfer>false</inhibitTransfer>
       <periodId></periodId>
       <stateType>0</stateType>
@@ -349,7 +360,7 @@
     <ProcessState>
       <processStatePK>
         <companyId>1</companyId>
-        <processId>devolucao_coleta_tercerizada</processId>
+        <processId>devolucao_coleta_cigame</processId>
         <version>1</version>
         <sequence>7</sequence>
       </processStatePK>
@@ -374,7 +385,7 @@
     <ProcessState>
       <processStatePK>
         <companyId>1</companyId>
-        <processId>devolucao_coleta_tercerizada</processId>
+        <processId>devolucao_coleta_cigame</processId>
         <version>1</version>
         <sequence>13</sequence>
       </processStatePK>
@@ -399,7 +410,32 @@
     <ProcessState>
       <processStatePK>
         <companyId>1</companyId>
-        <processId>devolucao_coleta_tercerizada</processId>
+        <processId>devolucao_coleta_cigame</processId>
+        <version>1</version>
+        <sequence>29</sequence>
+      </processStatePK>
+      <stateName>Aprova solicitação?</stateName>
+      <stateDescription>Aprova solicitação?</stateDescription>
+      <joint>false</joint>
+      <initialState>false</initialState>
+      <transferAttachments>false</transferAttachments>
+      <subProcessId></subProcessId>
+      <formFolder>0</formFolder>
+      <automatic>true</automatic>
+      <positionX>330</positionX>
+      <positionY>280</positionY>
+      <inhibitTransfer>false</inhibitTransfer>
+      <stateType>1</stateType>
+      <bpmnType>120</bpmnType>
+      <signalId>0</signalId>
+      <openInstances>0</openInstances>
+      <destinationStates/>
+      <digitalSignature>false</digitalSignature>
+    </ProcessState>
+    <ProcessState>
+      <processStatePK>
+        <companyId>1</companyId>
+        <processId>devolucao_coleta_cigame</processId>
         <version>1</version>
         <sequence>16</sequence>
       </processStatePK>
@@ -446,7 +482,7 @@
     <ProcessState>
       <processStatePK>
         <companyId>1</companyId>
-        <processId>devolucao_coleta_tercerizada</processId>
+        <processId>devolucao_coleta_cigame</processId>
         <version>1</version>
         <sequence>23</sequence>
       </processStatePK>
@@ -490,40 +526,85 @@
       <destinationStates/>
       <digitalSignature>false</digitalSignature>
     </ProcessState>
+    <ProcessState>
+      <processStatePK>
+        <companyId>1</companyId>
+        <processId>devolucao_coleta_cigame</processId>
+        <version>1</version>
+        <sequence>32</sequence>
+      </processStatePK>
+      <stateName>Fim</stateName>
+      <stateDescription>Fim</stateDescription>
+      <instruction>Atividade final do processo</instruction>
+      <deadlineTime>0</deadlineTime>
+      <joint>false</joint>
+      <agreementPercentage>0</agreementPercentage>
+      <engineAllocationId></engineAllocationId>
+      <engineAllocationConfiguration></engineAllocationConfiguration>
+      <selectColleague>0</selectColleague>
+      <initialState>false</initialState>
+      <notifyAuthorityDelay>true</notifyAuthorityDelay>
+      <notifyRequisitionerDelay>false</notifyRequisitionerDelay>
+      <allowanceAuthorityTime>0</allowanceAuthorityTime>
+      <frequenceAuthorityTime>1</frequenceAuthorityTime>
+      <allowanceRequisitionerTime>0</allowanceRequisitionerTime>
+      <frequenceRequisitionerTime>0</frequenceRequisitionerTime>
+      <transferAttachments>false</transferAttachments>
+      <subProcessId></subProcessId>
+      <formFolder>0</formFolder>
+      <notifyAuthorityFollowUp>false</notifyAuthorityFollowUp>
+      <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
+      <automatic>false</automatic>
+      <positionX>250</positionX>
+      <positionY>320</positionY>
+      <forecastedEffortType>0</forecastedEffortType>
+      <forecastedEffort>0</forecastedEffort>
+      <notifyManagerFollowUp>false</notifyManagerFollowUp>
+      <notifyManagerDelay>false</notifyManagerDelay>
+      <allowanceManagerTime>0</allowanceManagerTime>
+      <frequenceManagerTime>0</frequenceManagerTime>
+      <inhibitTransfer>false</inhibitTransfer>
+      <periodId></periodId>
+      <stateType>6</stateType>
+      <bpmnType>60</bpmnType>
+      <signalId>0</signalId>
+      <counterSign>false</counterSign>
+      <openInstances>0</openInstances>
+      <destinationStates/>
+      <digitalSignature>false</digitalSignature>
+    </ProcessState>
   </list>
   <list>
     <ConditionProcessState>
       <conditionProcessStatePK>
         <companyId>1</companyId>
-        <processId>devolucao_coleta_tercerizada</processId>
+        <processId>devolucao_coleta_cigame</processId>
         <expressionOrder>1</expressionOrder>
-        <version>14</version>
+        <version>1</version>
         <sequence>7</sequence>
       </conditionProcessStatePK>
-      <condition>hAPI.getCardValue(&quot;pedidoEspecial&quot;) == &quot;Sim&quot; ||
-hAPI.getCardValue(&quot;foraPrazo&quot;) == &quot;Fora do Prazo&quot; </condition>
+      <condition>hAPI.getCardValue(&quot;produtoEspecial&quot;) == &quot;Sim&quot;</condition>
       <destinationSequenceId>9</destinationSequenceId>
       <conditionType>0</conditionType>
     </ConditionProcessState>
     <ConditionProcessState>
       <conditionProcessStatePK>
         <companyId>1</companyId>
-        <processId>devolucao_coleta_tercerizada</processId>
+        <processId>devolucao_coleta_cigame</processId>
         <expressionOrder>2</expressionOrder>
-        <version>14</version>
+        <version>1</version>
         <sequence>7</sequence>
       </conditionProcessStatePK>
-      <condition>hAPI.getCardValue(&quot;pedidoEspecial&quot;) == &quot;Não&quot; &amp;&amp;
-hAPI.getCardValue(&quot;foraPrazo&quot;) != &quot;Fora do Prazo&quot; </condition>
+      <condition>hAPI.getCardValue(&quot;produtoEspecial&quot;) == &quot;Não&quot;</condition>
       <destinationSequenceId>11</destinationSequenceId>
       <conditionType>0</conditionType>
     </ConditionProcessState>
     <ConditionProcessState>
       <conditionProcessStatePK>
         <companyId>1</companyId>
-        <processId>devolucao_coleta_tercerizada</processId>
+        <processId>devolucao_coleta_cigame</processId>
         <expressionOrder>1</expressionOrder>
-        <version>14</version>
+        <version>1</version>
         <sequence>13</sequence>
       </conditionProcessStatePK>
       <condition></condition>
@@ -533,13 +614,37 @@ hAPI.getCardValue(&quot;foraPrazo&quot;) != &quot;Fora do Prazo&quot; </conditio
     <ConditionProcessState>
       <conditionProcessStatePK>
         <companyId>1</companyId>
-        <processId>devolucao_coleta_tercerizada</processId>
+        <processId>devolucao_coleta_cigame</processId>
         <expressionOrder>2</expressionOrder>
-        <version>14</version>
+        <version>1</version>
         <sequence>13</sequence>
       </conditionProcessStatePK>
       <condition></condition>
       <destinationSequenceId>16</destinationSequenceId>
+      <conditionType>1</conditionType>
+    </ConditionProcessState>
+    <ConditionProcessState>
+      <conditionProcessStatePK>
+        <companyId>1</companyId>
+        <processId>devolucao_coleta_cigame</processId>
+        <expressionOrder>1</expressionOrder>
+        <version>1</version>
+        <sequence>29</sequence>
+      </conditionProcessStatePK>
+      <condition></condition>
+      <destinationSequenceId>26</destinationSequenceId>
+      <conditionType>1</conditionType>
+    </ConditionProcessState>
+    <ConditionProcessState>
+      <conditionProcessStatePK>
+        <companyId>1</companyId>
+        <processId>devolucao_coleta_cigame</processId>
+        <expressionOrder>2</expressionOrder>
+        <version>1</version>
+        <sequence>29</sequence>
+      </conditionProcessStatePK>
+      <condition></condition>
+      <destinationSequenceId>32</destinationSequenceId>
       <conditionType>1</conditionType>
     </ConditionProcessState>
   </list>
@@ -547,7 +652,7 @@ hAPI.getCardValue(&quot;foraPrazo&quot;) != &quot;Fora do Prazo&quot; </conditio
     <ProcessLink>
       <processLinkPK>
         <companyId>1</companyId>
-        <processId>devolucao_coleta_tercerizada</processId>
+        <processId>devolucao_coleta_cigame</processId>
         <version>1</version>
         <linkSequence>10</linkSequence>
       </processLinkPK>
@@ -564,7 +669,7 @@ hAPI.getCardValue(&quot;foraPrazo&quot;) != &quot;Fora do Prazo&quot; </conditio
     <ProcessLink>
       <processLinkPK>
         <companyId>1</companyId>
-        <processId>devolucao_coleta_tercerizada</processId>
+        <processId>devolucao_coleta_cigame</processId>
         <version>1</version>
         <linkSequence>12</linkSequence>
       </processLinkPK>
@@ -581,7 +686,7 @@ hAPI.getCardValue(&quot;foraPrazo&quot;) != &quot;Fora do Prazo&quot; </conditio
     <ProcessLink>
       <processLinkPK>
         <companyId>1</companyId>
-        <processId>devolucao_coleta_tercerizada</processId>
+        <processId>devolucao_coleta_cigame</processId>
         <version>1</version>
         <linkSequence>14</linkSequence>
       </processLinkPK>
@@ -598,7 +703,7 @@ hAPI.getCardValue(&quot;foraPrazo&quot;) != &quot;Fora do Prazo&quot; </conditio
     <ProcessLink>
       <processLinkPK>
         <companyId>1</companyId>
-        <processId>devolucao_coleta_tercerizada</processId>
+        <processId>devolucao_coleta_cigame</processId>
         <version>1</version>
         <linkSequence>15</linkSequence>
       </processLinkPK>
@@ -615,7 +720,7 @@ hAPI.getCardValue(&quot;foraPrazo&quot;) != &quot;Fora do Prazo&quot; </conditio
     <ProcessLink>
       <processLinkPK>
         <companyId>1</companyId>
-        <processId>devolucao_coleta_tercerizada</processId>
+        <processId>devolucao_coleta_cigame</processId>
         <version>1</version>
         <linkSequence>17</linkSequence>
       </processLinkPK>
@@ -632,7 +737,7 @@ hAPI.getCardValue(&quot;foraPrazo&quot;) != &quot;Fora do Prazo&quot; </conditio
     <ProcessLink>
       <processLinkPK>
         <companyId>1</companyId>
-        <processId>devolucao_coleta_tercerizada</processId>
+        <processId>devolucao_coleta_cigame</processId>
         <version>1</version>
         <linkSequence>20</linkSequence>
       </processLinkPK>
@@ -649,7 +754,7 @@ hAPI.getCardValue(&quot;foraPrazo&quot;) != &quot;Fora do Prazo&quot; </conditio
     <ProcessLink>
       <processLinkPK>
         <companyId>1</companyId>
-        <processId>devolucao_coleta_tercerizada</processId>
+        <processId>devolucao_coleta_cigame</processId>
         <version>1</version>
         <linkSequence>22</linkSequence>
       </processLinkPK>
@@ -666,7 +771,7 @@ hAPI.getCardValue(&quot;foraPrazo&quot;) != &quot;Fora do Prazo&quot; </conditio
     <ProcessLink>
       <processLinkPK>
         <companyId>1</companyId>
-        <processId>devolucao_coleta_tercerizada</processId>
+        <processId>devolucao_coleta_cigame</processId>
         <version>1</version>
         <linkSequence>24</linkSequence>
       </processLinkPK>
@@ -683,24 +788,7 @@ hAPI.getCardValue(&quot;foraPrazo&quot;) != &quot;Fora do Prazo&quot; </conditio
     <ProcessLink>
       <processLinkPK>
         <companyId>1</companyId>
-        <processId>devolucao_coleta_tercerizada</processId>
-        <version>1</version>
-        <linkSequence>27</linkSequence>
-      </processLinkPK>
-      <actionLabel></actionLabel>
-      <returnPermited>false</returnPermited>
-      <initialStateSequence>11</initialStateSequence>
-      <finalStateSequence>26</finalStateSequence>
-      <returnLabel></returnLabel>
-      <name></name>
-      <automaticLink>false</automaticLink>
-      <defaultLink>false</defaultLink>
-      <type>0</type>
-    </ProcessLink>
-    <ProcessLink>
-      <processLinkPK>
-        <companyId>1</companyId>
-        <processId>devolucao_coleta_tercerizada</processId>
+        <processId>devolucao_coleta_cigame</processId>
         <version>1</version>
         <linkSequence>28</linkSequence>
       </processLinkPK>
@@ -714,6 +802,57 @@ hAPI.getCardValue(&quot;foraPrazo&quot;) != &quot;Fora do Prazo&quot; </conditio
       <defaultLink>false</defaultLink>
       <type>0</type>
     </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>devolucao_coleta_cigame</processId>
+        <version>1</version>
+        <linkSequence>31</linkSequence>
+      </processLinkPK>
+      <actionLabel></actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>29</initialStateSequence>
+      <finalStateSequence>26</finalStateSequence>
+      <returnLabel></returnLabel>
+      <name></name>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>devolucao_coleta_cigame</processId>
+        <version>1</version>
+        <linkSequence>33</linkSequence>
+      </processLinkPK>
+      <actionLabel></actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>29</initialStateSequence>
+      <finalStateSequence>32</finalStateSequence>
+      <returnLabel></returnLabel>
+      <name></name>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>devolucao_coleta_cigame</processId>
+        <version>1</version>
+        <linkSequence>34</linkSequence>
+      </processLinkPK>
+      <actionLabel></actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>11</initialStateSequence>
+      <finalStateSequence>29</finalStateSequence>
+      <returnLabel></returnLabel>
+      <name></name>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+    </ProcessLink>
   </list>
   <list/>
   <list/>
@@ -721,7 +860,7 @@ hAPI.getCardValue(&quot;foraPrazo&quot;) != &quot;Fora do Prazo&quot; </conditio
   <list>
     <SwimLane>
       <color>82b0b7</color>
-      <height>149</height>
+      <height>237</height>
       <width>711</width>
       <positionX>20</positionX>
       <positionY>154</positionY>
@@ -730,7 +869,7 @@ hAPI.getCardValue(&quot;foraPrazo&quot;) != &quot;Fora do Prazo&quot; </conditio
       <parentSequence>0</parentSequence>
       <swimLanePK>
         <companyId>1</companyId>
-        <processId>devolucao_coleta_tercerizada</processId>
+        <processId>devolucao_coleta_cigame</processId>
         <version>1</version>
         <sequence>1</sequence>
       </swimLanePK>
@@ -746,39 +885,39 @@ hAPI.getCardValue(&quot;foraPrazo&quot;) != &quot;Fora do Prazo&quot; </conditio
       <parentSequence>0</parentSequence>
       <swimLanePK>
         <companyId>1</companyId>
-        <processId>devolucao_coleta_tercerizada</processId>
+        <processId>devolucao_coleta_cigame</processId>
         <version>1</version>
         <sequence>2</sequence>
       </swimLanePK>
     </SwimLane>
     <SwimLane>
       <color>ADC9DB</color>
-      <height>149</height>
+      <height>151</height>
       <width>711</width>
       <positionX>20</positionX>
-      <positionY>302</positionY>
+      <positionY>390</positionY>
       <stateName>Rotas</stateName>
       <type>2</type>
       <parentSequence>0</parentSequence>
       <swimLanePK>
         <companyId>1</companyId>
-        <processId>devolucao_coleta_tercerizada</processId>
+        <processId>devolucao_coleta_cigame</processId>
         <version>1</version>
         <sequence>3</sequence>
       </swimLanePK>
     </SwimLane>
     <SwimLane>
       <color>adc9ac</color>
-      <height>149</height>
+      <height>141</height>
       <width>711</width>
       <positionX>20</positionX>
-      <positionY>450</positionY>
+      <positionY>540</positionY>
       <stateName>Devolução</stateName>
       <type>2</type>
       <parentSequence>0</parentSequence>
       <swimLanePK>
         <companyId>1</companyId>
-        <processId>devolucao_coleta_tercerizada</processId>
+        <processId>devolucao_coleta_cigame</processId>
         <version>1</version>
         <sequence>4</sequence>
       </swimLanePK>
@@ -790,30 +929,30 @@ hAPI.getCardValue(&quot;foraPrazo&quot;) != &quot;Fora do Prazo&quot; </conditio
     <ProcessLinkBend>
       <processLinkBendPK>
         <companyId>1</companyId>
-        <processId>devolucao_coleta_tercerizada</processId>
-        <version>14</version>
+        <processId>devolucao_coleta_cigame</processId>
+        <version>1</version>
         <linkSequence>12</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
       <positionX>209</positionX>
-      <positionY>229</positionY>
+      <positionY>213</positionY>
     </ProcessLinkBend>
     <ProcessLinkBend>
       <processLinkBendPK>
         <companyId>1</companyId>
-        <processId>devolucao_coleta_tercerizada</processId>
-        <version>14</version>
+        <processId>devolucao_coleta_cigame</processId>
+        <version>1</version>
         <linkSequence>15</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
       <positionX>479</positionX>
-      <positionY>229</positionY>
+      <positionY>213</positionY>
     </ProcessLinkBend>
     <ProcessLinkBend>
       <processLinkBendPK>
         <companyId>1</companyId>
-        <processId>devolucao_coleta_tercerizada</processId>
-        <version>14</version>
+        <processId>devolucao_coleta_cigame</processId>
+        <version>1</version>
         <linkSequence>22</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -823,13 +962,13 @@ hAPI.getCardValue(&quot;foraPrazo&quot;) != &quot;Fora do Prazo&quot; </conditio
     <ProcessLinkBend>
       <processLinkBendPK>
         <companyId>1</companyId>
-        <processId>devolucao_coleta_tercerizada</processId>
-        <version>14</version>
+        <processId>devolucao_coleta_cigame</processId>
+        <version>1</version>
         <linkSequence>28</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
-      <positionX>352</positionX>
-      <positionY>525</positionY>
+      <positionX>362</positionX>
+      <positionY>611</positionY>
     </ProcessLinkBend>
   </list>
   <list/>
@@ -854,6 +993,24 @@ hAPI.getCardValue(&quot;foraPrazo&quot;) != &quot;Fora do Prazo&quot; </conditio
       <expressionOrder>2</expressionOrder>
       <ruleOrder>1</ruleOrder>
       <field>rdAprovaSup</field>
+      <value>Não</value>
+      <operator>1</operator>
+      <valueType>1</valueType>
+    </ConditionProcessAutomaticRules>
+    <ConditionProcessAutomaticRules>
+      <sequence>29</sequence>
+      <expressionOrder>1</expressionOrder>
+      <ruleOrder>1</ruleOrder>
+      <field>rdAprovaPosVenda</field>
+      <value>Sim</value>
+      <operator>1</operator>
+      <valueType>1</valueType>
+    </ConditionProcessAutomaticRules>
+    <ConditionProcessAutomaticRules>
+      <sequence>29</sequence>
+      <expressionOrder>2</expressionOrder>
+      <ruleOrder>1</ruleOrder>
+      <field>rdAprovaPosVenda</field>
       <value>Não</value>
       <operator>1</operator>
       <valueType>1</valueType>

@@ -2,15 +2,16 @@
   <ProcessDefinition>
     <processDefinitionPK>
       <companyId>1</companyId>
-      <processId>devolucao_coleta_tercerizada</processId>
+      <processId>devolucao_presencial_balcao</processId>
     </processDefinitionPK>
-    <processDescription>Devolução Coleta Terceirizada</processDescription>
+    <processDescription>Devolução Presencial Balcão</processDescription>
     <instruction></instruction>
     <active>true</active>
     <publicProcess>false</publicProcess>
     <volumeId>Default</volumeId>
     <categoryId>Vendas</categoryId>
-    <managerEngineAllocationId></managerEngineAllocationId>
+    <managerEngineAllocationId>Grupo</managerEngineAllocationId>
+    <managerEngineAllocationConfiguration>&lt;AssignmentController&gt;&lt;Group&gt;POS_VENDA&lt;/Group&gt;&lt;/AssignmentController&gt;</managerEngineAllocationConfiguration>
     <snapshotFrequency>0</snapshotFrequency>
     <baseDay>0</baseDay>
     <baseMonth>0</baseMonth>
@@ -27,8 +28,8 @@
   <ProcessDefinitionVersion>
     <processDefinitionVersionPK>
       <companyId>1</companyId>
-      <processId>Devolução Coleta Terceirizada</processId>
-      <version>14</version>
+      <processId>Devolução Presencial Balcão</processId>
+      <version>1</version>
     </processDefinitionVersionPK>
     <versionDescription></versionDescription>
     <formId>0</formId>
@@ -49,7 +50,7 @@
     <ProcessState>
       <processStatePK>
         <companyId>1</companyId>
-        <processId>devolucao_coleta_tercerizada</processId>
+        <processId>devolucao_presencial_balcao</processId>
         <version>1</version>
         <sequence>4</sequence>
       </processStatePK>
@@ -59,8 +60,8 @@
       <deadlineTime>0</deadlineTime>
       <joint>false</joint>
       <agreementPercentage>0</agreementPercentage>
-      <engineAllocationId></engineAllocationId>
-      <engineAllocationConfiguration></engineAllocationConfiguration>
+      <engineAllocationId>Usuário</engineAllocationId>
+      <engineAllocationConfiguration>&lt;AssignmentController&gt;&lt;User&gt;50&lt;/User&gt;&lt;/AssignmentController&gt;</engineAllocationConfiguration>
       <selectColleague>1</selectColleague>
       <initialState>true</initialState>
       <notifyAuthorityDelay>true</notifyAuthorityDelay>
@@ -99,7 +100,7 @@
     <ProcessState>
       <processStatePK>
         <companyId>1</companyId>
-        <processId>devolucao_coleta_tercerizada</processId>
+        <processId>devolucao_presencial_balcao</processId>
         <version>1</version>
         <sequence>9</sequence>
       </processStatePK>
@@ -110,12 +111,14 @@
       <deadlineFieldName></deadlineFieldName>
       <joint>false</joint>
       <agreementPercentage>0</agreementPercentage>
+      <engineAllocationId>Campo Formulário</engineAllocationId>
+      <engineAllocationConfiguration>&lt;AssignmentController&gt;&lt;FormField&gt;matSupervisor&lt;/FormField&gt;&lt;/AssignmentController&gt;</engineAllocationConfiguration>
       <selectColleague>1</selectColleague>
       <initialState>false</initialState>
       <notifyAuthorityDelay>true</notifyAuthorityDelay>
       <notifyRequisitionerDelay>false</notifyRequisitionerDelay>
-      <allowanceAuthorityTime>3600</allowanceAuthorityTime>
-      <frequenceAuthorityTime>3600</frequenceAuthorityTime>
+      <allowanceAuthorityTime>1800</allowanceAuthorityTime>
+      <frequenceAuthorityTime>900</frequenceAuthorityTime>
       <allowanceRequisitionerTime>0</allowanceRequisitionerTime>
       <frequenceRequisitionerTime>0</frequenceRequisitionerTime>
       <transferAttachments>false</transferAttachments>
@@ -129,9 +132,9 @@
       <forecastedEffortType>0</forecastedEffortType>
       <forecastedEffort>0</forecastedEffort>
       <notifyManagerFollowUp>false</notifyManagerFollowUp>
-      <notifyManagerDelay>false</notifyManagerDelay>
-      <allowanceManagerTime>0</allowanceManagerTime>
-      <frequenceManagerTime>0</frequenceManagerTime>
+      <notifyManagerDelay>true</notifyManagerDelay>
+      <allowanceManagerTime>3600</allowanceManagerTime>
+      <frequenceManagerTime>3600</frequenceManagerTime>
       <inhibitTransfer>false</inhibitTransfer>
       <periodId></periodId>
       <stateType>0</stateType>
@@ -149,7 +152,7 @@
     <ProcessState>
       <processStatePK>
         <companyId>1</companyId>
-        <processId>devolucao_coleta_tercerizada</processId>
+        <processId>devolucao_presencial_balcao</processId>
         <version>1</version>
         <sequence>18</sequence>
       </processStatePK>
@@ -160,12 +163,14 @@
       <deadlineFieldName></deadlineFieldName>
       <joint>false</joint>
       <agreementPercentage>0</agreementPercentage>
+      <engineAllocationId>Pool Papel</engineAllocationId>
+      <engineAllocationConfiguration>&lt;AssignmentController&gt;&lt;Role&gt;DEVOLUCOES&lt;/Role&gt;&lt;/AssignmentController&gt;</engineAllocationConfiguration>
       <selectColleague>1</selectColleague>
       <initialState>false</initialState>
       <notifyAuthorityDelay>true</notifyAuthorityDelay>
       <notifyRequisitionerDelay>false</notifyRequisitionerDelay>
-      <allowanceAuthorityTime>3600</allowanceAuthorityTime>
-      <frequenceAuthorityTime>3600</frequenceAuthorityTime>
+      <allowanceAuthorityTime>2700</allowanceAuthorityTime>
+      <frequenceAuthorityTime>1800</frequenceAuthorityTime>
       <allowanceRequisitionerTime>0</allowanceRequisitionerTime>
       <frequenceRequisitionerTime>0</frequenceRequisitionerTime>
       <transferAttachments>false</transferAttachments>
@@ -179,9 +184,9 @@
       <forecastedEffortType>0</forecastedEffortType>
       <forecastedEffort>0</forecastedEffort>
       <notifyManagerFollowUp>false</notifyManagerFollowUp>
-      <notifyManagerDelay>false</notifyManagerDelay>
-      <allowanceManagerTime>0</allowanceManagerTime>
-      <frequenceManagerTime>0</frequenceManagerTime>
+      <notifyManagerDelay>true</notifyManagerDelay>
+      <allowanceManagerTime>2400</allowanceManagerTime>
+      <frequenceManagerTime>900</frequenceManagerTime>
       <inhibitTransfer>false</inhibitTransfer>
       <periodId></periodId>
       <stateType>0</stateType>
@@ -199,7 +204,7 @@
     <ProcessState>
       <processStatePK>
         <companyId>1</companyId>
-        <processId>devolucao_coleta_tercerizada</processId>
+        <processId>devolucao_presencial_balcao</processId>
         <version>1</version>
         <sequence>21</sequence>
       </processStatePK>
@@ -210,6 +215,8 @@
       <deadlineFieldName></deadlineFieldName>
       <joint>false</joint>
       <agreementPercentage>0</agreementPercentage>
+      <engineAllocationId>Grupo</engineAllocationId>
+      <engineAllocationConfiguration>&lt;AssignmentController&gt;&lt;Group&gt;POS_VENDA&lt;/Group&gt;&lt;/AssignmentController&gt;</engineAllocationConfiguration>
       <selectColleague>1</selectColleague>
       <initialState>false</initialState>
       <notifyAuthorityDelay>true</notifyAuthorityDelay>
@@ -249,7 +256,7 @@
     <ProcessState>
       <processStatePK>
         <companyId>1</companyId>
-        <processId>devolucao_coleta_tercerizada</processId>
+        <processId>devolucao_presencial_balcao</processId>
         <version>1</version>
         <sequence>30</sequence>
       </processStatePK>
@@ -260,12 +267,14 @@
       <deadlineFieldName></deadlineFieldName>
       <joint>false</joint>
       <agreementPercentage>0</agreementPercentage>
+      <engineAllocationId>Pool Papel</engineAllocationId>
+      <engineAllocationConfiguration>&lt;AssignmentController&gt;&lt;Role&gt;DEVOLUCOES&lt;/Role&gt;&lt;/AssignmentController&gt;</engineAllocationConfiguration>
       <selectColleague>1</selectColleague>
       <initialState>false</initialState>
       <notifyAuthorityDelay>true</notifyAuthorityDelay>
       <notifyRequisitionerDelay>false</notifyRequisitionerDelay>
-      <allowanceAuthorityTime>3600</allowanceAuthorityTime>
-      <frequenceAuthorityTime>3600</frequenceAuthorityTime>
+      <allowanceAuthorityTime>2100</allowanceAuthorityTime>
+      <frequenceAuthorityTime>900</frequenceAuthorityTime>
       <allowanceRequisitionerTime>0</allowanceRequisitionerTime>
       <frequenceRequisitionerTime>0</frequenceRequisitionerTime>
       <transferAttachments>false</transferAttachments>
@@ -279,9 +288,9 @@
       <forecastedEffortType>0</forecastedEffortType>
       <forecastedEffort>0</forecastedEffort>
       <notifyManagerFollowUp>false</notifyManagerFollowUp>
-      <notifyManagerDelay>false</notifyManagerDelay>
-      <allowanceManagerTime>0</allowanceManagerTime>
-      <frequenceManagerTime>0</frequenceManagerTime>
+      <notifyManagerDelay>true</notifyManagerDelay>
+      <allowanceManagerTime>1200</allowanceManagerTime>
+      <frequenceManagerTime>900</frequenceManagerTime>
       <inhibitTransfer>false</inhibitTransfer>
       <periodId></periodId>
       <stateType>0</stateType>
@@ -299,7 +308,7 @@
     <ProcessState>
       <processStatePK>
         <companyId>1</companyId>
-        <processId>devolucao_coleta_tercerizada</processId>
+        <processId>devolucao_presencial_balcao</processId>
         <version>1</version>
         <sequence>7</sequence>
       </processStatePK>
@@ -324,7 +333,7 @@
     <ProcessState>
       <processStatePK>
         <companyId>1</companyId>
-        <processId>devolucao_coleta_tercerizada</processId>
+        <processId>devolucao_presencial_balcao</processId>
         <version>1</version>
         <sequence>13</sequence>
       </processStatePK>
@@ -349,7 +358,7 @@
     <ProcessState>
       <processStatePK>
         <companyId>1</companyId>
-        <processId>devolucao_coleta_tercerizada</processId>
+        <processId>devolucao_presencial_balcao</processId>
         <version>1</version>
         <sequence>25</sequence>
       </processStatePK>
@@ -374,7 +383,7 @@
     <ProcessState>
       <processStatePK>
         <companyId>1</companyId>
-        <processId>devolucao_coleta_tercerizada</processId>
+        <processId>devolucao_presencial_balcao</processId>
         <version>1</version>
         <sequence>16</sequence>
       </processStatePK>
@@ -421,7 +430,7 @@
     <ProcessState>
       <processStatePK>
         <companyId>1</companyId>
-        <processId>devolucao_coleta_tercerizada</processId>
+        <processId>devolucao_presencial_balcao</processId>
         <version>1</version>
         <sequence>23</sequence>
       </processStatePK>
@@ -470,51 +479,73 @@
     <ConditionProcessState>
       <conditionProcessStatePK>
         <companyId>1</companyId>
-        <processId>devolucao_coleta_tercerizada</processId>
+        <processId>devolucao_presencial_balcao</processId>
         <expressionOrder>1</expressionOrder>
-        <version>14</version>
+        <version>1</version>
         <sequence>7</sequence>
       </conditionProcessStatePK>
-      <condition>hAPI.getCardValue(&quot;pedidoEspecial&quot;) == &quot;Sim&quot; ||
-hAPI.getCardValue(&quot;foraPrazo&quot;) == &quot;Fora do Prazo&quot; </condition>
+      <condition>hAPI.getCardValue(&quot;produtoEspecial&quot;) == &quot;Sim&quot;</condition>
       <destinationSequenceId>9</destinationSequenceId>
       <conditionType>0</conditionType>
     </ConditionProcessState>
     <ConditionProcessState>
       <conditionProcessStatePK>
         <companyId>1</companyId>
-        <processId>devolucao_coleta_tercerizada</processId>
+        <processId>devolucao_presencial_balcao</processId>
         <expressionOrder>2</expressionOrder>
-        <version>14</version>
+        <version>1</version>
         <sequence>7</sequence>
       </conditionProcessStatePK>
-      <condition>hAPI.getCardValue(&quot;pedidoEspecial&quot;) == &quot;Não&quot; &amp;&amp;
-hAPI.getCardValue(&quot;foraPrazo&quot;) != &quot;Fora do Prazo&quot; </condition>
-      <destinationSequenceId>0</destinationSequenceId>
+      <condition>hAPI.getCardValue(&quot;produtoEspecial&quot;) == &quot;Não&quot;</condition>
+      <destinationSequenceId>25</destinationSequenceId>
       <conditionType>0</conditionType>
     </ConditionProcessState>
     <ConditionProcessState>
       <conditionProcessStatePK>
         <companyId>1</companyId>
-        <processId>devolucao_coleta_tercerizada</processId>
+        <processId>devolucao_presencial_balcao</processId>
         <expressionOrder>1</expressionOrder>
-        <version>14</version>
+        <version>1</version>
         <sequence>13</sequence>
       </conditionProcessStatePK>
       <condition></condition>
-      <destinationSequenceId>0</destinationSequenceId>
+      <destinationSequenceId>25</destinationSequenceId>
       <conditionType>1</conditionType>
     </ConditionProcessState>
     <ConditionProcessState>
       <conditionProcessStatePK>
         <companyId>1</companyId>
-        <processId>devolucao_coleta_tercerizada</processId>
+        <processId>devolucao_presencial_balcao</processId>
         <expressionOrder>2</expressionOrder>
-        <version>14</version>
+        <version>1</version>
         <sequence>13</sequence>
       </conditionProcessStatePK>
       <condition></condition>
       <destinationSequenceId>16</destinationSequenceId>
+      <conditionType>1</conditionType>
+    </ConditionProcessState>
+    <ConditionProcessState>
+      <conditionProcessStatePK>
+        <companyId>1</companyId>
+        <processId>devolucao_presencial_balcao</processId>
+        <expressionOrder>1</expressionOrder>
+        <version>1</version>
+        <sequence>25</sequence>
+      </conditionProcessStatePK>
+      <condition></condition>
+      <destinationSequenceId>30</destinationSequenceId>
+      <conditionType>1</conditionType>
+    </ConditionProcessState>
+    <ConditionProcessState>
+      <conditionProcessStatePK>
+        <companyId>1</companyId>
+        <processId>devolucao_presencial_balcao</processId>
+        <expressionOrder>2</expressionOrder>
+        <version>1</version>
+        <sequence>25</sequence>
+      </conditionProcessStatePK>
+      <condition></condition>
+      <destinationSequenceId>18</destinationSequenceId>
       <conditionType>1</conditionType>
     </ConditionProcessState>
   </list>
@@ -522,7 +553,7 @@ hAPI.getCardValue(&quot;foraPrazo&quot;) != &quot;Fora do Prazo&quot; </conditio
     <ProcessLink>
       <processLinkPK>
         <companyId>1</companyId>
-        <processId>devolucao_coleta_tercerizada</processId>
+        <processId>devolucao_presencial_balcao</processId>
         <version>1</version>
         <linkSequence>10</linkSequence>
       </processLinkPK>
@@ -539,7 +570,7 @@ hAPI.getCardValue(&quot;foraPrazo&quot;) != &quot;Fora do Prazo&quot; </conditio
     <ProcessLink>
       <processLinkPK>
         <companyId>1</companyId>
-        <processId>devolucao_coleta_tercerizada</processId>
+        <processId>devolucao_presencial_balcao</processId>
         <version>1</version>
         <linkSequence>14</linkSequence>
       </processLinkPK>
@@ -556,7 +587,7 @@ hAPI.getCardValue(&quot;foraPrazo&quot;) != &quot;Fora do Prazo&quot; </conditio
     <ProcessLink>
       <processLinkPK>
         <companyId>1</companyId>
-        <processId>devolucao_coleta_tercerizada</processId>
+        <processId>devolucao_presencial_balcao</processId>
         <version>1</version>
         <linkSequence>17</linkSequence>
       </processLinkPK>
@@ -573,7 +604,7 @@ hAPI.getCardValue(&quot;foraPrazo&quot;) != &quot;Fora do Prazo&quot; </conditio
     <ProcessLink>
       <processLinkPK>
         <companyId>1</companyId>
-        <processId>devolucao_coleta_tercerizada</processId>
+        <processId>devolucao_presencial_balcao</processId>
         <version>1</version>
         <linkSequence>20</linkSequence>
       </processLinkPK>
@@ -590,7 +621,7 @@ hAPI.getCardValue(&quot;foraPrazo&quot;) != &quot;Fora do Prazo&quot; </conditio
     <ProcessLink>
       <processLinkPK>
         <companyId>1</companyId>
-        <processId>devolucao_coleta_tercerizada</processId>
+        <processId>devolucao_presencial_balcao</processId>
         <version>1</version>
         <linkSequence>22</linkSequence>
       </processLinkPK>
@@ -607,7 +638,7 @@ hAPI.getCardValue(&quot;foraPrazo&quot;) != &quot;Fora do Prazo&quot; </conditio
     <ProcessLink>
       <processLinkPK>
         <companyId>1</companyId>
-        <processId>devolucao_coleta_tercerizada</processId>
+        <processId>devolucao_presencial_balcao</processId>
         <version>1</version>
         <linkSequence>24</linkSequence>
       </processLinkPK>
@@ -624,24 +655,7 @@ hAPI.getCardValue(&quot;foraPrazo&quot;) != &quot;Fora do Prazo&quot; </conditio
     <ProcessLink>
       <processLinkPK>
         <companyId>1</companyId>
-        <processId>devolucao_coleta_tercerizada</processId>
-        <version>1</version>
-        <linkSequence>26</linkSequence>
-      </processLinkPK>
-      <actionLabel></actionLabel>
-      <returnPermited>false</returnPermited>
-      <initialStateSequence>9</initialStateSequence>
-      <finalStateSequence>25</finalStateSequence>
-      <returnLabel></returnLabel>
-      <name></name>
-      <automaticLink>false</automaticLink>
-      <defaultLink>false</defaultLink>
-      <type>0</type>
-    </ProcessLink>
-    <ProcessLink>
-      <processLinkPK>
-        <companyId>1</companyId>
-        <processId>devolucao_coleta_tercerizada</processId>
+        <processId>devolucao_presencial_balcao</processId>
         <version>1</version>
         <linkSequence>27</linkSequence>
       </processLinkPK>
@@ -658,7 +672,7 @@ hAPI.getCardValue(&quot;foraPrazo&quot;) != &quot;Fora do Prazo&quot; </conditio
     <ProcessLink>
       <processLinkPK>
         <companyId>1</companyId>
-        <processId>devolucao_coleta_tercerizada</processId>
+        <processId>devolucao_presencial_balcao</processId>
         <version>1</version>
         <linkSequence>28</linkSequence>
       </processLinkPK>
@@ -675,7 +689,7 @@ hAPI.getCardValue(&quot;foraPrazo&quot;) != &quot;Fora do Prazo&quot; </conditio
     <ProcessLink>
       <processLinkPK>
         <companyId>1</companyId>
-        <processId>devolucao_coleta_tercerizada</processId>
+        <processId>devolucao_presencial_balcao</processId>
         <version>1</version>
         <linkSequence>29</linkSequence>
       </processLinkPK>
@@ -692,7 +706,7 @@ hAPI.getCardValue(&quot;foraPrazo&quot;) != &quot;Fora do Prazo&quot; </conditio
     <ProcessLink>
       <processLinkPK>
         <companyId>1</companyId>
-        <processId>devolucao_coleta_tercerizada</processId>
+        <processId>devolucao_presencial_balcao</processId>
         <version>1</version>
         <linkSequence>31</linkSequence>
       </processLinkPK>
@@ -709,7 +723,7 @@ hAPI.getCardValue(&quot;foraPrazo&quot;) != &quot;Fora do Prazo&quot; </conditio
     <ProcessLink>
       <processLinkPK>
         <companyId>1</companyId>
-        <processId>devolucao_coleta_tercerizada</processId>
+        <processId>devolucao_presencial_balcao</processId>
         <version>1</version>
         <linkSequence>32</linkSequence>
       </processLinkPK>
@@ -739,7 +753,7 @@ hAPI.getCardValue(&quot;foraPrazo&quot;) != &quot;Fora do Prazo&quot; </conditio
       <parentSequence>0</parentSequence>
       <swimLanePK>
         <companyId>1</companyId>
-        <processId>devolucao_coleta_tercerizada</processId>
+        <processId>devolucao_presencial_balcao</processId>
         <version>1</version>
         <sequence>1</sequence>
       </swimLanePK>
@@ -755,7 +769,7 @@ hAPI.getCardValue(&quot;foraPrazo&quot;) != &quot;Fora do Prazo&quot; </conditio
       <parentSequence>0</parentSequence>
       <swimLanePK>
         <companyId>1</companyId>
-        <processId>devolucao_coleta_tercerizada</processId>
+        <processId>devolucao_presencial_balcao</processId>
         <version>1</version>
         <sequence>2</sequence>
       </swimLanePK>
@@ -771,7 +785,7 @@ hAPI.getCardValue(&quot;foraPrazo&quot;) != &quot;Fora do Prazo&quot; </conditio
       <parentSequence>0</parentSequence>
       <swimLanePK>
         <companyId>1</companyId>
-        <processId>devolucao_coleta_tercerizada</processId>
+        <processId>devolucao_presencial_balcao</processId>
         <version>1</version>
         <sequence>3</sequence>
       </swimLanePK>
@@ -783,8 +797,8 @@ hAPI.getCardValue(&quot;foraPrazo&quot;) != &quot;Fora do Prazo&quot; </conditio
     <ProcessLinkBend>
       <processLinkBendPK>
         <companyId>1</companyId>
-        <processId>devolucao_coleta_tercerizada</processId>
-        <version>14</version>
+        <processId>devolucao_presencial_balcao</processId>
+        <version>1</version>
         <linkSequence>22</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -794,8 +808,8 @@ hAPI.getCardValue(&quot;foraPrazo&quot;) != &quot;Fora do Prazo&quot; </conditio
     <ProcessLinkBend>
       <processLinkBendPK>
         <companyId>1</companyId>
-        <processId>devolucao_coleta_tercerizada</processId>
-        <version>14</version>
+        <processId>devolucao_presencial_balcao</processId>
+        <version>1</version>
         <linkSequence>27</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -805,8 +819,8 @@ hAPI.getCardValue(&quot;foraPrazo&quot;) != &quot;Fora do Prazo&quot; </conditio
     <ProcessLinkBend>
       <processLinkBendPK>
         <companyId>1</companyId>
-        <processId>devolucao_coleta_tercerizada</processId>
-        <version>14</version>
+        <processId>devolucao_presencial_balcao</processId>
+        <version>1</version>
         <linkSequence>28</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -816,8 +830,8 @@ hAPI.getCardValue(&quot;foraPrazo&quot;) != &quot;Fora do Prazo&quot; </conditio
     <ProcessLinkBend>
       <processLinkBendPK>
         <companyId>1</companyId>
-        <processId>devolucao_coleta_tercerizada</processId>
-        <version>14</version>
+        <processId>devolucao_presencial_balcao</processId>
+        <version>1</version>
         <linkSequence>29</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -827,8 +841,8 @@ hAPI.getCardValue(&quot;foraPrazo&quot;) != &quot;Fora do Prazo&quot; </conditio
     <ProcessLinkBend>
       <processLinkBendPK>
         <companyId>1</companyId>
-        <processId>devolucao_coleta_tercerizada</processId>
-        <version>14</version>
+        <processId>devolucao_presencial_balcao</processId>
+        <version>1</version>
         <linkSequence>31</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -858,6 +872,24 @@ hAPI.getCardValue(&quot;foraPrazo&quot;) != &quot;Fora do Prazo&quot; </conditio
       <expressionOrder>2</expressionOrder>
       <ruleOrder>1</ruleOrder>
       <field>rdAprovaSup</field>
+      <value>Não</value>
+      <operator>1</operator>
+      <valueType>1</valueType>
+    </ConditionProcessAutomaticRules>
+    <ConditionProcessAutomaticRules>
+      <sequence>25</sequence>
+      <expressionOrder>1</expressionOrder>
+      <ruleOrder>1</ruleOrder>
+      <field>possuiPedidoSubstituto</field>
+      <value>Sim</value>
+      <operator>1</operator>
+      <valueType>1</valueType>
+    </ConditionProcessAutomaticRules>
+    <ConditionProcessAutomaticRules>
+      <sequence>25</sequence>
+      <expressionOrder>2</expressionOrder>
+      <ruleOrder>1</ruleOrder>
+      <field>possuiPedidoSubstituto</field>
       <value>Não</value>
       <operator>1</operator>
       <valueType>1</valueType>

@@ -11,7 +11,7 @@
     <volumeId>Default</volumeId>
     <categoryId>Compras</categoryId>
     <managerEngineAllocationId>Usuário</managerEngineAllocationId>
-    <managerEngineAllocationConfiguration>&lt;AssignmentController&gt;&lt;User&gt;209&lt;/User&gt;&lt;/AssignmentController&gt;</managerEngineAllocationConfiguration>
+    <managerEngineAllocationConfiguration>&lt;AssignmentController&gt;&lt;User&gt;893&lt;/User&gt;&lt;/AssignmentController&gt;</managerEngineAllocationConfiguration>
     <snapshotFrequency>0</snapshotFrequency>
     <baseDay>0</baseDay>
     <baseMonth>0</baseMonth>
@@ -29,7 +29,7 @@
     <processDefinitionVersionPK>
       <companyId>1</companyId>
       <processId>Solicitação de compra na praça</processId>
-      <version>7</version>
+      <version>15</version>
     </processDefinitionVersionPK>
     <versionDescription></versionDescription>
     <formId>0</formId>
@@ -320,7 +320,7 @@
       <joint>false</joint>
       <agreementPercentage>0</agreementPercentage>
       <engineAllocationId>Usuário</engineAllocationId>
-      <engineAllocationConfiguration>&lt;AssignmentController&gt;&lt;User&gt;209&lt;/User&gt;&lt;/AssignmentController&gt;</engineAllocationConfiguration>
+      <engineAllocationConfiguration>&lt;AssignmentController&gt;&lt;User&gt;893&lt;/User&gt;&lt;/AssignmentController&gt;</engineAllocationConfiguration>
       <selectColleague>1</selectColleague>
       <initialState>false</initialState>
       <notifyAuthorityDelay>true</notifyAuthorityDelay>
@@ -633,7 +633,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>wf_solicitacao_compra_praca</processId>
-        <version>7</version>
+        <version>15</version>
         <linkSequence>72</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -644,7 +644,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>wf_solicitacao_compra_praca</processId>
-        <version>7</version>
+        <version>15</version>
         <linkSequence>74</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -655,7 +655,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>wf_solicitacao_compra_praca</processId>
-        <version>7</version>
+        <version>15</version>
         <linkSequence>76</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -666,7 +666,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>wf_solicitacao_compra_praca</processId>
-        <version>7</version>
+        <version>15</version>
         <linkSequence>77</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -712,24 +712,6 @@
       </processFormFieldPK>
       <fieldDescription>validacao</fieldDescription>
       <slotId>4</slotId>
-    </ProcessFormField>
-    <ProcessFormField>
-      <processFormFieldPK>
-        <companyId>1</companyId>
-        <processId>wf_solicitacao_compra_praca</processId>
-        <fieldId>codfornec</fieldId>
-      </processFormFieldPK>
-      <fieldDescription>codfornec</fieldDescription>
-      <slotId>5</slotId>
-    </ProcessFormField>
-    <ProcessFormField>
-      <processFormFieldPK>
-        <companyId>1</companyId>
-        <processId>wf_solicitacao_compra_praca</processId>
-        <fieldId>fornecedor</fieldId>
-      </processFormFieldPK>
-      <fieldDescription>fornecedor</fieldDescription>
-      <slotId>6</slotId>
     </ProcessFormField>
   </list>
   <list/>

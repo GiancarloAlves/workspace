@@ -588,8 +588,8 @@ function praca() {
   const MATCOMP_ORIGINAL = $(`#matcompras1`).val();
 
   if (PRACA == "Sim") {
-    COMPRADOR.value = "Maicon Conceição (praça)";
-    MATCOMP.value = "209";
+    COMPRADOR.value = "Carlos Eduardo (praça)";
+    MATCOMP.value = "893";
   } else {
     COMPRADOR.value = COMPRADOR_ORIGINAL;
     MATCOMP.value = MATCOMP_ORIGINAL;
