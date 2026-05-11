@@ -186,6 +186,11 @@ $(document).ready(() => {
     wdkAddChild(`pedido`);
     filtrarZoomPaiFilho();
   });
+
+  $(document).on("click", `${TABLE__GRID_ID} .remove-button`, function () {
+    setTimeout(validarTodasLinhasComprador, 0);
+  });
+
   mostrarTodasSecoes();
   taskHandler();
   validarProdutoEspecial();

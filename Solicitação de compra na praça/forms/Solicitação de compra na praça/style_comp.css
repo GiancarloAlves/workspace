@@ -633,13 +633,55 @@ label {
 }
 
 #devkit-style .pai-filho tr.linha-comprador-divergente {
-    opacity: 0.6;
+    opacity: 0.85;
 }
 
 #devkit-style .pai-filho tr.linha-comprador-divergente td,
 #devkit-style .pai-filho tr.linha-comprador-divergente .form-control {
-    background: #d3d3d3 !important;
-    color: #777 !important;
+    background: #f0f0f0 !important;
+    color: #9a9a9a !important;
+}
+
+/* Tabela pai-filho - melhorias visuais */
+#devkit-style .pai-filho {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 4px rgba(41, 43, 100, 0.08);
+    border: 1px solid #e6e8f0;
+}
+
+#devkit-style .pai-filho thead th {
+    font-size: 9pt !important;
+    letter-spacing: 0.4px;
+    padding: 16px 8px !important;
+    font-weight: 600;
+}
+
+#devkit-style .pai-filho tbody tr {
+    transition: background-color 0.18s ease;
+    border-bottom: 1px solid #eef0f5;
+}
+
+#devkit-style .pai-filho tbody tr:last-child {
+    border-bottom: none;
+}
+
+#devkit-style .pai-filho tbody tr:hover:not(.linha-comprador-divergente) {
+    background: #f7f9fd !important;
+}
+
+#devkit-style .pai-filho tbody tr:hover:not(.linha-comprador-divergente) .form-control {
+    background: #ffffff !important;
+}
+
+#devkit-style .pai-filho .form-control {
+    transition: background-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+#devkit-style .pai-filho .form-control:focus {
+    background: #ffffff !important;
+    box-shadow: 0 0 0 2px rgba(42, 36, 200, 0.2);
+    outline: none;
 }
 
 #devkit-style .produto-fora-prazo {
