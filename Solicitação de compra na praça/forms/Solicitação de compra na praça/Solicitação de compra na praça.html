@@ -221,7 +221,7 @@
 
 							</div>
 
-							<div class="row">
+							<!-- <div class="row">
 
 								<div class="form-group col-md-2">
 								  <label for="zoom">Cod. fornecedor</label>
@@ -251,7 +251,7 @@
 								  </div>
 								</div>
 				
-							  </div>
+							  </div> -->
 
 							<div class="row">
 
@@ -292,6 +292,9 @@
 										<tr>
 											<th width="10%">
 												Cód.produto&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+											</th>
+											<th width="15%">
+												Comprador&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 											</th>
 											<th width="30%">Descrição
 												produto&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -336,6 +339,11 @@
 								{'field':'A09_COD_PROD','label':'Cod','standard':'true'}
 							  ]
 							}">
+											</td>
+											<td>
+												<input type="text" name="comprador" id="comprador" class="form-control"
+													readonly>
+												<input type="hidden" name="matcomprador" id="matcomprador">
 											</td>
 											<td><input type="text" name="descprod" id="descprod" class="form-control"
 													readonly></td>

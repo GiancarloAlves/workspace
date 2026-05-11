@@ -116,7 +116,8 @@ const FINALIZA = 75
   function validarPaiFilho() {
     var indexes = form.getChildrenIndexes("pedido");
     if(indexes.length > 0) {
-        for(var i = 0; i < indexes.length; i++) { 
+        var matriculasUnicas = [];
+        for(var i = 0; i < indexes.length; i++) {
             if(form.getValue("codprod___" + indexes[i]) == null || form.getValue("codprod___" + indexes[i]) == "") {
                 throw "<strong> Há campos de código do produto em branco. Preencha todos.<strong>";
             }
@@ -129,7 +130,14 @@ const FINALIZA = 75
             if(form.getValue("precocalc___" + indexes[i]) == null || form.getValue("precocalc___" + indexes[i]) == "") {
                 throw "<strong> Há campos de preço calculado em branco. Preencha todos<strong>";
               }
+            var matComp = form.getValue("matcomprador___" + indexes[i]);
+            if(matComp != null && matComp != "" && matriculasUnicas.indexOf(matComp) === -1) {
+                matriculasUnicas.push(matComp);
+            }
                     }
+        if(matriculasUnicas.length > 1) {
+            throw "<strong> Há produtos com compradores diferentes na tabela. Deixe apenas itens de um único comprador para enviar o processo.<strong>";
+        }
     }
     else {
         throw("<strong>Adicione ao menos um item!</strong>");

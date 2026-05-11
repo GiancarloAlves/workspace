@@ -632,6 +632,16 @@ label {
     background: #ff6363;
 }
 
+#devkit-style .pai-filho tr.linha-comprador-divergente {
+    opacity: 0.6;
+}
+
+#devkit-style .pai-filho tr.linha-comprador-divergente td,
+#devkit-style .pai-filho tr.linha-comprador-divergente .form-control {
+    background: #d3d3d3 !important;
+    color: #777 !important;
+}
+
 #devkit-style .produto-fora-prazo {
     background: #FFBB00;
 }

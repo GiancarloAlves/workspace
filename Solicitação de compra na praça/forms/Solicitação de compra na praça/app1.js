@@ -276,6 +276,9 @@ function setSelectedZoomItem(selectedItem) {
       $(`#descprod___${row}`).val(selectedItem.A10_PRODUTO);
       $(`#tipo___${row}`).val(selectedItem.A11_TIPO_PRODUTO);
       $(`#qtd___${row}`).val(selectedItem.A12_QT);
+      $(`#comprador___${row}`).val(selectedItem.A18_COMPRADOR);
+      $(`#matcomprador___${row}`).val(selectedItem.A17_MATRICULA_COMPRADOR);
+      validarTodasLinhasComprador();
 
       const PRODUTO_ESPECIAL = $(`#tipo___${row}`).val() == "PRODUTO ESPECIAL";
 
@@ -494,6 +497,28 @@ function filtrarZoomPaiFilho() {
 
   Array.from($(`:input[id*=codprod___]`)).map((el) => {
     reloadZoomFilterValues(el.id, `A01_PEDIDO,${NUM_PED}`);
+  });
+}
+
+function validarTodasLinhasComprador() {
+  let matReferencia = null;
+  $(`${TABLE__GRID_ID} tbody tr`).each(function () {
+    const val = $(this).find(`input[id^="matcomprador"]`).val();
+    if (val) {
+      matReferencia = String(val);
+      return false;
+    }
+  });
+
+  $(`${TABLE__GRID_ID} tbody tr`).each(function () {
+    const $tr = $(this);
+    const matLinha = $tr.find(`input[id^="matcomprador"]`).val();
+
+    if (!matLinha || !matReferencia || String(matLinha) === matReferencia) {
+      $tr.removeClass("linha-comprador-divergente");
+    } else {
+      $tr.addClass("linha-comprador-divergente");
+    }
   });
 }
 
