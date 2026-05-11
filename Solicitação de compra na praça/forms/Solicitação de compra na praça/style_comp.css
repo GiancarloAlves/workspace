@@ -653,7 +653,8 @@ label {
     overflow: hidden;
     box-shadow: 0 1px 4px rgba(41, 43, 100, 0.08);
     border: 1px solid #e6e8f0;
-    min-width: 1500px;
+    min-width: 1800px;
+    table-layout: fixed;
 }
 
 #devkit-style .pai-filho thead th {
