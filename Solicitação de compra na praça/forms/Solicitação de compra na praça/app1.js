@@ -187,9 +187,12 @@ $(document).ready(() => {
     filtrarZoomPaiFilho();
   });
 
-  $(document).on("click", `${TABLE__GRID_ID} .remove-button`, function () {
-    setTimeout(validarTodasLinhasComprador, 0);
-  });
+  const tbodyEl = document.querySelector(`${TABLE__GRID_ID} tbody`);
+  if (tbodyEl) {
+    new MutationObserver(() => {
+      validarTodasLinhasComprador();
+    }).observe(tbodyEl, { childList: true });
+  }
 
   mostrarTodasSecoes();
   taskHandler();
@@ -553,6 +556,7 @@ function validarTodasLinhasComprador() {
 
   $(`${TABLE__GRID_ID} tbody tr`).each(function (i) {
     const $tr = $(this);
+    const $comprador = $tr.find(`input[id^="comprador___"]`);
     const matLinha = $tr.find(`input[id^="matCompProd___"]`).val();
     const matLinhaNorm = matLinha ? String(matLinha).trim() : "";
     const igual = matLinhaNorm === matReferencia;
@@ -569,9 +573,9 @@ function validarTodasLinhasComprador() {
     );
 
     if (!matLinha || !matReferencia || igual) {
-      $tr.removeClass("linha-comprador-divergente");
+      $comprador.removeClass("comprador-divergente");
     } else {
-      $tr.addClass("linha-comprador-divergente");
+      $comprador.addClass("comprador-divergente");
     }
   });
 }

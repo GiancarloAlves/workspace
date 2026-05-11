@@ -632,14 +632,19 @@ label {
     background: #ff6363;
 }
 
-#devkit-style .pai-filho tr.linha-comprador-divergente {
-    opacity: 0.85;
+#devkit-style .pai-filho input.comprador-divergente {
+    color: #c62828 !important;
+    background: #fff5f5 !important;
+    font-weight: 600;
+    box-shadow: inset 0 0 0 1px #ef9a9a;
 }
 
-#devkit-style .pai-filho tr.linha-comprador-divergente td,
-#devkit-style .pai-filho tr.linha-comprador-divergente .form-control {
-    background: #f0f0f0 !important;
-    color: #9a9a9a !important;
+/* Scroll horizontal no wrapper da pai-filho */
+#devkit-style .form-field[data-field-name="pedido"] {
+    overflow-x: auto;
+    width: 100%;
+    max-width: 100%;
+    padding-bottom: 4px;
 }
 
 /* Tabela pai-filho - melhorias visuais */
@@ -648,6 +653,7 @@ label {
     overflow: hidden;
     box-shadow: 0 1px 4px rgba(41, 43, 100, 0.08);
     border: 1px solid #e6e8f0;
+    min-width: 1500px;
 }
 
 #devkit-style .pai-filho thead th {
@@ -666,11 +672,11 @@ label {
     border-bottom: none;
 }
 
-#devkit-style .pai-filho tbody tr:hover:not(.linha-comprador-divergente) {
+#devkit-style .pai-filho tbody tr:hover {
     background: #f7f9fd !important;
 }
 
-#devkit-style .pai-filho tbody tr:hover:not(.linha-comprador-divergente) .form-control {
+#devkit-style .pai-filho tbody tr:hover .form-control:not(.comprador-divergente) {
     background: #ffffff !important;
 }
 
