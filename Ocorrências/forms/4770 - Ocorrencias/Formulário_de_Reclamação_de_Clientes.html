@@ -149,12 +149,39 @@
               <!--início do segundo row-->
               <div class="row">
 
+                <div class="form-group col-md-3">
+                  <label class="required">Aceita receber nota parcial?</label>
+                  <select class="form-control" name="notaParcial" id="notaParcial">
+                    <option value="">Selecione</option>
+                    <option value="Sim">Sim</option>
+                    <option value="Fazer nota total">Fazer nota total</option>
+                  </select>
+                </div>
+
+                <div class="form-group col-md-3">
+                  <label class="required">Crédito</label>
+                  <select class="form-control" name="credito" id="credito">
+                    <option value="">Selecione</option>
+                    <option value="Disponível">Disponível</option>
+                    <option value="Material reposto">Material reposto</option>
+                  </select>
+                </div>
+
+                <div class="form-group col-md-3">
+                  <label class="required">Possuí louça?</label>
+                  <select class="form-control" name="possuiLouca" id="possuiLouca">
+                    <option value="">Selecione</option>
+                    <option value="Sim">Sim</option>
+                    <option value="Não">Não</option>
+                  </select>
+                </div>
+
                 <div class="form-input col-md-3">
                   <div class="form-group">
                     <label>Nome do cliente</label><input type="text" class="form-control" name="PessoaCliente" id="PessoaCliente"
                       value="" placeholder="Nome da pessoa que fez a reclamação" data-size="big" />
                   </div>
-                </div>  
+                </div>
 
                 <!--campo setor do cliente-->
                   <div class="form-input">
@@ -316,63 +343,6 @@
 
               <div class="row">
 
-                <!-- combo tipo de reclamação-->
-
-                <div class="form-group col-md-3">
-                  <label class="required">Motivo da reclamação</label>
-                  <input type="zoom" name="motivoDevolucao" id="motivoDevolucao" class="form-control" data-zoom="
-                    {
-                      'displayKey':'MOTIVO',
-                      'datasetId':'ds_motivo_devolucoes_winthor',
-                      'maximumSelectionLength':'1',
-                      'placeholder':'Buscar...',
-                      'fields':[
-                        {'field':'MOTIVO','label':'Motivo','standard':'true'}
-                      ]
-                    }"
-                  >
-                </div>    
-
-                <!--campo sentimento do cliente-->
-                  <div class="form-group col-md-3">
-                    <label>Como o cliente está se sentindo?</label><select class="form-control" name="SentimCliente">
-                      <option value="Selecione">Selecione</option>
-                      <option value="Tranquilo">Tranquilo</option>
-                      <option value="Impaciente">Impaciente</option>
-                      <option value="Muito irritado">Muito irritado</option>
-                    </select>
-                  </div>
-
-                <!-- campo setor que está gerando transtorno-->
-                  <div class="form-group col-md-3">
-                    <label>Setor que causou o problema</label>
-                    <select class="form-control" name="setorTranstorno" id="setorTranstorno">
-                      <option value="Selecione">Selecione</option>
-                      <option value="Vendas">Vendas</option>
-                      <option value="Logística">Logística</option>
-                      <option value="Compras">Compras</option>
-                      <option value="Financeiro">Financeiro</option>
-                      <option value="E-commerce">E-commerce</option>
-                      <option value="RH">RH</option>
-                      <option value="Diretoria">Diretoria</option>
-                    </select>
-                  </div>
-
-                  <div class="form-group col-md-3">
-                    <label>Como o cliente manifestou a reclamação?</label><select class="form-control"
-                      name="modoReclamacao" id="modoReclamacao">
-                      <option value="Selecione">Selecione</option>
-                      <option value="Telefone">Telefone</option>
-                      <option value="Email">Email</option>
-                      <option value="Em visita nossa">Em visita nossa</option>
-                      <option value="Em visita do Cliente">Em visita do Cliente</option>
-                    </select>
-                  </div>                
-
-              </div>
-
-              <div class="row">
-
               <div class="form-input col-md-12">
                 <label>Descreva aqui a ocorrência</label>
                 <div class="input-group">
@@ -493,6 +463,62 @@
                       <option value="Transportadora">Transportadora</option>
                     </select>
                   </div>
+
+                  <div class="row">
+
+                <!-- combo tipo de reclamação-->
+
+                <div class="form-group col-md-3">
+                  <label class="required">Motivo da reclamação</label>
+                  <input type="zoom" name="motivoDevolucao" id="motivoDevolucao" class="form-control" data-zoom="
+                    {
+                      'displayKey':'MOTIVO',
+                      'datasetId':'ds_motivo_devolucoes_winthor',
+                      'maximumSelectionLength':'1',
+                      'placeholder':'Buscar...',
+                      'fields':[
+                        {'field':'MOTIVO','label':'Motivo','standard':'true'}
+                      ]
+                    }"
+                  >
+                </div>    
+
+                <!--campo sentimento do cliente-->
+                  <div class="form-group col-md-3">
+                    <label>Como o cliente está se sentindo?</label><select class="form-control" name="SentimCliente">
+                      <option value="Selecione">Selecione</option>
+                      <option value="Tranquilo">Tranquilo</option>
+                      <option value="Impaciente">Impaciente</option>
+                      <option value="Muito irritado">Muito irritado</option>
+                    </select>
+                  </div>
+
+                <!-- campo setor que está gerando transtorno-->
+                  <div class="form-group col-md-3">
+                    <label>Setor que causou o problema</label>
+                    <select class="form-control" name="setorTranstorno" id="setorTranstorno">
+                      <option value="Selecione">Selecione</option>
+                      <option value="Vendas">Vendas</option>
+                      <option value="Logística">Logística</option>
+                      <option value="Compras">Compras</option>
+                      <option value="Financeiro">Financeiro</option>
+                      <option value="E-commerce">E-commerce</option>
+                      <option value="RH">RH</option>
+                      <option value="Diretoria">Diretoria</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group col-md-3">
+                    <label>Como o cliente manifestou a reclamação?</label><select class="form-control"
+                      name="modoReclamacao" id="modoReclamacao">
+                      <option value="Selecione">Selecione</option>
+                      <option value="Telefone">Telefone</option>
+                      <option value="Email">Email</option>
+                      <option value="Em visita nossa">Em visita nossa</option>
+                      <option value="Em visita do Cliente">Em visita do Cliente</option>
+                    </select>
+                  </div>                
+              </div>
 
               <div class="form-input col-md-12">
                 <label>Por que foi gerada a reclamação?</label>

@@ -46,6 +46,21 @@ function validateForm(form) {
       throw "Informe o número da nota!";
     }
 
+    var notaParcial = form.getValue("notaParcial");
+    if (notaParcial == "" || notaParcial == null) {
+      throw "Informe se o cliente aceita receber nota parcial!";
+    }
+
+    var credito = form.getValue("credito");
+    if (credito == "" || credito == null) {
+      throw "Informe o status do crédito!";
+    }
+
+    var possuiLouca = form.getValue("possuiLouca");
+    if (possuiLouca == "" || possuiLouca == null) {
+      throw "Informe se possuí louça!";
+    }
+
     var pessoa = form.getValue("PessoaCliente");
     if (pessoa == "" || pessoa == null) {
       throw "Diga o nome da pessoa que fez a reclamação!";
