@@ -71,21 +71,6 @@ function validateForm(form) {
       throw "Preencha o contato telefônico";
     }
 
-    var tipo = form.getValue("motivoDevolucao");
-    if (tipo == "Selecione" || tipo == null) {
-      throw "Informe o motivo da reclamação!";
-    }
-
-    var setor = form.getValue("setorTranstorno");
-    if (setor == "Selecione" || setor == null) {
-      throw "Informe o setor que está causando o problema.";
-    }
-
-    var modo = form.getValue("modoReclamacao");
-    if (modo == "Selecione" || modo == null) {
-      throw "Informe o meio pelo qual o cliente manifestou a reclamação.";
-    }
-
     var ocorrencia = form.getValue("DescrOcorrencia");
     if (ocorrencia == "" || ocorrencia == null) {
       throw "Descreva a ocorrência";
@@ -125,6 +110,21 @@ function validateForm(form) {
     var devolucao = form.getValue("devolucao");
     if (devolucao == "" || devolucao == null) {
       throw "Escolha se o vendedor deve abrir devolução ou não!";
+    }
+
+      var tipo = form.getValue("motivoDevolucao");
+    if (tipo == "Selecione" || tipo == null) {
+      throw "Informe o motivo da reclamação!";
+    }
+
+    var setor = form.getValue("setorTranstorno");
+    if (setor == "Selecione" || setor == null) {
+      throw "Informe o setor que está causando o problema.";
+    }
+
+    var modo = form.getValue("modoReclamacao");
+    if (modo == "Selecione" || modo == null) {
+      throw "Informe o meio pelo qual o cliente manifestou a reclamação.";
     }
   }
 

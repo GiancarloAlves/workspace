@@ -149,7 +149,7 @@
               <!--início do segundo row-->
               <div class="row">
 
-                <div class="form-group col-md-3">
+                <div class="form-group col-md-2">
                   <label class="required">Aceita receber nota parcial?</label>
                   <select class="form-control" name="notaParcial" id="notaParcial">
                     <option value="">Selecione</option>
@@ -158,7 +158,7 @@
                   </select>
                 </div>
 
-                <div class="form-group col-md-3">
+                <div class="form-group col-md-2">
                   <label class="required">Crédito</label>
                   <select class="form-control" name="credito" id="credito">
                     <option value="">Selecione</option>
@@ -167,7 +167,7 @@
                   </select>
                 </div>
 
-                <div class="form-group col-md-3">
+                <div class="form-group col-md-2">
                   <label class="required">Possuí louça?</label>
                   <select class="form-control" name="possuiLouca" id="possuiLouca">
                     <option value="">Selecione</option>
@@ -189,28 +189,28 @@
                       <label>Setor do cliente</label><input type="text" class="form-control" name="SetorCliente"
                         value="" placeholder="" data-size="big" />
                     </div>
-                  </div>
-           
-                <!-- campo contato telefonico direto-->
-                  <div class="form-input">
-                    <div class="form-group col-md-3">
-                      <label>Contato telefônico direto do cliente</label><input type="text" class="form-control"
-                        name="ContTelefonico" id="ContTelefonico" />
-                    </div>
-                  </div>                
+                  </div>           
 
-                <!-- campo email-->
+                  </div>
+
+                  <div class="row">
+
+                    <!-- campo email-->
                   <div class="form-input">
                     <div class="form-group col-md-3">
                       <label>E-mail do cliente</label><input type="text" class="form-control" name="EmailCliente"/>
                     </div>
                   </div>
 
-                  </div>
+                  <!-- campo contato telefonico direto-->
+                    <div class="form-input">
+                      <div class="form-group col-md-2">
+                        <label>Contato telefônico direto do cliente</label><input type="text" class="form-control"
+                          name="ContTelefonico" id="ContTelefonico" />
+                      </div>
+                    </div>     
 
-                  <div class="row">
-
-                  <div class="form-group col-md-4">
+                  <div class="form-group col-md-2">
                     <label>Data fat. SEFAZ</label>
                     <div class="input-group">
                       <input type="text" name="datafat" id="datafat" class="form-control" readonly>
@@ -221,7 +221,7 @@
                   </div>
   
   
-                  <div class="form-group col-md-4">
+                  <div class="form-group col-md-3">
                     <label>Cobrança</label>
                     <div class="input-group">
                       <input type="text" name="cobranca" id="cobranca" class="form-control" readonly>
@@ -231,7 +231,7 @@
                     </div>
                   </div>
   
-                  <div class="form-group col-md-4">
+                  <div class="form-group col-md-2">
                     <label>Plano</label>
                     <div class="input-group">
                       <input type="text" name="plano" id="plano" class="form-control" readonly>
@@ -463,11 +463,7 @@
                       <option value="Transportadora">Transportadora</option>
                     </select>
                   </div>
-
-                  <div class="row">
-
                 <!-- combo tipo de reclamação-->
-
                 <div class="form-group col-md-3">
                   <label class="required">Motivo da reclamação</label>
                   <input type="zoom" name="motivoDevolucao" id="motivoDevolucao" class="form-control" data-zoom="
@@ -481,7 +477,7 @@
                       ]
                     }"
                   >
-                </div>    
+                </div>
 
                 <!--campo sentimento do cliente-->
                   <div class="form-group col-md-3">
@@ -492,8 +488,10 @@
                       <option value="Muito irritado">Muito irritado</option>
                     </select>
                   </div>
-
-                <!-- campo setor que está gerando transtorno-->
+                </div>
+                  
+                <div class="row">
+                  <!-- campo setor que está gerando transtorno-->
                   <div class="form-group col-md-3">
                     <label>Setor que causou o problema</label>
                     <select class="form-control" name="setorTranstorno" id="setorTranstorno">
@@ -508,7 +506,7 @@
                     </select>
                   </div>
 
-                  <div class="form-group col-md-3">
+                  <div class="form-group col-md-2">
                     <label>Como o cliente manifestou a reclamação?</label><select class="form-control"
                       name="modoReclamacao" id="modoReclamacao">
                       <option value="Selecione">Selecione</option>
@@ -517,8 +515,8 @@
                       <option value="Em visita nossa">Em visita nossa</option>
                       <option value="Em visita do Cliente">Em visita do Cliente</option>
                     </select>
-                  </div>                
-              </div>
+                  </div> 
+                </div>
 
               <div class="form-input col-md-12">
                 <label>Por que foi gerada a reclamação?</label>
@@ -534,15 +532,15 @@
 
                 <div class="spacer"></div>
 
-              <div class="form-input col-md-12">
+                <div class="form-input col-md-12">
                 <label>O que deve ser feito para solucionar a reclamação? (Observação)</label>
                 <div class="input-group">
                   <textarea class="form-control" rows="6" name="SolucaoReclamac" id="SolucaoReclamac"></textarea>
                   <span class="input-group-addon"><i class="fas fa-pen"></i></span>
                 </div>
-              </div>
+                </div>
 
-            </div>
+              </div>
 
               <div class="row">
 
