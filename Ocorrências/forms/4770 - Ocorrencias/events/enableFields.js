@@ -11,10 +11,6 @@ function enableFields(form) {
     form.setEnabled("SolucaoReclamac2", false);
     form.setEnabled("RdAprovOcor", false);
 
-    //Aprovação iniciador
-    form.setEnabled("RdProbResol", false);
-    form.setEnabled("ObsIniciador", false);
-
     //Resolucao
     form.setEnabled("PrimPQ", false);
     form.setEnabled("SegPQ", false);
@@ -43,10 +39,6 @@ function enableFields(form) {
     //2ª tratativa
     form.setEnabled("SolucaoReclamac2", false);
     form.setEnabled("RdAprovOcor", false);
-
-    //Aprovação iniciador
-    form.setEnabled("RdProbResol", false);
-    form.setEnabled("ObsIniciador", false);
 
     //Resolucao
     form.setEnabled("PrimPQ", false);
@@ -86,10 +78,6 @@ function enableFields(form) {
     //2ª tratativa - usuário
     form.setEnabled("RdAprovOcor", false);
 
-    //Aprovação iniciador
-    form.setEnabled("RdProbResol", false);
-    form.setEnabled("ObsIniciador", false);
-
     //Resolucao
     form.setEnabled("PrimPQ", false);
     form.setEnabled("SegPQ", false);
@@ -126,10 +114,6 @@ function enableFields(form) {
 
     //2ª tratativa - ocorrências
     form.setEnabled("SolucaoReclamac2", false);
-
-    //Aprovação iniciador
-    form.setEnabled("RdProbResol", false);
-    form.setEnabled("ObsIniciador", false);
 
     //Resolucao
     form.setEnabled("PrimPQ", false);
@@ -208,9 +192,5 @@ function enableFields(form) {
     //2ª tratativa
     form.setEnabled("SolucaoReclamac2", false);
     form.setEnabled("RdAprovOcor", false);
-
-    //Aprovação iniciador
-    form.setEnabled("RdProbResol", false);
-    form.setEnabled("ObsIniciador", false);
   }
 }

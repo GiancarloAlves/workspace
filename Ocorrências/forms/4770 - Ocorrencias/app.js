@@ -1,7 +1,6 @@
 // CONSTANTES GLOBAIS
 const EVENTO_INICIO = 7;
 const TRATATIVA_PRIMA = 9;
-const APROVACAO_INICIADOR = 54;
 const APROVACAO_OCORRENCIAS = 45;
 const RESOLUCAO_PROBLEMAS = 62;
 const TRATATIVA_SEGUNDA = 41;
@@ -10,7 +9,6 @@ const PEDIDO_SUBSTITUTO = 101;
 const DEVOLUCAO_CASE = 79;
 const ABRIR_DEVOLUCAO = 81;
 const CONSOLIDAR_RESPONSAVEL_DEV = 91;
-const INICIADOR_APROVA = 59;
 const TABLE__GRID_ID = `#pedido`;
 
 function taskHandler() {
@@ -53,7 +51,6 @@ function taskHandler() {
       }
 
       if (DEVOLUCAO == "Não" || SUBPROCESSO == "Não") {
-        $(`#ObsIniciador`).val("");
         $(`#SolucaoReclamac`).val("");
         $(`#devolucao`).val("Não");
       }
@@ -108,19 +105,7 @@ function taskHandler() {
 
       break;
 
-    case APROVACAO_INICIADOR:
-      dispararAlerta({
-        icone: "warning",
-        titulo: "Atenção!",
-        mensagem: `Para prosseguir nesta etapa do processo, você precisa ir até a seção "Aprovação do Iniciador", onde você deve dizer se o problema do cliente foi resolvido. Caso tenha sido resolvido, marque a opção "SIM". Caso não tenha sido resolvido, marque a opção "NÃO", que o processo retornará para o setor de ocorrências para ser resolvido.`,
-      });
-
-      updateLED("led_aprovacao");
-      tratarPainel("aprovacao");
-      break;
-
     case ABRIR_DEVOLUCAO:
-    case INICIADOR_APROVA:
       $(`#DescrOcorrencia`).val("");
       $(`#SugestaoResoluc`).val("");
       break;

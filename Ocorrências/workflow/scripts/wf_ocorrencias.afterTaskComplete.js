@@ -8,7 +8,6 @@ function afterTaskComplete(colleagueId, nextSequenceId, userList) {
   var SolucaoReclamac = hAPI.getCardValue("SolucaoReclamac");
   var SolucReclamac2 = hAPI.getCardValue("SolucaoReclamac2");
   var ObsDevolucao = hAPI.getCardValue("ObsDevolucao");
-  var ObsIniciador = hAPI.getCardValue("ObsIniciador");
 
   if (nextSequenceId == 9) {
     hAPI.setTaskComments(
@@ -47,14 +46,6 @@ function afterTaskComplete(colleagueId, nextSequenceId, userList) {
   if (nextSequenceId == 81) {
     if (ObsDevolucao !== "") {
       hAPI.setTaskComments(usuario, num_processo, 0, ObsDevolucao);
-    }
-  }
-
-  if (nextSequenceId == 59) {
-    //MAIS IMPORTANTE
-
-    if (ObsIniciador !== "") {
-      hAPI.setTaskComments(usuario, num_processo, 0, ObsIniciador);
     }
   }
 }
