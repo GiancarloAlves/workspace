@@ -5,7 +5,6 @@ const APROVACAO_INICIADOR = 54;
 const APROVACAO_OCORRENCIAS = 45;
 const RESOLUCAO_PROBLEMAS = 62;
 const TRATATIVA_SEGUNDA = 41;
-const RESPOSTA_GERENCIA = 22;
 const REFATURAMENTO = 98;
 const PEDIDO_SUBSTITUTO = 101;
 const DEVOLUCAO_CASE = 79;
@@ -129,11 +128,6 @@ function taskHandler() {
     case RESOLUCAO_PROBLEMAS:
       updateLED("led_resolucao");
       tratarPainel("resolucao");
-      break;
-
-    case RESPOSTA_GERENCIA:
-      updateLED("led_supervisor");
-      tratarPainel("fim");
       break;
   }
 }
