@@ -75,6 +75,11 @@ function validateForm(form) {
     if (ocorrencia == "" || ocorrencia == null) {
       throw "Descreva a ocorrência";
     }
+
+    var modo = form.getValue("modoReclamacao");
+    if (modo == "Selecione" || modo == null) {
+      throw "Informe o meio pelo qual o cliente manifestou a reclamação.";
+    }
   }
 
   function validarRefaturamento() {
@@ -120,11 +125,6 @@ function validateForm(form) {
     var setor = form.getValue("setorTranstorno");
     if (setor == "Selecione" || setor == null) {
       throw "Informe o setor que está causando o problema.";
-    }
-
-    var modo = form.getValue("modoReclamacao");
-    if (modo == "Selecione" || modo == null) {
-      throw "Informe o meio pelo qual o cliente manifestou a reclamação.";
     }
   }
 

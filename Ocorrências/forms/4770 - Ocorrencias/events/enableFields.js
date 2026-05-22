@@ -32,6 +32,8 @@ function enableFields(form) {
 
     //Reclamação
     form.setEnabled("ComboTipoReclam", false);
+    form.setEnabled("SentimCliente", false);
+    form.setEnabled("ModoReclamacao", false);
     form.setEnabled("DescrOcorrencia", false);
     form.setEnabled("SugestaoResoluc", false);
     form.setEnabled("Gerente", false);

@@ -69,7 +69,8 @@
                 <div class="form-group col-md-3">
                   <label>Supervisor</label>
                   <div class="input-group">
-                    <input type="text" name="supervisorSolicitante" id="supervisorSolicitante" class="form-control" readonly>
+                    <input type="text" name="supervisorSolicitante" id="supervisorSolicitante" class="form-control"
+                      readonly>
                     <span class="input-group-addon"><i class="fas fa-user-shield"></i></span>
                   </div>
                 </div>
@@ -161,7 +162,7 @@
                 </div>
 
                 <div class="form-group col-md-2">
-                  <label class="required">Possuí louça?</label>
+                  <label class="required">Isenção avaria?</label>
                   <select class="form-control" name="possuiLouca" id="possuiLouca">
                     <option value="">Selecione</option>
                     <option value="Sim">Sim</option>
@@ -171,14 +172,13 @@
 
                 <div class="form-group col-md-3">
                   <label>Nome do cliente</label>
-                  <input type="text" class="form-control" name="PessoaCliente" id="PessoaCliente"
-                    value="" placeholder="Nome da pessoa que fez a reclamação" data-size="big" />
+                  <input type="text" class="form-control" name="PessoaCliente" id="PessoaCliente" value=""
+                    placeholder="Nome da pessoa que fez a reclamação" data-size="big" />
                 </div>
 
                 <div class="form-group col-md-3">
                   <label>Setor do cliente</label>
-                  <input type="text" class="form-control" name="SetorCliente"
-                    value="" placeholder="" data-size="big" />
+                  <input type="text" class="form-control" name="SetorCliente" value="" placeholder="" data-size="big" />
                 </div>
               </div>
 
@@ -298,6 +298,29 @@
             <div class="panel-body">
 
               <div class="row">
+                <div class="form-group col-md-3">
+                  <label>Como o cliente está se sentindo?</label>
+                  <select class="form-control" name="SentimCliente">
+                    <option value="Selecione">Selecione</option>
+                    <option value="Tranquilo">Tranquilo</option>
+                    <option value="Impaciente">Impaciente</option>
+                    <option value="Muito irritado">Muito irritado</option>
+                  </select>
+                </div>
+
+                <div class="form-group col-md-3">
+                  <label>Como o cliente manifestou a reclamação?</label>
+                  <select class="form-control" name="modoReclamacao" id="modoReclamacao">
+                    <option value="Selecione">Selecione</option>
+                    <option value="Telefone">Telefone</option>
+                    <option value="Email">Email</option>
+                    <option value="Em visita nossa">Em visita nossa</option>
+                    <option value="Em visita do Cliente">Em visita do Cliente</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="row">
                 <div class="form-input col-md-12">
                   <label>Descreva aqui a ocorrência</label>
                   <div class="input-group">
@@ -321,11 +344,16 @@
               <div class="row">
                 <div class="spacer"></div>
                 <div class="form-field" data-type="tabledetail" data-show-properties="" data-field-name="pedido">
-                  <table id="pedido" class="table pai-filho table-striped" tablename="pedido" noaddbutton="true" nodeletebutton="true">
+                  <table id="pedido" class="table pai-filho table-striped" tablename="pedido" noaddbutton="true"
+                    nodeletebutton="true">
                     <thead>
                       <tr>
-                        <th width="8%">Cód.produto&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-                        <th width="25%">Descrição produto&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                        <th width="8%">
+                          Cód.produto&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        </th>
+                        <th width="25%">Descrição
+                          produto&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        </th>
                         <th width="15%">Tipo produto</th>
                         <th width="8%">Qtd</th>
                         <th width="80%">Observação</th>
@@ -350,7 +378,8 @@
                         <td><input type="text" name="obs" id="obs" class="form-control"></td>
                         <td class="remove">
                           <span class="fs-display-block fs-sm-space">
-                            <i class="flaticon flaticon-close icon-md remove-button" onclick="fnWdkRemoveChild(this)"></i>
+                            <i class="flaticon flaticon-close icon-md remove-button"
+                              onclick="fnWdkRemoveChild(this)"></i>
                           </span>
                         </td>
                       </tr>
@@ -424,18 +453,6 @@
                 </div>
 
                 <div class="form-group col-md-3">
-                  <label>Como o cliente está se sentindo?</label>
-                  <select class="form-control" name="SentimCliente">
-                    <option value="Selecione">Selecione</option>
-                    <option value="Tranquilo">Tranquilo</option>
-                    <option value="Impaciente">Impaciente</option>
-                    <option value="Muito irritado">Muito irritado</option>
-                  </select>
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="form-group col-md-3">
                   <label>Setor que causou o problema</label>
                   <select class="form-control" name="setorTranstorno" id="setorTranstorno">
                     <option value="Selecione">Selecione</option>
@@ -446,17 +463,6 @@
                     <option value="E-commerce">E-commerce</option>
                     <option value="RH">RH</option>
                     <option value="Diretoria">Diretoria</option>
-                  </select>
-                </div>
-
-                <div class="form-group col-md-3">
-                  <label>Como o cliente manifestou a reclamação?</label>
-                  <select class="form-control" name="modoReclamacao" id="modoReclamacao">
-                    <option value="Selecione">Selecione</option>
-                    <option value="Telefone">Telefone</option>
-                    <option value="Email">Email</option>
-                    <option value="Em visita nossa">Em visita nossa</option>
-                    <option value="Em visita do Cliente">Em visita do Cliente</option>
                   </select>
                 </div>
               </div>
@@ -569,12 +575,14 @@
             <div class="panel-body">
 
               <div class="form-input col-md-12">
-                <h2 style="font-size: large; font-weight: 700; color: black; display: flex; align-items: center; gap: 6px;">
+                <h2
+                  style="font-size: large; font-weight: 700; color: black; display: flex; align-items: center; gap: 6px;">
                   <i class="flaticon flaticon-border-color icon-md" aria-hidden="true"></i>
                   Tratativa sobre o refaturamento
                 </h2>
                 <div class="input-group">
-                  <textarea class="form-control" rows="6" name="ObsRefaturamento" id="ObsRefaturamento" placeholder="Explique as ações tomadas para o refaturamento"></textarea>
+                  <textarea class="form-control" rows="6" name="ObsRefaturamento" id="ObsRefaturamento"
+                    placeholder="Explique as ações tomadas para o refaturamento"></textarea>
                   <span class="input-group-addon"><i class="fas fa-pen"></i></span>
                 </div>
               </div>
@@ -637,14 +645,16 @@
               <div class="form-input col-md-3">
                 <div class="form-group">
                   <label class="required">Número do pedido substituto</label>
-                  <input type="text" class="form-control" name="numeroPedidoSubstituto" id="numeroPedidoSubstituto" placeholder="Informe o número do pedido" />
+                  <input type="text" class="form-control" name="numeroPedidoSubstituto" id="numeroPedidoSubstituto"
+                    placeholder="Informe o número do pedido" />
                 </div>
               </div>
 
               <div class="form-input col-md-12">
                 <label>Observação Pedido substituto</label>
                 <div class="input-group">
-                  <textarea class="form-control" rows="6" name="ObsPedidoSubstituto" id="ObsPedidoSubstituto"></textarea>
+                  <textarea class="form-control" rows="6" name="ObsPedidoSubstituto"
+                    id="ObsPedidoSubstituto"></textarea>
                   <span class="input-group-addon"><i class="fas fa-pen"></i></span>
                 </div>
               </div>
@@ -671,31 +681,36 @@
               <div class="form-input">
                 <div class="form-group">
                   <label>5 porquês - O problema aconteceu porque...</label>
-                  <input class="form-control" rows="1" name="PrimPQ" placeholder="Descreva aqui a causa principal do problema" data-size="big" />
+                  <input class="form-control" rows="1" name="PrimPQ"
+                    placeholder="Descreva aqui a causa principal do problema" data-size="big" />
                 </div>
               </div>
 
               <div class="form-input">
                 <div class="form-group">
-                  <input class="form-control" rows="1" name="SegPQ" placeholder="... que aconteceu porque..." data-size="big" />
+                  <input class="form-control" rows="1" name="SegPQ" placeholder="... que aconteceu porque..."
+                    data-size="big" />
                 </div>
               </div>
 
               <div class="form-input">
                 <div class="form-group">
-                  <input class="form-control" rows="1" name="TercPQ" placeholder="... que aconteceu porque..." data-size="big" />
+                  <input class="form-control" rows="1" name="TercPQ" placeholder="... que aconteceu porque..."
+                    data-size="big" />
                 </div>
               </div>
 
               <div class="form-input">
                 <div class="form-group">
-                  <input class="form-control" rows="1" name="QuartoPQ" placeholder="... que aconteceu porque..." data-size="big" />
+                  <input class="form-control" rows="1" name="QuartoPQ" placeholder="... que aconteceu porque..."
+                    data-size="big" />
                 </div>
               </div>
 
               <div class="form-input">
                 <div class="form-group">
-                  <input class="form-control" rows="1" name="QuintoPQ" placeholder="... que aconteceu porque..." data-size="big" />
+                  <input class="form-control" rows="1" name="QuintoPQ" placeholder="... que aconteceu porque..."
+                    data-size="big" />
                 </div>
               </div>
 
@@ -703,17 +718,22 @@
                 <div class="form-group">
                   <label>Categoria da causa raiz</label>
                   <select class="form-control" name="ishikawa">
-                    <option value="Selecione a possível causa raiz do problema">Selecione a possível causa raiz do problema</option>
+                    <option value="Selecione a possível causa raiz do problema">Selecione a possível causa raiz do
+                      problema</option>
                     <option value="Mão de obra - Falta de treinamento">Mão de obra - Falta de treinamento</option>
-                    <option value="Mão de obra - Imprudência ou desatenção na execução">Mão de obra - Imprudência ou desatenção na execução</option>
+                    <option value="Mão de obra - Imprudência ou desatenção na execução">Mão de obra - Imprudência ou
+                      desatenção na execução</option>
                     <option value="Método - Procedimento não documentado">Método - Procedimento não documentado</option>
                     <option value="Método - Falta de controle efetivo">Método - Falta de controle efetivo</option>
-                    <option value="Métrica - Má calibração de equipamento">Métrica - Má calibração de equipamento</option>
-                    <option value="Métrica - Má avaliação dos indicadores">Métrica - Má avaliação dos indicadores</option>
+                    <option value="Métrica - Má calibração de equipamento">Métrica - Má calibração de equipamento
+                    </option>
+                    <option value="Métrica - Má avaliação dos indicadores">Métrica - Má avaliação dos indicadores
+                    </option>
                     <option value="Materiais - especificações incorretas">Materiais - especificações incorretas</option>
                     <option value="Materiais - quantidade incorreta">Materiais - quantidade incorreta</option>
                     <option value="Máquinas - problema de sistema">Máquinas - problema de sistema</option>
-                    <option value="Máquinas - falha em dispositivo eletrônico">Máquinas - falha em dispositivo eletrônico</option>
+                    <option value="Máquinas - falha em dispositivo eletrônico">Máquinas - falha em dispositivo
+                      eletrônico</option>
                     <option value="Meio ambiente - Layout mal definido">Meio ambiente - Layout mal definido</option>
                     <option value="Meio ambiente - Falta de organização">Meio ambiente - Falta de organização</option>
                   </select>
