@@ -6,7 +6,6 @@ function validateForm(form) {
   const EVENTO_INICIO = 7;
   const TRATATIVA_PRIMA = 9;
   const DEVOLUCAO = 79;
-  const TRATATIVA_SEGUNDA = 41;
   const REFATURAMENTO = 98;
   const PEDIDO_SUBSTITUTO = 101;
 
@@ -33,10 +32,6 @@ function validateForm(form) {
 
     case PEDIDO_SUBSTITUTO:
       validarPedidoSubstituto();
-      break;
-
-    case TRATATIVA_SEGUNDA:
-      validarSegTratativa();
       break;
   }
 
@@ -130,13 +125,6 @@ function validateForm(form) {
     var opcoesResolucao = form.getValue("opcoesResolucao");
     if (opcoesResolucao == "" || opcoesResolucao == null) {
       throw "Informe a opção de resolução!";
-    }
-  }
-
-  function validarSegTratativa() {
-    var segunda = form.getValue("SolucaoReclamac2");
-    if (segunda == "" || segunda == null) {
-      throw "Descreva a solução";
     }
   }
 

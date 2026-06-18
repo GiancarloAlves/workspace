@@ -7,10 +7,6 @@ function enableFields(form) {
     form.setEnabled("RdOutroSetor", false);
     form.setEnabled("SegUsuario", false);
 
-    //2ª tratativa
-    form.setEnabled("SolucaoReclamac2", false);
-    form.setEnabled("RdAprovOcor", false);
-
     //Resolucao
     form.setEnabled("PrimPQ", false);
     form.setEnabled("SegPQ", false);
@@ -37,10 +33,6 @@ function enableFields(form) {
     form.setEnabled("DescrOcorrencia", false);
     form.setEnabled("SugestaoResoluc", false);
     form.setEnabled("Gerente", false);
-
-    //2ª tratativa
-    form.setEnabled("SolucaoReclamac2", false);
-    form.setEnabled("RdAprovOcor", false);
 
     //Resolucao
     form.setEnabled("PrimPQ", false);
@@ -77,9 +69,6 @@ function enableFields(form) {
     form.setEnabled("RdOutroSetor", false);
     form.setEnabled("SegUsuario", false);
 
-    //2ª tratativa - usuário
-    form.setEnabled("RdAprovOcor", false);
-
     //Resolucao
     form.setEnabled("PrimPQ", false);
     form.setEnabled("SegPQ", false);
@@ -113,9 +102,6 @@ function enableFields(form) {
     form.setEnabled("PqReclamacao", false);
     form.setEnabled("SolucaoReclamac", false);
     form.setEnabled("RdOutroSetor", false);
-
-    //2ª tratativa - ocorrências
-    form.setEnabled("SolucaoReclamac2", false);
 
     //Resolucao
     form.setEnabled("PrimPQ", false);
@@ -152,10 +138,6 @@ function enableFields(form) {
     form.setEnabled("RdOutroSetor", false);
     form.setEnabled("SegUsuario", false);
 
-    //2ª tratativa
-    form.setEnabled("SolucaoReclamac2", false);
-    form.setEnabled("RdAprovOcor", false);
-
     //Resolucao
     form.setEnabled("PrimPQ", false);
     form.setEnabled("SegPQ", false);
@@ -190,9 +172,5 @@ function enableFields(form) {
     form.setEnabled("SolucaoReclamac", false);
     form.setEnabled("RdOutroSetor", false);
     form.setEnabled("SegUsuario", false);
-
-    //2ª tratativa
-    form.setEnabled("SolucaoReclamac2", false);
-    form.setEnabled("RdAprovOcor", false);
   }
 }
