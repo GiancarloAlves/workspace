@@ -126,6 +126,11 @@ function validateForm(form) {
     if (setor == "Selecione" || setor == null) {
       throw "Informe o setor que está causando o problema.";
     }
+
+    var opcoesResolucao = form.getValue("opcoesResolucao");
+    if (opcoesResolucao == "" || opcoesResolucao == null) {
+      throw "Informe a opção de resolução!";
+    }
   }
 
   function validarSegTratativa() {
