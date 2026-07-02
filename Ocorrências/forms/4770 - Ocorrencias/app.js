@@ -1,5 +1,6 @@
 // CONSTANTES GLOBAIS
 const EVENTO_INICIO = 7;
+const APROVACAO_GERENTE_VENDAS = 23;
 const TRATATIVA_PRIMA = 9;
 const APROVACAO_OCORRENCIAS = 45;
 const RESOLUCAO_PROBLEMAS = 62;
@@ -24,6 +25,12 @@ function taskHandler() {
       $(`#reclamacao`).addClass("in");
       $(`#reclamacao`).removeClass("blocked");
       starter();
+
+      break;
+
+    case APROVACAO_GERENTE_VENDAS:
+      updateLED("led_aprovacaoGerente");
+      tratarPainel("aprovacaoGerenteVendas");
 
       break;
 

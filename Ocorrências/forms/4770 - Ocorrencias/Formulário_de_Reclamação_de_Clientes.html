@@ -322,6 +322,16 @@
 
               <div class="row">
                 <div class="form-input col-md-12">
+                  <label class="required">Motivo</label>
+                  <div class="input-group">
+                    <textarea class="form-control" rows="6" name="Motivo" id="Motivo"></textarea>
+                    <span class="input-group-addon"><i class="fas fa-pen"></i></span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="form-input col-md-12">
                   <label>Descreva aqui a ocorrência</label>
                   <div class="input-group">
                     <textarea class="form-control" rows="6" name="DescrOcorrencia" id="DescrOcorrencia"></textarea>
@@ -395,6 +405,48 @@
                         </button>
                       </div>
                     </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- ================================================ -->
+        <!-- APROVAÇÃO GERENTE VENDAS                         -->
+        <!-- ================================================ -->
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title subpanel_title">
+              <span id="led_aprovacaoGerente" class="led"></span>
+              <a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion"
+                href="#aprovacaoGerenteVendas">
+                <i class="fas fa-user-check"></i> APROVAÇÃO GERENTE VENDAS
+              </a>
+            </h3>
+          </div>
+          <div id="aprovacaoGerenteVendas" class="panel-collapse collapse in">
+            <div class="panel-body">
+
+              <div class="row">
+                <div class="form-group col-md-3">
+                  <label class="required">Aprovação gerente</label>
+                  <select class="form-control" name="aprovacaoGerente" id="aprovacaoGerente">
+                    <option value="">Selecione</option>
+                    <option value="Sim">Sim</option>
+                    <option value="Não">Não</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="form-input col-md-12">
+                  <label class="required">Observação</label>
+                  <div class="input-group">
+                    <textarea class="form-control" rows="6" name="obsAprovacaoGerente"
+                      id="obsAprovacaoGerente"></textarea>
+                    <span class="input-group-addon"><i class="fas fa-pen"></i></span>
                   </div>
                 </div>
               </div>

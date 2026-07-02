@@ -4,6 +4,7 @@ function validateForm(form) {
 
   //CONSTANTES GLOBAIS
   const EVENTO_INICIO = 7;
+  const APROVACAO_GERENTE_VENDAS = 23;
   const TRATATIVA_PRIMA = 9;
   const DEVOLUCAO = 79;
   const REFATURAMENTO = 98;
@@ -15,6 +16,10 @@ function validateForm(form) {
       if (WKCompletTask.equals("true")) {
         validarInicio();
       }
+      break;
+
+    case APROVACAO_GERENTE_VENDAS:
+      validarAprovacaoGerente();
       break;
 
     case TRATATIVA_PRIMA:
@@ -66,6 +71,11 @@ function validateForm(form) {
       throw "Preencha o contato telefônico";
     }
 
+    var motivo = form.getValue("Motivo");
+    if (motivo == "" || motivo == null) {
+      throw "Informe o motivo!";
+    }
+
     var ocorrencia = form.getValue("DescrOcorrencia");
     if (ocorrencia == "" || ocorrencia == null) {
       throw "Descreva a ocorrência";
@@ -74,6 +84,18 @@ function validateForm(form) {
     var modo = form.getValue("modoReclamacao");
     if (modo == "Selecione" || modo == null) {
       throw "Informe o meio pelo qual o cliente manifestou a reclamação.";
+    }
+  }
+
+  function validarAprovacaoGerente() {
+    var aprovacao = form.getValue("aprovacaoGerente");
+    if (aprovacao == "" || aprovacao == null) {
+      throw "Informe a aprovação do gerente!";
+    }
+
+    var observacao = form.getValue("obsAprovacaoGerente");
+    if (observacao == "" || observacao == null) {
+      throw "Informe a observação da aprovação do gerente!";
     }
   }
 
