@@ -1,5 +1,6 @@
 //CONSTANTES GLOBAIS
 const EVENTO_INICIO = 4;
+const APROVACAO_GERENTE_VENDAS = 23;
 const ESTORNO = 5;
 const CREDITO = 13;
 const FIM = 17;
@@ -13,19 +14,29 @@ function taskHandler() {
     case 0:
     case EVENTO_INICIO:
       esconderVariaveis();
+      $(`#aprovacaoGerenteVendas`).hide();
       $(`#credito`).hide();
       $(`#cp`).hide();
+      break;
+
+    case APROVACAO_GERENTE_VENDAS:
+      reaplicarHide();
+      $(`#abertura`).parent().addClass("blocked");
+      $(`#cp`).parent().addClass("blocked");
+      $(`#credito`).parent().addClass("blocked");
       break;
 
     case ESTORNO:
       reaplicarHide();
       $(`#abertura`).parent().addClass("blocked");
+      $(`#aprovacaoGerenteVendas`).parent().addClass("blocked");
       $(`#credito`).parent().addClass("blocked");
       break;
 
     case CREDITO:
       reaplicarHide();
       $(`#abertura`).parent().addClass("blocked");
+      $(`#aprovacaoGerenteVendas`).parent().addClass("blocked");
       $(`#cp`).parent().addClass("blocked");
       break;
 
@@ -33,6 +44,7 @@ function taskHandler() {
       console.log(FIM);
       reaplicarHide();
       $(`#abertura`).parent().addClass("blocked");
+      $(`#aprovacaoGerenteVendas`).parent().addClass("blocked");
       $(`#cp`).parent().addClass("blocked");
       $(`#credito`).parent().addClass("blocked");
       break;

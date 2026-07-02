@@ -4,6 +4,7 @@ function validateForm(form) {
 
   //CONSTANTES GLOBAIS
   const EVENTO_INICIO = 4;
+  const APROVACAO_GERENTE_VENDAS = 23;
   const ESTORNO = 5;
   const CREDITO = 13;
 
@@ -15,12 +16,28 @@ function validateForm(form) {
       }
       break;
 
+    case APROVACAO_GERENTE_VENDAS:
+      validarAprovacaoGerente();
+      break;
+
     case ESTORNO:
       validarContasAPagar();
       break;
 
     case CREDITO:
       break;
+  }
+
+  function validarAprovacaoGerente() {
+    var aprovacao = form.getValue("aprovacaoGerente");
+    if (aprovacao == "Selecione" || aprovacao == "" || aprovacao == null) {
+      throw "Informe a aprovação do gerente!";
+    }
+
+    var observacao = form.getValue("obsAprovacaoGerente");
+    if (observacao == "" || observacao == null) {
+      throw "Preencha a observação da aprovação do gerente!";
+    }
   }
 
   function validarInicio() {
