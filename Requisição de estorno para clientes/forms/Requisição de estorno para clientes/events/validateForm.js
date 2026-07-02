@@ -56,6 +56,11 @@ function validateForm(form) {
       throw "Preencha o campo <strong>Valor!</strong>";
     }
 
+    var motivo = form.getValue("Motivo");
+    if (motivo == "" || motivo == null) {
+      throw "Preencha o campo <strong>Motivo!</strong>";
+    }
+
     var modalidade = form.getValue("modalidade");
     var pix = form.getValue("pix");
     var tipopix = form.getValue("tipopix");
