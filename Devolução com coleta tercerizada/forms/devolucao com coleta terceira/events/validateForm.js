@@ -11,6 +11,7 @@ function validateForm(form) {
 
   //PÓS VENDA
   const VALIDACAO_APROVACAO = 11;
+  const FOLLOW_UP = 30;
   const FINALIZACAO_AVALIACAO = 21;
 
   switch (TASK) {
@@ -31,6 +32,10 @@ function validateForm(form) {
 
     case VALIDACAO_APROVACAO:
       validarAprovacaoPosVenda();
+      break;
+
+    case FOLLOW_UP:
+      validarFollowUp();
       break;
 
     case FINALIZACAO_AVALIACAO:
@@ -156,6 +161,14 @@ function validateForm(form) {
 
     if (ordemColeta == "" || ordemColeta == null) {
       throw "Preencha o campo <strong>Ordem de coleta</strong>";
+    }
+  }
+
+  function validarFollowUp() {
+    var coletaRealizada = form.getValue("coletaRealizada");
+
+    if (coletaRealizada == "" || coletaRealizada == null) {
+      throw "Preencha o campo <strong>Coleta realizada?</strong>";
     }
   }
 

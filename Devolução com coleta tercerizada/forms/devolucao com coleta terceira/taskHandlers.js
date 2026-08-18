@@ -8,12 +8,13 @@ const ETAPA_2 = `#aprovacao-supervisor`;
 const ETAPA_3 = `#pos-venda`;
 const ETAPA_4 = `#realizar-devolucao`;
 const ETAPA_5 = `#finalizacao-pos-venda`;
+const ETAPA_6 = `#followup`;
 
 const VENDAS = `#MasterVendas`;
 const POS_VENDA = `#MasterPosVenda`;
 const LOGISTICA = `#MasterLog`;
 
-const etapas = [ETAPA_1, ETAPA_2, ETAPA_3, ETAPA_4, ETAPA_5];
+const etapas = [ETAPA_1, ETAPA_2, ETAPA_3, ETAPA_4, ETAPA_5, ETAPA_6];
 
 // Bloqueia todas as seções e desbloqueia apenas a seção atual
 function bloquearOutrasSecoes(secaoAtual) {
@@ -85,6 +86,21 @@ function taskHandlerAprovacaoSupervisor() {
 
 function taskHandlerValidacaoAprovacao() {
   const SECTION_ID = `#pos-venda`;
+
+  bloquearOutrasSecoes(SECTION_ID);
+
+  exibirSecaoForm(SECTION_ID);
+
+  $(`${SECTION_ID} :input`).parent().removeClass("blocked");
+  $(SECTION_ID).addClass("in");
+
+  $(VENDAS).addClass("in");
+  $(POS_VENDA).addClass("in");
+  $(LOGISTICA).removeClass("in");
+}
+
+function taskHandlerFollowUp() {
+  const SECTION_ID = `#followup`;
 
   bloquearOutrasSecoes(SECTION_ID);
 

@@ -9,6 +9,7 @@ const DEVOLUCAO = 18;
 
 //PÓS VENDA
 const VALIDACAO_APROVACAO = 11;
+const FOLLOW_UP = 30;
 const FINALIZACAO_AVALIACAO = 21;
 
 function taskHandler() {
@@ -31,6 +32,11 @@ function taskHandler() {
     case VALIDACAO_APROVACAO:
       taskHandlerValidacaoAprovacao();
       updateLED("led_posvenda");
+      break;
+
+    case FOLLOW_UP:
+      taskHandlerFollowUp();
+      updateLED("led_followup");
       break;
 
     case DEVOLUCAO:

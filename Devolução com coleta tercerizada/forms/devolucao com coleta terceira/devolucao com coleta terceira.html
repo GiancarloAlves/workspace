@@ -1007,6 +1007,52 @@
               <div class="panel panel-primary">
                 <div class="panel-heading">
                   <h3 class="panel-title subpanel_title">
+                    <span id="led_followup" class="led"></span>
+                    <a
+                      class="collapse-icon up"
+                      data-toggle="collapse"
+                      data-parent="#accordion"
+                      href="#followup"
+                      ><i class="fas fa-headset"></i> FOLLOW UP</a
+                    >
+                  </h3>
+                </div>
+
+                <div id="followup" class="panel-collapse collapse in">
+                  <div class="panel-body">
+                    <div class="section-label"><i class="fas fa-truck"></i> Acompanhamento da Coleta</div>
+                    <div class="row">
+                      <div class="form-group col-md-3">
+                        <label class="required">Coleta realizada?</label>
+                        <select
+                          name="coletaRealizada"
+                          id="coletaRealizada"
+                          class="form-control"
+                        >
+                          <option value="">Selecione uma opção...</option>
+                          <option>Sim</option>
+                          <option>Não</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="form-group col-md-12">
+                        <label>Observação</label>
+                        <textarea
+                          name="obsFollowUp"
+                          id="obsFollowUp"
+                          class="form-control"
+                        ></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="panel panel-primary">
+                <div class="panel-heading">
+                  <h3 class="panel-title subpanel_title">
                     <span id="led_finalizacao_avaliacao" class="led"></span>
                     <a
                       class="collapse-icon up"
